@@ -18,6 +18,7 @@ import UserProfile from "@/components/UserProfile";
 import GumiToast from "@/components/GumiToast";
 import AlgorithmModal from "@/components/AlgorithmModal";
 import MyProfile from "@/components/MyProfile/MyProfile";
+import ChatBot from "@/components/ChatBot";
 
 export default function Home() {
   const router = useRouter();
@@ -228,6 +229,15 @@ export default function Home() {
       <div className="flex-1 w-full">
         {feedMode === "gallery" && (
           <div className="w-full">
+            {/* ChatBot — only shows during search */}
+            {activeSearch && (
+              <ChatBot
+                searchQuery={activeSearch}
+                currentProducts={products}
+                onProductClick={handleProductClick}
+              />
+            )}
+
             {/* Stories row — recent friend purchases */}
             {!activeSearch && (
               <div className="pt-4">
