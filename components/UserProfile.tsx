@@ -1,27 +1,16 @@
 "use client";
 
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { MockUser } from "@/types";
-import { MOCK_PRODUCTS } from "@/lib/mock-data";
+import { getUserGumis, getUserHighlights } from "@/lib/user-products";
 import { formatCount } from "@/lib/utils";
 
 type UserProfileProps = {
   user: MockUser | null;
   onClose: () => void;
 };
-
-// Get deterministic "purchased" products for a user based on their ID
-function getUserGumis(userId: string) {
-  const seed = userId.split("").reduce((acc, c) => acc + c.charCodeAt(0), 0);
-  const shuffled = [...MOCK_PRODUCTS].sort((a, b) => {
-    const hashA = (a.id.charCodeAt(a.id.length - 1) * seed) % 100;
-    const hashB = (b.id.charCodeAt(b.id.length - 1) * seed) % 100;
-    return hashA - hashB;
-  });
-  return shuffled.slice(0, Math.min(12, Math.floor(seed % 8) + 5));
-}
 
 export default function UserProfile({ user, onClose }: UserProfileProps) {
   useEffect(() => {
@@ -61,6 +50,17 @@ export default function UserProfile({ user, onClose }: UserProfileProps) {
   }, [user]);
 
   const userGumis = user ? getUserGumis(user.id) : [];
+  const highlights = user ? getUserHighlights(user.id) : [];
+  const [activeHighlight, setActiveHighlight] = useState<string | null>(null);
+
+  // Reset highlight when user changes
+  useEffect(() => {
+    setActiveHighlight(null);
+  }, [user]);
+
+  const displayProducts = activeHighlight
+    ? highlights.find((h) => h.id === activeHighlight)?.products || userGumis
+    : userGumis;
 
   return (
     <AnimatePresence>
@@ -153,13 +153,57 @@ export default function UserProfile({ user, onClose }: UserProfileProps) {
               </div>
             </div>
 
+            {/* Highlights row */}
+            {highlights.length > 0 && (
+              <div className="px-6 py-4 border-t border-[var(--border)]/50">
+                <div className="flex gap-4 overflow-x-auto hide-scrollbar">
+                  {highlights.map((highlight) => (
+                    <button
+                      key={highlight.id}
+                      onClick={() =>
+                        setActiveHighlight(activeHighlight === highlight.id ? null : highlight.id)
+                      }
+                      className="flex flex-col items-center gap-1.5 flex-shrink-0"
+                    >
+                      <div
+                        className={`w-16 h-16 rounded-full overflow-hidden border-2 transition-colors ${
+                          activeHighlight === highlight.id
+                            ? "border-[var(--accent)]"
+                            : "border-[var(--border)]"
+                        }`}
+                      >
+                        <div className="w-full h-full bg-[var(--bg-secondary)] flex items-center justify-center relative">
+                          {highlight.products[0] ? (
+                            <Image
+                              src={highlight.products[0].primaryImage.url}
+                              alt={highlight.label}
+                              fill
+                              className="object-cover"
+                              sizes="64px"
+                            />
+                          ) : (
+                            <span className="text-2xl">{highlight.emoji}</span>
+                          )}
+                        </div>
+                      </div>
+                      <span className="text-[10px] text-[var(--text-secondary)] font-medium">
+                        {highlight.label}
+                      </span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+
             {/* Products they've Gumied (purchased and posted) */}
             <div className="px-6 pb-8">
               <h3 className="text-xs uppercase tracking-[0.1em] text-[var(--text-tertiary)] font-medium mb-3">
-                Products {user.name.split(" ")[0]} bought
+                {activeHighlight
+                  ? highlights.find((h) => h.id === activeHighlight)?.label
+                  : `Products ${user.name.split(" ")[0]} bought`}
               </h3>
               <div className="grid grid-cols-3 gap-2">
-                {userGumis.map((product) => (
+                {displayProducts.map((product) => (
                   <div
                     key={product.id}
                     className="relative aspect-square rounded-xl overflow-hidden bg-[var(--bg-secondary)] group cursor-pointer"

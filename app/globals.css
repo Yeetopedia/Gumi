@@ -113,3 +113,17 @@ body {
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
+/* Algorithm formula styling */
+.formula {
+  font-family: var(--font-cormorant), serif;
+  font-size: 1.15rem;
+  font-style: italic;
+  letter-spacing: 0.02em;
+  line-height: 2;
+}
+
+.formula .fn {
+  font-style: normal;
+  font-weight: 600;
+}

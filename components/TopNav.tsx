@@ -16,6 +16,7 @@ type TopNavProps = {
   onCategorySelect: (categoryId: string) => void;
   feedMode: FeedMode;
   onFeedModeChange: (mode: FeedMode) => void;
+  onAlgorithmClick?: () => void;
 };
 
 export default function TopNav({
@@ -27,6 +28,7 @@ export default function TopNav({
   onCategorySelect,
   feedMode,
   onFeedModeChange,
+  onAlgorithmClick,
 }: TopNavProps) {
   const [isVisible, setIsVisible] = useState(true);
   const lastScrollY = useRef(0);
@@ -136,6 +138,20 @@ export default function TopNav({
             </svg>
           </button>
         </div>
+
+        {/* Algorithm info button */}
+        {onAlgorithmClick && (
+          <button
+            onClick={onAlgorithmClick}
+            className="flex-shrink-0 w-8 h-8 rounded-full hover:bg-[var(--bg-secondary)] flex items-center justify-center transition-colors"
+            aria-label="How Gumi works"
+            title="The Algorithm"
+          >
+            <span className="text-sm text-[var(--text-tertiary)]" style={{ fontFamily: "var(--font-cormorant), serif", fontStyle: "italic", fontWeight: 600 }}>
+              Σ
+            </span>
+          </button>
+        )}
 
         {/* Profile with Gumi count */}
         <button

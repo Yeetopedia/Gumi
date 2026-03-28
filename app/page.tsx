@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useCallback, useEffect, useRef } from "react";
+import { AnimatePresence } from "framer-motion";
 import { Product, FeedMode, FeedResponse, MockUser } from "@/types";
 import { CATEGORIES } from "@/lib/mock-data";
 import { getStoryUsers } from "@/lib/mock-users";
@@ -8,11 +9,13 @@ import { useDebounce } from "@/hooks/useDebounce";
 import { useInfiniteScroll } from "@/hooks/useInfiniteScroll";
 import TopNav from "@/components/TopNav";
 import StoriesRow from "@/components/StoriesRow";
+import StoryViewer from "@/components/StoryViewer";
 import MasonryGrid from "@/components/MasonryGrid";
 import ReelsView from "@/components/ReelsView";
 import ProductModal from "@/components/ProductModal";
 import UserProfile from "@/components/UserProfile";
 import GumiToast from "@/components/GumiToast";
+import AlgorithmModal from "@/components/AlgorithmModal";
 
 export default function Home() {
   // Feed state
@@ -29,6 +32,13 @@ export default function Home() {
   const [activeSearch, setActiveSearch] = useState("");
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [selectedUser, setSelectedUser] = useState<MockUser | null>(null);
+
+  // Story viewer state
+  const [storyViewerOpen, setStoryViewerOpen] = useState(false);
+  const [storyInitialIndex, setStoryInitialIndex] = useState(0);
+
+  // Algorithm modal
+  const [algorithmOpen, setAlgorithmOpen] = useState(false);
 
   // Gumi toast state
   const [toastVisible, setToastVisible] = useState(false);
@@ -48,6 +58,12 @@ export default function Home() {
   // Handle friend avatar click — open profile
   const handleFriendClick = useCallback((user: MockUser) => {
     setSelectedUser(user);
+  }, []);
+
+  // Handle story click — open story viewer
+  const handleStoryClick = useCallback((_user: MockUser, index: number) => {
+    setStoryInitialIndex(index);
+    setStoryViewerOpen(true);
   }, []);
 
   // Fetch products
@@ -192,6 +208,7 @@ export default function Home() {
           onCategorySelect={handleCategorySelect}
           feedMode={feedMode}
           onFeedModeChange={handleFeedModeChange}
+          onAlgorithmClick={() => setAlgorithmOpen(true)}
         />
       )}
 
@@ -199,7 +216,7 @@ export default function Home() {
         <div style={{ paddingTop: `${navHeight}px` }}>
           {/* Stories row — recent friend purchases */}
           {!activeSearch && (
-            <StoriesRow users={storyUsers} onUserClick={handleUserClick} />
+            <StoriesRow users={storyUsers} onStoryClick={handleStoryClick} />
           )}
 
           {activeSearch && (
@@ -293,6 +310,24 @@ export default function Home() {
       <UserProfile
         user={selectedUser}
         onClose={() => setSelectedUser(null)}
+      />
+
+      {/* Story Viewer */}
+      <AnimatePresence>
+        {storyViewerOpen && (
+          <StoryViewer
+            users={storyUsers}
+            initialUserIndex={storyInitialIndex}
+            onClose={() => setStoryViewerOpen(false)}
+            onProductClick={handleProductClick}
+          />
+        )}
+      </AnimatePresence>
+
+      {/* Algorithm Modal */}
+      <AlgorithmModal
+        isOpen={algorithmOpen}
+        onClose={() => setAlgorithmOpen(false)}
       />
 
       {/* Purchase confirmation toast */}

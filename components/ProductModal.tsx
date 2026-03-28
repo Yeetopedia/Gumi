@@ -17,9 +17,13 @@ type ProductModalProps = {
 
 export default function ProductModal({ product, onClose, onGumi, onFriendClick }: ProductModalProps) {
   const [isGumied, setIsGumied] = useState(false);
+  const [isSaved, setIsSaved] = useState(false);
 
   useEffect(() => {
-    if (product) setIsGumied(product.isGumied ?? false);
+    if (product) {
+      setIsGumied(product.isGumied ?? false);
+      setIsSaved(false);
+    }
   }, [product]);
 
   useEffect(() => {
@@ -231,11 +235,11 @@ export default function ProductModal({ product, onClose, onGumi, onFriendClick }
               <div className="flex-1" />
 
               {/* Action buttons */}
-              <div className="flex gap-3 sticky bottom-0 pt-4 bg-[var(--card-bg)]">
+              <div className="flex items-center gap-2 sticky bottom-0 pt-4 bg-[var(--card-bg)]">
                 {/* Gumi = "I Bought This" */}
                 <button
                   onClick={handleGumi}
-                  className={`flex items-center gap-2 px-5 py-3 rounded-full border text-sm font-medium transition-all ${
+                  className={`flex items-center gap-2 px-4 py-3 rounded-full border text-sm font-medium transition-all ${
                     isGumied
                       ? "bg-[var(--accent)]/10 border-[var(--accent)] text-[var(--accent)]"
                       : "border-[var(--border)] text-[var(--text-secondary)] hover:border-[var(--accent)] hover:text-[var(--accent)]"
@@ -256,12 +260,53 @@ export default function ProductModal({ product, onClose, onGumi, onFriendClick }
                   {isGumied ? "Purchased!" : "I Bought This"}
                 </button>
 
-                {/* Shop Now — external purchase link */}
+                {/* Share */}
+                <button
+                  onClick={() => {
+                    if (navigator.share) {
+                      navigator.share({
+                        title: product.title,
+                        text: `Check out ${product.title} by ${product.brand} on Gumi`,
+                        url: product.buyUrl,
+                      });
+                    }
+                  }}
+                  className="w-11 h-11 flex-shrink-0 flex items-center justify-center rounded-full border border-[var(--border)] text-[var(--text-secondary)] hover:border-[var(--text-tertiary)] transition-colors"
+                  aria-label="Share"
+                >
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" />
+                    <polyline points="16 6 12 2 8 6" />
+                    <line x1="12" y1="2" x2="12" y2="15" />
+                  </svg>
+                </button>
+
+                {/* Wishlist/Save */}
+                <button
+                  onClick={() => setIsSaved(!isSaved)}
+                  className={`w-11 h-11 flex-shrink-0 flex items-center justify-center rounded-full border transition-all ${
+                    isSaved
+                      ? "bg-[var(--text-primary)] border-[var(--text-primary)]"
+                      : "border-[var(--border)] hover:border-[var(--text-tertiary)]"
+                  }`}
+                  aria-label={isSaved ? "Remove from wishlist" : "Add to wishlist"}
+                >
+                  <motion.div
+                    animate={isSaved ? { scale: [1, 1.3, 1] } : { scale: 1 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill={isSaved ? "white" : "none"} stroke={isSaved ? "white" : "var(--text-secondary)"} strokeWidth="2">
+                      <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" />
+                    </svg>
+                  </motion.div>
+                </button>
+
+                {/* Shop Now */}
                 <a
                   href={product.buyUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 flex items-center justify-center gap-2 px-5 py-3 bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white rounded-full text-sm font-semibold transition-colors"
+                  className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white rounded-full text-sm font-semibold transition-colors"
                 >
                   Shop Now
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

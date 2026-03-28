@@ -6,15 +6,14 @@ import { MockUser } from "@/types";
 
 type StoriesRowProps = {
   users: MockUser[];
-  onUserClick: (user: MockUser) => void;
+  onStoryClick: (user: MockUser, index: number) => void;
 };
 
-export default function StoriesRow({ users, onUserClick }: StoriesRowProps) {
+export default function StoriesRow({ users, onStoryClick }: StoriesRowProps) {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   return (
     <div className="border-b border-[var(--border)]/50 bg-[var(--bg-primary)]">
-      {/* Section label */}
       <div className="px-4 md:px-6 lg:px-8 pt-3 pb-1">
         <p className="text-[10px] uppercase tracking-[0.15em] text-[var(--text-tertiary)] font-medium">
           Recent Gumis from friends
@@ -24,15 +23,13 @@ export default function StoriesRow({ users, onUserClick }: StoriesRowProps) {
         ref={scrollRef}
         className="flex gap-4 overflow-x-auto hide-scrollbar px-4 md:px-6 lg:px-8 pb-4 pt-1"
       >
-        {users.map((user) => (
+        {users.map((user, index) => (
           <button
             key={user.id}
-            onClick={() => onUserClick(user)}
+            onClick={() => onStoryClick(user, index)}
             className="flex flex-col items-center gap-1.5 flex-shrink-0 group"
           >
-            {/* Story ring around avatar — indicates they have a recent Gumi */}
             <div className="relative w-16 h-16 md:w-[72px] md:h-[72px]">
-              {/* The watercolor ring = this person recently Gumied something */}
               {user.hasStory && (
                 <Image
                   src="/story-ring.png"
@@ -42,7 +39,6 @@ export default function StoriesRow({ users, onUserClick }: StoriesRowProps) {
                   sizes="72px"
                 />
               )}
-              {/* Avatar centered inside the ring */}
               <div
                 className={`absolute inset-0 flex items-center justify-center ${
                   user.hasStory ? "p-[6px]" : "p-0"
@@ -58,14 +54,12 @@ export default function StoriesRow({ users, onUserClick }: StoriesRowProps) {
                   />
                 </div>
               </div>
-              {/* Small Gumi icon badge */}
               {user.hasStory && (
                 <div className="absolute -bottom-0.5 -right-0.5 w-5 h-5 rounded-full bg-white flex items-center justify-center shadow-sm">
                   <Image src="/gumi-icon.png" alt="" width={12} height={12} />
                 </div>
               )}
             </div>
-            {/* Username */}
             <span className="text-[11px] text-[var(--text-secondary)] truncate w-16 text-center">
               {user.username}
             </span>
