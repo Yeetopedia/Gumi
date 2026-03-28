@@ -10,9 +10,18 @@ import { formatCount } from "@/lib/utils";
 type UserProfileProps = {
   user: MockUser | null;
   onClose: () => void;
+  onFollow?: (userId: string) => void;
+  onMessage?: (userId: string) => void;
+  isFollowing?: (userId: string) => boolean;
 };
 
-export default function UserProfile({ user, onClose }: UserProfileProps) {
+export default function UserProfile({
+  user,
+  onClose,
+  onFollow,
+  onMessage,
+  isFollowing,
+}: UserProfileProps) {
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
@@ -144,10 +153,24 @@ export default function UserProfile({ user, onClose }: UserProfileProps) {
 
               {/* Action buttons */}
               <div className="flex gap-3 w-full max-w-xs">
-                <button className="flex-1 py-2.5 bg-[var(--accent)] text-white rounded-full text-sm font-semibold hover:bg-[var(--accent-hover)] transition-colors">
-                  Follow
+                <button
+                  onClick={() => {
+                    onFollow?.(user.id);
+                  }}
+                  className={`flex-1 py-2.5 rounded-full text-sm font-semibold transition-colors ${
+                    isFollowing?.(user.id)
+                      ? "border border-[var(--border)] text-[var(--text-secondary)] hover:bg-[var(--bg-secondary)]"
+                      : "bg-[var(--accent)] text-white hover:bg-[var(--accent-hover)]"
+                  }`}
+                >
+                  {isFollowing?.(user.id) ? "Following" : "Follow"}
                 </button>
-                <button className="flex-1 py-2.5 border border-[var(--border)] text-[var(--text-secondary)] rounded-full text-sm font-medium hover:border-[var(--text-tertiary)] transition-colors">
+                <button
+                  onClick={() => {
+                    onMessage?.(user.id);
+                  }}
+                  className="flex-1 py-2.5 border border-[var(--border)] text-[var(--text-secondary)] rounded-full text-sm font-medium hover:border-[var(--text-tertiary)] transition-colors"
+                >
                   Message
                 </button>
               </div>

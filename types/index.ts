@@ -90,3 +90,20 @@ export type ProfileTab = "gumis" | "saved" | "collections" | "wishlist";
 export type SortOption = "recent" | "category" | "price-low" | "price-high";
 
 export type UserListType = "followers" | "following";
+
+// Messaging types
+export type Message = {
+  id: string;
+  sender: string; // user ID
+  content: string;
+  timestamp: Date;
+  read: boolean;
+};
+
+export type Conversation = {
+  id: string;
+  participantId: string; // the other user in conversation
+  messages: Message[];
+  createdAt: Date;
+  updatedAt: Date; // timestamp of last message
+};

@@ -21,6 +21,7 @@ import AlgorithmModal from "@/components/AlgorithmModal";
 import MyProfile from "@/components/MyProfile/MyProfile";
 import ChatBot from "@/components/ChatBot";
 import GamesHub from "@/components/GamesHub";
+import MessagesHub from "@/components/MessagesHub";
 
 export default function Home() {
   const router = useRouter();
@@ -45,7 +46,10 @@ export default function Home() {
   const [myProfileOpen, setMyProfileOpen] = useState(false);
 
   // App section
-  const [appSection, setAppSection] = useState<"feed" | "games">("feed");
+  const [appSection, setAppSection] = useState<"feed" | "games" | "messages">("feed");
+
+  // Follow state
+  const [followedUsers, setFollowedUsers] = useState<Set<string>>(new Set());
 
   // Gumi toast state
   const [toastVisible, setToastVisible] = useState(false);
@@ -150,12 +154,19 @@ export default function Home() {
         activeSection={appSection}
         onHomeClick={() => setAppSection("feed")}
         onGamesClick={() => setAppSection("games")}
+        onMessagesClick={() => setAppSection("messages")}
+        onFollowUser={(userId) => {
+          setFollowedUsers((prev) => new Set([...prev, userId]));
+        }}
+        isFollowing={(userId) => followedUsers.has(userId)}
       />
 
       {/* Main content area */}
       <div className="flex-1 min-w-0">
         {appSection === "games" ? (
           <GamesHub />
+        ) : appSection === "messages" ? (
+          <MessagesHub />
         ) : (
         <>
         {feedMode === "gallery" && (
@@ -261,6 +272,14 @@ export default function Home() {
       <UserProfile
         user={selectedUser}
         onClose={() => setSelectedUser(null)}
+        onFollow={(userId) => {
+          setFollowedUsers((prev) => new Set([...prev, userId]));
+        }}
+        onMessage={(userId) => {
+          setAppSection("messages");
+          setSelectedUser(null);
+        }}
+        isFollowing={(userId) => followedUsers.has(userId)}
       />
 
       {/* Story Viewer */}

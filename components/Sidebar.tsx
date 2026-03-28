@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { Category, FeedMode } from "@/types";
 import { CURRENT_USER } from "@/lib/mock-users";
+import { getUnreadCount } from "@/lib/mock-conversations";
 import SearchBar from "./SearchBar";
 
 type SidebarProps = {
@@ -17,9 +18,12 @@ type SidebarProps = {
   onCategorySelect: (categoryId: string) => void;
   onAlgorithmClick?: () => void;
   onProfileClick?: () => void;
-  activeSection?: "feed" | "games";
+  activeSection?: "feed" | "games" | "messages";
   onHomeClick?: () => void;
   onGamesClick?: () => void;
+  onMessagesClick?: () => void;
+  onFollowUser?: (userId: string) => void;
+  isFollowing?: (userId: string) => boolean;
 };
 
 export default function Sidebar({
@@ -36,8 +40,12 @@ export default function Sidebar({
   activeSection = "feed",
   onHomeClick,
   onGamesClick,
+  onMessagesClick,
+  onFollowUser,
+  isFollowing,
 }: SidebarProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const unreadCount = getUnreadCount();
 
   return (
     <>
@@ -129,11 +137,19 @@ export default function Sidebar({
                 </svg>
                 <span className="text-sm font-medium text-[var(--text-primary)]">Likes</span>
               </button>
-              <button className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[var(--bg-secondary)] transition-colors text-left">
+              <button
+                onClick={() => { onMessagesClick?.(); setIsOpen(false); }}
+                className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[var(--bg-secondary)] transition-colors text-left relative ${activeSection === "messages" ? "bg-[var(--bg-secondary)]" : ""}`}
+              >
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--text-primary)" strokeWidth="2">
                   <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
                 </svg>
                 <span className="text-sm font-medium text-[var(--text-primary)]">Messages</span>
+                {unreadCount > 0 && (
+                  <span className="ml-auto bg-[var(--accent)] text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                    {unreadCount > 9 ? "9+" : unreadCount}
+                  </span>
+                )}
               </button>
               <button
                 onClick={() => {
