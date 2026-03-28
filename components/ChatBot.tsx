@@ -100,7 +100,7 @@ export default function ChatBot({
               />
             </div>
           ) : (
-            <p className="text-sm text-[var(--text-primary)] mb-4">
+            <p className="text-sm text-[var(--text-primary)] mb-4 line-clamp-2">
               {message?.content}
             </p>
           )}

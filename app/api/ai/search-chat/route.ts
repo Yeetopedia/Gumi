@@ -38,26 +38,32 @@ export async function POST(request: NextRequest) {
     )
     .join("\n");
 
-  const systemPrompt = `You are Gumi's shopping assistant helping users find the perfect products.
+  const systemPrompt = `You are Gumi's shopping assistant. KEEP YOUR MESSAGE SUPER SHORT - MAX 1 SENTENCE.
 
-Your task: The user searched for "${searchQuery}". Looking at the available products below, write a SHORT, friendly recommendation message (2-3 sentences max, casual Instagram vibe).
+The user searched for: "${searchQuery}"
 
-Example recommendations:
-- "Just found these perfect [product type]! They're exactly what you're looking for."
-- "Ooh, these are amazing! Great [qualities] for what you searched."
-- "Your search led me to these gems – highly recommend!"
+Your job: Write ONE casual, friendly sentence about the products shown. That's it. No explanations, no rambling.
 
-Keep your message brief and natural. Focus on why the products are great, not on the product names.`;
+Examples of GOOD responses (short!):
+- "These totally match what you're looking for! 🎯"
+- "Found exactly what you need!"
+- "Ooh love these for your search!"
+
+Rules:
+- NEVER MORE THAN 1 SENTENCE
+- NEVER MORE THAN 20 WORDS
+- Be casual, be brief, be done
+- If products don't match search well, just say "These are close to what you searched for!"`;
 
   const messages = [
     { role: "system" as const, content: systemPrompt },
     {
       role: "user" as const,
-      content: `User searched for: "${searchQuery}"\n\nAvailable products:\n${productList}`,
+      content: `Products for "${searchQuery}":\n${productList}`,
     },
   ];
 
-  const response = await lavaChat(messages, 150);
+  const response = await lavaChat(messages, 80);
 
   if (!response) {
     return NextResponse.json(
@@ -66,11 +72,22 @@ Keep your message brief and natural. Focus on why the products are great, not on
     );
   }
 
+  // Enforce single sentence + trim to first sentence if needed
+  let cleanedResponse = response.trim();
+  const firstSentence = cleanedResponse.split(/[.!?]+/)[0];
+  if (firstSentence) {
+    cleanedResponse = firstSentence + (firstSentence.match(/[.!?]$/) ? "" : ".");
+  }
+  // Truncate to 100 chars absolute max for UI
+  if (cleanedResponse.length > 100) {
+    cleanedResponse = cleanedResponse.substring(0, 97) + "...";
+  }
+
   // Recommend the first 3 products
   const recommendedProducts = availableProducts.slice(0, 3);
 
   return NextResponse.json({
-    message: response,
+    message: cleanedResponse,
     recommendedProducts,
   });
 }
