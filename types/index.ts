@@ -63,3 +63,30 @@ export type Category = {
 };
 
 export type FeedMode = "gallery" | "reels";
+
+// Profile section types
+export type CurrentUserProfile = MockUser & {
+  email: string;
+  joinedDate: string;
+  isPrivate: boolean;
+  notificationsEnabled: boolean;
+  savedProducts: string[];
+  wishlistProducts: string[];
+  collections: Collection[];
+};
+
+export type Collection = {
+  id: string;
+  name: string;
+  description: string;
+  coverProductId: string;
+  productIds: string[];
+  createdAt: string;
+  isDefault: boolean;
+};
+
+export type ProfileTab = "gumis" | "saved" | "collections" | "wishlist";
+
+export type SortOption = "recent" | "category" | "price-low" | "price-high";
+
+export type UserListType = "followers" | "following";

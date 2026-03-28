@@ -16,6 +16,7 @@ type SidebarProps = {
   activeCategory: string;
   onCategorySelect: (categoryId: string) => void;
   onAlgorithmClick?: () => void;
+  onProfileClick?: () => void;
 };
 
 export default function Sidebar({
@@ -28,6 +29,7 @@ export default function Sidebar({
   activeCategory,
   onCategorySelect,
   onAlgorithmClick,
+  onProfileClick,
 }: SidebarProps) {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -208,7 +210,7 @@ export default function Sidebar({
           )}
 
           {/* User profile button */}
-          <button className="w-full flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-[var(--bg-secondary)] transition-colors text-left">
+          <button onClick={onProfileClick} className="w-full flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-[var(--bg-secondary)] transition-colors text-left">
             <div className="relative w-8 h-8 rounded-full overflow-hidden bg-[var(--bg-secondary)] flex-shrink-0">
               <Image src={CURRENT_USER.avatar} alt="You" fill className="object-cover" sizes="32px" />
             </div>

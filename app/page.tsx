@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useCallback, useEffect, useRef } from "react";
+import { useRouter } from "next/navigation";
 import { AnimatePresence } from "framer-motion";
 import { Product, FeedMode, FeedResponse, MockUser } from "@/types";
 import { CATEGORIES } from "@/lib/mock-data";
@@ -16,8 +17,10 @@ import ProductModal from "@/components/ProductModal";
 import UserProfile from "@/components/UserProfile";
 import GumiToast from "@/components/GumiToast";
 import AlgorithmModal from "@/components/AlgorithmModal";
+import MyProfile from "@/components/MyProfile/MyProfile";
 
 export default function Home() {
+  const router = useRouter();
   // Feed state
   const [products, setProducts] = useState<Product[]>([]);
   const [cursor, setCursor] = useState<string | null>(null);
@@ -40,6 +43,9 @@ export default function Home() {
 
   // Algorithm modal
   const [algorithmOpen, setAlgorithmOpen] = useState(false);
+
+  // My Profile
+  const [myProfileOpen, setMyProfileOpen] = useState(false);
 
   // Gumi toast state
   const [toastVisible, setToastVisible] = useState(false);
@@ -181,9 +187,15 @@ export default function Home() {
     setActiveSearch(value);
   };
 
-  const handleProductClick = (product: Product) => {
-    setSelectedProduct(product);
-  };
+  const handleProductClick = useCallback((product: Product) => {
+    if (feedMode === "gallery") {
+      // Navigate to product detail page
+      router.push(`/product/${encodeURIComponent(product.id)}`);
+    } else {
+      // Reels mode — use overlay modal
+      setSelectedProduct(product);
+    }
+  }, [feedMode, router]);
 
   const handleFeedModeChange = (mode: FeedMode) => {
     setFeedMode(mode);
@@ -209,6 +221,7 @@ export default function Home() {
         activeCategory={activeCategory}
         onCategorySelect={handleCategorySelect}
         onAlgorithmClick={() => setAlgorithmOpen(true)}
+        onProfileClick={() => setMyProfileOpen(true)}
       />
 
       {/* Main content area */}
@@ -308,12 +321,15 @@ export default function Home() {
         )}
       </div>
 
-      <ProductModal
-        product={selectedProduct}
-        onClose={() => setSelectedProduct(null)}
-        onGumi={handleGumi}
-        onFriendClick={handleFriendClick}
-      />
+      {/* Overlay modal only in reels mode */}
+      {feedMode !== "gallery" && (
+        <ProductModal
+          product={selectedProduct}
+          onClose={() => setSelectedProduct(null)}
+          onGumi={handleGumi}
+          onFriendClick={handleFriendClick}
+        />
+      )}
 
       <UserProfile
         user={selectedUser}
@@ -342,6 +358,20 @@ export default function Home() {
           />
         )}
       </AnimatePresence>
+
+      {/* My Profile */}
+      <MyProfile
+        isOpen={myProfileOpen}
+        onClose={() => setMyProfileOpen(false)}
+        onProductClick={(product) => {
+          setMyProfileOpen(false);
+          setTimeout(() => handleProductClick(product), 300);
+        }}
+        onUserClick={(user) => {
+          setMyProfileOpen(false);
+          setTimeout(() => setSelectedUser(user), 300);
+        }}
+      />
 
       {/* Algorithm Modal */}
       <AlgorithmModal

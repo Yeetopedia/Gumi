@@ -17,6 +17,7 @@ type TopNavProps = {
   feedMode: FeedMode;
   onFeedModeChange: (mode: FeedMode) => void;
   onAlgorithmClick?: () => void;
+  onProfileClick?: () => void;
 };
 
 export default function TopNav({
@@ -29,6 +30,7 @@ export default function TopNav({
   feedMode,
   onFeedModeChange,
   onAlgorithmClick,
+  onProfileClick,
 }: TopNavProps) {
   const [isVisible, setIsVisible] = useState(true);
   const lastScrollY = useRef(0);
@@ -155,6 +157,7 @@ export default function TopNav({
 
         {/* Profile with Gumi count */}
         <button
+          onClick={onProfileClick}
           className="flex-shrink-0 flex items-center gap-1.5 px-2 py-1.5 rounded-full hover:bg-[var(--bg-secondary)] transition-colors"
           aria-label="Profile"
         >
