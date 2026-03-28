@@ -242,35 +242,6 @@ export default function Home() {
               hasMore={true}
               onProductClick={handleProductClick}
             />
-            <button
-              onClick={() => handleFeedModeChange("gallery")}
-              className="fixed top-6 left-4 z-50 w-10 h-10 rounded-full bg-black/30 backdrop-blur-sm flex items-center justify-center hover:bg-black/50 transition-colors"
-              aria-label="Back to gallery"
-            >
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
-                <polyline points="15 18 9 12 15 6" />
-              </svg>
-            </button>
-            <div className="fixed top-6 right-4 z-50 flex items-center bg-black/30 backdrop-blur-sm rounded-full p-1">
-              <button
-                onClick={() => handleFeedModeChange("gallery")}
-                className="p-2 rounded-full hover:bg-white/10 transition-all"
-                aria-label="Gallery view"
-              >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
-                  <rect x="3" y="3" width="7" height="7" />
-                  <rect x="14" y="3" width="7" height="7" />
-                  <rect x="3" y="14" width="7" height="7" />
-                  <rect x="14" y="14" width="7" height="7" />
-                </svg>
-              </button>
-              <button className="p-2 rounded-full bg-white/20" aria-label="Reels view (active)">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
-                  <rect x="6" y="3" width="12" height="18" rx="2" />
-                  <line x1="12" y1="18" x2="12" y2="18" strokeLinecap="round" strokeWidth="3" />
-                </svg>
-              </button>
-            </div>
           </div>
         )}
         </>

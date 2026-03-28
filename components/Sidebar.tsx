@@ -136,6 +136,19 @@ export default function Sidebar({
                 <span className="text-sm font-medium text-[var(--text-primary)]">Messages</span>
               </button>
               <button
+                onClick={() => {
+                  onFeedModeChange("reels");
+                  setIsOpen(false);
+                }}
+                className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[var(--bg-secondary)] transition-colors text-left"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--text-primary)" strokeWidth="2">
+                  <rect x="6" y="3" width="12" height="18" rx="2" />
+                  <line x1="12" y1="18" x2="12" y2="18" strokeLinecap="round" strokeWidth="3" />
+                </svg>
+                <span className="text-sm font-medium text-[var(--text-primary)]">Feed</span>
+              </button>
+              <button
                 onClick={() => { onGamesClick?.(); setIsOpen(false); }}
                 className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[var(--bg-secondary)] transition-colors text-left ${activeSection === "games" ? "bg-[var(--bg-secondary)]" : ""}`}
               >
@@ -154,50 +167,7 @@ export default function Sidebar({
             </div>
           </nav>
 
-          {/* Feed mode toggle */}
-          <div className="space-y-2 mb-6 pb-6 border-b border-[var(--border)]">
-            <p className="text-xs uppercase tracking-widest text-[var(--text-tertiary)] font-semibold px-3">View</p>
-            <div className="flex gap-2 px-3">
-              <button
-                onClick={() => {
-                  onFeedModeChange("gallery");
-                  setIsOpen(false);
-                }}
-                className={`flex-1 p-2 rounded-lg transition-all ${
-                  feedMode === "gallery"
-                    ? "bg-[var(--accent)] text-white"
-                    : "bg-[var(--bg-secondary)] hover:bg-[var(--border)] text-[var(--text-primary)]"
-                }`}
-                aria-label="Gallery view"
-              >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="1.5" className="mx-auto">
-                  <rect x="3" y="3" width="7" height="7" />
-                  <rect x="14" y="3" width="7" height="7" />
-                  <rect x="3" y="14" width="7" height="7" />
-                  <rect x="14" y="14" width="7" height="7" />
-                </svg>
-              </button>
-              <button
-                onClick={() => {
-                  onFeedModeChange("reels");
-                  setIsOpen(false);
-                }}
-                className={`flex-1 p-2 rounded-lg transition-all ${
-                  feedMode === "reels"
-                    ? "bg-[var(--accent)] text-white"
-                    : "bg-[var(--bg-secondary)] hover:bg-[var(--border)] text-[var(--text-primary)]"
-                }`}
-                aria-label="Reels view"
-              >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="1.5" className="mx-auto">
-                  <rect x="6" y="3" width="12" height="18" rx="2" />
-                  <line x1="12" y1="18" x2="12" y2="18" strokeLinecap="round" strokeWidth="3" />
-                </svg>
-              </button>
-            </div>
-          </div>
-
-          {/* Algorithm button */}
+{/* Algorithm button */}
           {onAlgorithmClick && (
             <button
               onClick={onAlgorithmClick}

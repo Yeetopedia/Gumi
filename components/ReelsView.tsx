@@ -120,31 +120,32 @@ export default function ReelsView({ products, onLoadMore, hasMore, onProductClic
   return (
     <div
       ref={containerRef}
-      className="fixed inset-0 bg-black z-10 overflow-hidden"
+      className="fixed inset-0 bg-black z-10 overflow-hidden flex items-center justify-center"
       style={{ top: 0 }}
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
     >
-      <AnimatePresence initial={false} custom={direction} mode="popLayout">
-        <motion.div
-          key={product.id}
-          custom={direction}
-          variants={variants}
-          initial="enter"
-          animate="center"
-          exit="exit"
-          transition={{ duration: 0.35, ease: [0.32, 0.72, 0, 1] }}
-          className="absolute inset-0"
-        >
-          <div className="relative w-full h-full">
-            <Image
-              src={product.primaryImage.url.replace("w=600", "w=1200")}
-              alt={product.primaryImage.alt}
-              fill
-              className="object-cover"
-              priority
-              sizes="100vw"
-            />
+      <div className="relative w-full h-full max-w-md">
+        <AnimatePresence initial={false} custom={direction} mode="popLayout">
+          <motion.div
+            key={product.id}
+            custom={direction}
+            variants={variants}
+            initial="enter"
+            animate="center"
+            exit="exit"
+            transition={{ duration: 0.35, ease: [0.32, 0.72, 0, 1] }}
+            className="absolute inset-0"
+          >
+            <div className="relative w-full h-full">
+              <Image
+                src={product.primaryImage.url.replace("w=600", "w=1200")}
+                alt={product.primaryImage.alt}
+                fill
+                className="object-cover"
+                priority
+                sizes="(max-width: 768px) 100vw, 28rem"
+              />
 
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-black/30" />
 
@@ -294,6 +295,7 @@ export default function ReelsView({ products, onLoadMore, hasMore, onProductClic
           </div>
         </motion.div>
       </AnimatePresence>
+      </div>
 
       {/* Scroll hint */}
       {currentIndex === 0 && (
