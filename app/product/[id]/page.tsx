@@ -34,28 +34,45 @@ export default function ProductPage() {
     [productId]
   );
 
-  // Get full pool of related products, paginate from it
-  const allRelated = useMemo(
+  // Base pool of related products (deterministic order)
+  const baseRelated = useMemo(
     () => (product ? getRelatedProducts(product.id, MOCK_PRODUCTS, 47) : []),
     [product]
   );
 
-  const relatedProducts = allRelated.slice(0, visibleCount);
-  const hasMore = visibleCount < allRelated.length;
+  // Infinite list — grows by recycling products with unique IDs
+  const [relatedProducts, setRelatedProducts] = useState<Product[]>([]);
+  const batchRef = useRef(0);
+
+  // Initialize on product change
+  useMemo(() => {
+    if (baseRelated.length > 0) {
+      setRelatedProducts(baseRelated.slice(0, 12));
+      batchRef.current = 1;
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [productId]);
 
   const handleLoadMore = useCallback(() => {
-    if (loadingRef.current || !hasMore) return;
+    if (loadingRef.current) return;
     loadingRef.current = true;
     setIsLoadingMore(true);
     setTimeout(() => {
-      setVisibleCount((prev) => Math.min(prev + 12, allRelated.length));
+      const batch = batchRef.current;
+      const start = (batch * 12) % baseRelated.length;
+      const newItems = Array.from({ length: 12 }, (_, i) => {
+        const source = baseRelated[(start + i) % baseRelated.length];
+        return { ...source, id: `${source.id}-r${batch}-${i}` };
+      });
+      setRelatedProducts((prev) => [...prev, ...newItems]);
+      batchRef.current = batch + 1;
       setIsLoadingMore(false);
       loadingRef.current = false;
     }, 400);
-  }, [hasMore, allRelated.length]);
+  }, [baseRelated]);
 
   const sentinelRef = useInfiniteScroll(handleLoadMore, {
-    enabled: hasMore && !isLoadingMore,
+    enabled: !isLoadingMore,
   });
 
   const allImages = product
@@ -333,7 +350,7 @@ export default function ProductPage() {
                   <SkeletonCard key={`skeleton-${i}`} index={i} />
                 ))}
             </div>
-            {hasMore && <div ref={sentinelRef} className="h-4" />}
+            <div ref={sentinelRef} className="h-4" />
           </div>
         </div>
       </div>

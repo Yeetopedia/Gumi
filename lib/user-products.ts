@@ -20,13 +20,19 @@ export function getUserGumis(userId: string): Product[] {
 }
 
 // Product index ranges by category in MOCK_PRODUCTS
+// fashion(0-34), shoes(35-64), bags(65-99), jewelry(100-134), home(135-174),
+// kitchen(175-209), beauty(210-244), fragrance(245-269), art(270-299),
+// tech(300-329), wellness(330-359), outdoors(360-384), books(385-409),
+// plants(410-429), food(430-454)
 const HIGHLIGHT_DEFS = [
-  { id: "fashion", label: "Fashion", emoji: "👗", range: [0, 5] as const },
-  { id: "home", label: "Home", emoji: "🏠", range: [5, 10] as const },
-  { id: "beauty", label: "Beauty", emoji: "✨", range: [10, 13] as const },
-  { id: "art", label: "Art", emoji: "🎨", range: [13, 15] as const },
-  { id: "tech", label: "Tech", emoji: "💻", range: [15, 17] as const },
-  { id: "kitchen", label: "Kitchen", emoji: "🍳", range: [17, 20] as const },
+  { id: "fashion", label: "Fashion", emoji: "\u{1F457}", range: [0, 35] as const },
+  { id: "shoes", label: "Shoes", emoji: "\u{1F45F}", range: [35, 65] as const },
+  { id: "home", label: "Home", emoji: "\u{1F3E0}", range: [135, 175] as const },
+  { id: "beauty", label: "Beauty", emoji: "\u2728", range: [210, 245] as const },
+  { id: "jewelry", label: "Jewelry", emoji: "\u{1F48D}", range: [100, 135] as const },
+  { id: "tech", label: "Tech", emoji: "\u{1F4BB}", range: [300, 330] as const },
+  { id: "kitchen", label: "Kitchen", emoji: "\u{1F373}", range: [175, 210] as const },
+  { id: "art", label: "Art", emoji: "\u{1F3A8}", range: [270, 300] as const },
 ];
 
 export function getUserHighlights(userId: string): HighlightCollection[] {

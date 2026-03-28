@@ -23,21 +23,33 @@ export function getCurrentUserProfile(): CurrentUserProfile {
 // Products the current user has Gumied (purchased) — expanded set
 export function getMyGumis(): Product[] {
   const base = getUserGumis("user-me");
-  // Add more products for a richer profile
+  // Add more products for a richer profile — spread across categories
   const extra = MOCK_PRODUCTS.filter(
     (p) => !base.some((b) => b.id === p.id)
-  ).slice(0, 12);
-  return [...base, ...extra].slice(0, 20);
+  ).slice(0, 20);
+  return [...base, ...extra].slice(0, 28);
 }
 
-// Products the current user has saved/bookmarked
+// Products the current user has saved/bookmarked — mix of categories
 export function getMySavedProducts(): Product[] {
-  return MOCK_PRODUCTS.slice(5, 15);
+  return [
+    ...MOCK_PRODUCTS.slice(0, 4),     // fashion
+    ...MOCK_PRODUCTS.slice(135, 139), // home
+    ...MOCK_PRODUCTS.slice(210, 214), // beauty
+    ...MOCK_PRODUCTS.slice(300, 303), // tech
+    ...MOCK_PRODUCTS.slice(175, 178), // kitchen
+  ];
 }
 
-// Products on the current user's wishlist
+// Products on the current user's wishlist — different categories
 export function getMyWishlist(): Product[] {
-  return MOCK_PRODUCTS.slice(18, 26);
+  return [
+    ...MOCK_PRODUCTS.slice(35, 38),   // shoes
+    ...MOCK_PRODUCTS.slice(100, 103), // jewelry
+    ...MOCK_PRODUCTS.slice(245, 248), // fragrance
+    ...MOCK_PRODUCTS.slice(270, 273), // art
+    ...MOCK_PRODUCTS.slice(330, 333), // wellness
+  ];
 }
 
 // User-created collections
@@ -46,7 +58,7 @@ const COLLECTION_DEFS: Omit<Collection, "productIds">[] = [
     id: "col-1",
     name: "Home Favorites",
     description: "Things that made my space feel like home",
-    coverProductId: MOCK_PRODUCTS[5]?.id ?? "",
+    coverProductId: MOCK_PRODUCTS[135]?.id ?? "",
     createdAt: "2025-11-20",
     isDefault: false,
   },
@@ -54,7 +66,7 @@ const COLLECTION_DEFS: Omit<Collection, "productIds">[] = [
     id: "col-2",
     name: "Gift Ideas",
     description: "Perfect gifts for people I love",
-    coverProductId: MOCK_PRODUCTS[10]?.id ?? "",
+    coverProductId: MOCK_PRODUCTS[245]?.id ?? "",
     createdAt: "2025-12-01",
     isDefault: false,
   },
@@ -70,16 +82,47 @@ const COLLECTION_DEFS: Omit<Collection, "productIds">[] = [
     id: "col-4",
     name: "Tech Essentials",
     description: "Desk setup and everyday carry",
-    coverProductId: MOCK_PRODUCTS[15]?.id ?? "",
+    coverProductId: MOCK_PRODUCTS[300]?.id ?? "",
     createdAt: "2026-01-10",
+    isDefault: false,
+  },
+  {
+    id: "col-5",
+    name: "Self-Care Rituals",
+    description: "My daily wellness routine",
+    coverProductId: MOCK_PRODUCTS[330]?.id ?? "",
+    createdAt: "2026-02-28",
+    isDefault: false,
+  },
+  {
+    id: "col-6",
+    name: "Kitchen Upgrade",
+    description: "Cooking with beautiful tools",
+    coverProductId: MOCK_PRODUCTS[175]?.id ?? "",
+    createdAt: "2026-03-10",
     isDefault: false,
   },
 ];
 
 export function getMyCollections(): Collection[] {
+  const collectionProducts = [
+    // Home Favorites: home + plants
+    [...MOCK_PRODUCTS.slice(135, 140), ...MOCK_PRODUCTS.slice(410, 413)].map(p => p.id),
+    // Gift Ideas: fragrance + beauty + jewelry
+    [...MOCK_PRODUCTS.slice(245, 248), ...MOCK_PRODUCTS.slice(210, 213), ...MOCK_PRODUCTS.slice(100, 102)].map(p => p.id),
+    // Spring Picks: fashion + shoes + bags
+    [...MOCK_PRODUCTS.slice(0, 3), ...MOCK_PRODUCTS.slice(35, 38), ...MOCK_PRODUCTS.slice(65, 67)].map(p => p.id),
+    // Tech Essentials: tech
+    MOCK_PRODUCTS.slice(300, 308).map(p => p.id),
+    // Self-Care Rituals: wellness + beauty
+    [...MOCK_PRODUCTS.slice(330, 335), ...MOCK_PRODUCTS.slice(215, 218)].map(p => p.id),
+    // Kitchen Upgrade: kitchen + food
+    [...MOCK_PRODUCTS.slice(175, 180), ...MOCK_PRODUCTS.slice(430, 433)].map(p => p.id),
+  ];
+
   return COLLECTION_DEFS.map((def, i) => ({
     ...def,
-    productIds: MOCK_PRODUCTS.slice(i * 5, i * 5 + 5).map((p) => p.id),
+    productIds: collectionProducts[i] || [],
   }));
 }
 

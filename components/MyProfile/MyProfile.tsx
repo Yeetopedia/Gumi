@@ -22,9 +22,10 @@ type MyProfileProps = {
   onClose: () => void;
   onProductClick: (product: Product) => void;
   onUserClick: (user: MockUser) => void;
+  onGumi?: (product: Product) => void;
 };
 
-export default function MyProfile({ isOpen, onClose, onProductClick, onUserClick }: MyProfileProps) {
+export default function MyProfile({ isOpen, onClose, onProductClick, onUserClick, onGumi }: MyProfileProps) {
   const [activeTab, setActiveTab] = useState<ProfileTab>("gumis");
   const [sortOption, setSortOption] = useState<SortOption>("recent");
   const [editModalOpen, setEditModalOpen] = useState(false);
@@ -32,6 +33,7 @@ export default function MyProfile({ isOpen, onClose, onProductClick, onUserClick
   const [userListType, setUserListType] = useState<UserListType | null>(null);
   const [selectedCollection, setSelectedCollection] = useState<Collection | null>(null);
   const [highlightViewerIndex, setHighlightViewerIndex] = useState<number | null>(null);
+  const [removedSavedIds, setRemovedSavedIds] = useState<Set<string>>(new Set());
 
   // Profile data
   const [profile, setProfile] = useState(getCurrentUserProfile());
@@ -166,7 +168,12 @@ export default function MyProfile({ isOpen, onClose, onProductClick, onUserClick
                   />
                 )}
                 {activeTab === "saved" && (
-                  <ProfileSavedGrid onProductClick={onProductClick} />
+                  <ProfileSavedGrid
+                    onProductClick={onProductClick}
+                    removedIds={removedSavedIds}
+                    onRemove={(id) => setRemovedSavedIds((prev) => new Set(prev).add(id))}
+                    onUndoAll={() => setRemovedSavedIds(new Set())}
+                  />
                 )}
                 {activeTab === "collections" && (
                   <ProfileCollections
@@ -174,7 +181,7 @@ export default function MyProfile({ isOpen, onClose, onProductClick, onUserClick
                   />
                 )}
                 {activeTab === "wishlist" && (
-                  <ProfileWishlist onProductClick={onProductClick} />
+                  <ProfileWishlist onProductClick={onProductClick} onGumi={onGumi} />
                 )}
               </motion.div>
             </AnimatePresence>

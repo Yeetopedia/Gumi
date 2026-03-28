@@ -9,6 +9,7 @@ import { formatCount } from "@/lib/utils";
 
 type ProfileWishlistProps = {
   onProductClick: (product: Product) => void;
+  onGumi?: (product: Product) => void;
 };
 
 // Deterministic "price change" indicator based on product ID
@@ -17,7 +18,7 @@ function getPriceIndicator(productId: string): "dropped" | "none" {
   return hash % 3 === 0 ? "dropped" : "none";
 }
 
-export default function ProfileWishlist({ onProductClick }: ProfileWishlistProps) {
+export default function ProfileWishlist({ onProductClick, onGumi }: ProfileWishlistProps) {
   const wishlist = useMemo(() => getMyWishlist(), []);
 
   if (wishlist.length === 0) {
@@ -88,8 +89,23 @@ export default function ProfileWishlist({ onProductClick }: ProfileWishlistProps
                 </span>
               </div>
 
+              {/* "I bought this" button — visible on hover */}
+              {onGumi && (
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    onGumi(product);
+                  }}
+                  className="absolute bottom-1.5 right-1.5 flex items-center gap-1 bg-[var(--accent)]/90 backdrop-blur-sm rounded-full px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity hover:bg-[var(--accent)]"
+                  aria-label="I bought this"
+                >
+                  <Image src="/gumi-icon.png" alt="" width={10} height={17} />
+                  <span className="text-white text-[8px] font-bold">Bought</span>
+                </button>
+              )}
+
               {/* Hover overlay */}
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors" />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors pointer-events-none" />
             </motion.button>
           );
         })}

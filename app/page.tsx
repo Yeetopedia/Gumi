@@ -371,6 +371,7 @@ export default function Home() {
           setMyProfileOpen(false);
           setTimeout(() => setSelectedUser(user), 300);
         }}
+        onGumi={handleGumi}
       />
 
       {/* Algorithm Modal */}
