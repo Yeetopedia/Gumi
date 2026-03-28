@@ -1,13 +1,13 @@
 "use client";
 
-import { useState, useCallback, useEffect, useRef } from "react";
+import { useState, useCallback, useEffect, useMemo } from "react";
 import { useRouter } from "next/navigation";
 import { AnimatePresence } from "framer-motion";
-import { Product, FeedMode, FeedResponse, MockUser } from "@/types";
-import { CATEGORIES } from "@/lib/mock-data";
+import { Product, FeedMode, MockUser } from "@/types";
+import { CATEGORIES, getProductPool, getSearchPool } from "@/lib/mock-data";
 import { getStoryUsers } from "@/lib/mock-users";
 import { useDebounce } from "@/hooks/useDebounce";
-import { useInfiniteScroll } from "@/hooks/useInfiniteScroll";
+import { useInfiniteQueue } from "@/hooks/useInfiniteQueue";
 import Sidebar from "@/components/Sidebar";
 import StoriesRow from "@/components/StoriesRow";
 import StoryViewer from "@/components/StoryViewer";
@@ -21,12 +21,6 @@ import MyProfile from "@/components/MyProfile/MyProfile";
 
 export default function Home() {
   const router = useRouter();
-  // Feed state
-  const [products, setProducts] = useState<Product[]>([]);
-  const [cursor, setCursor] = useState<string | null>(null);
-  const [hasMore, setHasMore] = useState(true);
-  const [isLoading, setIsLoading] = useState(false);
-  const [initialLoading, setInitialLoading] = useState(true);
 
   // UI state
   const [feedMode, setFeedMode] = useState<FeedMode>("gallery");
@@ -52,8 +46,35 @@ export default function Home() {
   const [toastProductTitle, setToastProductTitle] = useState("");
 
   const debouncedSearch = useDebounce(searchValue, 300);
-  const isLoadingRef = useRef(false);
   const storyUsers = getStoryUsers();
+
+  // Debounced search → activeSearch
+  useEffect(() => {
+    if (debouncedSearch !== activeSearch) {
+      setActiveSearch(debouncedSearch);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [debouncedSearch]);
+
+  // Queue-based infinite scroll
+  const sourceProducts = useMemo(() => {
+    if (activeSearch) return getSearchPool(activeSearch);
+    return getProductPool(activeCategory);
+  }, [activeCategory, activeSearch]);
+
+  const {
+    displayedProducts,
+    isLoading,
+    prefetchSentinelIndex,
+    prefetchSentinelRef,
+    loadSentinelRef,
+    manualAppend,
+  } = useInfiniteQueue(sourceProducts, {
+    batchSize: 500,
+    prefetchAt: 200,
+    initialDisplayCount: 30,
+    resetKey: `${activeCategory}|${activeSearch}`,
+  });
 
   // Handle Gumi action — show confirmation toast
   const handleGumi = useCallback((product: Product) => {
@@ -73,108 +94,6 @@ export default function Home() {
     setStoryViewerOpen(true);
     setViewedStoryUsers((prev) => new Set(prev).add(user.id));
   }, []);
-
-  // Fetch products
-  const fetchProducts = useCallback(
-    async (reset: boolean = false) => {
-      if (isLoadingRef.current) return;
-      isLoadingRef.current = true;
-      setIsLoading(true);
-
-      try {
-        const currentCursor = reset ? null : cursor;
-        let url: string;
-
-        if (activeSearch) {
-          url = `/api/search?q=${encodeURIComponent(activeSearch)}&limit=15${
-            currentCursor ? `&cursor=${currentCursor}` : ""
-          }`;
-        } else {
-          url = `/api/feed?category=${activeCategory}&limit=15${
-            currentCursor ? `&cursor=${currentCursor}` : ""
-          }`;
-        }
-
-        const res = await fetch(url);
-        const data: FeedResponse = await res.json();
-
-        if (reset) {
-          setProducts(data.products);
-        } else {
-          setProducts((prev) => [...prev, ...data.products]);
-        }
-        setCursor(data.nextCursor);
-        setHasMore(data.hasMore);
-      } catch {
-        setHasMore(false);
-      } finally {
-        setIsLoading(false);
-        setInitialLoading(false);
-        isLoadingRef.current = false;
-      }
-    },
-    [cursor, activeCategory, activeSearch]
-  );
-
-  useEffect(() => {
-    setProducts([]);
-    setCursor(null);
-    setHasMore(true);
-    setInitialLoading(true);
-    isLoadingRef.current = false;
-
-    const timeout = setTimeout(() => {
-      fetchProductsFresh();
-    }, 0);
-
-    return () => clearTimeout(timeout);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [activeCategory, activeSearch]);
-
-  const fetchProductsFresh = async () => {
-    if (isLoadingRef.current) return;
-    isLoadingRef.current = true;
-    setIsLoading(true);
-
-    try {
-      let url: string;
-      if (activeSearch) {
-        url = `/api/search?q=${encodeURIComponent(activeSearch)}&limit=15`;
-      } else {
-        url = `/api/feed?category=${activeCategory}&limit=15`;
-      }
-
-      const res = await fetch(url);
-      const data: FeedResponse = await res.json();
-
-      setProducts(data.products);
-      setCursor(data.nextCursor);
-      setHasMore(data.hasMore);
-    } catch {
-      setHasMore(false);
-    } finally {
-      setIsLoading(false);
-      setInitialLoading(false);
-      isLoadingRef.current = false;
-    }
-  };
-
-  useEffect(() => {
-    if (debouncedSearch !== activeSearch) {
-      setActiveSearch(debouncedSearch);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [debouncedSearch]);
-
-  const handleLoadMore = useCallback(() => {
-    if (!isLoadingRef.current && hasMore) {
-      fetchProducts(false);
-    }
-  }, [fetchProducts, hasMore]);
-
-  const sentinelRef = useInfiniteScroll(handleLoadMore, {
-    enabled: hasMore && !isLoading && feedMode === "gallery",
-  });
 
   const handleCategorySelect = (categoryId: string) => {
     setActiveCategory(categoryId);
@@ -237,15 +156,15 @@ export default function Home() {
 
             {/* Search results header */}
             {activeSearch && (
-              <div className="px-4 md:px-6 lg:px-8 py-4 b border-border-[var(--border)]">
+              <div className="px-4 md:px-6 lg:px-8 py-4">
                 <p className="text-sm text-[var(--text-secondary)]">
-                  {products.length > 0
+                  {displayedProducts.length > 0
                     ? `Results for "${activeSearch}"`
-                    : initialLoading
+                    : isLoading
                       ? `Searching for "${activeSearch}"...`
                       : `No results for "${activeSearch}"`}
                 </p>
-                {products.length === 0 && !initialLoading && (
+                {displayedProducts.length === 0 && !isLoading && (
                   <div className="mt-4 flex flex-wrap gap-2">
                     <span className="text-xs text-[var(--text-tertiary)]">Try:</span>
                     {["fashion", "home decor", "skincare", "kitchen", "art"].map((s) => (
@@ -268,24 +187,26 @@ export default function Home() {
             {/* Masonry grid */}
             <div className="px-4 md:px-6 lg:px-8 py-6">
               <MasonryGrid
-                products={products}
-                isLoading={isLoading || initialLoading}
+                products={displayedProducts}
+                isLoading={isLoading}
                 onProductClick={handleProductClick}
                 onFriendClick={handleFriendClick}
                 onGumi={handleGumi}
+                prefetchSentinelIndex={prefetchSentinelIndex}
+                prefetchSentinelRef={prefetchSentinelRef}
               />
 
-              {hasMore && <div ref={sentinelRef} className="h-4" />}
+              <div ref={loadSentinelRef} className="h-4" />
             </div>
           </div>
         )}
 
-        {feedMode === "reels" && products.length > 0 && (
+        {feedMode === "reels" && displayedProducts.length > 0 && (
           <div className="w-full">
             <ReelsView
-              products={products}
-              onLoadMore={handleLoadMore}
-              hasMore={hasMore}
+              products={displayedProducts}
+              onLoadMore={manualAppend}
+              hasMore={true}
               onProductClick={handleProductClick}
             />
             <button

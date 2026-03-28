@@ -23,11 +23,11 @@ export const WELLNESS_PRODUCTS: Product[] = [
         alt: "Bala weighted bangles in blush pink on yoga mat",
       },
       {
-        url: "https://images.unsplash.com/photo-1518459031867-a89b944bffe4?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=1200&q=80",
         alt: "Person wearing weighted bangles during workout",
       },
       {
-        url: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1499346030926-9a72daac6c63?w=1200&q=80",
         alt: "Weighted bangles detail shot on wrist",
       },
     ],
@@ -52,16 +52,16 @@ export const WELLNESS_PRODUCTS: Product[] = [
     title: "Queen Silk Pillowcase",
     brand: "Slip",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1631729371254-42c2892f0e6e?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=600&q=80",
       alt: "Silk pillowcase in caramel on white bedding",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1631729371254-42c2892f0e6e?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=1200&q=80",
         alt: "Silk pillowcase in caramel on white bedding",
       },
       {
-        url: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1499346030926-9a72daac6c63?w=1200&q=80",
         alt: "Close-up of mulberry silk texture",
       },
     ],
@@ -86,20 +86,20 @@ export const WELLNESS_PRODUCTS: Product[] = [
     title: "Stone Diffuser",
     brand: "Vitruvi",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1602928321679-560bb453f190?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1499346030926-9a72daac6c63?w=600&q=80",
       alt: "Vitruvi stone diffuser in white ceramic on shelf",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1602928321679-560bb453f190?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1499346030926-9a72daac6c63?w=1200&q=80",
         alt: "Vitruvi stone diffuser in white ceramic on shelf",
       },
       {
-        url: "https://images.unsplash.com/photo-1600950207944-0d63e8edbc3f?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1200&q=80",
         alt: "Stone diffuser misting essential oils in living room",
       },
       {
-        url: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1545389336-cf090694435e?w=1200&q=80",
         alt: "Diffuser alongside essential oil bottles",
       },
     ],
@@ -159,16 +159,16 @@ export const WELLNESS_PRODUCTS: Product[] = [
     title: "Body Hero Daily Oil Wash",
     brand: "Nécessaire",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1545389336-cf090694435e?w=600&q=80",
       alt: "Nécessaire body oil wash in minimal bathroom setting",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1545389336-cf090694435e?w=1200&q=80",
         alt: "Nécessaire body oil wash in minimal bathroom setting",
       },
       {
-        url: "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1470770903676-69b98201ea1c?w=1200&q=80",
         alt: "Body oil wash lathering on skin",
       },
     ],
@@ -193,16 +193,16 @@ export const WELLNESS_PRODUCTS: Product[] = [
     title: "Acupressure Mat & Pillow Set",
     brand: "Higher Dose",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1470770903676-69b98201ea1c?w=600&q=80",
       alt: "Acupressure mat in dusty rose laid out on floor",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1470770903676-69b98201ea1c?w=1200&q=80",
         alt: "Acupressure mat in dusty rose laid out on floor",
       },
       {
-        url: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?w=1200&q=80",
         alt: "Person lying on acupressure mat for relaxation",
       },
     ],
@@ -228,20 +228,20 @@ export const WELLNESS_PRODUCTS: Product[] = [
     title: "Theragun Mini Percussive Therapy",
     brand: "Therabody",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?w=600&q=80",
       alt: "Theragun Mini massage device on gym bag",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?w=1200&q=80",
         alt: "Theragun Mini massage device on gym bag",
       },
       {
-        url: "https://images.unsplash.com/photo-1518459031867-a89b944bffe4?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1482398650355-d4c6462afa0e?w=1200&q=80",
         alt: "Using Theragun on shoulder muscles post-workout",
       },
       {
-        url: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=1200&q=80",
         alt: "Theragun Mini with carrying case",
       },
     ],
@@ -266,16 +266,16 @@ export const WELLNESS_PRODUCTS: Product[] = [
     title: "Mineral Soaking Bath Salts",
     brand: "Bathing Culture",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1482398650355-d4c6462afa0e?w=600&q=80",
       alt: "Bath salts in glass jar beside drawn bath",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1482398650355-d4c6462afa0e?w=1200&q=80",
         alt: "Bath salts in glass jar beside drawn bath",
       },
       {
-        url: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=1200&q=80",
         alt: "Mineral bath soak crystals close-up",
       },
     ],
@@ -300,20 +300,20 @@ export const WELLNESS_PRODUCTS: Product[] = [
     title: "EKO Lite Cork Yoga Mat",
     brand: "Manduka",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1518459031867-a89b944bffe4?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=600&q=80",
       alt: "Cork yoga mat rolled out in bright studio",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1518459031867-a89b944bffe4?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=1200&q=80",
         alt: "Cork yoga mat rolled out in bright studio",
       },
       {
-        url: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=80",
         alt: "Person practicing yoga on cork mat",
       },
       {
-        url: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1200&q=80",
         alt: "Cork mat texture detail",
       },
     ],
@@ -339,16 +339,16 @@ export const WELLNESS_PRODUCTS: Product[] = [
     title: "High-Density Foam Roller",
     brand: "Therabody",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=600&q=80",
       alt: "Textured foam roller on gym floor",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=80",
         alt: "Textured foam roller on gym floor",
       },
       {
-        url: "https://images.unsplash.com/photo-1518459031867-a89b944bffe4?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1200&q=80",
         alt: "Foam roller in use for back release",
       },
     ],
@@ -373,16 +373,16 @@ export const WELLNESS_PRODUCTS: Product[] = [
     title: "Washable Silk Robe",
     brand: "Lunya",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=600&q=80",
       alt: "Lunya silk robe draped over bedroom chair",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1200&q=80",
         alt: "Lunya silk robe draped over bedroom chair",
       },
       {
-        url: "https://images.unsplash.com/photo-1631729371254-42c2892f0e6e?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1200&q=80",
         alt: "Silk robe detail showing piping and belt",
       },
     ],
@@ -408,16 +408,16 @@ export const WELLNESS_PRODUCTS: Product[] = [
     title: "Sleep Gummy Supplement",
     brand: "Olly",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=600&q=80",
       alt: "Olly sleep gummies bottle on nightstand",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1200&q=80",
         alt: "Olly sleep gummies bottle on nightstand",
       },
       {
-        url: "https://images.unsplash.com/photo-1631729371254-42c2892f0e6e?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1505765050516-f72dcac9c60e?w=1200&q=80",
         alt: "Bedside setup with sleep supplement",
       },
     ],
@@ -442,16 +442,16 @@ export const WELLNESS_PRODUCTS: Product[] = [
     title: "Magnesium Body Lotion",
     brand: "Agent Nateur",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1505765050516-f72dcac9c60e?w=600&q=80",
       alt: "Agent Nateur magnesium lotion on marble surface",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1505765050516-f72dcac9c60e?w=1200&q=80",
         alt: "Agent Nateur magnesium lotion on marble surface",
       },
       {
-        url: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1540555700478-4be289fbec6d?w=1200&q=80",
         alt: "Applying magnesium body lotion to skin",
       },
     ],
@@ -476,16 +476,16 @@ export const WELLNESS_PRODUCTS: Product[] = [
     title: "Sisal Dry Body Brush",
     brand: "Esker",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1540555700478-4be289fbec6d?w=600&q=80",
       alt: "Natural bristle dry brush on linen towel",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1540555700478-4be289fbec6d?w=1200&q=80",
         alt: "Natural bristle dry brush on linen towel",
       },
       {
-        url: "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1599447421416-3414500d18a5?w=1200&q=80",
         alt: "Dry brushing body ritual in bathroom",
       },
     ],
@@ -510,16 +510,16 @@ export const WELLNESS_PRODUCTS: Product[] = [
     title: "Weighted Neck Heating Pad",
     brand: "Ostrichpillow",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1545389336-cf090694435e?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1599447421416-3414500d18a5?w=600&q=80",
       alt: "Ostrichpillow heated neck wrap in midnight blue",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1545389336-cf090694435e?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1599447421416-3414500d18a5?w=1200&q=80",
         alt: "Ostrichpillow heated neck wrap in midnight blue",
       },
       {
-        url: "https://images.unsplash.com/photo-1631729371254-42c2892f0e6e?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1200&q=80",
         alt: "Wearing heated neck wrap while reading",
       },
     ],
@@ -544,16 +544,16 @@ export const WELLNESS_PRODUCTS: Product[] = [
     title: "Lavender Eye Pillow",
     brand: "HAY",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&q=80",
       alt: "Linen eye pillow in lavender shade on bed",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1200&q=80",
         alt: "Linen eye pillow in lavender shade on bed",
       },
       {
-        url: "https://images.unsplash.com/photo-1545389336-cf090694435e?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1552196563-55cd4e45efb3?w=1200&q=80",
         alt: "Eye pillow used during savasana",
       },
     ],
@@ -578,16 +578,16 @@ export const WELLNESS_PRODUCTS: Product[] = [
     title: "The Five-Minute Gratitude Journal",
     brand: "Intelligent Change",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1545389336-cf090694435e?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1552196563-55cd4e45efb3?w=600&q=80",
       alt: "Gratitude journal open on desk with pen",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1545389336-cf090694435e?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1552196563-55cd4e45efb3?w=1200&q=80",
         alt: "Gratitude journal open on desk with pen",
       },
       {
-        url: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1598153346810-860daa814c4b?w=1200&q=80",
         alt: "Morning journaling ritual with coffee",
       },
     ],
@@ -612,20 +612,20 @@ export const WELLNESS_PRODUCTS: Product[] = [
     title: "Restore Sunrise Alarm Clock",
     brand: "Hatch",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1631729371254-42c2892f0e6e?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1598153346810-860daa814c4b?w=600&q=80",
       alt: "Hatch Restore glowing softly on nightstand",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1631729371254-42c2892f0e6e?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1598153346810-860daa814c4b?w=1200&q=80",
         alt: "Hatch Restore glowing softly on nightstand",
       },
       {
-        url: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1588286840104-8957b019727f?w=1200&q=80",
         alt: "Sunrise alarm emitting warm dawn light",
       },
       {
-        url: "https://images.unsplash.com/photo-1602928321679-560bb453f190?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1600618528240-fb9fc964b853?w=1200&q=80",
         alt: "Hatch Restore app sleep routine screen",
       },
     ],
@@ -651,16 +651,16 @@ export const WELLNESS_PRODUCTS: Product[] = [
     title: "Calm Essential Oil Roller",
     brand: "Vitruvi",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1600950207944-0d63e8edbc3f?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1588286840104-8957b019727f?w=600&q=80",
       alt: "Vitruvi essential oil roller in pocket-size bottle",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1600950207944-0d63e8edbc3f?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1588286840104-8957b019727f?w=1200&q=80",
         alt: "Vitruvi essential oil roller in pocket-size bottle",
       },
       {
-        url: "https://images.unsplash.com/photo-1602928321679-560bb453f190?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1600618528240-fb9fc964b853?w=1200&q=80",
         alt: "Applying aromatherapy roller to wrist",
       },
     ],
@@ -685,16 +685,16 @@ export const WELLNESS_PRODUCTS: Product[] = [
     title: "Collagen Peptides Powder",
     brand: "Moon Juice",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1600618528240-fb9fc964b853?w=600&q=80",
       alt: "Moon Juice collagen powder jar on kitchen counter",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1600618528240-fb9fc964b853?w=1200&q=80",
         alt: "Moon Juice collagen powder jar on kitchen counter",
       },
       {
-        url: "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=1200&q=80",
         alt: "Collagen powder being stirred into morning coffee",
       },
     ],
@@ -719,16 +719,16 @@ export const WELLNESS_PRODUCTS: Product[] = [
     title: "Reusable Organic Face Rounds",
     brand: "Dame",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=600&q=80",
       alt: "Stack of reusable cotton face rounds on vanity",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=1200&q=80",
         alt: "Stack of reusable cotton face rounds on vanity",
       },
       {
-        url: "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1518611012118-696072aa579a?w=1200&q=80",
         alt: "Using reusable face round with toner",
       },
     ],
@@ -753,16 +753,16 @@ export const WELLNESS_PRODUCTS: Product[] = [
     title: "Healing Crystal Starter Set",
     brand: "Maude",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1602928321679-560bb453f190?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1518611012118-696072aa579a?w=600&q=80",
       alt: "Curated crystal set with rose quartz and amethyst",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1602928321679-560bb453f190?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1518611012118-696072aa579a?w=1200&q=80",
         alt: "Curated crystal set with rose quartz and amethyst",
       },
       {
-        url: "https://images.unsplash.com/photo-1600950207944-0d63e8edbc3f?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1593811167562-9cef47bfc4d7?w=1200&q=80",
         alt: "Crystals arranged on meditation altar",
       },
     ],
@@ -787,20 +787,20 @@ export const WELLNESS_PRODUCTS: Product[] = [
     title: "Infrared PEMF Mat",
     brand: "Higher Dose",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1593811167562-9cef47bfc4d7?w=600&q=80",
       alt: "Higher Dose infrared mat laid out in wellness studio",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1593811167562-9cef47bfc4d7?w=1200&q=80",
         alt: "Higher Dose infrared mat laid out in wellness studio",
       },
       {
-        url: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1601925260368-ae2f83cf8b7f?w=1200&q=80",
         alt: "Person relaxing on infrared PEMF mat",
       },
       {
-        url: "https://images.unsplash.com/photo-1518459031867-a89b944bffe4?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=1200&q=80",
         alt: "PEMF mat controller and settings",
       },
     ],
@@ -826,16 +826,16 @@ export const WELLNESS_PRODUCTS: Product[] = [
     title: "Restorative Face Serum",
     brand: "Dr. Barbara Sturm",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1601925260368-ae2f83cf8b7f?w=600&q=80",
       alt: "Dr. Barbara Sturm serum bottle on minimalist vanity",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1601925260368-ae2f83cf8b7f?w=1200&q=80",
         alt: "Dr. Barbara Sturm serum bottle on minimalist vanity",
       },
       {
-        url: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=1200&q=80",
         alt: "Serum dropper dispensing product",
       },
     ],
@@ -860,20 +860,20 @@ export const WELLNESS_PRODUCTS: Product[] = [
     title: "Washable Silk Sleep Set",
     brand: "Lunya",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=600&q=80",
       alt: "Lunya silk sleep set in dusty rose on bed",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=1200&q=80",
         alt: "Lunya silk sleep set in dusty rose on bed",
       },
       {
-        url: "https://images.unsplash.com/photo-1631729371254-42c2892f0e6e?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=1200&q=80",
         alt: "Close-up of silk fabric drape and stitching",
       },
       {
-        url: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1574680178050-55c6a6a96e0a?w=1200&q=80",
         alt: "Model wearing silk cami and shorts set",
       },
     ],
@@ -899,16 +899,16 @@ export const WELLNESS_PRODUCTS: Product[] = [
     title: "Neroli Hand & Body Wash",
     brand: "Homecourt",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=600&q=80",
       alt: "Homecourt body wash bottle in modern bathroom",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=1200&q=80",
         alt: "Homecourt body wash bottle in modern bathroom",
       },
       {
-        url: "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1574680178050-55c6a6a96e0a?w=1200&q=80",
         alt: "Lathering Homecourt hand wash at sink",
       },
     ],
@@ -933,16 +933,16 @@ export const WELLNESS_PRODUCTS: Product[] = [
     title: "Bala Beam Yoga Block",
     brand: "Bala",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1518459031867-a89b944bffe4?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1574680178050-55c6a6a96e0a?w=600&q=80",
       alt: "Bala Beam weighted yoga block in charcoal",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1518459031867-a89b944bffe4?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1574680178050-55c6a6a96e0a?w=1200&q=80",
         alt: "Bala Beam weighted yoga block in charcoal",
       },
       {
-        url: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=1200&q=80",
         alt: "Using Bala Beam for overhead press",
       },
     ],
@@ -967,16 +967,16 @@ export const WELLNESS_PRODUCTS: Product[] = [
     title: "Adaptogen Dust Blend",
     brand: "Moon Juice",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=600&q=80",
       alt: "Moon Juice adaptogen dust jar with wooden spoon",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=1200&q=80",
         alt: "Moon Juice adaptogen dust jar with wooden spoon",
       },
       {
-        url: "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?w=1200&q=80",
         alt: "Adaptogen dust blended into morning latte",
       },
     ],
@@ -1001,16 +1001,16 @@ export const WELLNESS_PRODUCTS: Product[] = [
     title: "Eucalyptus Shower Steamers",
     brand: "Bathing Culture",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?w=600&q=80",
       alt: "Shower steamer tablets in kraft box on tile ledge",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?w=1200&q=80",
         alt: "Shower steamer tablets in kraft box on tile ledge",
       },
       {
-        url: "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=1200&q=80",
         alt: "Shower steamer dissolving with steam rising",
       },
     ],
@@ -1035,20 +1035,20 @@ export const WELLNESS_PRODUCTS: Product[] = [
     title: "Theragun Elite Percussive Device",
     brand: "Therabody",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=600&q=80",
       alt: "Theragun Elite with attachment heads on gym bench",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=1200&q=80",
         alt: "Theragun Elite with attachment heads on gym bench",
       },
       {
-        url: "https://images.unsplash.com/photo-1518459031867-a89b944bffe4?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=1200&q=80",
         alt: "Using Theragun Elite on leg muscles",
       },
       {
-        url: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=1200&q=80",
         alt: "Theragun Elite in hard carrying case",
       },
     ],

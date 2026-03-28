@@ -1,14 +1,15 @@
 "use client";
 
-import { useState, useMemo, useCallback, useRef } from "react";
+import { useState, useMemo, useCallback } from "react";
+import React from "react";
 import { useParams, useRouter } from "next/navigation";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Product, MockUser } from "@/types";
-import { MOCK_PRODUCTS, getRelatedProducts } from "@/lib/mock-data";
+import { MOCK_PRODUCTS } from "@/lib/mock-data";
 import { getUserById } from "@/lib/mock-users";
 import { formatPriceRange, formatCount, formatRating } from "@/lib/utils";
-import { useInfiniteScroll } from "@/hooks/useInfiniteScroll";
+import { useInfiniteQueue } from "@/hooks/useInfiniteQueue";
 import ImageGallery from "@/components/ImageGallery";
 import ProductCard from "@/components/ProductCard";
 import SkeletonCard from "@/components/SkeletonCard";
@@ -24,55 +25,32 @@ export default function ProductPage() {
   const [isSaved, setIsSaved] = useState(false);
   const [toastVisible, setToastVisible] = useState(false);
   const [selectedUser, setSelectedUser] = useState<MockUser | null>(null);
-  const [visibleCount, setVisibleCount] = useState(12);
-  const [isLoadingMore, setIsLoadingMore] = useState(false);
-  const loadingRef = useRef(false);
 
-  // Find the product
+  // Strip cycle suffix for product lookup
+  const cleanId = decodeURIComponent(productId).replace(/__c\d+_\d+$/, "");
+
   const product = useMemo(
-    () => MOCK_PRODUCTS.find((p) => p.id === decodeURIComponent(productId)) ?? null,
-    [productId]
+    () => MOCK_PRODUCTS.find((p) => p.id === cleanId) ?? null,
+    [cleanId]
   );
 
-  // Base pool of related products (deterministic order)
-  const baseRelated = useMemo(
-    () => (product ? getRelatedProducts(product.id, MOCK_PRODUCTS, 47) : []),
-    [product]
+  // Related products pool (all products except current)
+  const relatedPool = useMemo(
+    () => MOCK_PRODUCTS.filter((p) => p.id !== cleanId),
+    [cleanId]
   );
 
-  // Infinite list — grows by recycling products with unique IDs
-  const [relatedProducts, setRelatedProducts] = useState<Product[]>([]);
-  const batchRef = useRef(0);
-
-  // Initialize on product change
-  useMemo(() => {
-    if (baseRelated.length > 0) {
-      setRelatedProducts(baseRelated.slice(0, 12));
-      batchRef.current = 1;
-    }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [productId]);
-
-  const handleLoadMore = useCallback(() => {
-    if (loadingRef.current) return;
-    loadingRef.current = true;
-    setIsLoadingMore(true);
-    setTimeout(() => {
-      const batch = batchRef.current;
-      const start = (batch * 12) % baseRelated.length;
-      const newItems = Array.from({ length: 12 }, (_, i) => {
-        const source = baseRelated[(start + i) % baseRelated.length];
-        return { ...source, id: `${source.id}-r${batch}-${i}` };
-      });
-      setRelatedProducts((prev) => [...prev, ...newItems]);
-      batchRef.current = batch + 1;
-      setIsLoadingMore(false);
-      loadingRef.current = false;
-    }, 400);
-  }, [baseRelated]);
-
-  const sentinelRef = useInfiniteScroll(handleLoadMore, {
-    enabled: !isLoadingMore,
+  const {
+    displayedProducts: relatedProducts,
+    isLoading: isLoadingRelated,
+    prefetchSentinelIndex,
+    prefetchSentinelRef,
+    loadSentinelRef,
+  } = useInfiniteQueue(relatedPool, {
+    batchSize: 500,
+    prefetchAt: 200,
+    initialDisplayCount: 12,
+    resetKey: productId,
   });
 
   const allImages = product
@@ -331,26 +309,30 @@ export default function ProductPage() {
             </div>
           </div>
 
-          {/* Right column: Similar products masonry grid */}
+          {/* Right column: Similar products masonry grid with infinite queue */}
           <div className="flex-1 min-w-0">
             <p className="text-[10px] uppercase tracking-[0.15em] text-[var(--text-tertiary)] font-medium mb-4">
               More like this
             </p>
             <div className="masonry" style={{ columns: 3 }}>
               {relatedProducts.map((relProduct, index) => (
-                <ProductCard
-                  key={relProduct.id}
-                  product={relProduct}
-                  index={index}
-                  onClick={handleRelatedProductClick}
-                />
+                <React.Fragment key={relProduct.id}>
+                  <ProductCard
+                    product={relProduct}
+                    index={index}
+                    onClick={handleRelatedProductClick}
+                  />
+                  {index === prefetchSentinelIndex && (
+                    <div ref={prefetchSentinelRef} className="h-0 w-0" aria-hidden="true" />
+                  )}
+                </React.Fragment>
               ))}
-              {isLoadingMore &&
+              {isLoadingRelated &&
                 Array.from({ length: 6 }).map((_, i) => (
                   <SkeletonCard key={`skeleton-${i}`} index={i} />
                 ))}
             </div>
-            <div ref={sentinelRef} className="h-4" />
+            <div ref={loadSentinelRef} className="h-4" />
           </div>
         </div>
       </div>

@@ -14,16 +14,16 @@ export const SHOES_PRODUCTS: Product[] = [
     title: "New Balance 550",
     brand: "New Balance",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1491553895911-0055eca6402d?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&q=80",
       alt: "New Balance 550 white and green leather sneaker on neutral background",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1491553895911-0055eca6402d?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=1200&q=80",
         alt: "New Balance 550 white and green leather sneaker on neutral background",
       },
       {
-        url: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1460353581641-37baddab0fa2?w=1200&q=80",
         alt: "New Balance 550 side profile showing retro basketball silhouette",
       },
     ],
@@ -48,16 +48,16 @@ export const SHOES_PRODUCTS: Product[] = [
     title: "Birkenstock Boston Clog",
     brand: "Birkenstock",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1595341888016-a392ef81b7de?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1460353581641-37baddab0fa2?w=600&q=80",
       alt: "Birkenstock Boston suede clog in taupe on wooden surface",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1595341888016-a392ef81b7de?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1460353581641-37baddab0fa2?w=1200&q=80",
         alt: "Birkenstock Boston suede clog in taupe on wooden surface",
       },
       {
-        url: "https://images.unsplash.com/photo-1603487742131-4160ec999306?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=1200&q=80",
         alt: "Birkenstock Boston showing adjustable buckle detail",
       },
     ],
@@ -82,20 +82,20 @@ export const SHOES_PRODUCTS: Product[] = [
     title: "Salomon XT-6",
     brand: "Salomon",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1539185441755-769473a23570?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1600269452121-4f2416e55c28?w=600&q=80",
       alt: "Salomon XT-6 trail running shoe in black and silver colorway",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1539185441755-769473a23570?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1600269452121-4f2416e55c28?w=1200&q=80",
         alt: "Salomon XT-6 trail running shoe in black and silver colorway",
       },
       {
-        url: "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=1200&q=80",
         alt: "Salomon XT-6 showing aggressive Contagrip outsole tread",
       },
       {
-        url: "https://images.unsplash.com/photo-1460353581641-37baddab0fa2?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1608256246200-53e635b5b65f?w=1200&q=80",
         alt: "Salomon XT-6 on feet styled with wide-leg trousers",
       },
     ],
@@ -121,16 +121,16 @@ export const SHOES_PRODUCTS: Product[] = [
     title: "Common Projects Original Achilles Low",
     brand: "Common Projects",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=600&q=80",
       alt: "Common Projects Achilles Low white leather minimalist sneaker",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=1200&q=80",
         alt: "Common Projects Achilles Low white leather minimalist sneaker",
       },
       {
-        url: "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1600269452121-4f2416e55c28?w=1200&q=80",
         alt: "Common Projects Achilles Low showing gold-stamped serial number",
       },
     ],
@@ -155,16 +155,16 @@ export const SHOES_PRODUCTS: Product[] = [
     title: "Adidas Samba OG",
     brand: "Adidas",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1600269452121-4f2416e55c28?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1608256246200-53e635b5b65f?w=600&q=80",
       alt: "Adidas Samba OG in classic white with black stripes and gum sole",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1600269452121-4f2416e55c28?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1608256246200-53e635b5b65f?w=1200&q=80",
         alt: "Adidas Samba OG in classic white with black stripes and gum sole",
       },
       {
-        url: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1605812860427-4024433a70fd?w=1200&q=80",
         alt: "Adidas Samba OG showing T-toe overlay and serrated Three Stripes",
       },
     ],
@@ -189,16 +189,16 @@ export const SHOES_PRODUCTS: Product[] = [
     title: "Nike Cortez",
     brand: "Nike",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1605812860427-4024433a70fd?w=600&q=80",
       alt: "Nike Cortez in white leather with red swoosh and blue heel tab",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1605812860427-4024433a70fd?w=1200&q=80",
         alt: "Nike Cortez in white leather with red swoosh and blue heel tab",
       },
       {
-        url: "https://images.unsplash.com/photo-1460353581641-37baddab0fa2?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=1200&q=80",
         alt: "Nike Cortez herringbone rubber outsole detail",
       },
     ],
@@ -223,16 +223,16 @@ export const SHOES_PRODUCTS: Product[] = [
     title: "Veja Campo Chromefree",
     brand: "Veja",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=600&q=80",
       alt: "Veja Campo white sneaker with green V logo on clean background",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=1200&q=80",
         alt: "Veja Campo white sneaker with green V logo on clean background",
       },
       {
-        url: "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1582897085656-c636d006a246?w=1200&q=80",
         alt: "Veja Campo showing ChromeFree leather and wild rubber sole",
       },
     ],
@@ -258,20 +258,20 @@ export const SHOES_PRODUCTS: Product[] = [
     title: "Dr. Martens 1460 Boot",
     brand: "Dr. Martens",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1638247025967-b4e38f787b76?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1582897085656-c636d006a246?w=600&q=80",
       alt: "Dr. Martens 1460 boot in classic black smooth leather",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1638247025967-b4e38f787b76?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1582897085656-c636d006a246?w=1200&q=80",
         alt: "Dr. Martens 1460 boot in classic black smooth leather",
       },
       {
-        url: "https://images.unsplash.com/photo-1608256246200-53e635b5b65f?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1562183241-b937e95585b6?w=1200&q=80",
         alt: "Dr. Martens 1460 showing iconic yellow stitching and AirWair sole",
       },
       {
-        url: "https://images.unsplash.com/photo-1605812860427-4024433a70fd?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1603487742131-4160ec999306?w=1200&q=80",
         alt: "Dr. Martens 1460 lace-up detail with grooved sidewall",
       },
     ],
@@ -297,16 +297,16 @@ export const SHOES_PRODUCTS: Product[] = [
     title: "Blundstone #500 Chelsea Boot",
     brand: "Blundstone",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1608256246200-53e635b5b65f?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1562183241-b937e95585b6?w=600&q=80",
       alt: "Blundstone Chelsea boot in stout brown leather",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1608256246200-53e635b5b65f?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1562183241-b937e95585b6?w=1200&q=80",
         alt: "Blundstone Chelsea boot in stout brown leather",
       },
       {
-        url: "https://images.unsplash.com/photo-1605812860427-4024433a70fd?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1595341888016-a392ef81b7de?w=1200&q=80",
         alt: "Blundstone #500 showing elastic side panel and pull tab",
       },
     ],
@@ -332,16 +332,16 @@ export const SHOES_PRODUCTS: Product[] = [
     title: "Suicoke MOTO-Cab Sandal",
     brand: "Suicoke",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1562183241-b937e95585b6?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1603487742131-4160ec999306?w=600&q=80",
       alt: "Suicoke MOTO-Cab nylon strap sandal in black",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1562183241-b937e95585b6?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1603487742131-4160ec999306?w=1200&q=80",
         alt: "Suicoke MOTO-Cab nylon strap sandal in black",
       },
       {
-        url: "https://images.unsplash.com/photo-1603487742131-4160ec999306?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=1200&q=80",
         alt: "Suicoke MOTO-Cab Vibram sole and neoprene footbed detail",
       },
     ],
@@ -366,16 +366,16 @@ export const SHOES_PRODUCTS: Product[] = [
     title: "The Row Soft Loafer",
     brand: "The Row",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1595341888016-a392ef81b7de?w=600&q=80",
       alt: "The Row Soft Loafer in butter-soft black calfskin leather",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1595341888016-a392ef81b7de?w=1200&q=80",
         alt: "The Row Soft Loafer in butter-soft black calfskin leather",
       },
       {
-        url: "https://images.unsplash.com/photo-1582897085656-c636d006a246?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=1200&q=80",
         alt: "The Row Soft Loafer showing unlined interior and stacked leather heel",
       },
     ],
@@ -400,16 +400,16 @@ export const SHOES_PRODUCTS: Product[] = [
     title: "Alaïa Mesh Ballet Flat",
     brand: "Alaïa",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=600&q=80",
       alt: "Alaïa ballet flat with signature laser-cut perforations in nude",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=1200&q=80",
         alt: "Alaïa ballet flat with signature laser-cut perforations in nude",
       },
       {
-        url: "https://images.unsplash.com/photo-1582897085656-c636d006a246?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1491553895911-0055eca6402d?w=1200&q=80",
         alt: "Alaïa Mesh ballet flat showing intricate leather detailing",
       },
     ],
@@ -434,16 +434,16 @@ export const SHOES_PRODUCTS: Product[] = [
     title: "Converse Chuck 70 High Top",
     brand: "Converse",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1460353581641-37baddab0fa2?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=600&q=80",
       alt: "Converse Chuck 70 high top in parchment white canvas",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1460353581641-37baddab0fa2?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=1200&q=80",
         alt: "Converse Chuck 70 high top in parchment white canvas",
       },
       {
-        url: "https://images.unsplash.com/photo-1600269452121-4f2416e55c28?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1587563871167-1ee9c731aefb?w=1200&q=80",
         alt: "Converse Chuck 70 showing premium canvas weave and cushioned OrthoLite insole",
       },
     ],
@@ -469,16 +469,16 @@ export const SHOES_PRODUCTS: Product[] = [
     title: "Onitsuka Tiger Mexico 66",
     brand: "Onitsuka Tiger",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1491553895911-0055eca6402d?w=600&q=80",
       alt: "Onitsuka Tiger Mexico 66 in white with blue and red stripes",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1491553895911-0055eca6402d?w=1200&q=80",
         alt: "Onitsuka Tiger Mexico 66 in white with blue and red stripes",
       },
       {
-        url: "https://images.unsplash.com/photo-1491553895911-0055eca6402d?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1584735175315-9d5df23860e6?w=1200&q=80",
         alt: "Onitsuka Tiger Mexico 66 showing slim profile and tiger stripe detail",
       },
     ],
@@ -503,16 +503,16 @@ export const SHOES_PRODUCTS: Product[] = [
     title: "Hoka Clifton 9",
     brand: "Hoka",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1587563871167-1ee9c731aefb?w=600&q=80",
       alt: "Hoka Clifton 9 running shoe in soft lilac colorway",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1587563871167-1ee9c731aefb?w=1200&q=80",
         alt: "Hoka Clifton 9 running shoe in soft lilac colorway",
       },
       {
-        url: "https://images.unsplash.com/photo-1539185441755-769473a23570?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1520256862855-398228c41684?w=1200&q=80",
         alt: "Hoka Clifton 9 showing maximal cushion midsole profile",
       },
     ],
@@ -538,16 +538,16 @@ export const SHOES_PRODUCTS: Product[] = [
     title: "On Cloud 5",
     brand: "On Running",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1539185441755-769473a23570?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1584735175315-9d5df23860e6?w=600&q=80",
       alt: "On Cloud 5 in all-white with signature CloudTec sole pods",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1539185441755-769473a23570?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1584735175315-9d5df23860e6?w=1200&q=80",
         alt: "On Cloud 5 in all-white with signature CloudTec sole pods",
       },
       {
-        url: "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1604671801908-6f0c6a092c05?w=1200&q=80",
         alt: "On Cloud 5 showing individual cloud pods and Speedboard",
       },
     ],
@@ -573,16 +573,16 @@ export const SHOES_PRODUCTS: Product[] = [
     title: "Madewell The Milo Boot",
     brand: "Madewell",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1605812860427-4024433a70fd?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1520256862855-398228c41684?w=600&q=80",
       alt: "Madewell Milo ankle boot in rich brown leather",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1605812860427-4024433a70fd?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1520256862855-398228c41684?w=1200&q=80",
         alt: "Madewell Milo ankle boot in rich brown leather",
       },
       {
-        url: "https://images.unsplash.com/photo-1638247025967-b4e38f787b76?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1607522370275-f14206abe5d3?w=1200&q=80",
         alt: "Madewell Milo boot showing side zip and stacked heel",
       },
     ],
@@ -608,16 +608,16 @@ export const SHOES_PRODUCTS: Product[] = [
     title: "Cole Haan GrandPro Rally Sneaker",
     brand: "Cole Haan",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1604671801908-6f0c6a092c05?w=600&q=80",
       alt: "Cole Haan GrandPro Rally court sneaker in optic white",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1604671801908-6f0c6a092c05?w=1200&q=80",
         alt: "Cole Haan GrandPro Rally court sneaker in optic white",
       },
       {
-        url: "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1597045566677-8cf032ed6634?w=1200&q=80",
         alt: "Cole Haan GrandPro Rally showing Grand.OS cushioning system",
       },
     ],
@@ -642,16 +642,16 @@ export const SHOES_PRODUCTS: Product[] = [
     title: "Stuart Weitzman Nudistcurve Sandal",
     brand: "Stuart Weitzman",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1562183241-b937e95585b6?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1607522370275-f14206abe5d3?w=600&q=80",
       alt: "Stuart Weitzman Nudistcurve strappy heel sandal in beige suede",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1562183241-b937e95585b6?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1607522370275-f14206abe5d3?w=1200&q=80",
         alt: "Stuart Weitzman Nudistcurve strappy heel sandal in beige suede",
       },
       {
-        url: "https://images.unsplash.com/photo-1603487742131-4160ec999306?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1551107696-a4b0c5a0d9a2?w=1200&q=80",
         alt: "Stuart Weitzman Nudistcurve showing curved heel and ankle strap",
       },
     ],
@@ -676,16 +676,16 @@ export const SHOES_PRODUCTS: Product[] = [
     title: "Allbirds Tree Dasher 2",
     brand: "Allbirds",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1597045566677-8cf032ed6634?w=600&q=80",
       alt: "Allbirds Tree Dasher 2 in natural grey eucalyptus fiber",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1597045566677-8cf032ed6634?w=1200&q=80",
         alt: "Allbirds Tree Dasher 2 in natural grey eucalyptus fiber",
       },
       {
-        url: "https://images.unsplash.com/photo-1539185441755-769473a23570?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1560769629-975ec94e6a86?w=1200&q=80",
         alt: "Allbirds Tree Dasher 2 showing SweetFoam sugarcane midsole",
       },
     ],
@@ -711,16 +711,16 @@ export const SHOES_PRODUCTS: Product[] = [
     title: "Mango Leather Loafer",
     brand: "Mango",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1582897085656-c636d006a246?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1551107696-a4b0c5a0d9a2?w=600&q=80",
       alt: "Mango leather penny loafer in cognac with gold hardware",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1582897085656-c636d006a246?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1551107696-a4b0c5a0d9a2?w=1200&q=80",
         alt: "Mango leather penny loafer in cognac with gold hardware",
       },
       {
-        url: "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1579338559194-a162d19bf842?w=1200&q=80",
         alt: "Mango leather loafer showing hand-stitched apron and leather sole",
       },
     ],
@@ -745,16 +745,16 @@ export const SHOES_PRODUCTS: Product[] = [
     title: "& Other Stories Leather Platform Sandal",
     brand: "& Other Stories",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1603487742131-4160ec999306?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1560769629-975ec94e6a86?w=600&q=80",
       alt: "& Other Stories leather platform sandal in cream with chunky sole",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1603487742131-4160ec999306?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1560769629-975ec94e6a86?w=1200&q=80",
         alt: "& Other Stories leather platform sandal in cream with chunky sole",
       },
       {
-        url: "https://images.unsplash.com/photo-1562183241-b937e95585b6?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1612681621150-a67e5fb3e803?w=1200&q=80",
         alt: "& Other Stories sandal showing padded crossover straps",
       },
     ],
@@ -779,20 +779,20 @@ export const SHOES_PRODUCTS: Product[] = [
     title: "Nike Air Force 1 '07",
     brand: "Nike",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1579338559194-a162d19bf842?w=600&q=80",
       alt: "Nike Air Force 1 '07 in triple white leather",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1579338559194-a162d19bf842?w=1200&q=80",
         alt: "Nike Air Force 1 '07 in triple white leather",
       },
       {
-        url: "https://images.unsplash.com/photo-1600269452121-4f2416e55c28?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1543508282-6319a3e2621f?w=1200&q=80",
         alt: "Nike Air Force 1 showing encapsulated Air cushioning and pivot traction",
       },
       {
-        url: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1580480055002-4ecc3f78f50b?w=1200&q=80",
         alt: "Nike Air Force 1 '07 side profile showing chunky midsole",
       },
     ],
@@ -818,16 +818,16 @@ export const SHOES_PRODUCTS: Product[] = [
     title: "Adidas Gazelle",
     brand: "Adidas",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1600269452121-4f2416e55c28?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1612681621150-a67e5fb3e803?w=600&q=80",
       alt: "Adidas Gazelle in collegiate navy suede with white stripes",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1600269452121-4f2416e55c28?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1612681621150-a67e5fb3e803?w=1200&q=80",
         alt: "Adidas Gazelle in collegiate navy suede with white stripes",
       },
       {
-        url: "https://images.unsplash.com/photo-1491553895911-0055eca6402d?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1614252369475-531eba835eb1?w=1200&q=80",
         alt: "Adidas Gazelle showing pigskin suede and gold foil tongue logo",
       },
     ],
@@ -853,20 +853,20 @@ export const SHOES_PRODUCTS: Product[] = [
     title: "New Balance 2002R",
     brand: "New Balance",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1491553895911-0055eca6402d?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1543508282-6319a3e2621f?w=600&q=80",
       alt: "New Balance 2002R in rain cloud grey with mesh and suede panels",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1491553895911-0055eca6402d?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1543508282-6319a3e2621f?w=1200&q=80",
         alt: "New Balance 2002R in rain cloud grey with mesh and suede panels",
       },
       {
-        url: "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1515955656352-a1fa3ffcd111?w=1200&q=80",
         alt: "New Balance 2002R showing N-ERGY and ABZORB cushioning technology",
       },
       {
-        url: "https://images.unsplash.com/photo-1539185441755-769473a23570?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1638247025967-b4e38f787b76?w=1200&q=80",
         alt: "New Balance 2002R medial side with layered paneling detail",
       },
     ],
@@ -892,16 +892,16 @@ export const SHOES_PRODUCTS: Product[] = [
     title: "The Row Billie Sneaker",
     brand: "The Row",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1580480055002-4ecc3f78f50b?w=600&q=80",
       alt: "The Row Billie low-top sneaker in off-white Nappa leather",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1580480055002-4ecc3f78f50b?w=1200&q=80",
         alt: "The Row Billie low-top sneaker in off-white Nappa leather",
       },
       {
-        url: "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1539185441755-769473a23570?w=1200&q=80",
         alt: "The Row Billie sneaker showing hand-stitched detail and zero branding",
       },
     ],
@@ -926,16 +926,16 @@ export const SHOES_PRODUCTS: Product[] = [
     title: "Birkenstock Arizona Soft Footbed",
     brand: "Birkenstock",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1603487742131-4160ec999306?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1614252369475-531eba835eb1?w=600&q=80",
       alt: "Birkenstock Arizona two-strap sandal in oiled leather",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1603487742131-4160ec999306?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1614252369475-531eba835eb1?w=1200&q=80",
         alt: "Birkenstock Arizona two-strap sandal in oiled leather",
       },
       {
-        url: "https://images.unsplash.com/photo-1562183241-b937e95585b6?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=1200&q=80",
         alt: "Birkenstock Arizona showing contoured cork footbed and dual buckles",
       },
     ],
@@ -961,16 +961,16 @@ export const SHOES_PRODUCTS: Product[] = [
     title: "Nike Dunk Low Retro",
     brand: "Nike",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1515955656352-a1fa3ffcd111?w=600&q=80",
       alt: "Nike Dunk Low Retro in panda black and white colorway",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1515955656352-a1fa3ffcd111?w=1200&q=80",
         alt: "Nike Dunk Low Retro in panda black and white colorway",
       },
       {
-        url: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1460353581641-37baddab0fa2?w=1200&q=80",
         alt: "Nike Dunk Low Retro showing padded collar and perforated toe",
       },
     ],
@@ -996,16 +996,16 @@ export const SHOES_PRODUCTS: Product[] = [
     title: "Common Projects BBall Low",
     brand: "Common Projects",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1638247025967-b4e38f787b76?w=600&q=80",
       alt: "Common Projects BBall Low in white with contrasting black sole",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1638247025967-b4e38f787b76?w=1200&q=80",
         alt: "Common Projects BBall Low in white with contrasting black sole",
       },
       {
-        url: "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1600269452121-4f2416e55c28?w=1200&q=80",
         alt: "Common Projects BBall Low showing retro basketball paneling",
       },
     ],
@@ -1030,16 +1030,16 @@ export const SHOES_PRODUCTS: Product[] = [
     title: "Veja Recife Logo Sneaker",
     brand: "Veja",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1600269452121-4f2416e55c28?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1539185441755-769473a23570?w=600&q=80",
       alt: "Veja Recife velcro sneaker in white with green V logo",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1600269452121-4f2416e55c28?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1539185441755-769473a23570?w=1200&q=80",
         alt: "Veja Recife velcro sneaker in white with green V logo",
       },
       {
-        url: "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=1200&q=80",
         alt: "Veja Recife showing triple velcro straps and wild rubber sole",
       },
     ],

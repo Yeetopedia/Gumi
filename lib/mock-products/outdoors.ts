@@ -48,16 +48,16 @@ export const OUTDOORS_PRODUCTS: Product[] = [
     title: "Better Sweater Recycled Fleece Jacket",
     brand: "Patagonia",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1523362628745-0c100150b504?w=600&q=80",
       alt: "Patagonia recycled fleece jacket in natural tan layered for cool weather",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1523362628745-0c100150b504?w=1200&q=80",
         alt: "Patagonia recycled fleece jacket in natural tan layered for cool weather",
       },
       {
-        url: "https://images.unsplash.com/photo-1544022613-e10091c39da4?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=1200&q=80",
         alt: "Close-up of fleece texture showing soft recycled polyester knit",
       },
     ],
@@ -83,20 +83,20 @@ export const OUTDOORS_PRODUCTS: Product[] = [
     title: "The Carry-On Aluminum Edition",
     brand: "Away",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1581553680321-4fffff48f6e4?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=600&q=80",
       alt: "Sleek aluminum carry-on suitcase standing in airport terminal",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1581553680321-4fffff48f6e4?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=1200&q=80",
         alt: "Sleek aluminum carry-on suitcase standing in airport terminal",
       },
       {
-        url: "https://images.unsplash.com/photo-1553531384-397c80973a0b?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1478827536114-da961b7f86d2?w=1200&q=80",
         alt: "Carry-on interior showing compression pad and organization pockets",
       },
       {
-        url: "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1517824806704-9040b037703b?w=1200&q=80",
         alt: "Travel suitcase rolling through hotel lobby",
       },
     ],
@@ -122,16 +122,16 @@ export const OUTDOORS_PRODUCTS: Product[] = [
     title: "Packing Cube Set — 5-Piece",
     brand: "Peak Design",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1478827536114-da961b7f86d2?w=600&q=80",
       alt: "Set of neatly organized packing cubes in various sizes on bed",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1478827536114-da961b7f86d2?w=1200&q=80",
         alt: "Set of neatly organized packing cubes in various sizes on bed",
       },
       {
-        url: "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1517824806704-9040b037703b?w=1200&q=80",
         alt: "Packing cubes loaded into carry-on suitcase for travel",
       },
     ],
@@ -156,16 +156,16 @@ export const OUTDOORS_PRODUCTS: Product[] = [
     title: "Titanium Single Wall Mug 450ml",
     brand: "Snow Peak",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1517824806704-9040b037703b?w=600&q=80",
       alt: "Snow Peak titanium camping mug next to campfire under stars",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1517824806704-9040b037703b?w=1200&q=80",
         alt: "Snow Peak titanium camping mug next to campfire under stars",
       },
       {
-        url: "https://images.unsplash.com/photo-1478827536114-da961b7f86d2?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1551632811-561732d1e306?w=1200&q=80",
         alt: "Camping scene with titanium cookware on portable stove",
       },
     ],
@@ -190,20 +190,20 @@ export const OUTDOORS_PRODUCTS: Product[] = [
     title: "Nano Puff Packable Puffer Jacket",
     brand: "Patagonia",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1544022613-e10091c39da4?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1551632811-561732d1e306?w=600&q=80",
       alt: "Packable puffer jacket in navy stuffed into its own chest pocket",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1544022613-e10091c39da4?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1551632811-561732d1e306?w=1200&q=80",
         alt: "Packable puffer jacket in navy stuffed into its own chest pocket",
       },
       {
-        url: "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=1200&q=80",
         alt: "Puffer jacket worn layered over flannel on mountain overlook",
       },
       {
-        url: "https://images.unsplash.com/photo-1551632811-561732d1e306?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1581553680321-4fffff48f6e4?w=1200&q=80",
         alt: "Hiker wearing puffer jacket on ridgeline trail at dawn",
       },
     ],
@@ -229,16 +229,16 @@ export const OUTDOORS_PRODUCTS: Product[] = [
     title: "PhD Run Light Elite Micro Socks",
     brand: "Smartwool",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1551632811-561732d1e306?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=600&q=80",
       alt: "Technical merino hiking socks laid flat showing cushion zones",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1551632811-561732d1e306?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=1200&q=80",
         alt: "Technical merino hiking socks laid flat showing cushion zones",
       },
       {
-        url: "https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1581553680321-4fffff48f6e4?w=1200&q=80",
         alt: "Trail runner on mountain path with performance socks visible",
       },
     ],
@@ -263,20 +263,20 @@ export const OUTDOORS_PRODUCTS: Product[] = [
     title: "Original Puffy Blanket",
     brand: "Rumpl",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1478827536114-da961b7f86d2?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1581553680321-4fffff48f6e4?w=600&q=80",
       alt: "Rumpl puffy blanket draped over camp chair at sunset campsite",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1478827536114-da961b7f86d2?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1581553680321-4fffff48f6e4?w=1200&q=80",
         alt: "Rumpl puffy blanket draped over camp chair at sunset campsite",
       },
       {
-        url: "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1553531384-397c80973a0b?w=1200&q=80",
         alt: "Campfire scene with insulated blanket wrapped around shoulders",
       },
       {
-        url: "https://images.unsplash.com/photo-1517824806704-9040b037703b?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=1200&q=80",
         alt: "Colorful puffy blanket on mountain overlook at golden hour",
       },
     ],
@@ -302,16 +302,16 @@ export const OUTDOORS_PRODUCTS: Product[] = [
     title: "Ultra-Sil Dry Bag 13L",
     brand: "Sea to Summit",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1523362628745-0c100150b504?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1553531384-397c80973a0b?w=600&q=80",
       alt: "Bright waterproof dry bag sealed and clipped to kayak deck",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1523362628745-0c100150b504?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1553531384-397c80973a0b?w=1200&q=80",
         alt: "Bright waterproof dry bag sealed and clipped to kayak deck",
       },
       {
-        url: "https://images.unsplash.com/photo-1517824806704-9040b037703b?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=1200&q=80",
         alt: "Dry bag packed with gear on riverbank before paddling trip",
       },
     ],
@@ -345,7 +345,7 @@ export const OUTDOORS_PRODUCTS: Product[] = [
         alt: "Fjallraven travel toiletry pouch in dusk blue with brass hardware",
       },
       {
-        url: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=1200&q=80",
         alt: "Toiletry kit open showing interior pockets and hanging hook",
       },
     ],
@@ -370,20 +370,20 @@ export const OUTDOORS_PRODUCTS: Product[] = [
     title: "Atmos AG 65 Backpacking Pack",
     brand: "Osprey",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1622260614153-03223fb72052?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=600&q=80",
       alt: "Osprey Atmos 65L backpacking pack leaning against alpine rock",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1622260614153-03223fb72052?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=1200&q=80",
         alt: "Osprey Atmos 65L backpacking pack leaning against alpine rock",
       },
       {
-        url: "https://images.unsplash.com/photo-1551632811-561732d1e306?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&q=80",
         alt: "Hiker on trail with fully loaded backpacking pack",
       },
       {
-        url: "https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1505144808419-1957a94ca61e?w=1200&q=80",
         alt: "Backpack detail showing Anti-Gravity suspension mesh panel",
       },
     ],
@@ -409,16 +409,16 @@ export const OUTDOORS_PRODUCTS: Product[] = [
     title: "Kaha 2 GTX Hiking Boots",
     brand: "Arc'teryx",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80",
       alt: "Gore-Tex hiking boots on rocky mountain trail with valley backdrop",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&q=80",
         alt: "Gore-Tex hiking boots on rocky mountain trail with valley backdrop",
       },
       {
-        url: "https://images.unsplash.com/photo-1551632811-561732d1e306?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1505144808419-1957a94ca61e?w=1200&q=80",
         alt: "Boot sole detail showing Vibram Megagrip outsole lugs",
       },
     ],
@@ -444,16 +444,16 @@ export const OUTDOORS_PRODUCTS: Product[] = [
     title: "Merino 250 Base Layer Crew",
     brand: "Smartwool",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1505144808419-1957a94ca61e?w=600&q=80",
       alt: "Merino wool base layer crew in charcoal heather on wooden hanger",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1505144808419-1957a94ca61e?w=1200&q=80",
         alt: "Merino wool base layer crew in charcoal heather on wooden hanger",
       },
       {
-        url: "https://images.unsplash.com/photo-1551632811-561732d1e306?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1622260614153-03223fb72052?w=1200&q=80",
         alt: "Skier wearing merino base layer under shell jacket",
       },
     ],
@@ -478,16 +478,16 @@ export const OUTDOORS_PRODUCTS: Product[] = [
     title: "Spot 400 Headlamp",
     brand: "Black Diamond",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1622260614153-03223fb72052?w=600&q=80",
       alt: "Black Diamond headlamp illuminating campsite under night sky",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1622260614153-03223fb72052?w=1200&q=80",
         alt: "Black Diamond headlamp illuminating campsite under night sky",
       },
       {
-        url: "https://images.unsplash.com/photo-1517824806704-9040b037703b?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1501555088652-021faa106b9b?w=1200&q=80",
         alt: "Headlamp beam cutting through forest darkness on night hike",
       },
     ],
@@ -513,16 +513,16 @@ export const OUTDOORS_PRODUCTS: Product[] = [
     title: "Hopper Flip 18 Soft Cooler",
     brand: "Yeti",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1517824806704-9040b037703b?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1501555088652-021faa106b9b?w=600&q=80",
       alt: "Yeti soft cooler packed with ice and drinks at lake shore camp",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1517824806704-9040b037703b?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1501555088652-021faa106b9b?w=1200&q=80",
         alt: "Yeti soft cooler packed with ice and drinks at lake shore camp",
       },
       {
-        url: "https://images.unsplash.com/photo-1478827536114-da961b7f86d2?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1527004013197-933c4588cf2d?w=1200&q=80",
         alt: "Cooler detail showing HydroLok zipper and ColdCell insulation",
       },
     ],
@@ -548,16 +548,16 @@ export const OUTDOORS_PRODUCTS: Product[] = [
     title: "Universal Travel Adapter",
     brand: "Goal Zero",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1553531384-397c80973a0b?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1527004013197-933c4588cf2d?w=600&q=80",
       alt: "Compact universal travel adapter with multiple plug types extended",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1553531384-397c80973a0b?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1527004013197-933c4588cf2d?w=1200&q=80",
         alt: "Compact universal travel adapter with multiple plug types extended",
       },
       {
-        url: "https://images.unsplash.com/photo-1581553680321-4fffff48f6e4?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1533240332313-0db49b459ad6?w=1200&q=80",
         alt: "Travel adapter plugged into wall with phone charging via USB-C",
       },
     ],
@@ -582,20 +582,20 @@ export const OUTDOORS_PRODUCTS: Product[] = [
     title: "Ultralight Single Hammock",
     brand: "Sea to Summit",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1517824806704-9040b037703b?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1533240332313-0db49b459ad6?w=600&q=80",
       alt: "Camping hammock strung between pine trees at misty lakeside site",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1517824806704-9040b037703b?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1533240332313-0db49b459ad6?w=1200&q=80",
         alt: "Camping hammock strung between pine trees at misty lakeside site",
       },
       {
-        url: "https://images.unsplash.com/photo-1478827536114-da961b7f86d2?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1510312305653-8ed496efae75?w=1200&q=80",
         alt: "Close-up of hammock suspension straps and buckle system",
       },
       {
-        url: "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1520208422220-d12a3c588e6c?w=1200&q=80",
         alt: "Hammock packed into stuff sack next to water bottle for scale",
       },
     ],
@@ -621,16 +621,16 @@ export const OUTDOORS_PRODUCTS: Product[] = [
     title: "Crank Multi-Tool Kit",
     brand: "REI Co-op",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1510312305653-8ed496efae75?w=600&q=80",
       alt: "Compact bike multi-tool with allen keys and chain breaker displayed",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1510312305653-8ed496efae75?w=1200&q=80",
         alt: "Compact bike multi-tool with allen keys and chain breaker displayed",
       },
       {
-        url: "https://images.unsplash.com/photo-1551632811-561732d1e306?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1520208422220-d12a3c588e6c?w=1200&q=80",
         alt: "Multi-tool being used for trailside bike repair",
       },
     ],
@@ -655,16 +655,16 @@ export const OUTDOORS_PRODUCTS: Product[] = [
     title: "Rambler 26oz Stackable Cup",
     brand: "Yeti",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1520208422220-d12a3c588e6c?w=600&q=80",
       alt: "Yeti Rambler stackable cup in Nordic blue on camp table",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1520208422220-d12a3c588e6c?w=1200&q=80",
         alt: "Yeti Rambler stackable cup in Nordic blue on camp table",
       },
       {
-        url: "https://images.unsplash.com/photo-1523362628745-0c100150b504?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1528543606781-2f6e6857f318?w=1200&q=80",
         alt: "Stackable cups nested together for compact storage",
       },
     ],
@@ -689,20 +689,20 @@ export const OUTDOORS_PRODUCTS: Product[] = [
     title: "Cotopaxi Del Día Batac 16L Daypack",
     brand: "Cotopaxi",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1622260614153-03223fb72052?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1528543606781-2f6e6857f318?w=600&q=80",
       alt: "Colorful one-of-a-kind Cotopaxi daypack made from remnant fabrics",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1622260614153-03223fb72052?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1528543606781-2f6e6857f318?w=1200&q=80",
         alt: "Colorful one-of-a-kind Cotopaxi daypack made from remnant fabrics",
       },
       {
-        url: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1520390138845-fd2d229dd553?w=1200&q=80",
         alt: "Del Día pack showing unique color-block pattern from repurposed materials",
       },
       {
-        url: "https://images.unsplash.com/photo-1551632811-561732d1e306?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1526772662000-3f88f10405ff?w=1200&q=80",
         alt: "Daypack worn on sunny trail hike through desert canyon",
       },
     ],
@@ -728,16 +728,16 @@ export const OUTDOORS_PRODUCTS: Product[] = [
     title: "Venture 75 Solar Panel Kit",
     brand: "Goal Zero",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1520390138845-fd2d229dd553?w=600&q=80",
       alt: "Portable solar panel deployed at base camp with mountain backdrop",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1520390138845-fd2d229dd553?w=1200&q=80",
         alt: "Portable solar panel deployed at base camp with mountain backdrop",
       },
       {
-        url: "https://images.unsplash.com/photo-1517824806704-9040b037703b?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1526772662000-3f88f10405ff?w=1200&q=80",
         alt: "Solar panel connected to power station charging devices off-grid",
       },
     ],
@@ -763,16 +763,16 @@ export const OUTDOORS_PRODUCTS: Product[] = [
     title: "Classic Everyday Backpack 20L",
     brand: "Herschel",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1526772662000-3f88f10405ff?w=600&q=80",
       alt: "Herschel classic backpack in forest green with leather bottom panel",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1526772662000-3f88f10405ff?w=1200&q=80",
         alt: "Herschel classic backpack in forest green with leather bottom panel",
       },
       {
-        url: "https://images.unsplash.com/photo-1622260614153-03223fb72052?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1532339142463-fd0a8979791a?w=1200&q=80",
         alt: "Backpack interior showing padded laptop sleeve and organizer pockets",
       },
     ],
@@ -797,20 +797,20 @@ export const OUTDOORS_PRODUCTS: Product[] = [
     title: "Kanken Original Backpack",
     brand: "Fjallraven",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1622260614153-03223fb72052?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1532339142463-fd0a8979791a?w=600&q=80",
       alt: "Fjallraven Kanken backpack in iconic Frost Green with red handles",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1622260614153-03223fb72052?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1532339142463-fd0a8979791a?w=1200&q=80",
         alt: "Fjallraven Kanken backpack in iconic Frost Green with red handles",
       },
       {
-        url: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1445307806294-bff7f67ff225?w=1200&q=80",
         alt: "Kanken shown open from top revealing spacious main compartment",
       },
       {
-        url: "https://images.unsplash.com/photo-1551632811-561732d1e306?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1530789253388-582c481c54b0?w=1200&q=80",
         alt: "Kanken backpack carried on trail through Swedish birch forest",
       },
     ],
@@ -836,16 +836,16 @@ export const OUTDOORS_PRODUCTS: Product[] = [
     title: "PocketRocket Deluxe Backpacking Stove",
     brand: "MSR",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1478827536114-da961b7f86d2?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1445307806294-bff7f67ff225?w=600&q=80",
       alt: "MSR PocketRocket stove with pot boiling water at alpine camp",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1478827536114-da961b7f86d2?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1445307806294-bff7f67ff225?w=1200&q=80",
         alt: "MSR PocketRocket stove with pot boiling water at alpine camp",
       },
       {
-        url: "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1530789253388-582c481c54b0?w=1200&q=80",
         alt: "Compact stove disassembled next to fuel canister and mug",
       },
     ],
@@ -871,12 +871,12 @@ export const OUTDOORS_PRODUCTS: Product[] = [
     title: "Nalgene Wide Mouth Sustain 32oz",
     brand: "Nalgene",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1523362628745-0c100150b504?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1530789253388-582c481c54b0?w=600&q=80",
       alt: "Nalgene wide mouth water bottle in retro teal clipped to pack",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1523362628745-0c100150b504?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1530789253388-582c481c54b0?w=1200&q=80",
         alt: "Nalgene wide mouth water bottle in retro teal clipped to pack",
       },
       {

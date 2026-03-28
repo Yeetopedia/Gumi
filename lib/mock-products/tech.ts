@@ -14,20 +14,20 @@ export const TECH_PRODUCTS: Product[] = [
     title: "AirPods Max",
     brand: "Apple",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=600&q=80",
       alt: "Apple AirPods Max over-ear headphones in silver",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=1200&q=80",
         alt: "Apple AirPods Max over-ear headphones in silver",
       },
       {
-        url: "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?w=1200&q=80",
         alt: "AirPods Max earcup detail showing mesh canopy",
       },
       {
-        url: "https://images.unsplash.com/photo-1484704849700-f032a568e944?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=1200&q=80",
         alt: "AirPods Max resting on marble desk surface",
       },
     ],
@@ -62,11 +62,11 @@ export const TECH_PRODUCTS: Product[] = [
         alt: "Keychron mechanical keyboard with warm backlight on wooden desk",
       },
       {
-        url: "https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=1200&q=80",
         alt: "Side profile showing gasket mount construction",
       },
       {
-        url: "https://images.unsplash.com/photo-1595225476474-87563907a212?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=1200&q=80",
         alt: "Close-up of double-shot PBT keycaps with RGB lighting",
       },
     ],
@@ -92,16 +92,16 @@ export const TECH_PRODUCTS: Product[] = [
     title: "Walnut Desk Shelf",
     brand: "Grovemade",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&q=80",
       alt: "Grovemade walnut desk shelf elevating a monitor on a clean desk",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=1200&q=80",
         alt: "Grovemade walnut desk shelf elevating a monitor on a clean desk",
       },
       {
-        url: "https://images.unsplash.com/photo-1593062096033-9a26b09da705?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=1200&q=80",
         alt: "Detail of solid walnut wood grain and steel bracket",
       },
     ],
@@ -126,16 +126,16 @@ export const TECH_PRODUCTS: Product[] = [
     title: "Merino Wool Desk Mat",
     brand: "Ugmonk",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1593062096033-9a26b09da705?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=600&q=80",
       alt: "Large wool felt desk mat in charcoal covering a modern desk",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1593062096033-9a26b09da705?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=1200&q=80",
         alt: "Large wool felt desk mat in charcoal covering a modern desk",
       },
       {
-        url: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1484704849700-f032a568e944?w=1200&q=80",
         alt: "Close-up of the pressed wool felt texture",
       },
     ],
@@ -160,16 +160,16 @@ export const TECH_PRODUCTS: Product[] = [
     title: "Nest Leather Cable Organizer",
     brand: "Orbitkey",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1484704849700-f032a568e944?w=600&q=80",
       alt: "Orbitkey Nest organizer with cables and tech accessories neatly arranged",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1484704849700-f032a568e944?w=1200&q=80",
         alt: "Orbitkey Nest organizer with cables and tech accessories neatly arranged",
       },
       {
-        url: "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1200&q=80",
         alt: "Interior compartments showing cable organization system",
       },
     ],
@@ -194,12 +194,12 @@ export const TECH_PRODUCTS: Product[] = [
     title: "Monitor Light Bar Pro",
     brand: "Elgato",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&q=80",
       alt: "Elgato light bar mounted on top of ultrawide monitor illuminating desk",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1200&q=80",
         alt: "Elgato light bar mounted on top of ultrawide monitor illuminating desk",
       },
       {
@@ -228,16 +228,16 @@ export const TECH_PRODUCTS: Product[] = [
     title: "Linen Mousepad",
     brand: "Grovemade",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1593062096033-9a26b09da705?w=600&q=80",
       alt: "Grovemade linen mousepad in natural on a walnut desk",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1593062096033-9a26b09da705?w=1200&q=80",
         alt: "Grovemade linen mousepad in natural on a walnut desk",
       },
       {
-        url: "https://images.unsplash.com/photo-1593062096033-9a26b09da705?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=1200&q=80",
         alt: "Close-up of linen weave surface texture",
       },
     ],
@@ -262,12 +262,12 @@ export const TECH_PRODUCTS: Product[] = [
     title: "USB-C Multiport Adapter V3",
     brand: "Satechi",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=600&q=80",
       alt: "Satechi USB-C hub in space gray connected to a MacBook",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=1200&q=80",
         alt: "Satechi USB-C hub in space gray connected to a MacBook",
       },
       {
@@ -329,20 +329,20 @@ export const TECH_PRODUCTS: Product[] = [
     title: "Era 100 Wireless Speaker",
     brand: "Sonos",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?w=600&q=80",
       alt: "Sonos Era 100 speaker in white on a shelf",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?w=1200&q=80",
         alt: "Sonos Era 100 speaker in white on a shelf",
       },
       {
-        url: "https://images.unsplash.com/photo-1545454675-3531b543be5d?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1580910051074-3eb694886571?w=1200&q=80",
         alt: "Close-up of speaker grille and touch controls",
       },
       {
-        url: "https://images.unsplash.com/photo-1558089687-f282d8cbef78?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=1200&q=80",
         alt: "Sonos Era 100 pair in stereo configuration on bookshelf",
       },
     ],
@@ -367,16 +367,16 @@ export const TECH_PRODUCTS: Product[] = [
     title: "WF-1000XM5 Wireless Earbuds",
     brand: "Sony",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1484704849700-f032a568e944?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1580910051074-3eb694886571?w=600&q=80",
       alt: "Sony WF-1000XM5 earbuds in charging case on desk",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1484704849700-f032a568e944?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1580910051074-3eb694886571?w=1200&q=80",
         alt: "Sony WF-1000XM5 earbuds in charging case on desk",
       },
       {
-        url: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=1200&q=80",
         alt: "Single earbud showing driver and tip detail",
       },
     ],
@@ -402,16 +402,16 @@ export const TECH_PRODUCTS: Product[] = [
     title: "Echo Show 15 Smart Display",
     brand: "Amazon",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1593062096033-9a26b09da705?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=600&q=80",
       alt: "Smart home display mounted on wall showing calendar and widgets",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1593062096033-9a26b09da705?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=1200&q=80",
         alt: "Smart home display mounted on wall showing calendar and widgets",
       },
       {
-        url: "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1595225476474-87563907a212?w=1200&q=80",
         alt: "Display in landscape mode on a kitchen counter",
       },
     ],
@@ -436,16 +436,16 @@ export const TECH_PRODUCTS: Product[] = [
     title: "Kindle Paperwhite Signature Edition",
     brand: "Amazon",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1595225476474-87563907a212?w=600&q=80",
       alt: "Kindle Paperwhite e-reader resting on a linen blanket",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1595225476474-87563907a212?w=1200&q=80",
         alt: "Kindle Paperwhite e-reader resting on a linen blanket",
       },
       {
-        url: "https://images.unsplash.com/photo-1580910051074-3eb694886571?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1545454675-3531b543be5d?w=1200&q=80",
         alt: "Reading in direct sunlight with glare-free display",
       },
     ],
@@ -471,16 +471,16 @@ export const TECH_PRODUCTS: Product[] = [
     title: "Facecam Pro 4K Webcam",
     brand: "Elgato",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1580910051074-3eb694886571?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1545454675-3531b543be5d?w=600&q=80",
       alt: "Elgato Facecam Pro mounted on monitor looking sharp",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1580910051074-3eb694886571?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1545454675-3531b543be5d?w=1200&q=80",
         alt: "Elgato Facecam Pro mounted on monitor looking sharp",
       },
       {
-        url: "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1558089687-f282d8cbef78?w=1200&q=80",
         alt: "Webcam comparison showing 4K clarity vs built-in camera",
       },
     ],
@@ -505,16 +505,16 @@ export const TECH_PRODUCTS: Product[] = [
     title: "Dyson Solarcycle Morph Desk Lamp",
     brand: "Dyson",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1558089687-f282d8cbef78?w=600&q=80",
       alt: "Dyson desk lamp in copper/silver illuminating a workspace",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1558089687-f282d8cbef78?w=1200&q=80",
         alt: "Dyson desk lamp in copper/silver illuminating a workspace",
       },
       {
-        url: "https://images.unsplash.com/photo-1593062096033-9a26b09da705?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=1200&q=80",
         alt: "Lamp morphed into ambient lighting position",
       },
     ],
@@ -539,16 +539,16 @@ export const TECH_PRODUCTS: Product[] = [
     title: "Curve Laptop Stand",
     brand: "Twelve South",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=600&q=80",
       alt: "Twelve South Curve stand holding a MacBook at ergonomic height",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=1200&q=80",
         alt: "Twelve South Curve stand holding a MacBook at ergonomic height",
       },
       {
-        url: "https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=1200&q=80",
         alt: "Side view showing ventilation gap beneath laptop",
       },
     ],
@@ -573,16 +573,16 @@ export const TECH_PRODUCTS: Product[] = [
     title: "MagSafe StandBy Charger",
     brand: "Twelve South",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=600&q=80",
       alt: "iPhone on MagSafe stand in landscape StandBy mode on nightstand",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=1200&q=80",
         alt: "iPhone on MagSafe stand in landscape StandBy mode on nightstand",
       },
       {
-        url: "https://images.unsplash.com/photo-1580910051074-3eb694886571?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?w=1200&q=80",
         alt: "Charger with iPhone and Apple Watch charging simultaneously",
       },
     ],
@@ -607,16 +607,16 @@ export const TECH_PRODUCTS: Product[] = [
     title: "Cable Management Tray",
     brand: "Grovemade",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?w=600&q=80",
       alt: "Under-desk cable tray in walnut holding power strip and cables",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?w=1200&q=80",
         alt: "Under-desk cable tray in walnut holding power strip and cables",
       },
       {
-        url: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1625842268584-8f3296236761?w=1200&q=80",
         alt: "Before and after showing cables hidden inside the tray",
       },
     ],
@@ -641,16 +641,16 @@ export const TECH_PRODUCTS: Product[] = [
     title: "T7 Shield Portable SSD 2TB",
     brand: "Samsung",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1625842268584-8f3296236761?w=600&q=80",
       alt: "Samsung T7 Shield portable SSD in indigo blue on desk",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1625842268584-8f3296236761?w=1200&q=80",
         alt: "Samsung T7 Shield portable SSD in indigo blue on desk",
       },
       {
-        url: "https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1618788372246-79faff0c3742?w=1200&q=80",
         alt: "SSD next to a coin for size comparison",
       },
     ],
@@ -675,16 +675,16 @@ export const TECH_PRODUCTS: Product[] = [
     title: "Mini Smart Plug (4-Pack)",
     brand: "Anker",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1558089687-f282d8cbef78?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1618788372246-79faff0c3742?w=600&q=80",
       alt: "Compact smart plug inserted into a wall outlet",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1558089687-f282d8cbef78?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1618788372246-79faff0c3742?w=1200&q=80",
         alt: "Compact smart plug inserted into a wall outlet",
       },
       {
-        url: "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=1200&q=80",
         alt: "App interface showing energy monitoring and schedules",
       },
     ],
@@ -709,20 +709,20 @@ export const TECH_PRODUCTS: Product[] = [
     title: "Beoplay H100 Over-Ear Headphones",
     brand: "Bang & Olufsen",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=600&q=80",
       alt: "Bang & Olufsen Beoplay H100 headphones in timber finish",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=1200&q=80",
         alt: "Bang & Olufsen Beoplay H100 headphones in timber finish",
       },
       {
-        url: "https://images.unsplash.com/photo-1484704849700-f032a568e944?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200&q=80",
         alt: "Detail of lambskin ear cushions and aluminum hinges",
       },
       {
-        url: "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?w=1200&q=80",
         alt: "Headphones folded flat inside carrying case",
       },
     ],
@@ -748,20 +748,20 @@ export const TECH_PRODUCTS: Product[] = [
     title: "Marshall Stanmore III Bluetooth Speaker",
     brand: "Marshall",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1545454675-3531b543be5d?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&q=80",
       alt: "Marshall Stanmore III speaker in classic black with brass details",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1545454675-3531b543be5d?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200&q=80",
         alt: "Marshall Stanmore III speaker in classic black with brass details",
       },
       {
-        url: "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?w=1200&q=80",
         alt: "Top-down view of analog control knobs",
       },
       {
-        url: "https://images.unsplash.com/photo-1558089687-f282d8cbef78?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1596558450268-9c27524ba856?w=1200&q=80",
         alt: "Speaker filling a living room with sound",
       },
     ],
@@ -786,16 +786,16 @@ export const TECH_PRODUCTS: Product[] = [
     title: "OB-4 Magic Radio",
     brand: "Teenage Engineering",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1558089687-f282d8cbef78?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?w=600&q=80",
       alt: "Teenage Engineering OB-4 portable speaker with retro dial interface",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1558089687-f282d8cbef78?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?w=1200&q=80",
         alt: "Teenage Engineering OB-4 portable speaker with retro dial interface",
       },
       {
-        url: "https://images.unsplash.com/photo-1545454675-3531b543be5d?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1596558450268-9c27524ba856?w=1200&q=80",
         alt: "OB-4 in portable mode leaning against a wall",
       },
     ],
@@ -820,16 +820,16 @@ export const TECH_PRODUCTS: Product[] = [
     title: "Ear (2) Wireless Earbuds",
     brand: "Nothing",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1484704849700-f032a568e944?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1596558450268-9c27524ba856?w=600&q=80",
       alt: "Nothing Ear 2 transparent earbuds in clear case",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1484704849700-f032a568e944?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1596558450268-9c27524ba856?w=1200&q=80",
         alt: "Nothing Ear 2 transparent earbuds in clear case",
       },
       {
-        url: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1610465299993-e6675c9f99db?w=1200&q=80",
         alt: "Single earbud showing transparent stem design",
       },
     ],
@@ -854,20 +854,20 @@ export const TECH_PRODUCTS: Product[] = [
     title: "TS4 Thunderbolt Station",
     brand: "CalDigit",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1610465299993-e6675c9f99db?w=600&q=80",
       alt: "CalDigit TS4 dock with multiple cables connected on a desk",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1610465299993-e6675c9f99db?w=1200&q=80",
         alt: "CalDigit TS4 dock with multiple cables connected on a desk",
       },
       {
-        url: "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1587614382346-4ec70e388b28?w=1200&q=80",
         alt: "Rear panel showing 18 ports",
       },
       {
-        url: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1606220838315-056192d5e927?w=1200&q=80",
         alt: "Single cable from TS4 powering and connecting entire desk setup",
       },
     ],
@@ -892,16 +892,16 @@ export const TECH_PRODUCTS: Product[] = [
     title: "Key Light Mini",
     brand: "Elgato",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1587614382346-4ec70e388b28?w=600&q=80",
       alt: "Elgato Key Light Mini portable LED panel on desk",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1587614382346-4ec70e388b28?w=1200&q=80",
         alt: "Elgato Key Light Mini portable LED panel on desk",
       },
       {
-        url: "https://images.unsplash.com/photo-1593062096033-9a26b09da705?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1606220838315-056192d5e927?w=1200&q=80",
         alt: "Mini panel backlighting a monitor for video calls",
       },
     ],
@@ -926,16 +926,16 @@ export const TECH_PRODUCTS: Product[] = [
     title: "Bellroy Tech Kit Compact",
     brand: "Bellroy",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1606220838315-056192d5e927?w=600&q=80",
       alt: "Bellroy Tech Kit in charcoal with cables and adapters peeking out",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1606220838315-056192d5e927?w=1200&q=80",
         alt: "Bellroy Tech Kit in charcoal with cables and adapters peeking out",
       },
       {
-        url: "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1625245488600-d610c6b04012?w=1200&q=80",
         alt: "Interior organization showing elastic loops and mesh pocket",
       },
     ],
@@ -960,20 +960,20 @@ export const TECH_PRODUCTS: Product[] = [
     title: "QuietComfort Ultra Headphones",
     brand: "Bose",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1625245488600-d610c6b04012?w=600&q=80",
       alt: "Bose QuietComfort Ultra headphones in black over-ear design",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1625245488600-d610c6b04012?w=1200&q=80",
         alt: "Bose QuietComfort Ultra headphones in black over-ear design",
       },
       {
-        url: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1618329340733-12a2c78d3d40?w=1200&q=80",
         alt: "Headphones folded for travel in slim carrying case",
       },
       {
-        url: "https://images.unsplash.com/photo-1484704849700-f032a568e944?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1592899677112-8b637e8cb1ea?w=1200&q=80",
         alt: "Touch controls on the right earcup",
       },
     ],
@@ -999,20 +999,20 @@ export const TECH_PRODUCTS: Product[] = [
     title: "MX Master 3S Wireless Mouse",
     brand: "Logitech",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1618329340733-12a2c78d3d40?w=600&q=80",
       alt: "Logitech MX Master 3S ergonomic mouse in graphite on desk",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1618329340733-12a2c78d3d40?w=1200&q=80",
         alt: "Logitech MX Master 3S ergonomic mouse in graphite on desk",
       },
       {
-        url: "https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1592899677112-8b637e8cb1ea?w=1200&q=80",
         alt: "Mouse next to keyboard showing matching design language",
       },
       {
-        url: "https://images.unsplash.com/photo-1593062096033-9a26b09da705?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=1200&q=80",
         alt: "Thumb wheel and gesture buttons close-up",
       },
     ],
@@ -1038,20 +1038,20 @@ export const TECH_PRODUCTS: Product[] = [
     title: "Desk Mat Pro (Leather)",
     brand: "Bellroy",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1592899677112-8b637e8cb1ea?w=600&q=80",
       alt: "Bellroy leather desk mat in tan with keyboard and mouse arranged on top",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1592899677112-8b637e8cb1ea?w=1200&q=80",
         alt: "Bellroy leather desk mat in tan with keyboard and mouse arranged on top",
       },
       {
-        url: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=1200&q=80",
         alt: "Close-up of vegetable-tanned leather patina developing over time",
       },
       {
-        url: "https://images.unsplash.com/photo-1593062096033-9a26b09da705?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?w=1200&q=80",
         alt: "Desk mat rolled up for portability",
       },
     ],

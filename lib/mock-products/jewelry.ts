@@ -14,12 +14,12 @@ export const JEWELRY_PRODUCTS: Product[] = [
     title: "Gold Vermeil Hoops",
     brand: "Mejuri",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&q=80",
       alt: "Gold vermeil hoop earrings on a marble surface",
     },
     images: [
-      { url: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=1200&q=80", alt: "Gold vermeil hoops close-up" },
-      { url: "https://images.unsplash.com/photo-1630019852942-f89202989a59?w=1200&q=80", alt: "Gold vermeil hoops on model" },
+      { url: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=1200&q=80", alt: "Gold vermeil hoops close-up" },
+      { url: "https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=1200&q=80", alt: "Gold vermeil hoops on model" }
     ],
     price: { min: 5500, max: 7500, currency: "USD" },
     rating: { average: 4.7, count: 2340 },
@@ -41,13 +41,13 @@ export const JEWELRY_PRODUCTS: Product[] = [
     title: "Pearl Drop Earrings",
     brand: "Monica Vinader",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1515562141589-67f0d569b6f3?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=600&q=80",
       alt: "Freshwater pearl drop earrings with gold hardware",
     },
     images: [
-      { url: "https://images.unsplash.com/photo-1515562141589-67f0d569b6f3?w=1200&q=80", alt: "Pearl drop earrings detail" },
-      { url: "https://images.unsplash.com/photo-1611107683227-e9060eccd846?w=1200&q=80", alt: "Pearl drop earrings styled" },
-      { url: "https://images.unsplash.com/photo-1588444837495-c6cfeb53f32d?w=1200&q=80", alt: "Pearl drop earrings on model" },
+      { url: "https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=1200&q=80", alt: "Pearl drop earrings detail" },
+      { url: "https://images.unsplash.com/photo-1515562141589-67f0d569b6f3?w=1200&q=80", alt: "Pearl drop earrings styled" },
+      { url: "https://images.unsplash.com/photo-1611107683227-e9060eccd846?w=1200&q=80", alt: "Pearl drop earrings on model" }
     ],
     price: { min: 12800, max: 17500, currency: "USD" },
     rating: { average: 4.8, count: 1890 },
@@ -69,12 +69,12 @@ export const JEWELRY_PRODUCTS: Product[] = [
     title: "Chunky Chain Bracelet",
     brand: "Laura Lombardi",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80",
       alt: "Chunky gold chain bracelet on wrist",
     },
     images: [
-      { url: "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?w=1200&q=80", alt: "Chunky chain bracelet detail" },
-      { url: "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=1200&q=80", alt: "Chunky chain bracelet flat lay" },
+      { url: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=1200&q=80", alt: "Chunky chain bracelet detail" },
+      { url: "https://images.unsplash.com/photo-1630019852942-f89202989a59?w=1200&q=80", alt: "Chunky chain bracelet flat lay" }
     ],
     price: { min: 16800, max: 22000, currency: "USD" },
     rating: { average: 4.6, count: 876 },
@@ -96,12 +96,12 @@ export const JEWELRY_PRODUCTS: Product[] = [
     title: "Classic Signet Ring",
     brand: "Mejuri",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&q=80",
       alt: "Gold signet ring with polished face",
     },
     images: [
-      { url: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=1200&q=80", alt: "Signet ring close-up" },
-      { url: "https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=1200&q=80", alt: "Signet ring on hand" },
+      { url: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=1200&q=80", alt: "Signet ring close-up" },
+      { url: "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=1200&q=80", alt: "Signet ring on hand" }
     ],
     price: { min: 9800, max: 14800, currency: "USD" },
     rating: { average: 4.5, count: 1450 },
@@ -123,13 +123,13 @@ export const JEWELRY_PRODUCTS: Product[] = [
     title: "Layering Necklace Set",
     brand: "Gorjana",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1515562141589-67f0d569b6f3?w=600&q=80",
       alt: "Set of three layered gold necklaces",
     },
     images: [
-      { url: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=1200&q=80", alt: "Layering necklace set styled" },
-      { url: "https://images.unsplash.com/photo-1611107683227-e9060eccd846?w=1200&q=80", alt: "Layering necklaces detail" },
-      { url: "https://images.unsplash.com/photo-1515562141589-67f0d569b6f3?w=1200&q=80", alt: "Layering necklaces on model" },
+      { url: "https://images.unsplash.com/photo-1515562141589-67f0d569b6f3?w=1200&q=80", alt: "Layering necklace set styled" },
+      { url: "https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?w=1200&q=80", alt: "Layering necklaces detail" },
+      { url: "https://images.unsplash.com/photo-1611652022419-a9419f74343d?w=1200&q=80", alt: "Layering necklaces on model" }
     ],
     price: { min: 6500, max: 9800, currency: "USD" },
     rating: { average: 4.6, count: 3210 },
@@ -152,12 +152,12 @@ export const JEWELRY_PRODUCTS: Product[] = [
     title: "Tennis Bracelet",
     brand: "Ana Luisa",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1611107683227-e9060eccd846?w=600&q=80",
       alt: "Sparkling tennis bracelet with cubic zirconia stones",
     },
     images: [
-      { url: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=1200&q=80", alt: "Tennis bracelet close-up" },
-      { url: "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=1200&q=80", alt: "Tennis bracelet on wrist" },
+      { url: "https://images.unsplash.com/photo-1611107683227-e9060eccd846?w=1200&q=80", alt: "Tennis bracelet close-up" },
+      { url: "https://images.unsplash.com/photo-1610694955371-d4a3e0ce4b52?w=1200&q=80", alt: "Tennis bracelet on wrist" }
     ],
     price: { min: 8500, max: 12000, currency: "USD" },
     rating: { average: 4.7, count: 2100 },
@@ -179,12 +179,12 @@ export const JEWELRY_PRODUCTS: Product[] = [
     title: "Gold Ear Cuff",
     brand: "Maria Black",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1630019852942-f89202989a59?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=600&q=80",
       alt: "Minimalist gold ear cuff on ear",
     },
     images: [
-      { url: "https://images.unsplash.com/photo-1630019852942-f89202989a59?w=1200&q=80", alt: "Gold ear cuff detail" },
-      { url: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=1200&q=80", alt: "Gold ear cuff styled with other earrings" },
+      { url: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=1200&q=80", alt: "Gold ear cuff detail" },
+      { url: "https://images.unsplash.com/photo-1600721391776-b5cd0e0048f9?w=1200&q=80", alt: "Gold ear cuff styled with other earrings" }
     ],
     price: { min: 8000, max: 14500, currency: "USD" },
     rating: { average: 4.4, count: 645 },
@@ -206,12 +206,13 @@ export const JEWELRY_PRODUCTS: Product[] = [
     title: "Medallion Pendant Necklace",
     brand: "Alighieri",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1630019852942-f89202989a59?w=600&q=80",
       alt: "Textured gold medallion pendant on chain",
     },
     images: [
-      { url: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=1200&q=80", alt: "Medallion pendant detail" },
-      { url: "https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=1200&q=80", alt: "Medallion pendant on model" },
+      { url: "https://images.unsplash.com/photo-1630019852942-f89202989a59?w=1200&q=80", alt: "Medallion pendant detail" },
+      { url: "https://images.unsplash.com/photo-1596944924616-7b38e7cfac36?w=1200&q=80", alt: "Medallion pendant on model" },
+      { url: "https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?w=1200&q=80", alt: "Medallion pendant on model" }
     ],
     price: { min: 29000, max: 39000, currency: "USD" },
     rating: { average: 4.8, count: 320 },
@@ -233,13 +234,12 @@ export const JEWELRY_PRODUCTS: Product[] = [
     title: "Pisa Chain Link Necklace",
     brand: "Laura Lombardi",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1611107683227-e9060eccd846?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1588444837495-c6cfeb53f32d?w=600&q=80",
       alt: "Thick gold chain link necklace",
     },
     images: [
-      { url: "https://images.unsplash.com/photo-1611107683227-e9060eccd846?w=1200&q=80", alt: "Chain link necklace detail" },
-      { url: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=1200&q=80", alt: "Chain link necklace on model" },
-      { url: "https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=1200&q=80", alt: "Chain link necklace flat lay" },
+      { url: "https://images.unsplash.com/photo-1588444837495-c6cfeb53f32d?w=1200&q=80", alt: "Chain link necklace detail" },
+      { url: "https://images.unsplash.com/photo-1602752250015-52934bc67458?w=1200&q=80", alt: "Chain link necklace on model" }
     ],
     price: { min: 19500, max: 27000, currency: "USD" },
     rating: { average: 4.7, count: 540 },
@@ -261,12 +261,12 @@ export const JEWELRY_PRODUCTS: Product[] = [
     title: "Diamond Stud Earrings",
     brand: "Mejuri",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1588444837495-c6cfeb53f32d?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?w=600&q=80",
       alt: "Classic diamond stud earrings in gold setting",
     },
     images: [
-      { url: "https://images.unsplash.com/photo-1588444837495-c6cfeb53f32d?w=1200&q=80", alt: "Diamond studs close-up" },
-      { url: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=1200&q=80", alt: "Diamond studs on model" },
+      { url: "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?w=1200&q=80", alt: "Diamond studs close-up" },
+      { url: "https://images.unsplash.com/photo-1598560917807-1bae44bd2be8?w=1200&q=80", alt: "Diamond studs on model" }
     ],
     price: { min: 19500, max: 30000, currency: "USD" },
     rating: { average: 4.9, count: 4320 },
@@ -289,12 +289,13 @@ export const JEWELRY_PRODUCTS: Product[] = [
     title: "Pearl Choker Necklace",
     brand: "Sophie Buhai",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1515562141589-67f0d569b6f3?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=600&q=80",
       alt: "Classic pearl choker with gold clasp",
     },
     images: [
-      { url: "https://images.unsplash.com/photo-1515562141589-67f0d569b6f3?w=1200&q=80", alt: "Pearl choker detail" },
-      { url: "https://images.unsplash.com/photo-1611107683227-e9060eccd846?w=1200&q=80", alt: "Pearl choker styled" },
+      { url: "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=1200&q=80", alt: "Pearl choker detail" },
+      { url: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=1200&q=80", alt: "Pearl choker styled" },
+      { url: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=1200&q=80", alt: "Pearl choker styled" }
     ],
     price: { min: 39500, max: 58000, currency: "USD" },
     rating: { average: 4.8, count: 215 },
@@ -316,12 +317,12 @@ export const JEWELRY_PRODUCTS: Product[] = [
     title: "Beaded Bracelet Stack",
     brand: "Gorjana",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&q=80",
       alt: "Colorful beaded bracelets stacked on wrist",
     },
     images: [
-      { url: "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=1200&q=80", alt: "Beaded bracelets detail" },
-      { url: "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?w=1200&q=80", alt: "Beaded bracelets styled" },
+      { url: "https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=1200&q=80", alt: "Beaded bracelets detail" },
+      { url: "https://images.unsplash.com/photo-1611107683227-e9060eccd846?w=1200&q=80", alt: "Beaded bracelets styled" }
     ],
     price: { min: 3800, max: 5800, currency: "USD" },
     rating: { average: 4.3, count: 1890 },
@@ -343,12 +344,12 @@ export const JEWELRY_PRODUCTS: Product[] = [
     title: "Dainty Gold Anklet",
     brand: "Catbird",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1598560917505-59a3ad559071?w=600&q=80",
       alt: "Delicate gold chain anklet",
     },
     images: [
-      { url: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=1200&q=80", alt: "Gold anklet close-up" },
-      { url: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=1200&q=80", alt: "Gold anklet styled" },
+      { url: "https://images.unsplash.com/photo-1598560917505-59a3ad559071?w=1200&q=80", alt: "Gold anklet close-up" },
+      { url: "https://images.unsplash.com/photo-1588444837495-c6cfeb53f32d?w=1200&q=80", alt: "Gold anklet styled" }
     ],
     price: { min: 6800, max: 8800, currency: "USD" },
     rating: { average: 4.5, count: 980 },
@@ -370,12 +371,13 @@ export const JEWELRY_PRODUCTS: Product[] = [
     title: "Bold Statement Ring",
     brand: "Completedworks",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?w=600&q=80",
       alt: "Sculptural gold statement ring",
     },
     images: [
-      { url: "https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=1200&q=80", alt: "Statement ring detail" },
-      { url: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=1200&q=80", alt: "Statement ring on hand" },
+      { url: "https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?w=1200&q=80", alt: "Statement ring detail" },
+      { url: "https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=1200&q=80", alt: "Statement ring on hand" },
+      { url: "https://images.unsplash.com/photo-1598560917505-59a3ad559071?w=1200&q=80", alt: "Statement ring on hand" }
     ],
     price: { min: 24000, max: 35000, currency: "USD" },
     rating: { average: 4.6, count: 189 },
@@ -397,13 +399,12 @@ export const JEWELRY_PRODUCTS: Product[] = [
     title: "Minimalist Bar Necklace",
     brand: "BYCHARI",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1611652022419-a9419f74343d?w=600&q=80",
       alt: "Sleek gold bar pendant on fine chain",
     },
     images: [
-      { url: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=1200&q=80", alt: "Bar necklace detail" },
-      { url: "https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=1200&q=80", alt: "Bar necklace on model" },
-      { url: "https://images.unsplash.com/photo-1515562141589-67f0d569b6f3?w=1200&q=80", alt: "Bar necklace layered" },
+      { url: "https://images.unsplash.com/photo-1611652022419-a9419f74343d?w=1200&q=80", alt: "Bar necklace detail" },
+      { url: "https://images.unsplash.com/photo-1515688594390-b649af70d282?w=1200&q=80", alt: "Bar necklace on model" }
     ],
     price: { min: 9500, max: 16000, currency: "USD" },
     rating: { average: 4.7, count: 1560 },
@@ -425,12 +426,12 @@ export const JEWELRY_PRODUCTS: Product[] = [
     title: "Huggie Hoop Earrings",
     brand: "Missoma",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1515688594390-b649af70d282?w=600&q=80",
       alt: "Small gold huggie hoop earrings",
     },
     images: [
-      { url: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=1200&q=80", alt: "Huggie hoops close-up" },
-      { url: "https://images.unsplash.com/photo-1630019852942-f89202989a59?w=1200&q=80", alt: "Huggie hoops on model" },
+      { url: "https://images.unsplash.com/photo-1515688594390-b649af70d282?w=1200&q=80", alt: "Huggie hoops close-up" },
+      { url: "https://images.unsplash.com/photo-1602751584552-8ba73aad5559?w=1200&q=80", alt: "Huggie hoops on model" }
     ],
     price: { min: 6800, max: 9500, currency: "USD" },
     rating: { average: 4.6, count: 2780 },
@@ -452,12 +453,13 @@ export const JEWELRY_PRODUCTS: Product[] = [
     title: "Organic Sculptural Bangle",
     brand: "Sophie Buhai",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1610694955371-d4a3e0ce4b52?w=600&q=80",
       alt: "Thick sculptural gold bangle bracelet",
     },
     images: [
-      { url: "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?w=1200&q=80", alt: "Sculptural bangle detail" },
-      { url: "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=1200&q=80", alt: "Sculptural bangle styled" },
+      { url: "https://images.unsplash.com/photo-1610694955371-d4a3e0ce4b52?w=1200&q=80", alt: "Sculptural bangle detail" },
+      { url: "https://images.unsplash.com/photo-1609552559488-f8e73cde8a48?w=1200&q=80", alt: "Sculptural bangle styled" },
+      { url: "https://images.unsplash.com/photo-1599459183200-59c7687a0275?w=1200&q=80", alt: "Sculptural bangle styled" }
     ],
     price: { min: 42000, max: 62000, currency: "USD" },
     rating: { average: 4.7, count: 156 },
@@ -479,12 +481,12 @@ export const JEWELRY_PRODUCTS: Product[] = [
     title: "Coin Pendant Necklace",
     brand: "Missoma",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1602751584552-8ba73aad5559?w=600&q=80",
       alt: "Gold coin pendant on delicate chain",
     },
     images: [
-      { url: "https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=1200&q=80", alt: "Coin pendant detail" },
-      { url: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=1200&q=80", alt: "Coin pendant on model" },
+      { url: "https://images.unsplash.com/photo-1602751584552-8ba73aad5559?w=1200&q=80", alt: "Coin pendant detail" },
+      { url: "https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?w=1200&q=80", alt: "Coin pendant on model" }
     ],
     price: { min: 8900, max: 12500, currency: "USD" },
     rating: { average: 4.5, count: 1980 },
@@ -506,12 +508,12 @@ export const JEWELRY_PRODUCTS: Product[] = [
     title: "Twisted Gold Ring",
     brand: "Jenny Bird",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1612528443702-f264f23f0cfd?w=600&q=80",
       alt: "Twisted gold ring with crossover design",
     },
     images: [
-      { url: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=1200&q=80", alt: "Twisted ring close-up" },
-      { url: "https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=1200&q=80", alt: "Twisted ring on hand" },
+      { url: "https://images.unsplash.com/photo-1612528443702-f264f23f0cfd?w=1200&q=80", alt: "Twisted ring close-up" },
+      { url: "https://images.unsplash.com/photo-1618077360395-f3068be8e001?w=1200&q=80", alt: "Twisted ring on hand" }
     ],
     price: { min: 6800, max: 9500, currency: "USD" },
     rating: { average: 4.4, count: 1230 },
@@ -533,13 +535,13 @@ export const JEWELRY_PRODUCTS: Product[] = [
     title: "Baroque Pearl Ring",
     brand: "Completedworks",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1600721391776-b5cd0e0048f9?w=600&q=80",
       alt: "Large baroque pearl set in gold ring",
     },
     images: [
-      { url: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=1200&q=80", alt: "Baroque pearl ring detail" },
-      { url: "https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=1200&q=80", alt: "Baroque pearl ring on hand" },
-      { url: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=1200&q=80", alt: "Baroque pearl ring styled" },
+      { url: "https://images.unsplash.com/photo-1600721391776-b5cd0e0048f9?w=1200&q=80", alt: "Baroque pearl ring detail" },
+      { url: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=1200&q=80", alt: "Baroque pearl ring on hand" },
+      { url: "https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=1200&q=80", alt: "Baroque pearl ring styled" }
     ],
     price: { min: 28000, max: 38000, currency: "USD" },
     rating: { average: 4.7, count: 234 },
@@ -561,12 +563,12 @@ export const JEWELRY_PRODUCTS: Product[] = [
     title: "Herringbone Chain Necklace",
     brand: "Ana Luisa",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1611107683227-e9060eccd846?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1609552559488-f8e73cde8a48?w=600&q=80",
       alt: "Flat herringbone gold chain necklace",
     },
     images: [
-      { url: "https://images.unsplash.com/photo-1611107683227-e9060eccd846?w=1200&q=80", alt: "Herringbone chain detail" },
-      { url: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=1200&q=80", alt: "Herringbone chain on model" },
+      { url: "https://images.unsplash.com/photo-1609552559488-f8e73cde8a48?w=1200&q=80", alt: "Herringbone chain detail" },
+      { url: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=1200&q=80", alt: "Herringbone chain on model" }
     ],
     price: { min: 5500, max: 8500, currency: "USD" },
     rating: { average: 4.6, count: 3450 },
@@ -588,13 +590,12 @@ export const JEWELRY_PRODUCTS: Product[] = [
     title: "Crawler Ear Climbers",
     brand: "Adina Reyter",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1630019852942-f89202989a59?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1599459183200-59c7687a0275?w=600&q=80",
       alt: "Diamond ear climber earrings",
     },
     images: [
-      { url: "https://images.unsplash.com/photo-1630019852942-f89202989a59?w=1200&q=80", alt: "Ear climbers detail" },
-      { url: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=1200&q=80", alt: "Ear climbers on model" },
-      { url: "https://images.unsplash.com/photo-1588444837495-c6cfeb53f32d?w=1200&q=80", alt: "Ear climbers styling" },
+      { url: "https://images.unsplash.com/photo-1599459183200-59c7687a0275?w=1200&q=80", alt: "Ear climbers detail" },
+      { url: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=1200&q=80", alt: "Ear climbers on model" }
     ],
     price: { min: 29800, max: 42000, currency: "USD" },
     rating: { average: 4.8, count: 412 },
@@ -616,12 +617,13 @@ export const JEWELRY_PRODUCTS: Product[] = [
     title: "Chunky Open Cuff",
     brand: "Jenny Bird",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1596944924616-7b38e7cfac36?w=600&q=80",
       alt: "Wide gold open cuff bracelet",
     },
     images: [
-      { url: "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?w=1200&q=80", alt: "Open cuff detail" },
-      { url: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=1200&q=80", alt: "Open cuff on wrist" },
+      { url: "https://images.unsplash.com/photo-1596944924616-7b38e7cfac36?w=1200&q=80", alt: "Open cuff detail" },
+      { url: "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?w=1200&q=80", alt: "Open cuff on wrist" },
+      { url: "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=1200&q=80", alt: "Open cuff on wrist" }
     ],
     price: { min: 8500, max: 12800, currency: "USD" },
     rating: { average: 4.5, count: 876 },
@@ -643,12 +645,12 @@ export const JEWELRY_PRODUCTS: Product[] = [
     title: "Satellite Chain Necklace",
     brand: "Catbird",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1515562141589-67f0d569b6f3?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?w=600&q=80",
       alt: "Delicate satellite chain with tiny gold beads",
     },
     images: [
-      { url: "https://images.unsplash.com/photo-1515562141589-67f0d569b6f3?w=1200&q=80", alt: "Satellite chain detail" },
-      { url: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=1200&q=80", alt: "Satellite chain layered" },
+      { url: "https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?w=1200&q=80", alt: "Satellite chain detail" },
+      { url: "https://images.unsplash.com/photo-1598560917505-59a3ad559071?w=1200&q=80", alt: "Satellite chain layered" }
     ],
     price: { min: 7400, max: 10200, currency: "USD" },
     rating: { average: 4.6, count: 1670 },
@@ -670,12 +672,12 @@ export const JEWELRY_PRODUCTS: Product[] = [
     title: "Lion Head Pendant",
     brand: "Alighieri",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1611085583191-a3b181a88401?w=600&q=80",
       alt: "Textured lion head gold pendant necklace",
     },
     images: [
-      { url: "https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=1200&q=80", alt: "Lion pendant detail" },
-      { url: "https://images.unsplash.com/photo-1611107683227-e9060eccd846?w=1200&q=80", alt: "Lion pendant styled" },
+      { url: "https://images.unsplash.com/photo-1611085583191-a3b181a88401?w=1200&q=80", alt: "Lion pendant detail" },
+      { url: "https://images.unsplash.com/photo-1515688594390-b649af70d282?w=1200&q=80", alt: "Lion pendant styled" }
     ],
     price: { min: 35000, max: 45000, currency: "USD" },
     rating: { average: 4.9, count: 198 },
@@ -698,12 +700,13 @@ export const JEWELRY_PRODUCTS: Product[] = [
     title: "Pave Diamond Huggies",
     brand: "Adina Reyter",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1588444837495-c6cfeb53f32d?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1602752250015-52934bc67458?w=600&q=80",
       alt: "Small diamond pave huggie earrings",
     },
     images: [
-      { url: "https://images.unsplash.com/photo-1588444837495-c6cfeb53f32d?w=1200&q=80", alt: "Pave huggies close-up" },
-      { url: "https://images.unsplash.com/photo-1630019852942-f89202989a59?w=1200&q=80", alt: "Pave huggies on model" },
+      { url: "https://images.unsplash.com/photo-1602752250015-52934bc67458?w=1200&q=80", alt: "Pave huggies close-up" },
+      { url: "https://images.unsplash.com/photo-1612528443702-f264f23f0cfd?w=1200&q=80", alt: "Pave huggies on model" },
+      { url: "https://images.unsplash.com/photo-1600721391776-b5cd0e0048f9?w=1200&q=80", alt: "Pave huggies on model" }
     ],
     price: { min: 35000, max: 48000, currency: "USD" },
     rating: { average: 4.8, count: 567 },
@@ -725,13 +728,12 @@ export const JEWELRY_PRODUCTS: Product[] = [
     title: "Curb Chain Bracelet",
     brand: "Missoma",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1618077360395-f3068be8e001?w=600&q=80",
       alt: "Gold curb chain bracelet",
     },
     images: [
-      { url: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=1200&q=80", alt: "Curb chain bracelet detail" },
-      { url: "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?w=1200&q=80", alt: "Curb chain bracelet on wrist" },
-      { url: "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=1200&q=80", alt: "Curb chain bracelet flat lay" },
+      { url: "https://images.unsplash.com/photo-1618077360395-f3068be8e001?w=1200&q=80", alt: "Curb chain bracelet detail" },
+      { url: "https://images.unsplash.com/photo-1599459183200-59c7687a0275?w=1200&q=80", alt: "Curb chain bracelet on wrist" }
     ],
     price: { min: 7800, max: 10500, currency: "USD" },
     rating: { average: 4.5, count: 2100 },
@@ -753,12 +755,12 @@ export const JEWELRY_PRODUCTS: Product[] = [
     title: "Pearl Strand Bracelet",
     brand: "Monica Vinader",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1603974372039-adc49044b6bd?w=600&q=80",
       alt: "Freshwater pearl strand bracelet with gold clasp",
     },
     images: [
-      { url: "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=1200&q=80", alt: "Pearl bracelet detail" },
-      { url: "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?w=1200&q=80", alt: "Pearl bracelet on wrist" },
+      { url: "https://images.unsplash.com/photo-1603974372039-adc49044b6bd?w=1200&q=80", alt: "Pearl bracelet detail" },
+      { url: "https://images.unsplash.com/photo-1611085583191-a3b181a88401?w=1200&q=80", alt: "Pearl bracelet on wrist" }
     ],
     price: { min: 15000, max: 22000, currency: "USD" },
     rating: { average: 4.6, count: 890 },
@@ -780,12 +782,13 @@ export const JEWELRY_PRODUCTS: Product[] = [
     title: "Dome Ring",
     brand: "Mejuri",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1598560917807-1bae44bd2be8?w=600&q=80",
       alt: "Polished gold dome ring",
     },
     images: [
-      { url: "https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=1200&q=80", alt: "Dome ring close-up" },
-      { url: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=1200&q=80", alt: "Dome ring on hand" },
+      { url: "https://images.unsplash.com/photo-1598560917807-1bae44bd2be8?w=1200&q=80", alt: "Dome ring close-up" },
+      { url: "https://images.unsplash.com/photo-1603974372039-adc49044b6bd?w=1200&q=80", alt: "Dome ring on hand" },
+      { url: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=1200&q=80", alt: "Dome ring on hand" }
     ],
     price: { min: 7500, max: 12500, currency: "USD" },
     rating: { average: 4.5, count: 2340 },
@@ -807,12 +810,12 @@ export const JEWELRY_PRODUCTS: Product[] = [
     title: "Emerald Bezel Studs",
     brand: "Wwake",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?w=600&q=80",
       alt: "Small emerald bezel-set stud earrings",
     },
     images: [
-      { url: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=1200&q=80", alt: "Emerald studs detail" },
-      { url: "https://images.unsplash.com/photo-1588444837495-c6cfeb53f32d?w=1200&q=80", alt: "Emerald studs on model" },
+      { url: "https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?w=1200&q=80", alt: "Emerald studs detail" },
+      { url: "https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=1200&q=80", alt: "Emerald studs on model" }
     ],
     price: { min: 38000, max: 52000, currency: "USD" },
     rating: { average: 4.9, count: 178 },
@@ -835,12 +838,12 @@ export const JEWELRY_PRODUCTS: Product[] = [
     title: "Figaro Chain Necklace",
     brand: "Laura Lombardi",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=600&q=80",
       alt: "Gold figaro chain necklace with mixed link sizes",
     },
     images: [
-      { url: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=1200&q=80", alt: "Figaro chain detail" },
-      { url: "https://images.unsplash.com/photo-1611107683227-e9060eccd846?w=1200&q=80", alt: "Figaro chain styled" },
+      { url: "https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=1200&q=80", alt: "Figaro chain detail" },
+      { url: "https://images.unsplash.com/photo-1515562141589-67f0d569b6f3?w=1200&q=80", alt: "Figaro chain styled" }
     ],
     price: { min: 14500, max: 19500, currency: "USD" },
     rating: { average: 4.6, count: 430 },
@@ -862,13 +865,13 @@ export const JEWELRY_PRODUCTS: Product[] = [
     title: "Croissant Dome Earrings",
     brand: "Jenny Bird",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1630019852942-f89202989a59?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1616486029926-7e0d83564a80?w=600&q=80",
       alt: "Croissant-shaped gold dome earrings",
     },
     images: [
-      { url: "https://images.unsplash.com/photo-1630019852942-f89202989a59?w=1200&q=80", alt: "Croissant earrings detail" },
-      { url: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=1200&q=80", alt: "Croissant earrings on model" },
-      { url: "https://images.unsplash.com/photo-1588444837495-c6cfeb53f32d?w=1200&q=80", alt: "Croissant earrings styling" },
+      { url: "https://images.unsplash.com/photo-1616486029926-7e0d83564a80?w=1200&q=80", alt: "Croissant earrings detail" },
+      { url: "https://images.unsplash.com/photo-1630019852942-f89202989a59?w=1200&q=80", alt: "Croissant earrings on model" },
+      { url: "https://images.unsplash.com/photo-1588444837495-c6cfeb53f32d?w=1200&q=80", alt: "Croissant earrings styling" }
     ],
     price: { min: 6500, max: 8800, currency: "USD" },
     rating: { average: 4.4, count: 1560 },
@@ -890,12 +893,12 @@ export const JEWELRY_PRODUCTS: Product[] = [
     title: "Initial Pendant Necklace",
     brand: "BYCHARI",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1625794084867-8ddd239946b1?w=600&q=80",
       alt: "Gold initial letter pendant on fine chain",
     },
     images: [
-      { url: "https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=1200&q=80", alt: "Initial pendant detail" },
-      { url: "https://images.unsplash.com/photo-1515562141589-67f0d569b6f3?w=1200&q=80", alt: "Initial pendant on model" },
+      { url: "https://images.unsplash.com/photo-1625794084867-8ddd239946b1?w=1200&q=80", alt: "Initial pendant detail" },
+      { url: "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=1200&q=80", alt: "Initial pendant on model" }
     ],
     price: { min: 12500, max: 18000, currency: "USD" },
     rating: { average: 4.7, count: 2890 },
@@ -917,13 +920,12 @@ export const JEWELRY_PRODUCTS: Product[] = [
     title: "Mixed Metal Stacking Rings",
     brand: "Maria Black",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1583292650898-7d22cd27ca6f?w=600&q=80",
       alt: "Set of thin gold and silver stacking rings",
     },
     images: [
-      { url: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=1200&q=80", alt: "Stacking rings detail" },
-      { url: "https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=1200&q=80", alt: "Stacking rings on hand" },
-      { url: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=1200&q=80", alt: "Stacking rings styled" },
+      { url: "https://images.unsplash.com/photo-1583292650898-7d22cd27ca6f?w=1200&q=80", alt: "Stacking rings detail" },
+      { url: "https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?w=1200&q=80", alt: "Stacking rings on hand" }
     ],
     price: { min: 9500, max: 16500, currency: "USD" },
     rating: { average: 4.5, count: 920 },
@@ -945,12 +947,13 @@ export const JEWELRY_PRODUCTS: Product[] = [
     title: "Rope Chain Choker",
     brand: "Gorjana",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1611107683227-e9060eccd846?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1619119069152-a2b331eb392a?w=600&q=80",
       alt: "Twisted rope chain gold choker necklace",
     },
     images: [
-      { url: "https://images.unsplash.com/photo-1611107683227-e9060eccd846?w=1200&q=80", alt: "Rope chain choker detail" },
-      { url: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=1200&q=80", alt: "Rope chain choker on model" },
+      { url: "https://images.unsplash.com/photo-1619119069152-a2b331eb392a?w=1200&q=80", alt: "Rope chain choker detail" },
+      { url: "https://images.unsplash.com/photo-1610694955371-d4a3e0ce4b52?w=1200&q=80", alt: "Rope chain choker on model" },
+      { url: "https://images.unsplash.com/photo-1602751584552-8ba73aad5559?w=1200&q=80", alt: "Rope chain choker on model" }
     ],
     price: { min: 5500, max: 7500, currency: "USD" },
     rating: { average: 4.4, count: 1890 },

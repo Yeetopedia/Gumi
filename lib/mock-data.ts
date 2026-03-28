@@ -135,3 +135,22 @@ export function searchMockProducts(
     hasMore: slice.length === limit,
   };
 }
+
+// Get the full product pool for a category (for queue-based infinite scroll)
+export function getProductPool(category?: string): Product[] {
+  if (!category || category === "for-you") return [...MOCK_PRODUCTS];
+  if (CATEGORY_PRODUCTS[category]) return [...CATEGORY_PRODUCTS[category]];
+  return [...MOCK_PRODUCTS];
+}
+
+// Get filtered products for search (for queue-based infinite scroll)
+export function getSearchPool(query: string): Product[] {
+  const q = query.toLowerCase();
+  return MOCK_PRODUCTS.filter(
+    (p) =>
+      p.title.toLowerCase().includes(q) ||
+      p.brand.toLowerCase().includes(q) ||
+      p.description?.toLowerCase().includes(q) ||
+      p.topFeatures.some((f) => f.toLowerCase().includes(q))
+  );
+}
