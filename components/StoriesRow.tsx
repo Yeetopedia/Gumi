@@ -91,13 +91,6 @@ export default function StoriesRow({ users, onStoryClick, viewedUserIds }: Stori
         </button>
       )}
 
-      {/* Stories label */}
-      <div className="px-4 md:px-6 lg:px-8 pt-3 pb-1">
-        <p className="text-[10px] uppercase tracking-[0.15em] text-[var(--text-tertiary)] font-medium">
-          Recent Gumis from friends
-        </p>
-      </div>
-
       {/* Stories scroll container */}
       <div
         ref={scrollRef}
