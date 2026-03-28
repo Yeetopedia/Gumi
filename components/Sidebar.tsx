@@ -57,7 +57,7 @@ export default function Sidebar({
 
       {/* Sidebar */}
       <aside
-        className={`fixed left-0 top-0 bottom-0 w-64 bg-[var(--card-bg)] border-r border-[var(--border)] z-40 overflow-y-auto transition-transform duration-300 lg:translate-x-0 ${
+        className={`fixed left-0 top-0 bottom-0 w-64 bg-[var(--bg-primary)] border-r border-[var(--border)] z-40 overflow-y-auto transition-transform duration-300 lg:translate-x-0 ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
