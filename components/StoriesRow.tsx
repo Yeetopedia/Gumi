@@ -55,7 +55,7 @@ export default function StoriesRow({ users, onStoryClick }: StoriesRowProps) {
                 />
               )}
               {user.hasStory && (
-                <div className="absolute -bottom-0.5 -right-0.5 w-5 h-5 rounded-full bg-white flex items-center justify-center shadow-sm z-20">
+                <div className="absolute -bottom-0.5 -right-0.5 w-5 h-5 bg-transparent flex items-center justify-center z-20">
                   <Image src="/gumi-icon.png" alt="" width={12} height={12} />
                 </div>
               )}
