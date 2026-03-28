@@ -1,12 +1,6 @@
 import { Product } from "@/types";
 import { getRandomGumiFriends } from "../mock-users";
 
-function rg(): number {
-  const r = [[50,500],[500,5000],[5000,50000],[50000,500000]];
-  const x = r[Math.floor(Math.random()*r.length)];
-  return Math.floor(Math.random()*(x[1]-x[0])+x[0]);
-}
-function rs(): number { return Math.floor(Math.random()*2000)+10; }
 
 export const BEAUTY_PRODUCTS: Product[] = [
   // ─── 1. Vitamin C Serum ──────────────────────────────
@@ -28,8 +22,8 @@ export const BEAUTY_PRODUCTS: Product[] = [
     topFeatures: ["15% L-Ascorbic Acid", "Antioxidant Complex", "Brightening Formula"],
     description: "A potent vitamin C day serum packed with antioxidants and fruit enzymes. Firms, brightens, and improves the signs of photoaging for a more even-toned complexion.",
     aspectRatio: 0.85,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 42000,
+    shares: 4620,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 2. Retinol Night Cream ──────────────────────────
@@ -51,8 +45,8 @@ export const BEAUTY_PRODUCTS: Product[] = [
     topFeatures: ["1% Retinol", "Vegan Formula", "Reduces Fine Lines"],
     description: "A powerful retinol cream that visibly reduces the look of wrinkles, sun damage, and pores. The clean formula uses a blend of passionfruit, jojoba, and marula oils for deep nourishment.",
     aspectRatio: 1.0,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 35000,
+    shares: 3850,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 3. Lip Oil ──────────────────────────────────────
@@ -74,8 +68,8 @@ export const BEAUTY_PRODUCTS: Product[] = [
     topFeatures: ["Hyaluronic Acid Infused", "Non-Sticky Formula", "Peptide Complex"],
     description: "A hydrating lip oil that delivers glassy shine and active skincare ingredients. Hyaluronic acid and peptides plump and smooth while evening primrose nourishes deeply.",
     aspectRatio: 0.70,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 18000,
+    shares: 1980,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 4. Cloud Paint Blush ────────────────────────────
@@ -98,8 +92,8 @@ export const BEAUTY_PRODUCTS: Product[] = [
     topFeatures: ["Gel-Cream Formula", "Buildable Coverage", "Seamlessly Blendable"],
     description: "The original gel-cream blush that gives cheeks a natural flush. The seamless formula blends effortlessly with fingertips for a dewy, just-pinched look.",
     aspectRatio: 1.30,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 48000,
+    shares: 5280,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 5. Cleansing Balm ───────────────────────────────
@@ -121,8 +115,8 @@ export const BEAUTY_PRODUCTS: Product[] = [
     topFeatures: ["Dissolves Makeup", "Fruit Enzyme Blend", "Soap-Free"],
     description: "A luxe cleansing balm that melts into an oil, then transforms into a milky emulsion. Effortlessly removes even waterproof makeup without stripping the skin barrier.",
     aspectRatio: 1.10,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 29000,
+    shares: 3190,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 6. Sunscreen Stick ──────────────────────────────
@@ -144,8 +138,8 @@ export const BEAUTY_PRODUCTS: Product[] = [
     topFeatures: ["SPF 40 PA+++", "Invisible Finish", "Makeup Primer Hybrid"],
     description: "A totally invisible, scentless, weightless sunscreen that doubles as a smoothing primer. The oil-free formula leaves a velvety finish perfect under makeup or worn alone.",
     aspectRatio: 0.75,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 38000,
+    shares: 4180,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 7. Scalp Scrub ─────────────────────────────────
@@ -167,8 +161,8 @@ export const BEAUTY_PRODUCTS: Product[] = [
     topFeatures: ["Bond-Building Technology", "Deep Clarifying", "Removes Buildup"],
     description: "A weekly clarifying shampoo that deeply cleanses while repairing bonds. Removes product buildup, hard water minerals, and impurities without stripping moisture.",
     aspectRatio: 1.45,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 22000,
+    shares: 2420,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 8. Hair Oil ─────────────────────────────────────
@@ -190,8 +184,8 @@ export const BEAUTY_PRODUCTS: Product[] = [
     topFeatures: ["Mirsalehi Honey", "Lightweight Formula", "Adds Shine & Softness"],
     description: "A luxurious hair oil enriched with Mirsalehi honey from the family bee garden. Deeply nourishes and repairs while adding a gorgeous, healthy-looking shine without weighing hair down.",
     aspectRatio: 0.80,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 34500,
+    shares: 3450,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 9. Body Butter ──────────────────────────────────
@@ -205,7 +199,7 @@ export const BEAUTY_PRODUCTS: Product[] = [
     },
     images: [
       { url: "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=1200&q=80", alt: "Body butter in signature tub" },
-      { url: "https://images.unsplash.com/photo-1570194065650-d99fb4b38b17?w=1200&q=80", alt: "Cream texture closeup" },
+      { url: "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=1200&q=80", alt: "Cream texture closeup" },
     ],
     price: { min: 4800, max: 4800, currency: "USD" },
     rating: { average: 4.7, count: 4950 },
@@ -213,8 +207,8 @@ export const BEAUTY_PRODUCTS: Product[] = [
     topFeatures: ["Cupuaçu Butter", "Firming Formula", "Addictive Scent"],
     description: "The cult-favorite fast-absorbing body cream with an addictive pistachio-salted caramel scent. Powered by cupuaçu butter and açaí oil to tighten and smooth skin.",
     aspectRatio: 1.15,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 87000,
+    shares: 8700,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 10. Face Mist ───────────────────────────────────
@@ -223,11 +217,11 @@ export const BEAUTY_PRODUCTS: Product[] = [
     title: "Jet Lag Mask",
     brand: "Summer Fridays",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1570194065650-d99fb4b38b17?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=600&q=80",
       alt: "Hydrating face mist spray",
     },
     images: [
-      { url: "https://images.unsplash.com/photo-1570194065650-d99fb4b38b17?w=1200&q=80", alt: "Hydrating face mist spray" },
+      { url: "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=1200&q=80", alt: "Hydrating face mist spray" },
       { url: "https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?w=1200&q=80", alt: "Product in travel bag" },
     ],
     price: { min: 4900, max: 4900, currency: "USD" },
@@ -236,8 +230,8 @@ export const BEAUTY_PRODUCTS: Product[] = [
     topFeatures: ["Hyaluronic Acid", "Niacinamide", "Use as Mask or Moisturizer"],
     description: "A multitasking hydration mask that doubles as a rich moisturizer. Packed with hyaluronic acid and niacinamide to quench thirsty skin and restore a dewy glow.",
     aspectRatio: 0.90,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 112000,
+    shares: 11200,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 11. Jade Roller ─────────────────────────────────
@@ -259,8 +253,8 @@ export const BEAUTY_PRODUCTS: Product[] = [
     topFeatures: ["Genuine Jade Stone", "Dual-Ended Design", "Reduces Puffiness"],
     description: "A genuine jade stone facial roller that depuffs and soothes skin. The dual-ended design targets both broad facial areas and delicate under-eye zones for a sculpted look.",
     aspectRatio: 0.65,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 28500,
+    shares: 2850,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 12. Gua Sha ─────────────────────────────────────
@@ -282,8 +276,8 @@ export const BEAUTY_PRODUCTS: Product[] = [
     topFeatures: ["Genuine Rose Quartz", "Ergonomic Shape", "Promotes Lymphatic Drainage"],
     description: "A hand-carved rose quartz gua sha tool designed to lift, sculpt, and depuff the face. The smooth contours glide along the jawline and cheekbones for an at-home facial massage.",
     aspectRatio: 1.20,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 22000,
+    shares: 2200,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 13. Sheet Mask Set ──────────────────────────────
@@ -306,8 +300,8 @@ export const BEAUTY_PRODUCTS: Product[] = [
     topFeatures: ["4-Pack of Masks", "Japanese Rice Bran", "Deep Hydration"],
     description: "A set of four luxurious sheet masks infused with Tatcha's signature Japanese rice bran and green tea complex. Each mask delivers an intense burst of hydration for plumped, dewy skin.",
     aspectRatio: 1.40,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 67000,
+    shares: 6700,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 14. Hand Cream ──────────────────────────────────
@@ -329,8 +323,8 @@ export const BEAUTY_PRODUCTS: Product[] = [
     topFeatures: ["Citrus Rind & Cedar Atlas", "Non-Greasy Finish", "Deeply Moisturizing"],
     description: "An exquisitely fragrant hand balm that hydrates without greasiness. The botanical blend of citrus rind, cedar atlas, and rosemary leaf creates a signature Aesop sensory experience.",
     aspectRatio: 0.95,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 45000,
+    shares: 4500,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 15. Nail Polish Set ─────────────────────────────
@@ -352,8 +346,8 @@ export const BEAUTY_PRODUCTS: Product[] = [
     topFeatures: ["3-Piece Set", "Chip-Resistant", "12-Free Formula"],
     description: "A curated set of three universally flattering nail colors in Glossier's signature sheer-buildable formula. Long-lasting wear with a glossy, gel-like finish without the UV lamp.",
     aspectRatio: 1.55,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 38000,
+    shares: 3800,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 16. Brow Gel ────────────────────────────────────
@@ -375,8 +369,8 @@ export const BEAUTY_PRODUCTS: Product[] = [
     topFeatures: ["Flexible Hold", "Thickening Formula", "Tiny Wand for Precision"],
     description: "The cult brow grooming pomade that thickens, shapes, and grooms brows into place. The creamy wax formula gives a fluffy, full look that lasts all day without flaking.",
     aspectRatio: 0.68,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 124000,
+    shares: 12400,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 17. Setting Spray ───────────────────────────────
@@ -398,8 +392,8 @@ export const BEAUTY_PRODUCTS: Product[] = [
     topFeatures: ["SPF 30 Protection", "Locks In Makeup", "Dewy Finish"],
     description: "A lightweight setting spray that locks makeup in place while delivering broad-spectrum SPF 30. The micro-mist creates a dewy, luminous finish with invisible sun protection.",
     aspectRatio: 0.78,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 41000,
+    shares: 4100,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 18. Micellar Water ──────────────────────────────
@@ -421,8 +415,8 @@ export const BEAUTY_PRODUCTS: Product[] = [
     topFeatures: ["No-Rinse Formula", "Japanese Camellia Oil", "Removes Waterproof Makeup"],
     description: "A gentle yet effective micellar water that sweeps away makeup and impurities in one step. Infused with Japanese camellia oil and Hadasei-3 complex for a soft, hydrated finish.",
     aspectRatio: 1.05,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 52000,
+    shares: 5200,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 19. Eye Cream ───────────────────────────────────
@@ -444,8 +438,8 @@ export const BEAUTY_PRODUCTS: Product[] = [
     topFeatures: ["TFC8 Technology", "Reduces Dark Circles", "Anti-Wrinkle Peptides"],
     description: "An ultra-luxe eye cream powered by Augustinus Bader's patented TFC8 technology. Targets fine lines, dark circles, and puffiness with a rich, fast-absorbing formula.",
     aspectRatio: 1.00,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 31000,
+    shares: 3100,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 20. Tinted Moisturizer ──────────────────────────
@@ -459,7 +453,7 @@ export const BEAUTY_PRODUCTS: Product[] = [
     },
     images: [
       { url: "https://images.unsplash.com/photo-1612817288484-6f916006741a?w=1200&q=80", alt: "Tinted moisturizer dropper bottle" },
-      { url: "https://images.unsplash.com/photo-1614159869878-66e982a71de2?w=1200&q=80", alt: "Skin tint swatch on arm" },
+      { url: "https://images.unsplash.com/photo-1583209814683-c023dd293cc6?w=1200&q=80", alt: "Skin tint swatch on arm" },
       { url: "https://images.unsplash.com/photo-1583209814683-c023dd293cc6?w=1200&q=80", alt: "Product bottle flatlay" },
     ],
     price: { min: 4800, max: 4800, currency: "USD" },
@@ -468,8 +462,8 @@ export const BEAUTY_PRODUCTS: Product[] = [
     topFeatures: ["SPF 40 Mineral", "Serum-Level Skincare", "30 Shade Range"],
     description: "A skin tint that's actually a serum with light, buildable coverage and SPF 40. Hyaluronic acid, niacinamide, and squalane create a your-skin-but-better glow.",
     aspectRatio: 0.72,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 58000,
+    shares: 5800,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 21. Exfoliating Toner ───────────────────────────
@@ -478,11 +472,11 @@ export const BEAUTY_PRODUCTS: Product[] = [
     title: "2% BHA Liquid Exfoliant",
     brand: "Paula's Choice",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1614159869878-66e982a71de2?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1583209814683-c023dd293cc6?w=600&q=80",
       alt: "Exfoliating toner bottle",
     },
     images: [
-      { url: "https://images.unsplash.com/photo-1614159869878-66e982a71de2?w=1200&q=80", alt: "Exfoliating toner bottle" },
+      { url: "https://images.unsplash.com/photo-1583209814683-c023dd293cc6?w=1200&q=80", alt: "Exfoliating toner bottle" },
       { url: "https://images.unsplash.com/photo-1583209814683-c023dd293cc6?w=1200&q=80", alt: "Toner on cotton pad" },
     ],
     price: { min: 3200, max: 3200, currency: "USD" },
@@ -491,8 +485,8 @@ export const BEAUTY_PRODUCTS: Product[] = [
     topFeatures: ["2% Salicylic Acid", "Unclogs Pores", "Smooths Skin Texture"],
     description: "The legendary leave-on exfoliant with 2% BHA that unclogs and diminishes enlarged pores. Green tea soothes while salicylic acid sweeps away dead skin for a radiant, smooth complexion.",
     aspectRatio: 0.88,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 145000,
+    shares: 14500,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 22. Face Mask ───────────────────────────────────
@@ -514,8 +508,8 @@ export const BEAUTY_PRODUCTS: Product[] = [
     topFeatures: ["Japanese Purple Rice", "Plumping Hydration", "Antioxidant-Rich"],
     description: "A rich yet lightweight plumping moisturizer powered by Japanese purple rice. Delivers lasting hydration with a bouncy, dewy finish that makes skin look impossibly healthy.",
     aspectRatio: 1.25,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 61000,
+    shares: 6100,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 23. Body Wash ───────────────────────────────────
@@ -537,8 +531,8 @@ export const BEAUTY_PRODUCTS: Product[] = [
     topFeatures: ["Kale & Spinach Extract", "pH Balanced", "Cold-Pressed Antioxidants"],
     description: "A gel cleanser made with cold-pressed kale, spinach, and green tea antioxidants. Removes dirt and makeup while maintaining the skin's pH balance for a clean, never-tight feel.",
     aspectRatio: 0.92,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 29000,
+    shares: 2900,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 24. Dry Shampoo ─────────────────────────────────
@@ -560,8 +554,8 @@ export const BEAUTY_PRODUCTS: Product[] = [
     topFeatures: ["Bond-Building", "Weightless Volume", "No White Residue"],
     description: "A reparative dry shampoo that absorbs oil and adds weightless volume while building bonds. The invisible formula works on all hair colors without leaving any white residue.",
     aspectRatio: 0.75,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 48000,
+    shares: 4800,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 25. Lip Balm ────────────────────────────────────
@@ -583,8 +577,8 @@ export const BEAUTY_PRODUCTS: Product[] = [
     topFeatures: ["Multi-Purpose Salve", "Castor Oil & Beeswax", "Subtle Tint Options"],
     description: "The do-everything skin salve that hydrates lips, cuticles, dry patches, and everything in between. A thick, soothing formula with a barely-there sheen and subtle flavor options.",
     aspectRatio: 1.50,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 178000,
+    shares: 17800,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 26. Cuticle Oil ─────────────────────────────────
@@ -606,8 +600,8 @@ export const BEAUTY_PRODUCTS: Product[] = [
     topFeatures: ["Click-Pen Applicator", "Vitamin E Enriched", "Jojoba & Rosehip Oils"],
     description: "A nourishing cuticle oil in a convenient click-pen format for on-the-go nail care. The blend of jojoba, rosehip, and vitamin E softens cuticles and strengthens nails.",
     aspectRatio: 0.67,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 18500,
+    shares: 1850,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 27. Niacinamide Serum ───────────────────────────
@@ -629,8 +623,8 @@ export const BEAUTY_PRODUCTS: Product[] = [
     topFeatures: ["10% Niacinamide", "Zinc for Oil Control", "Minimizes Pores"],
     description: "A high-strength vitamin and mineral formula that reduces the appearance of blemishes and congestion. Niacinamide balances sebum while zinc keeps breakouts at bay.",
     aspectRatio: 0.82,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 98000,
+    shares: 9800,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 28. Highlighter ─────────────────────────────────
@@ -652,8 +646,8 @@ export const BEAUTY_PRODUCTS: Product[] = [
     topFeatures: ["Weightless Glow", "Buildable Formula", "Long-Lasting Radiance"],
     description: "A weightless liquid highlighter that melts into skin for a natural, lit-from-within glow. The buildable, light-reflecting formula never looks glittery or cakey.",
     aspectRatio: 1.35,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 89000,
+    shares: 8900,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 29. Lip & Cheek Tint ────────────────────────────
@@ -668,7 +662,7 @@ export const BEAUTY_PRODUCTS: Product[] = [
     images: [
       { url: "https://images.unsplash.com/photo-1601049676869-702ea24cfd58?w=1200&q=80", alt: "Liquid blush with doe-foot applicator" },
       { url: "https://images.unsplash.com/photo-1598452963314-b09f397a5c48?w=1200&q=80", alt: "Blush on cheeks" },
-      { url: "https://images.unsplash.com/photo-1556229010-6c3f2c7b9982?w=1200&q=80", alt: "Product range" },
+      { url: "https://images.unsplash.com/photo-1598452963314-b09f397a5c48?w=1200&q=80", alt: "Product range" },
     ],
     price: { min: 2300, max: 2300, currency: "USD" },
     rating: { average: 4.9, count: 4700 },
@@ -676,8 +670,8 @@ export const BEAUTY_PRODUCTS: Product[] = [
     topFeatures: ["Ultra-Pigmented", "Blendable in Seconds", "Matte & Dewy Finishes"],
     description: "A weightless, long-lasting liquid blush that blends effortlessly for a soft, healthy flush. An ultra-pigmented dot is all you need for a natural, just-blushed look.",
     aspectRatio: 0.73,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 134000,
+    shares: 13400,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 30. Glowy Sunscreen ─────────────────────────────
@@ -691,7 +685,7 @@ export const BEAUTY_PRODUCTS: Product[] = [
     },
     images: [
       { url: "https://images.unsplash.com/photo-1598452963314-b09f397a5c48?w=1200&q=80", alt: "Tinted sunscreen tube" },
-      { url: "https://images.unsplash.com/photo-1556229010-6c3f2c7b9982?w=1200&q=80", alt: "Dewy skin result" },
+      { url: "https://images.unsplash.com/photo-1598452963314-b09f397a5c48?w=1200&q=80", alt: "Dewy skin result" },
     ],
     price: { min: 3400, max: 3400, currency: "USD" },
     rating: { average: 4.5, count: 1560 },
@@ -699,8 +693,8 @@ export const BEAUTY_PRODUCTS: Product[] = [
     topFeatures: ["SPF 30 Mineral", "Lightweight Tint", "Clean Ingredients"],
     description: "A mineral tinted moisturizer that gives skin a dewy, blurred look with broad-spectrum SPF 30. The lightweight formula evens out skin tone while protecting from UV damage.",
     aspectRatio: 1.10,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 24500,
+    shares: 2450,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 31. Hyaluronic Acid Serum ───────────────────────
@@ -709,11 +703,11 @@ export const BEAUTY_PRODUCTS: Product[] = [
     title: "Hyaluronic Acid 2% + B5",
     brand: "The Ordinary",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1556229010-6c3f2c7b9982?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1598452963314-b09f397a5c48?w=600&q=80",
       alt: "Hydrating serum dropper bottle",
     },
     images: [
-      { url: "https://images.unsplash.com/photo-1556229010-6c3f2c7b9982?w=1200&q=80", alt: "Hydrating serum dropper bottle" },
+      { url: "https://images.unsplash.com/photo-1598452963314-b09f397a5c48?w=1200&q=80", alt: "Hydrating serum dropper bottle" },
       { url: "https://images.unsplash.com/photo-1590439471364-192aa70c0b53?w=1200&q=80", alt: "Serum texture on glass" },
     ],
     price: { min: 790, max: 790, currency: "USD" },
@@ -722,8 +716,8 @@ export const BEAUTY_PRODUCTS: Product[] = [
     topFeatures: ["Multi-Weight Hyaluronic Acid", "Vitamin B5", "Intense Hydration"],
     description: "A water-based serum with low-, medium-, and high-molecular-weight hyaluronic acid for multi-depth hydration. Vitamin B5 enhances surface hydration for plumper, smoother skin.",
     aspectRatio: 0.85,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 76000,
+    shares: 7600,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 32. Cream Bronzer ───────────────────────────────
@@ -745,8 +739,8 @@ export const BEAUTY_PRODUCTS: Product[] = [
     topFeatures: ["Jelly Texture", "Clean & Sensitive-Skin Safe", "Sun-Kissed Glow"],
     description: "A clean, bouncy gel bronzer that gives a translucent sun-kissed glow. The unique jelly formula is safe for sensitive and acne-prone skin and blends seamlessly with fingers.",
     aspectRatio: 1.48,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 32000,
+    shares: 3200,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 33. The Rich Cream ──────────────────────────────
@@ -769,8 +763,8 @@ export const BEAUTY_PRODUCTS: Product[] = [
     topFeatures: ["TFC8 Patented Complex", "Deeply Nourishing", "Visible Anti-Aging Results"],
     description: "The iconic ultra-rich moisturizer featuring Augustinus Bader's patented TFC8 technology. Clinically proven to improve the appearance of fine lines, elasticity, and overall radiance.",
     aspectRatio: 1.05,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 44000,
+    shares: 4400,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 34. Mascara ─────────────────────────────────────
@@ -792,8 +786,8 @@ export const BEAUTY_PRODUCTS: Product[] = [
     topFeatures: ["Film-Form Technology", "No Clumps or Flakes", "Lifts & Lengthens"],
     description: "A film-form mascara that creates a naturally defined lash look. The ultra-thin wand coats every lash root to tip for flutter-worthy length without clumping or smudging.",
     aspectRatio: 0.70,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 156000,
+    shares: 15600,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 35. Body Oil ────────────────────────────────────
@@ -816,8 +810,8 @@ export const BEAUTY_PRODUCTS: Product[] = [
     topFeatures: ["3-Piece Travel Set", "Cult Scent", "TSA-Friendly Sizes"],
     description: "The perfect introduction to Sol de Janeiro's bestselling Bum Bum line in travel-friendly sizes. Includes the iconic cream, body wash, and hair & body fragrance mist in carry-on sizes.",
     aspectRatio: 1.32,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 62000,
+    shares: 6200,
     gumiedByFriends: getRandomGumiFriends(),
   },
 ];

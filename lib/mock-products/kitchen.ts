@@ -1,12 +1,6 @@
 import { Product } from "@/types";
 import { getRandomGumiFriends } from "../mock-users";
 
-function rg(): number {
-  const r = [[50,500],[500,5000],[5000,50000],[50000,500000]];
-  const x = r[Math.floor(Math.random()*r.length)];
-  return Math.floor(Math.random()*(x[1]-x[0])+x[0]);
-}
-function rs(): number { return Math.floor(Math.random()*2000)+10; }
 
 export const KITCHEN_PRODUCTS: Product[] = [
   // ─── 1. Fellow Stagg EKG Pour-Over Kettle ─────────────
@@ -28,8 +22,8 @@ export const KITCHEN_PRODUCTS: Product[] = [
     topFeatures: ["Variable Temperature Control", "Precision Pour Spout", "Hold Mode Up to 60 Min", "LCD Display", "900ml Capacity"],
     description: "The kettle that changed the pour-over game. Fellow's Stagg EKG delivers pinpoint temperature accuracy with a counterbalanced handle and slow-pour spout that gives you total control over your brew. Looks as stunning on the counter as it performs in the morning ritual.",
     aspectRatio: 1.15,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 6800,
+    shares: 748,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 2. Le Creuset Dutch Oven ──────────────────────────
@@ -43,7 +37,7 @@ export const KITCHEN_PRODUCTS: Product[] = [
     },
     images: [
       { url: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=1200&q=80", alt: "Vibrant enameled Dutch oven on stovetop" },
-      { url: "https://images.unsplash.com/photo-1517256064527-7e4d8b55ef6c?w=1200&q=80", alt: "Dutch oven with fresh bread inside" },
+      { url: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=1200&q=80", alt: "Dutch oven with fresh bread inside" },
     ],
     price: { min: 37500, max: 37500, currency: "USD" },
     rating: { average: 4.9, count: 4872 },
@@ -51,8 +45,8 @@ export const KITCHEN_PRODUCTS: Product[] = [
     topFeatures: ["Enameled Cast Iron", "Tight-Fitting Lid", "Oven Safe to 500F", "Dishwasher Safe", "Lifetime Warranty"],
     description: "The icon of the kitchen for a reason. Le Creuset's Signature Dutch Oven distributes heat slowly and evenly, locking in moisture for braises, soups, and the crustiest artisan bread you'll ever bake at home. Passed down through generations and somehow still the most beautiful thing on the shelf.",
     aspectRatio: 0.95,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 89000,
+    shares: 9790,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 3. Miyabi Birchwood Chef's Knife ─────────────────
@@ -61,11 +55,11 @@ export const KITCHEN_PRODUCTS: Product[] = [
     title: "Birchwood SG2 8-Inch Chef's Knife",
     brand: "Miyabi",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1517256064527-7e4d8b55ef6c?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600&q=80",
       alt: "Japanese chef knife on wooden cutting board",
     },
     images: [
-      { url: "https://images.unsplash.com/photo-1517256064527-7e4d8b55ef6c?w=1200&q=80", alt: "Japanese chef knife on wooden cutting board" },
+      { url: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=1200&q=80", alt: "Japanese chef knife on wooden cutting board" },
       { url: "https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=1200&q=80", alt: "Knife with fresh herbs prep" },
     ],
     price: { min: 27500, max: 27500, currency: "USD" },
@@ -74,8 +68,8 @@ export const KITCHEN_PRODUCTS: Product[] = [
     topFeatures: ["SG2 Micro-Carbide Steel", "101-Layer Damascus Pattern", "Birchwood Handle", "9.5-12 Degree Edge", "Ice-Hardened FRIODUR Blade"],
     description: "A knife forged in the centuries-old Seki tradition, where precision meets artistry. The SG2 steel holds its razor edge far longer than conventional blades, while the 101-layer Damascus flower pattern makes every slice feel ceremonial. The birchwood handle warms to your grip like it was made for you.",
     aspectRatio: 1.45,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 24500,
+    shares: 2695,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 4. Our Place Always Pan ───────────────────────────
@@ -97,8 +91,8 @@ export const KITCHEN_PRODUCTS: Product[] = [
     topFeatures: ["Replaces 8 Pieces of Cookware", "Toxin-Free Ceramic Coating", "Built-In Steamer Basket", "Nesting Beechwood Spatula", "Stainless Steel Steaming Rack"],
     description: "The pan that launched a thousand kitchen declutters. Our Place's Always Pan does the work of a fry pan, saute pan, steamer, skillet, saucier, non-stick pan, spatula, and spoon rest all in one beautifully designed piece. Less clutter, more cooking, way better aesthetic.",
     aspectRatio: 0.85,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 72000,
+    shares: 7920,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 5. Hasami Porcelain Dinnerware Set ────────────────
@@ -120,8 +114,8 @@ export const KITCHEN_PRODUCTS: Product[] = [
     topFeatures: ["Porcelain from Hasami, Japan", "Modular Stacking Design", "Microwave & Dishwasher Safe", "Matte Unglazed Exterior"],
     description: "Born in Hasami, Japan, where porcelain has been crafted for over 400 years. Each piece is designed to stack seamlessly with any other, turning your cupboard into a perfectly ordered grid. The raw, unglazed exterior feels like holding a smooth river stone.",
     aspectRatio: 1.0,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 4200,
+    shares: 462,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 6. East Fork Mug ─────────────────────────────────
@@ -143,8 +137,8 @@ export const KITCHEN_PRODUCTS: Product[] = [
     topFeatures: ["Handmade in Asheville, NC", "Lead & Cadmium Free Glaze", "Microwave & Dishwasher Safe", "10 oz Capacity"],
     description: "The mug people camp overnight online to buy. East Fork's signature silhouette fits perfectly in the hand, with a generous handle and a foot that stays cool on the table. The Panna Cotta glaze breaks beautifully over the curves, making every mug uniquely yours.",
     aspectRatio: 0.75,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 7800,
+    shares: 858,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 7. Material Kitchen Olive Wood Board ──────────────
@@ -166,8 +160,8 @@ export const KITCHEN_PRODUCTS: Product[] = [
     topFeatures: ["Sustainably Sourced Olive Wood", "Natural Grain Variations", "Doubles as Serving Board", "Knife-Friendly Surface"],
     description: "Every board is a one-of-one, shaped by the natural grain and knots of Mediterranean olive wood. Gentle on knife edges yet durable enough for daily prep, it transitions effortlessly from kitchen workhorse to stunning charcuterie presentation.",
     aspectRatio: 1.35,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 3100,
+    shares: 341,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 8. Chemex Pour-Over Coffeemaker ──────────────────
@@ -189,8 +183,8 @@ export const KITCHEN_PRODUCTS: Product[] = [
     topFeatures: ["Borosilicate Glass", "Polished Wood Collar & Tie", "MoMA Permanent Collection", "BPA-Free", "Makes 8 Cups"],
     description: "Designed in 1941 and still the most beautiful object on any coffee lover's counter. The Chemex is in the permanent collection at MoMA for good reason: its hourglass silhouette and wood collar are as iconic as the clean, bright cup it produces.",
     aspectRatio: 1.55,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 5600,
+    shares: 616,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 9. Staub Cocotte ─────────────────────────────────
@@ -212,8 +206,8 @@ export const KITCHEN_PRODUCTS: Product[] = [
     topFeatures: ["Enameled Cast Iron", "Self-Basting Spike Lid", "Black Matte Enamel Interior", "Oven Safe to 500F", "Made in France"],
     description: "Staub's signature spike-studded lid continuously bastes your dish in its own juices, creating layers of flavor no other pot can match. The black matte enamel interior develops a natural patina over time, getting better with every braise, roast, and bake.",
     aspectRatio: 0.9,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 67000,
+    shares: 7370,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 10. Riedel Wine Glasses ──────────────────────────
@@ -235,8 +229,8 @@ export const KITCHEN_PRODUCTS: Product[] = [
     topFeatures: ["Machine-Blown Crystal", "Varietal-Specific Bowl Shape", "Extremely Thin Rim", "Dishwasher Safe", "Set of 2"],
     description: "Riedel literally wrote the science on how glass shape affects wine flavor. The Veritas Cabernet bowl is engineered to direct wine precisely where your palate perceives boldness and fruit, transforming even a Tuesday night pour into something ceremonial.",
     aspectRatio: 1.4,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 4800,
+    shares: 528,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 11. Heath Ceramics Serving Platter ───────────────
@@ -250,7 +244,7 @@ export const KITCHEN_PRODUCTS: Product[] = [
     },
     images: [
       { url: "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=1200&q=80", alt: "Handcrafted ceramic serving platter" },
-      { url: "https://images.unsplash.com/photo-1514362545857-3bc16c8c7f1b?w=1200&q=80", alt: "Platter in kitchen setting" },
+      { url: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200&q=80", alt: "Platter in kitchen setting" },
     ],
     price: { min: 14000, max: 14000, currency: "USD" },
     rating: { average: 4.8, count: 198 },
@@ -258,8 +252,8 @@ export const KITCHEN_PRODUCTS: Product[] = [
     topFeatures: ["Handmade in Sausalito, CA", "Lead-Free Glaze", "Oven & Microwave Safe", "15-Inch Oval"],
     description: "Handmade in Sausalito since 1948, Heath's Rim Line platter is the quiet centerpiece of every gathering. The subtle rim catches sauces and juices while the reactive glaze ensures no two platters are exactly alike. It's the piece guests always ask about.",
     aspectRatio: 0.7,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 2900,
+    shares: 319,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 12. Le Creuset Cast Iron Skillet ─────────────────
@@ -268,11 +262,11 @@ export const KITCHEN_PRODUCTS: Product[] = [
     title: "Signature Iron Handle Skillet 10.25\"",
     brand: "Le Creuset",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1514362545857-3bc16c8c7f1b?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&q=80",
       alt: "Enameled cast iron skillet with seared steak",
     },
     images: [
-      { url: "https://images.unsplash.com/photo-1514362545857-3bc16c8c7f1b?w=1200&q=80", alt: "Enameled cast iron skillet with seared steak" },
+      { url: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200&q=80", alt: "Enameled cast iron skillet with seared steak" },
       { url: "https://images.unsplash.com/photo-1606787366850-de6330128bfc?w=1200&q=80", alt: "Skillet on induction cooktop" },
     ],
     price: { min: 18500, max: 18500, currency: "USD" },
@@ -281,8 +275,8 @@ export const KITCHEN_PRODUCTS: Product[] = [
     topFeatures: ["Enameled Cast Iron", "Satin Black Interior", "Helper Handle", "Oven Safe to 500F", "Pour Spouts"],
     description: "The sear you get from Le Creuset's satin black enamel interior is unmatched — caramelized, crackling, and perfectly even. Unlike raw cast iron, the enamel never needs seasoning and cleans up in minutes. Built to outlast every trend and every pan that tries to replace it.",
     aspectRatio: 1.05,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 81000,
+    shares: 8910,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 13. Hario V60 Pour-Over Dripper ──────────────────
@@ -304,8 +298,8 @@ export const KITCHEN_PRODUCTS: Product[] = [
     topFeatures: ["Arita-Ware Ceramic", "60-Degree Angle Cone", "Spiral Ribbed Interior", "Single Large Drain Hole", "Brews 1-4 Cups"],
     description: "The dripper that specialty coffee was built on. Hario's signature 60-degree angle and spiral ribs allow you to control extraction speed by adjusting your pour, making it the most versatile manual brewer ever designed. The ceramic version retains heat beautifully for a cleaner cup.",
     aspectRatio: 0.8,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 5100,
+    shares: 561,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 14. Hedley & Bennett Cocktail Shaker ─────────────
@@ -327,8 +321,8 @@ export const KITCHEN_PRODUCTS: Product[] = [
     topFeatures: ["Brushed Brass Finish", "Built-In Strainer", "28 oz Capacity", "Weighted Base", "Develops Patina Over Time"],
     description: "A bar cart essential that gets more beautiful with age. The brushed brass develops a rich, living patina that tells the story of every cocktail hour. Weighted at the base for a confident shake, with a built-in strainer that pours clean every time.",
     aspectRatio: 1.5,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 11200,
+    shares: 1232,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 15. Material Kitchen Linen Napkin Set ────────────
@@ -350,8 +344,8 @@ export const KITCHEN_PRODUCTS: Product[] = [
     topFeatures: ["100% European Linen", "Stonewashed Softness", "Set of 4", "OEKO-TEX Certified", "20\" x 20\""],
     description: "Paper napkins are over. Material's stonewashed linen set arrives impossibly soft from day one and only gets better with each wash. The natural flax color complements every table setting, from weeknight pasta to full-production dinner parties.",
     aspectRatio: 0.68,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 3600,
+    shares: 396,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 16. Fellow French Press ──────────────────────────
@@ -373,8 +367,8 @@ export const KITCHEN_PRODUCTS: Product[] = [
     topFeatures: ["Enhanced Filtration System", "Double-Wall Insulation", "Non-Slip Base", "24 oz Capacity", "Matte Black or Warm White"],
     description: "Fellow re-engineered the French press from the ground up. The enhanced filtration system catches micro-grounds that other presses miss, giving you the full-bodied richness of immersion brewing without the grit. Double-wall vacuum insulation keeps it hot for 4x longer.",
     aspectRatio: 1.2,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 7200,
+    shares: 792,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 17. Emile Henry Mortar & Pestle ──────────────────
@@ -388,7 +382,7 @@ export const KITCHEN_PRODUCTS: Product[] = [
     },
     images: [
       { url: "https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?w=1200&q=80", alt: "Textured ceramic mortar with fresh herbs" },
-      { url: "https://images.unsplash.com/photo-1574269909862-7e3d7b72e7e8?w=1200&q=80", alt: "Mortar and pestle on wooden counter" },
+      { url: "https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?w=1200&q=80", alt: "Mortar and pestle on wooden counter" },
     ],
     price: { min: 5500, max: 5500, currency: "USD" },
     rating: { average: 4.5, count: 276 },
@@ -396,8 +390,8 @@ export const KITCHEN_PRODUCTS: Product[] = [
     topFeatures: ["HR Ceramic", "Unglazed Interior for Grip", "Non-Slip Silicone Base", "Made in France", "Dishwasher Safe"],
     description: "The French know a thing or two about grinding spices. Emile Henry's ceramic mortar features a deliberately unglazed interior that grips and grinds without the weight of traditional stone. The silicone base keeps it planted while you crush peppercorns, make pesto, or muddle herbs.",
     aspectRatio: 0.88,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 2400,
+    shares: 264,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 18. East Fork Pasta Bowl Set ─────────────────────
@@ -406,11 +400,11 @@ export const KITCHEN_PRODUCTS: Product[] = [
     title: "Everyday Bowl Set of 4 — Morel",
     brand: "East Fork",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1574269909862-7e3d7b72e7e8?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?w=600&q=80",
       alt: "Stoneware pasta bowls in warm earth tones",
     },
     images: [
-      { url: "https://images.unsplash.com/photo-1574269909862-7e3d7b72e7e8?w=1200&q=80", alt: "Stoneware pasta bowls in warm earth tones" },
+      { url: "https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?w=1200&q=80", alt: "Stoneware pasta bowls in warm earth tones" },
       { url: "https://images.unsplash.com/photo-1565538810643-b5bdb714032a?w=1200&q=80", alt: "Bowl with fresh pasta" },
     ],
     price: { min: 14400, max: 14400, currency: "USD" },
@@ -419,8 +413,8 @@ export const KITCHEN_PRODUCTS: Product[] = [
     topFeatures: ["Handmade Stoneware", "Generous 24 oz Capacity", "Set of 4", "Microwave & Dishwasher Safe", "Lead & Cadmium Free"],
     description: "The bowl that makes ramen night, pasta night, and cereal-for-dinner night all feel intentional. East Fork's Everyday Bowl is generously sized to cradle a proper portion with room for broth, and the Morel glaze breaks into earthy, warm tones that make food look incredible.",
     aspectRatio: 1.1,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 6400,
+    shares: 704,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 19. GreenPan Mixing Bowl Set ─────────────────────
@@ -434,7 +428,7 @@ export const KITCHEN_PRODUCTS: Product[] = [
     },
     images: [
       { url: "https://images.unsplash.com/photo-1565538810643-b5bdb714032a?w=1200&q=80", alt: "Nested stainless steel mixing bowls" },
-      { url: "https://images.unsplash.com/photo-1588686027781-55be61f2ad18?w=1200&q=80", alt: "Bowls during baking prep" },
+      { url: "https://images.unsplash.com/photo-1565538810643-b5bdb714032a?w=1200&q=80", alt: "Bowls during baking prep" },
     ],
     price: { min: 5500, max: 5500, currency: "USD" },
     rating: { average: 4.4, count: 812 },
@@ -442,8 +436,8 @@ export const KITCHEN_PRODUCTS: Product[] = [
     topFeatures: ["18/8 Stainless Steel", "Non-Slip Silicone Bases", "Measurement Markings", "Set of 3 (1.5, 3, 5 Qt)", "Dishwasher Safe"],
     description: "The workhorse set every kitchen actually needs. GreenPan's mixing bowls nest cleanly, stay put with silicone bases, and feature interior measurement markings so you can eyeball quantities without dirtying another cup. Stainless steel won't stain from turmeric or tomato.",
     aspectRatio: 0.78,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 9800,
+    shares: 1078,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 20. Wusthof Knife Set ────────────────────────────
@@ -452,11 +446,11 @@ export const KITCHEN_PRODUCTS: Product[] = [
     title: "Classic 7-Piece Knife Block Set",
     brand: "Wusthof",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1588686027781-55be61f2ad18?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1565538810643-b5bdb714032a?w=600&q=80",
       alt: "German knife set in walnut block",
     },
     images: [
-      { url: "https://images.unsplash.com/photo-1588686027781-55be61f2ad18?w=1200&q=80", alt: "German knife set in walnut block" },
+      { url: "https://images.unsplash.com/photo-1565538810643-b5bdb714032a?w=1200&q=80", alt: "German knife set in walnut block" },
       { url: "https://images.unsplash.com/photo-1585515320310-259814833e62?w=1200&q=80", alt: "Knife set on kitchen counter" },
     ],
     price: { min: 49900, max: 49900, currency: "USD" },
@@ -465,8 +459,8 @@ export const KITCHEN_PRODUCTS: Product[] = [
     topFeatures: ["Precision-Forged German Steel", "Full Tang Construction", "Triple-Riveted Handles", "17-Slot Walnut Block", "Lifetime Warranty"],
     description: "Seven generations of Solingen knifemaking in one block. Every Wusthof Classic blade is precision-forged from a single piece of high-carbon stainless steel, with a full tang and triple-riveted handle that feels perfectly balanced. The walnut block is a kitchen counter monument.",
     aspectRatio: 1.3,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 38000,
+    shares: 4180,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 21. Vitamix Blender ──────────────────────────────
@@ -488,8 +482,8 @@ export const KITCHEN_PRODUCTS: Product[] = [
     topFeatures: ["2.2 HP Motor", "Touchscreen Controls", "5 Program Settings", "Self-Cleaning Cycle", "10-Year Warranty"],
     description: "The blender that makes every other blender feel like a toy. Vitamix's 2.2 horsepower motor pulverizes anything from frozen acai to hot soup in seconds. The touchscreen interface and built-in programs mean perfect results without babysitting. You'll have this for a decade.",
     aspectRatio: 1.48,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 52000,
+    shares: 5720,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 22. Mauviel Copper Saucepan ──────────────────────
@@ -503,7 +497,7 @@ export const KITCHEN_PRODUCTS: Product[] = [
     },
     images: [
       { url: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=1200&q=80", alt: "Gleaming copper saucepan with brass handle" },
-      { url: "https://images.unsplash.com/photo-1610399524996-6e40d65be3b9?w=1200&q=80", alt: "Copper pan on gas range" },
+      { url: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=1200&q=80", alt: "Copper pan on gas range" },
     ],
     price: { min: 30000, max: 30000, currency: "USD" },
     rating: { average: 4.9, count: 234 },
@@ -511,8 +505,8 @@ export const KITCHEN_PRODUCTS: Product[] = [
     topFeatures: ["1.5mm Copper Construction", "Stainless Steel Lining", "Cast Iron Handle", "Made in Villedieu, France", "Induction Compatible"],
     description: "Copper isn't just for show — it conducts heat 25x faster than stainless steel, giving you surgical control over temperature-sensitive sauces and custards. Mauviel has been hammering copper in Normandy since 1830, and every M'Heritage piece carries that pedigree.",
     aspectRatio: 0.98,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 41000,
+    shares: 4510,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 23. KitchenAid Stand Mixer ───────────────────────
@@ -521,12 +515,12 @@ export const KITCHEN_PRODUCTS: Product[] = [
     title: "Artisan Series 5 Qt Stand Mixer",
     brand: "KitchenAid",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1610399524996-6e40d65be3b9?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&q=80",
       alt: "Iconic stand mixer in pistachio green",
     },
     images: [
-      { url: "https://images.unsplash.com/photo-1610399524996-6e40d65be3b9?w=1200&q=80", alt: "Iconic stand mixer in pistachio green" },
-      { url: "https://images.unsplash.com/photo-1556910636-c508d4bfaa5b?w=1200&q=80", alt: "Mixer with dough hook attachment" },
+      { url: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=1200&q=80", alt: "Iconic stand mixer in pistachio green" },
+      { url: "https://images.unsplash.com/photo-1504753793650-d4a2b783c15e?w=1200&q=80", alt: "Mixer with dough hook attachment" },
     ],
     price: { min: 37999, max: 37999, currency: "USD" },
     rating: { average: 4.8, count: 4210 },
@@ -534,8 +528,8 @@ export const KITCHEN_PRODUCTS: Product[] = [
     topFeatures: ["10 Speed Settings", "59-Point Planetary Mixing", "5 Qt Stainless Bowl", "Tilt-Head Design", "Over 10 Optional Attachments"],
     description: "The kitchen icon that turns anyone into a baker. KitchenAid's Artisan mixer powers through bread dough and delicately whips meringue with equal ease, thanks to its 59-point planetary mixing action. Available in 50+ colors because it's a permanent countertop resident.",
     aspectRatio: 1.0,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 58000,
+    shares: 6380,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 24. Hasami Porcelain Espresso Cups ───────────────
@@ -544,11 +538,11 @@ export const KITCHEN_PRODUCTS: Product[] = [
     title: "Espresso Cup & Saucer Set — Black",
     brand: "Hasami Porcelain",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1556910636-c508d4bfaa5b?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1504753793650-d4a2b783c15e?w=600&q=80",
       alt: "Minimalist black porcelain espresso cups",
     },
     images: [
-      { url: "https://images.unsplash.com/photo-1556910636-c508d4bfaa5b?w=1200&q=80", alt: "Minimalist black porcelain espresso cups" },
+      { url: "https://images.unsplash.com/photo-1504753793650-d4a2b783c15e?w=1200&q=80", alt: "Minimalist black porcelain espresso cups" },
       { url: "https://images.unsplash.com/photo-1504753793650-d4a2b783c15e?w=1200&q=80", alt: "Espresso cups on saucers" },
     ],
     price: { min: 5600, max: 5600, currency: "USD" },
@@ -557,8 +551,8 @@ export const KITCHEN_PRODUCTS: Product[] = [
     topFeatures: ["Set of 2 Cups & Saucers", "3 oz Capacity", "Stackable Design", "Microwave Safe", "Matte Exterior Finish"],
     description: "Espresso deserves a vessel that honors the ritual. Hasami's cups are precisely sized for a double shot, with a matte exterior that feels like silk and a glazed interior that cleans effortlessly. The saucers double as lids when stacked — brilliant Japanese design thinking.",
     aspectRatio: 0.72,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 3800,
+    shares: 418,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 25. Le Creuset Tea Kettle ────────────────────────
@@ -580,8 +574,8 @@ export const KITCHEN_PRODUCTS: Product[] = [
     topFeatures: ["Carbon Steel with Enamel", "Single-Tone Whistle", "Cool-Touch Phenolic Handle", "1.7 Qt Capacity", "All Cooktops Including Induction"],
     description: "A stovetop kettle so beautiful you'll skip the electric option just to see it perched on the burner. Le Creuset's enamel-on-steel construction heats quickly and evenly, while the single-tone whistle is a surprisingly pleasant sound to start your morning.",
     aspectRatio: 1.12,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 48000,
+    shares: 5280,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 26. Zwilling Cheese Board Set ────────────────────
@@ -603,8 +597,8 @@ export const KITCHEN_PRODUCTS: Product[] = [
     topFeatures: ["Acacia Hardwood Board", "3 Specialty Cheese Knives", "Hidden Drawer Storage", "16\" x 12\" Surface", "Magnetic Knife Closure"],
     description: "Every great cheese board starts with the actual board. Zwilling's acacia hardwood surface is generous enough for a full spread, with a hidden sliding drawer that stores three specialty knives — a fork, a spreader, and a chisel. Pull it out and you're instantly hosting.",
     aspectRatio: 0.82,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 9400,
+    shares: 940,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 27. Hedley & Bennett Bread Basket ────────────────
@@ -626,8 +620,8 @@ export const KITCHEN_PRODUCTS: Product[] = [
     topFeatures: ["100% Cotton Construction", "Removable Linen Liner", "10\" Diameter", "Collapsible for Storage", "Machine Washable"],
     description: "There's something about warm bread arriving to the table in a proper basket that elevates the entire meal. Hedley & Bennett's cotton weave is sturdy enough to hold a full boule, with a removable linen liner that catches crumbs and goes straight in the wash.",
     aspectRatio: 0.92,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 11200,
+    shares: 1120,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 28. Material Kitchen Herb Scissors ───────────────
@@ -649,8 +643,8 @@ export const KITCHEN_PRODUCTS: Product[] = [
     topFeatures: ["5 Stainless Steel Blades", "Silicone-Grip Handle", "Cleaning Comb Included", "Dishwasher Safe", "8.5\" Length"],
     description: "Five blades do the work in one snip that would take a knife five passes. Material's herb scissors make fast, uniform work of basil, chives, cilantro, and anything else you'd rather not bruise with a blade. The included cleaning comb pops right between the blades.",
     aspectRatio: 1.42,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 14500,
+    shares: 1450,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 29. Emile Henry Butter Dish ──────────────────────
@@ -672,8 +666,8 @@ export const KITCHEN_PRODUCTS: Product[] = [
     topFeatures: ["HR Ceramic", "Holds Standard Butter Stick", "Integrated Lid", "Made in France", "Dishwasher & Microwave Safe"],
     description: "Life is too short for cold, hard butter. Emile Henry's ceramic dish keeps butter at perfect spreading temperature on the counter, protected by a snug-fitting lid. The Burgundy glaze is a nod to the French region where these have been made for over 170 years.",
     aspectRatio: 0.65,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 22000,
+    shares: 2200,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 30. Zwilling Pepper Mill ─────────────────────────
@@ -695,8 +689,8 @@ export const KITCHEN_PRODUCTS: Product[] = [
     topFeatures: ["Ceramic Grinding Mechanism", "Adjustable Coarseness", "LED Light for Precision", "Rechargeable Battery", "Brushed Stainless Steel"],
     description: "One-handed freshly ground pepper, directed by a built-in LED light so you can see exactly where it lands. Zwilling's ceramic mechanism never dulls and won't corrode, while the rechargeable battery means you'll never hunt for AAAs mid-recipe again.",
     aspectRatio: 1.52,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 87000,
+    shares: 8700,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 31. Our Place Perfect Pot ────────────────────────
@@ -719,8 +713,8 @@ export const KITCHEN_PRODUCTS: Product[] = [
     topFeatures: ["Replaces 6 Pieces of Cookware", "Built-In Colander Lid", "Toxin-Free Ceramic Coating", "Roasting Rack Included", "5.5 Qt Capacity"],
     description: "The companion to the Always Pan, designed to replace your stockpot, Dutch oven, saucepot, roasting rack, colander, and steamer. The built-in colander lid is a stroke of genius — drain pasta without reaching for another tool. It's the pot that actually simplifies cooking.",
     aspectRatio: 0.95,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 18500,
+    shares: 1850,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 32. Heath Ceramics Stoneware Mug ─────────────────
@@ -742,8 +736,8 @@ export const KITCHEN_PRODUCTS: Product[] = [
     topFeatures: ["Handmade in San Francisco", "Reactive Glaze Finish", "12 oz Capacity", "Lead-Free", "Thick Comfortable Handle"],
     description: "Each Heath mug is shaped by hand in their Sausalito studio and finished with a reactive glaze that shifts and pools uniquely on every piece. The generous 12 oz size is perfect for a proper pour, and the thick handle feels reassuring in early-morning hands.",
     aspectRatio: 0.76,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 16200,
+    shares: 1620,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 33. GreenPan Reserve Skillet ─────────────────────
@@ -765,8 +759,8 @@ export const KITCHEN_PRODUCTS: Product[] = [
     topFeatures: ["Thermolon Infinity Ceramic Coating", "Hard Anodized Body", "Stainless Steel Handle", "Oven Safe to 600F", "PFAS & PFOA Free"],
     description: "Nonstick that you can feel good about. GreenPan pioneered healthy ceramic coating, and the Reserve line takes it further with Thermolon Infinity — their most durable surface yet. Sear at high heat, deglaze confidently, and slide an omelette out without a trace of oil.",
     aspectRatio: 1.08,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 24500,
+    shares: 2450,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 34. Fellow Atmos Vacuum Canister ─────────────────
@@ -788,8 +782,8 @@ export const KITCHEN_PRODUCTS: Product[] = [
     topFeatures: ["Integrated Vacuum Pump", "Airtight Silicone Seal", "BPA-Free Container", "Twist-Lock Lid", "0.7L or 1.2L Sizes"],
     description: "Your beans start going stale the moment they're roasted — Fellow's Atmos fights back with an integrated vacuum pump that removes air with a simple twist. The result is coffee that tastes days-fresh for weeks. The matte black finish makes it the handsomest thing in the pantry.",
     aspectRatio: 1.25,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 12800,
+    shares: 1280,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 35. Riedel Decanter ──────────────────────────────
@@ -812,8 +806,8 @@ export const KITCHEN_PRODUCTS: Product[] = [
     topFeatures: ["Mouth-Blown Crystal", "Lyre-Shaped Design", "Maximizes Aeration Surface", "1500ml Capacity", "Handcrafted in Austria"],
     description: "More sculpture than barware, Riedel's Amadeo Lyra is mouth-blown by master craftsmen into a shape that maximizes wine-to-air contact for rapid aeration. Pour in a young Barolo and watch it open up in minutes rather than hours. The kind of piece that starts conversations before the wine does.",
     aspectRatio: 1.38,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 12800,
+    shares: 1280,
     gumiedByFriends: getRandomGumiFriends(),
   },
 ];

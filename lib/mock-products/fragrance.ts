@@ -1,13 +1,6 @@
 import { Product } from "@/types";
 import { getRandomGumiFriends } from "../mock-users";
 
-function rg(): number {
-  const r = [[50,500],[500,5000],[5000,50000],[50000,500000]];
-  const x = r[Math.floor(Math.random()*r.length)];
-  return Math.floor(Math.random()*(x[1]-x[0])+x[0]);
-}
-function rs(): number { return Math.floor(Math.random()*2000)+10; }
-
 export const FRAGRANCE_PRODUCTS: Product[] = [
   // ─── PERFUMES & COLOGNES ──────────────────────────────
   {
@@ -29,8 +22,8 @@ export const FRAGRANCE_PRODUCTS: Product[] = [
     topFeatures: ["Unisex Woody Scent", "Sandalwood & Cardamom Notes", "Long-Lasting 8+ Hours", "Hand-Blended to Order"],
     description: "The cult-favorite fragrance that launched a thousand compliments. Santal 33 layers Australian sandalwood with cardamom, iris, and violet for a smoky, addictive warmth. Each bottle is blended fresh at the time of purchase.",
     aspectRatio: 1.35,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 72000,
+    shares: 8640,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -51,8 +44,8 @@ export const FRAGRANCE_PRODUCTS: Product[] = [
     topFeatures: ["Blackcurrant & Rose Blend", "60-Hour Burn Time", "Hand-Poured in France"],
     description: "The most iconic candle in the world for a reason. Baies blends the freshness of blackcurrant leaves with the sweetness of Bulgarian roses for a scent that transforms any room. The elegant glass vessel becomes a keepsake long after the wax is gone.",
     aspectRatio: 0.85,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 18500,
+    shares: 2220,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -65,7 +58,7 @@ export const FRAGRANCE_PRODUCTS: Product[] = [
     },
     images: [
       { url: "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=1200&q=80", alt: "Byredo Gypsy Water perfume bottle" },
-      { url: "https://images.unsplash.com/photo-1602607616907-fac24b10e3b1?w=1200&q=80", alt: "Fragrance collection on shelf" },
+      { url: "https://images.unsplash.com/photo-1572726729207-a78d6feb18d7?w=1200&q=80", alt: "Fragrance collection on shelf" },
       { url: "https://images.unsplash.com/photo-1572726729207-a78d6feb18d7?w=1200&q=80", alt: "Perfume in warm light" },
     ],
     price: { min: 14000, max: 28000, currency: "USD" },
@@ -74,8 +67,8 @@ export const FRAGRANCE_PRODUCTS: Product[] = [
     topFeatures: ["Bergamot & Pine Needle Top", "Sandalwood Base", "Unisex Fragrance", "50ml & 100ml Options"],
     description: "Inspired by the Romani lifestyle of freedom and wandering. Gypsy Water opens with fresh bergamot and lemon before settling into a warm, woody base of sandalwood and vanilla. It smells like open roads and campfire smoke.",
     aspectRatio: 1.45,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 48000,
+    shares: 5760,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -83,11 +76,11 @@ export const FRAGRANCE_PRODUCTS: Product[] = [
     title: "Jazz Club Eau de Toilette",
     brand: "Maison Margiela Replica",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1602607616907-fac24b10e3b1?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1572726729207-a78d6feb18d7?w=600&q=80",
       alt: "Replica Jazz Club fragrance bottle",
     },
     images: [
-      { url: "https://images.unsplash.com/photo-1602607616907-fac24b10e3b1?w=1200&q=80", alt: "Replica Jazz Club fragrance bottle" },
+      { url: "https://images.unsplash.com/photo-1572726729207-a78d6feb18d7?w=1200&q=80", alt: "Replica Jazz Club fragrance bottle" },
       { url: "https://images.unsplash.com/photo-1572726729207-a78d6feb18d7?w=1200&q=80", alt: "Fragrance on leather surface" },
     ],
     price: { min: 8000, max: 14000, currency: "USD" },
@@ -96,8 +89,8 @@ export const FRAGRANCE_PRODUCTS: Product[] = [
     topFeatures: ["Tobacco & Vanilla Notes", "Inspired by Brooklyn Jazz Clubs", "Warm Spicy Scent", "Long Wear"],
     description: "Step into a smoky Brooklyn jazz club circa 1975. Jazz Club layers pink pepper and neroli over a heart of rum absolute and tobacco leaf, settling into a base of vanilla and tonka bean. An intoxicating evening fragrance.",
     aspectRatio: 0.75,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 55000,
+    shares: 6600,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -118,8 +111,8 @@ export const FRAGRANCE_PRODUCTS: Product[] = [
     topFeatures: ["Coconut & Beeswax Blend", "Tobacco & Cocoa Notes", "50-Hour Burn Time"],
     description: "A gender-neutral candle that smells like a cozy evening in a leather-bound library. Tobacco Bar blends dark cocoa, dried tobacco, and black cherry over a warm amber base. The coconut-beeswax blend burns cleanly with an impressive throw.",
     aspectRatio: 1.0,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 9200,
+    shares: 1010,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -140,8 +133,8 @@ export const FRAGRANCE_PRODUCTS: Product[] = [
     topFeatures: ["Mediterranean Fig Scent", "Instant Room Refresh", "150ml Spray Bottle", "Alcohol-Free Formula"],
     description: "Transport yourself to a sun-drenched Mediterranean garden with a single spritz. The Figuier room spray captures the warmth of fig trees in full fruit with green, woody, and milky facets. Perfect for refreshing linens and living spaces.",
     aspectRatio: 1.55,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 12000,
+    shares: 1440,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -154,7 +147,7 @@ export const FRAGRANCE_PRODUCTS: Product[] = [
     },
     images: [
       { url: "https://images.unsplash.com/photo-1600950207944-0d63e8edbc3f?w=1200&q=80", alt: "Le Labo discovery set of mini perfume vials" },
-      { url: "https://images.unsplash.com/photo-1570053768101-fc7d89bf29c9?w=1200&q=80", alt: "Perfume vials arranged on tray" },
+      { url: "https://images.unsplash.com/photo-1602928321679-560bb453f190?w=1200&q=80", alt: "Perfume vials arranged on tray" },
       { url: "https://images.unsplash.com/photo-1602928321679-560bb453f190?w=1200&q=80", alt: "Mini fragrance bottles" },
     ],
     price: { min: 8500, max: 8500, currency: "USD" },
@@ -163,8 +156,8 @@ export const FRAGRANCE_PRODUCTS: Product[] = [
     topFeatures: ["5 x 5ml Bestsellers", "Includes Santal 33 & Rose 31", "Gift Box Included", "Travel-Friendly Size"],
     description: "The perfect entry point into Le Labo's world. This discovery set includes five 5ml vials of their most coveted scents including Santal 33, Rose 31, and Another 13. Each is blended fresh and labeled with the date of creation.",
     aspectRatio: 0.65,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 38000,
+    shares: 4560,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -172,11 +165,11 @@ export const FRAGRANCE_PRODUCTS: Product[] = [
     title: "Another 13 Eau de Parfum",
     brand: "Le Labo",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1570053768101-fc7d89bf29c9?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1602928321679-560bb453f190?w=600&q=80",
       alt: "Le Labo Another 13 minimalist perfume bottle",
     },
     images: [
-      { url: "https://images.unsplash.com/photo-1570053768101-fc7d89bf29c9?w=1200&q=80", alt: "Le Labo Another 13 minimalist perfume bottle" },
+      { url: "https://images.unsplash.com/photo-1602928321679-560bb453f190?w=1200&q=80", alt: "Le Labo Another 13 minimalist perfume bottle" },
       { url: "https://images.unsplash.com/photo-1602928321679-560bb453f190?w=1200&q=80", alt: "Fragrance on clean background" },
     ],
     price: { min: 18800, max: 31000, currency: "USD" },
@@ -185,8 +178,8 @@ export const FRAGRANCE_PRODUCTS: Product[] = [
     topFeatures: ["Musk & Ambroxan Dominant", "Skin-Scent Effect", "Unisex", "Long-Lasting Sillage"],
     description: "Created in collaboration with AnOther Magazine, Another 13 is an exercise in molecular seduction. Built around Ambroxan and musk, it melds with your skin chemistry to create a fragrance that's uniquely yours. People will ask what you're wearing.",
     aspectRatio: 1.2,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 61000,
+    shares: 7320,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -199,7 +192,7 @@ export const FRAGRANCE_PRODUCTS: Product[] = [
     },
     images: [
       { url: "https://images.unsplash.com/photo-1602928321679-560bb453f190?w=1200&q=80", alt: "Baccarat Rouge 540 crystal-inspired bottle" },
-      { url: "https://images.unsplash.com/photo-1594035910387-fea081ac6115?w=1200&q=80", alt: "Luxury fragrance display" },
+      { url: "https://images.unsplash.com/photo-1595456982104-14cc660c4d22?w=1200&q=80", alt: "Luxury fragrance display" },
       { url: "https://images.unsplash.com/photo-1595456982104-14cc660c4d22?w=1200&q=80", alt: "Perfume bottle detail shot" },
     ],
     price: { min: 30000, max: 45000, currency: "USD" },
@@ -208,8 +201,8 @@ export const FRAGRANCE_PRODUCTS: Product[] = [
     topFeatures: ["Saffron & Jasmine Heart", "Amberwood & Cedar Base", "Iconic Red Bottle", "Exceptional Longevity", "Compliment Magnet"],
     description: "The fragrance that broke the internet. Baccarat Rouge 540 is a luminous, crystal-clear scent that blends saffron and jasmine with a warm amberwood base. It leaves a trail that people remember for days. Worth every penny of its luxury price tag.",
     aspectRatio: 0.9,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 87000,
+    shares: 10440,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── INCENSE & RITUAL ─────────────────────────────────
@@ -218,11 +211,11 @@ export const FRAGRANCE_PRODUCTS: Product[] = [
     title: "Hinoki Incense Sticks",
     brand: "Hibi",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1594035910387-fea081ac6115?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1595456982104-14cc660c4d22?w=600&q=80",
       alt: "Hibi hinoki incense matchstick box",
     },
     images: [
-      { url: "https://images.unsplash.com/photo-1594035910387-fea081ac6115?w=1200&q=80", alt: "Hibi hinoki incense matchstick box" },
+      { url: "https://images.unsplash.com/photo-1595456982104-14cc660c4d22?w=1200&q=80", alt: "Hibi hinoki incense matchstick box" },
       { url: "https://images.unsplash.com/photo-1595456982104-14cc660c4d22?w=1200&q=80", alt: "Incense burning on ceramic holder" },
     ],
     price: { min: 1400, max: 1400, currency: "USD" },
@@ -231,8 +224,8 @@ export const FRAGRANCE_PRODUCTS: Product[] = [
     topFeatures: ["Japanese Hinoki Cypress", "Strike-on-Box Design", "10-Minute Burn", "Includes Ceramic Pad"],
     description: "These ingenious Japanese incense sticks double as matches. Simply strike and place on the included ceramic pad for ten minutes of pure hinoki cypress forest aroma. The perfect desk companion for moments of calm.",
     aspectRatio: 0.7,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 6800,
+    shares: 748,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -245,7 +238,7 @@ export const FRAGRANCE_PRODUCTS: Product[] = [
     },
     images: [
       { url: "https://images.unsplash.com/photo-1595456982104-14cc660c4d22?w=1200&q=80", alt: "Vitruvi stone diffuser in white" },
-      { url: "https://images.unsplash.com/photo-1588514912908-62c3bf1aeaaa?w=1200&q=80", alt: "Diffuser on nightstand" },
+      { url: "https://images.unsplash.com/photo-1603006905003-be475563bc59?w=1200&q=80", alt: "Diffuser on nightstand" },
     ],
     price: { min: 11900, max: 11900, currency: "USD" },
     rating: { average: 4.6, count: 2340 },
@@ -253,8 +246,8 @@ export const FRAGRANCE_PRODUCTS: Product[] = [
     topFeatures: ["Porcelain Matte Finish", "Ultrasonic Technology", "90ml Water Tank", "Auto Shut-Off", "Whisper-Quiet Operation"],
     description: "The diffuser that actually looks good on your nightstand. Vitruvi's stone diffuser features a hand-finished matte porcelain exterior and ultrasonic technology that fills rooms up to 500 sq ft. It runs for up to 7 hours on intermittent mode.",
     aspectRatio: 1.1,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 15000,
+    shares: 1800,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -262,12 +255,12 @@ export const FRAGRANCE_PRODUCTS: Product[] = [
     title: "Amber & Moss Reed Diffuser",
     brand: "P.F. Candle Co.",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1588514912908-62c3bf1aeaaa?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1603006905003-be475563bc59?w=600&q=80",
       alt: "P.F. Candle Co. reed diffuser in amber glass",
     },
     images: [
-      { url: "https://images.unsplash.com/photo-1588514912908-62c3bf1aeaaa?w=1200&q=80", alt: "P.F. Candle Co. reed diffuser in amber glass" },
-      { url: "https://images.unsplash.com/photo-1616862839785-ef60a6bf8c3a?w=1200&q=80", alt: "Diffuser styled in bathroom" },
+      { url: "https://images.unsplash.com/photo-1603006905003-be475563bc59?w=1200&q=80", alt: "P.F. Candle Co. reed diffuser in amber glass" },
+      { url: "https://images.unsplash.com/photo-1600950207944-0d63e8edbc3f?w=1200&q=80", alt: "Diffuser styled in bathroom" },
     ],
     price: { min: 3600, max: 3600, currency: "USD" },
     rating: { average: 4.4, count: 1560 },
@@ -275,8 +268,8 @@ export const FRAGRANCE_PRODUCTS: Product[] = [
     topFeatures: ["Amber & Moss Scent", "3.5oz Apothecary Bottle", "Lasts 2-3 Months", "No Flame Required"],
     description: "Set it and forget it fragrance for any room. This reed diffuser in P.F. Candle Co.'s best-selling Amber & Moss scent releases warm notes of sage, moss, and lavender continuously. The amber glass apothecary bottle looks beautiful anywhere.",
     aspectRatio: 1.4,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 8400,
+    shares: 924,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -284,13 +277,13 @@ export const FRAGRANCE_PRODUCTS: Product[] = [
     title: "Travel Atomizer Set",
     brand: "Byredo",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1616862839785-ef60a6bf8c3a?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1600950207944-0d63e8edbc3f?w=600&q=80",
       alt: "Byredo travel atomizer in leather case",
     },
     images: [
-      { url: "https://images.unsplash.com/photo-1616862839785-ef60a6bf8c3a?w=1200&q=80", alt: "Byredo travel atomizer in leather case" },
-      { url: "https://images.unsplash.com/photo-1609017909889-d7b582c0f998?w=1200&q=80", alt: "Atomizer with perfume bottles" },
-      { url: "https://images.unsplash.com/photo-1605651531144-51381895e23a?w=1200&q=80", alt: "Travel fragrance set" },
+      { url: "https://images.unsplash.com/photo-1600950207944-0d63e8edbc3f?w=1200&q=80", alt: "Byredo travel atomizer in leather case" },
+      { url: "https://images.unsplash.com/photo-1615634260167-c8cdede054de?w=1200&q=80", alt: "Atomizer with perfume bottles" },
+      { url: "https://images.unsplash.com/photo-1590736704728-f4730bb30770?w=1200&q=80", alt: "Travel fragrance set" },
     ],
     price: { min: 10000, max: 14500, currency: "USD" },
     rating: { average: 4.5, count: 650 },
@@ -298,8 +291,8 @@ export const FRAGRANCE_PRODUCTS: Product[] = [
     topFeatures: ["3 x 12ml Refillable Atomizers", "Leather Carrying Case", "TSA-Approved Size", "Choose Your Scents"],
     description: "Never travel without your signature scent. This set includes three 12ml refillable atomizers in a sleek leather case, each filled with a Byredo fragrance of your choice. The twist-lock mechanism prevents leaks in your carry-on.",
     aspectRatio: 0.8,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 42000,
+    shares: 5040,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -307,12 +300,12 @@ export const FRAGRANCE_PRODUCTS: Product[] = [
     title: "Car Diffuser Solid Fragrance",
     brand: "Aesop",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1609017909889-d7b582c0f998?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1615634260167-c8cdede054de?w=600&q=80",
       alt: "Aesop car fragrance diffuser in brass",
     },
     images: [
-      { url: "https://images.unsplash.com/photo-1609017909889-d7b582c0f998?w=1200&q=80", alt: "Aesop car fragrance diffuser in brass" },
-      { url: "https://images.unsplash.com/photo-1605651531144-51381895e23a?w=1200&q=80", alt: "Car diffuser on vent" },
+      { url: "https://images.unsplash.com/photo-1615634260167-c8cdede054de?w=1200&q=80", alt: "Aesop car fragrance diffuser in brass" },
+      { url: "https://images.unsplash.com/photo-1590736704728-f4730bb30770?w=1200&q=80", alt: "Car diffuser on vent" },
     ],
     price: { min: 5500, max: 5500, currency: "USD" },
     rating: { average: 4.3, count: 430 },
@@ -320,8 +313,8 @@ export const FRAGRANCE_PRODUCTS: Product[] = [
     topFeatures: ["Brass Vent Clip Design", "Ptolemy Aromatique", "Lasts 6-8 Weeks", "Refillable Cartridge"],
     description: "Elevate your commute with Aesop's beautifully designed car diffuser. The solid fragrance cartridge in Ptolemy Aromatique releases cedar atlas, vetiver, and frankincense over weeks of driving. The brass clip attaches elegantly to any air vent.",
     aspectRatio: 1.3,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 11000,
+    shares: 1210,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── LINENS & SPRAYS ──────────────────────────────────
@@ -330,12 +323,12 @@ export const FRAGRANCE_PRODUCTS: Product[] = [
     title: "Linen Spray – Lavender & Chamomile",
     brand: "Earl of East",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1605651531144-51381895e23a?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1590736704728-f4730bb30770?w=600&q=80",
       alt: "Earl of East linen spray bottle",
     },
     images: [
-      { url: "https://images.unsplash.com/photo-1605651531144-51381895e23a?w=1200&q=80", alt: "Earl of East linen spray bottle" },
-      { url: "https://images.unsplash.com/photo-1558882224-dda166ffe592?w=1200&q=80", alt: "Linen spray on bedsheets" },
+      { url: "https://images.unsplash.com/photo-1590736704728-f4730bb30770?w=1200&q=80", alt: "Earl of East linen spray bottle" },
+      { url: "https://images.unsplash.com/photo-1587017539504-67cfbddac569?w=1200&q=80", alt: "Linen spray on bedsheets" },
     ],
     price: { min: 2800, max: 2800, currency: "USD" },
     rating: { average: 4.5, count: 870 },
@@ -343,8 +336,8 @@ export const FRAGRANCE_PRODUCTS: Product[] = [
     topFeatures: ["Lavender & Chamomile Blend", "100ml Glass Bottle", "Natural Essential Oils", "Fabric Safe"],
     description: "A nightly ritual for better sleep. This linen spray combines calming lavender with soft chamomile to create the perfect bedtime atmosphere. A few spritzes on your pillowcase and sheets is all you need to unwind.",
     aspectRatio: 1.5,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 7600,
+    shares: 836,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -352,11 +345,11 @@ export const FRAGRANCE_PRODUCTS: Product[] = [
     title: "Pillow Mist – Deep Sleep",
     brand: "Aesop",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1558882224-dda166ffe592?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1587017539504-67cfbddac569?w=600&q=80",
       alt: "Aesop pillow mist in amber bottle",
     },
     images: [
-      { url: "https://images.unsplash.com/photo-1558882224-dda166ffe592?w=1200&q=80", alt: "Aesop pillow mist in amber bottle" },
+      { url: "https://images.unsplash.com/photo-1587017539504-67cfbddac569?w=1200&q=80", alt: "Aesop pillow mist in amber bottle" },
       { url: "https://images.unsplash.com/photo-1587017539504-67cfbddac569?w=1200&q=80", alt: "Mist bottle on nightstand" },
     ],
     price: { min: 3900, max: 3900, currency: "USD" },
@@ -365,8 +358,8 @@ export const FRAGRANCE_PRODUCTS: Product[] = [
     topFeatures: ["Vetiver & Petitgrain", "50ml Amber Glass Spray", "Vegan Formulation", "Non-Staining"],
     description: "Aesop's approach to bedtime aromatherapy is characteristically refined. This pillow mist combines vetiver, petitgrain, and bergamot rind into a calming blend that promotes deep, restful sleep. The fine mist dissipates quickly, leaving only scent.",
     aspectRatio: 0.95,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 9800,
+    shares: 1078,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -388,8 +381,8 @@ export const FRAGRANCE_PRODUCTS: Product[] = [
     topFeatures: ["Lavender, Eucalyptus & Grapefruit", "100% Pure Essential Oils", "10ml Each", "For Diffusers & Baths"],
     description: "Three essential oils that cover every mood. This curated trio includes calming lavender, invigorating eucalyptus, and uplifting grapefruit, all 100% pure and steam-distilled. Use them individually or create custom blends in your diffuser.",
     aspectRatio: 0.68,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 13500,
+    shares: 1485,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -410,8 +403,8 @@ export const FRAGRANCE_PRODUCTS: Product[] = [
     topFeatures: ["Sustainably Sourced Ecuador", "6 Sticks Per Bundle", "Resinous Sweet Smoke", "Ethically Harvested"],
     description: "Premium palo santo from fallen trees in Ecuador, selected by the fragrance obsessives at D.S. & Durga. These sticks are aged for years, resulting in an exceptionally rich, sweet, and resinous smoke. Light one to cleanse your space and your mood.",
     aspectRatio: 1.15,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 5400,
+    shares: 594,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── LUXURY & NICHE ───────────────────────────────────
@@ -425,7 +418,7 @@ export const FRAGRANCE_PRODUCTS: Product[] = [
     },
     images: [
       { url: "https://images.unsplash.com/photo-1615634260167-c8cdede054de?w=1200&q=80", alt: "Cire Trudon candle in green glass with gold crest" },
-      { url: "https://images.unsplash.com/photo-1614254429098-09fc25c1fbb0?w=1200&q=80", alt: "Luxury candle lit on mantel" },
+      { url: "https://images.unsplash.com/photo-1594149929911-78975a43d4f5?w=1200&q=80", alt: "Luxury candle lit on mantel" },
     ],
     price: { min: 10500, max: 10500, currency: "USD" },
     rating: { average: 4.8, count: 980 },
@@ -433,8 +426,8 @@ export const FRAGRANCE_PRODUCTS: Product[] = [
     topFeatures: ["Firewood & Smoky Scent", "Hand-Blown Green Glass", "65-Hour Burn Time", "Royal French Heritage Since 1643"],
     description: "From the world's oldest candlemaker, this is the definitive firewood candle. Cire Trudon's Feu de Bois perfectly recreates the crackling warmth of a wood-burning fireplace with smoky, resinous depth. The hand-blown green glass vessel with gold crest is museum-worthy.",
     aspectRatio: 0.88,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 16200,
+    shares: 1944,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -442,11 +435,11 @@ export const FRAGRANCE_PRODUCTS: Product[] = [
     title: "Wood Sage & Sea Salt Cologne",
     brand: "Jo Malone",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1614254429098-09fc25c1fbb0?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1594149929911-78975a43d4f5?w=600&q=80",
       alt: "Jo Malone cologne in cream box",
     },
     images: [
-      { url: "https://images.unsplash.com/photo-1614254429098-09fc25c1fbb0?w=1200&q=80", alt: "Jo Malone cologne in cream box" },
+      { url: "https://images.unsplash.com/photo-1594149929911-78975a43d4f5?w=1200&q=80", alt: "Jo Malone cologne in cream box" },
       { url: "https://images.unsplash.com/photo-1594149929911-78975a43d4f5?w=1200&q=80", alt: "Cologne bottle with packaging" },
       { url: "https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=1200&q=80", alt: "Cologne in bright light" },
     ],
@@ -456,8 +449,8 @@ export const FRAGRANCE_PRODUCTS: Product[] = [
     topFeatures: ["Sea Salt & Sage Notes", "Lightweight & Fresh", "Layerable Scent", "30ml & 100ml Options"],
     description: "The scent of a wind-swept coastal walk. Wood Sage & Sea Salt captures the mineral freshness of sea spray with earthy sage for a fragrance that feels effortlessly natural. A best-seller for good reason and perfect for layering with other Jo Malone scents.",
     aspectRatio: 1.25,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 67000,
+    shares: 8040,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -478,8 +471,8 @@ export const FRAGRANCE_PRODUCTS: Product[] = [
     topFeatures: ["Tobacco & Vanilla Accord", "Cacao & Dried Fruits", "Opulent Sillage", "Statement Evening Fragrance"],
     description: "Tom Ford's most decadent creation is a warm, spicy embrace of tobacco leaf and sweet vanilla. Layers of tonka bean, cacao, and dried fruit give it an almost edible richness. This is the fragrance that makes people lean in closer.",
     aspectRatio: 0.72,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 79000,
+    shares: 9480,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -492,7 +485,7 @@ export const FRAGRANCE_PRODUCTS: Product[] = [
     },
     images: [
       { url: "https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=1200&q=80", alt: "D.S. & Durga candle with artistic label" },
-      { url: "https://images.unsplash.com/photo-1589118949245-7eb73a49dbf3?w=1200&q=80", alt: "Lit candle on wooden surface" },
+      { url: "https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=1200&q=80", alt: "Lit candle on wooden surface" },
     ],
     price: { min: 6500, max: 6500, currency: "USD" },
     rating: { average: 4.5, count: 720 },
@@ -500,8 +493,8 @@ export const FRAGRANCE_PRODUCTS: Product[] = [
     topFeatures: ["Rose & Smoke Accord", "Soy Wax Blend", "60-Hour Burn Time", "Hand-Poured in Brooklyn"],
     description: "What happens when you set a rose garden on fire. D.S. & Durga's Burning Rose layers the lush sweetness of Damascena roses over a bed of charred wood and smoky incense. It is romantic and rebellious in equal measure.",
     aspectRatio: 1.05,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 11800,
+    shares: 1298,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -509,12 +502,12 @@ export const FRAGRANCE_PRODUCTS: Product[] = [
     title: "Sandalwood Incense Cones",
     brand: "Earl of East",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1589118949245-7eb73a49dbf3?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=600&q=80",
       alt: "Earl of East incense cones in ceramic bowl",
     },
     images: [
-      { url: "https://images.unsplash.com/photo-1589118949245-7eb73a49dbf3?w=1200&q=80", alt: "Earl of East incense cones in ceramic bowl" },
-      { url: "https://images.unsplash.com/photo-1616169201999-0d68e0a12d57?w=1200&q=80", alt: "Incense smoke trail" },
+      { url: "https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=1200&q=80", alt: "Earl of East incense cones in ceramic bowl" },
+      { url: "https://images.unsplash.com/photo-1523293182086-7651a899d37f?w=1200&q=80", alt: "Incense smoke trail" },
     ],
     price: { min: 1800, max: 1800, currency: "USD" },
     rating: { average: 4.3, count: 340 },
@@ -522,8 +515,8 @@ export const FRAGRANCE_PRODUCTS: Product[] = [
     topFeatures: ["Charcoal-Free Formula", "20 Cones Per Box", "15-Minute Burn Each", "Subtle Room Fill"],
     description: "Clean-burning incense cones that ditch the headache-inducing charcoal of cheaper alternatives. These sandalwood cones from Earl of East release a warm, creamy scent that fills a room without overwhelming it. Perfect for a Sunday morning ritual.",
     aspectRatio: 1.48,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 4700,
+    shares: 517,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -531,12 +524,12 @@ export const FRAGRANCE_PRODUCTS: Product[] = [
     title: "Sunset in Brooklyn Candle",
     brand: "P.F. Candle Co.",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1616169201999-0d68e0a12d57?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1523293182086-7651a899d37f?w=600&q=80",
       alt: "P.F. Candle Co. soy candle in amber jar",
     },
     images: [
-      { url: "https://images.unsplash.com/photo-1616169201999-0d68e0a12d57?w=1200&q=80", alt: "P.F. Candle Co. soy candle in amber jar" },
-      { url: "https://images.unsplash.com/photo-1590490360182-c33d955c4644?w=1200&q=80", alt: "Candle lit in cozy setting" },
+      { url: "https://images.unsplash.com/photo-1523293182086-7651a899d37f?w=1200&q=80", alt: "P.F. Candle Co. soy candle in amber jar" },
+      { url: "https://images.unsplash.com/photo-1541643600914-78b084683601?w=1200&q=80", alt: "Candle lit in cozy setting" },
       { url: "https://images.unsplash.com/photo-1541643600914-78b084683601?w=1200&q=80", alt: "Candle on windowsill" },
     ],
     price: { min: 2600, max: 3600, currency: "USD" },
@@ -545,8 +538,8 @@ export const FRAGRANCE_PRODUCTS: Product[] = [
     topFeatures: ["Fig & Incense Notes", "100% Soy Wax", "40-50 Hour Burn", "Cotton Wick"],
     description: "Capture golden hour in a jar. This limited-edition collaboration candle blends fig, violet, and incense to evoke the feeling of watching the sun set over the East River. The 100% domestically grown soy wax burns cleanly with excellent scent throw.",
     aspectRatio: 0.78,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 7200,
+    shares: 792,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -554,11 +547,11 @@ export const FRAGRANCE_PRODUCTS: Product[] = [
     title: "Rose 31 Eau de Parfum",
     brand: "Le Labo",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1590490360182-c33d955c4644?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1541643600914-78b084683601?w=600&q=80",
       alt: "Le Labo Rose 31 perfume bottle",
     },
     images: [
-      { url: "https://images.unsplash.com/photo-1590490360182-c33d955c4644?w=1200&q=80", alt: "Le Labo Rose 31 perfume bottle" },
+      { url: "https://images.unsplash.com/photo-1541643600914-78b084683601?w=1200&q=80", alt: "Le Labo Rose 31 perfume bottle" },
       { url: "https://images.unsplash.com/photo-1541643600914-78b084683601?w=1200&q=80", alt: "Rose perfume close-up" },
       { url: "https://images.unsplash.com/photo-1523293182086-7651a899d37f?w=1200&q=80", alt: "Fragrance on marble counter" },
     ],
@@ -568,8 +561,8 @@ export const FRAGRANCE_PRODUCTS: Product[] = [
     topFeatures: ["Centifolia Rose Core", "Cumin & Cedar Spice", "Unisex Rose Fragrance", "Handmade in NYC"],
     description: "Not your grandmother's rose perfume. Rose 31 takes centifolia rose and strips away the sweetness, adding cumin, cedar, and gaiac wood for a darker, more complex take on the world's most famous flower. It is moody, sophisticated, and utterly addictive.",
     aspectRatio: 1.38,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 58000,
+    shares: 6960,
     gumiedByFriends: getRandomGumiFriends(),
   },
 ];

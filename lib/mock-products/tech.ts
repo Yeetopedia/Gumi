@@ -1,12 +1,6 @@
 import { Product } from "@/types";
 import { getRandomGumiFriends } from "../mock-users";
 
-function rg(): number {
-  const r = [[50,500],[500,5000],[5000,50000],[50000,500000]];
-  const x = r[Math.floor(Math.random()*r.length)];
-  return Math.floor(Math.random()*(x[1]-x[0])+x[0]);
-}
-function rs(): number { return Math.floor(Math.random()*2000)+10; }
 
 export const TECH_PRODUCTS: Product[] = [
   {
@@ -44,8 +38,8 @@ export const TECH_PRODUCTS: Product[] = [
     description:
       "Apple's statement headphone combines computational audio with premium materials. The anodized aluminum cups and stainless steel frame feel substantial, while the knit-mesh canopy distributes weight so you forget they're there. ANC is best-in-class.",
     aspectRatio: 1.0,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 248000,
+    shares: 29760,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -83,8 +77,8 @@ export const TECH_PRODUCTS: Product[] = [
     description:
       "The Q1 HE brings hall-effect switches to Keychron's premium aluminum chassis. The gasket mount typing feel is bouncy and forgiving, and tri-mode connectivity means one keyboard for every device. Hot-swap sockets let you fine-tune every key.",
     aspectRatio: 0.7,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 18500,
+    shares: 2220,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -117,8 +111,8 @@ export const TECH_PRODUCTS: Product[] = [
     description:
       "A beautifully simple monitor riser machined from a single slab of American walnut. The steel legs create a hidden compartment for your keyboard or notebook, keeping the desk surface clear. Ages gracefully with a natural patina over time.",
     aspectRatio: 0.75,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 7200,
+    shares: 864,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -151,8 +145,8 @@ export const TECH_PRODUCTS: Product[] = [
     description:
       "A full-desk mat made from dense merino wool felt that softens every keystroke and mouse movement. The natural fiber stays cool in summer and warm in winter. It doubles as a giant mousepad with pixel-perfect tracking.",
     aspectRatio: 0.65,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 4800,
+    shares: 576,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -185,8 +179,8 @@ export const TECH_PRODUCTS: Product[] = [
     description:
       "A deceptively compact leather valet that holds every cable and dongle you carry. The magnetic lid opens to reveal flexible dividers, and the built-in Qi pad charges your earbuds while they sit inside. Closes flat for travel.",
     aspectRatio: 1.0,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 5600,
+    shares: 672,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -219,8 +213,8 @@ export const TECH_PRODUCTS: Product[] = [
     description:
       "An asymmetric LED bar that clips onto your monitor and bathes the desk in even light without any glare on screen. The wireless puck controller sits on the desk for instant brightness and temperature adjustments. A game-changer for late-night work.",
     aspectRatio: 0.68,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 9800,
+    shares: 1176,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -253,8 +247,8 @@ export const TECH_PRODUCTS: Product[] = [
     description:
       "A mousepad that actually looks good on your desk. Belgian linen stretched over a cork core gives a smooth, controlled glide with a warmth that synthetic pads can't match. The stitched border keeps its shape for years.",
     aspectRatio: 0.85,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 3800,
+    shares: 456,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -286,8 +280,8 @@ export const TECH_PRODUCTS: Product[] = [
     description:
       "The hub Apple should have shipped in the box. Seven ports in an aluminum shell that color-matches your MacBook perfectly. HDMI pushes 4K at 60 Hz, and 100 W pass-through keeps your laptop charged while everything is connected.",
     aspectRatio: 0.9,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 8200,
+    shares: 984,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -320,8 +314,8 @@ export const TECH_PRODUCTS: Product[] = [
     description:
       "Enough juice to charge a MacBook Air from zero, plus your phone twice over. The 87 W PD port means your laptop charges at full speed even on the go. Surprisingly compact for the capacity — fits in a jacket pocket.",
     aspectRatio: 1.1,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 28000,
+    shares: 3360,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -338,7 +332,7 @@ export const TECH_PRODUCTS: Product[] = [
         alt: "Sonos Era 100 speaker in white on a shelf",
       },
       {
-        url: "https://images.unsplash.com/photo-1580910051074-3eb694886571?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=1200&q=80",
         alt: "Close-up of speaker grille and touch controls",
       },
       {
@@ -358,8 +352,8 @@ export const TECH_PRODUCTS: Product[] = [
     description:
       "Sonos re-engineered their entry speaker from the ground up. Wider stereo separation from dual tweeters fills a room in a way the old One never could. Trueplay auto-tunes to your space, and Bluetooth means guests can play music instantly.",
     aspectRatio: 1.2,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 72000,
+    shares: 8640,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -367,12 +361,12 @@ export const TECH_PRODUCTS: Product[] = [
     title: "WF-1000XM5 Wireless Earbuds",
     brand: "Sony",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1580910051074-3eb694886571?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=600&q=80",
       alt: "Sony WF-1000XM5 earbuds in charging case on desk",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1580910051074-3eb694886571?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=1200&q=80",
         alt: "Sony WF-1000XM5 earbuds in charging case on desk",
       },
       {
@@ -393,8 +387,8 @@ export const TECH_PRODUCTS: Product[] = [
     description:
       "Sony's flagship earbuds are 25% smaller than the XM4 and somehow sound even better. The V2 processor cancels more noise while drawing less power. LDAC codec support means lossless streaming from any Android phone.",
     aspectRatio: 1.0,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 85000,
+    shares: 10200,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -427,8 +421,8 @@ export const TECH_PRODUCTS: Product[] = [
     description:
       "A 15-inch smart display that becomes the command center of your home. Pin calendars, shopping lists, and sticky notes as widgets, and Visual ID personalizes the view for each family member who walks by. Works as a photo frame when idle.",
     aspectRatio: 0.7,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 41000,
+    shares: 4920,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -462,8 +456,8 @@ export const TECH_PRODUCTS: Product[] = [
     description:
       "The best e-reader ever made, and it's not close. The warm-light display disappears in your hands, and 10-week battery life means you never think about charging. Wireless charging via Qi keeps the USB-C port free for travel.",
     aspectRatio: 1.35,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 95000,
+    shares: 11400,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -480,7 +474,7 @@ export const TECH_PRODUCTS: Product[] = [
         alt: "Elgato Facecam Pro mounted on monitor looking sharp",
       },
       {
-        url: "https://images.unsplash.com/photo-1558089687-f282d8cbef78?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=1200&q=80",
         alt: "Webcam comparison showing 4K clarity vs built-in camera",
       },
     ],
@@ -496,8 +490,8 @@ export const TECH_PRODUCTS: Product[] = [
     description:
       "Finally, a webcam that makes you look as good on Zoom as you do in person. The Sony STARVIS sensor handles dim rooms gracefully, and 4K resolution means you can crop and reframe without losing sharpness. Plug in and go — zero configuration.",
     aspectRatio: 0.95,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 7500,
+    shares: 900,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -505,12 +499,12 @@ export const TECH_PRODUCTS: Product[] = [
     title: "Dyson Solarcycle Morph Desk Lamp",
     brand: "Dyson",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1558089687-f282d8cbef78?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=600&q=80",
       alt: "Dyson desk lamp in copper/silver illuminating a workspace",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1558089687-f282d8cbef78?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=1200&q=80",
         alt: "Dyson desk lamp in copper/silver illuminating a workspace",
       },
       {
@@ -530,8 +524,8 @@ export const TECH_PRODUCTS: Product[] = [
     description:
       "Dyson's most ambitious lamp dynamically matches your local daylight throughout the day. In the morning it's cool and bright; at night it shifts to a warm amber. The heat-pipe technology means the LEDs will literally outlast the desk underneath them.",
     aspectRatio: 1.45,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 14000,
+    shares: 1680,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -564,8 +558,8 @@ export const TECH_PRODUCTS: Product[] = [
     description:
       "A single piece of bent aluminum that raises your laptop to eye level and looks like a piece of modern sculpture. The open-air design keeps the laptop cool, and the silicone contact points prevent scratches. Folds flat for travel.",
     aspectRatio: 0.9,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 21000,
+    shares: 2520,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -598,8 +592,8 @@ export const TECH_PRODUCTS: Product[] = [
     description:
       "Drop your iPhone on the magnetic puck and it immediately enters StandBy mode — turning your phone into a beautiful bedside clock. The Apple Watch charger on the back means one less cable on the nightstand. Weighted base stays planted.",
     aspectRatio: 1.15,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 88000,
+    shares: 10560,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -632,8 +626,8 @@ export const TECH_PRODUCTS: Product[] = [
     description:
       "The difference between a messy desk and a clean one is where the cables go. This under-desk tray hides your power strip, chargers, and every cable in a beautiful walnut shell. Magnetic brackets attach in seconds with no drilling required.",
     aspectRatio: 0.75,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 4200,
+    shares: 504,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -666,8 +660,8 @@ export const TECH_PRODUCTS: Product[] = [
     description:
       "Two terabytes in a drive the size of a credit card. The rubberized armor makes it waterproof and drop-proof, so it goes anywhere your laptop goes. Transfer speeds hit a gigabyte per second — you can copy a full-length film in under five seconds.",
     aspectRatio: 1.05,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 54000,
+    shares: 6480,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -700,8 +694,8 @@ export const TECH_PRODUCTS: Product[] = [
     description:
       "The smallest smart plugs that still support energy monitoring. Each one tracks watts in real-time and works with every major voice assistant. The compact profile means you can stack two on a single duplex outlet without overlap.",
     aspectRatio: 1.0,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 16500,
+    shares: 1980,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -739,8 +733,8 @@ export const TECH_PRODUCTS: Product[] = [
     description:
       "Bang & Olufsen's flagship headphone is an exercise in modular luxury. Every part — cushions, headband, battery — is user-replaceable, so these are headphones you keep for a decade. The sound signature is warm, detailed, and effortlessly wide.",
     aspectRatio: 1.0,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 9200,
+    shares: 1104,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -777,8 +771,8 @@ export const TECH_PRODUCTS: Product[] = [
     description:
       "The Stanmore III looks like a piece of music history and sounds like one too. Real analog knobs let you dial in bass and treble without an app, and Dynamic Loudness keeps the low end punchy even at whisper volumes. A conversation piece that happens to sound incredible.",
     aspectRatio: 0.85,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 48000,
+    shares: 5760,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -811,8 +805,8 @@ export const TECH_PRODUCTS: Product[] = [
     description:
       "Part speaker, part instrument, part art object. The OB-4 has an FM radio that loops and layers what it hears into generative soundscapes. The motorized wheel scrubs through your own audio timeline. Nothing else on the market feels remotely like it.",
     aspectRatio: 0.8,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 6100,
+    shares: 732,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -829,7 +823,7 @@ export const TECH_PRODUCTS: Product[] = [
         alt: "Nothing Ear 2 transparent earbuds in clear case",
       },
       {
-        url: "https://images.unsplash.com/photo-1610465299993-e6675c9f99db?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1587614382346-4ec70e388b28?w=1200&q=80",
         alt: "Single earbud showing transparent stem design",
       },
     ],
@@ -845,8 +839,8 @@ export const TECH_PRODUCTS: Product[] = [
     description:
       "Nothing's transparent design language extends to earbuds that people will actually ask you about. The LHDC 5.0 codec delivers near-lossless audio, and personalized ANC scans your ear canal for a perfect seal. Style and substance in equal measure.",
     aspectRatio: 1.0,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 32000,
+    shares: 3840,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -854,12 +848,12 @@ export const TECH_PRODUCTS: Product[] = [
     title: "TS4 Thunderbolt Station",
     brand: "CalDigit",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1610465299993-e6675c9f99db?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1587614382346-4ec70e388b28?w=600&q=80",
       alt: "CalDigit TS4 dock with multiple cables connected on a desk",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1610465299993-e6675c9f99db?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1587614382346-4ec70e388b28?w=1200&q=80",
         alt: "CalDigit TS4 dock with multiple cables connected on a desk",
       },
       {
@@ -883,8 +877,8 @@ export const TECH_PRODUCTS: Product[] = [
     description:
       "The definitive Thunderbolt dock for power users. One cable from TS4 to your MacBook and you get 18 ports, 98 W of charging, and dual 6K display support. The vertical form factor barely takes up desk space. Every professional reviewer recommends this for a reason.",
     aspectRatio: 1.3,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 25000,
+    shares: 3000,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -917,8 +911,8 @@ export const TECH_PRODUCTS: Product[] = [
     description:
       "A tiny LED panel that makes any video call look professionally lit. The rechargeable battery means no cables cluttering your desk, and the magnetic base sticks to any metal surface. Adjust brightness and color wirelessly from your phone or Stream Deck.",
     aspectRatio: 1.1,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 31000,
+    shares: 3100,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -935,7 +929,7 @@ export const TECH_PRODUCTS: Product[] = [
         alt: "Bellroy Tech Kit in charcoal with cables and adapters peeking out",
       },
       {
-        url: "https://images.unsplash.com/photo-1625245488600-d610c6b04012?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1606220838315-056192d5e927?w=1200&q=80",
         alt: "Interior organization showing elastic loops and mesh pocket",
       },
     ],
@@ -951,8 +945,8 @@ export const TECH_PRODUCTS: Product[] = [
     description:
       "A pouch that keeps your cable chaos contained. The clamshell design opens flat so you see everything at a glance — no more digging. Elastic loops pin cables in place, and the recycled woven fabric wipes clean. Small enough for a tote, big enough for everything.",
     aspectRatio: 0.9,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 14500,
+    shares: 1450,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -960,20 +954,20 @@ export const TECH_PRODUCTS: Product[] = [
     title: "QuietComfort Ultra Headphones",
     brand: "Bose",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1625245488600-d610c6b04012?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1606220838315-056192d5e927?w=600&q=80",
       alt: "Bose QuietComfort Ultra headphones in black over-ear design",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1625245488600-d610c6b04012?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1606220838315-056192d5e927?w=1200&q=80",
         alt: "Bose QuietComfort Ultra headphones in black over-ear design",
       },
       {
-        url: "https://images.unsplash.com/photo-1618329340733-12a2c78d3d40?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=1200&q=80",
         alt: "Headphones folded for travel in slim carrying case",
       },
       {
-        url: "https://images.unsplash.com/photo-1592899677112-8b637e8cb1ea?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=1200&q=80",
         alt: "Touch controls on the right earcup",
       },
     ],
@@ -990,8 +984,8 @@ export const TECH_PRODUCTS: Product[] = [
     description:
       "Bose redefined their iconic QC line with spatial audio that puts you inside the recording. CustomTune plays a brief tone when you put them on and calibrates ANC and EQ to your exact ear shape. The result is noise cancellation that feels almost eerie.",
     aspectRatio: 0.95,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 67000,
+    shares: 6700,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -999,16 +993,16 @@ export const TECH_PRODUCTS: Product[] = [
     title: "MX Master 3S Wireless Mouse",
     brand: "Logitech",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1618329340733-12a2c78d3d40?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=600&q=80",
       alt: "Logitech MX Master 3S ergonomic mouse in graphite on desk",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1618329340733-12a2c78d3d40?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=1200&q=80",
         alt: "Logitech MX Master 3S ergonomic mouse in graphite on desk",
       },
       {
-        url: "https://images.unsplash.com/photo-1592899677112-8b637e8cb1ea?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=1200&q=80",
         alt: "Mouse next to keyboard showing matching design language",
       },
       {
@@ -1029,8 +1023,8 @@ export const TECH_PRODUCTS: Product[] = [
     description:
       "The gold standard of productivity mice, now whisper-quiet. The MagSpeed wheel scrolls through a 100-page doc in a single flick, and the 8K sensor tracks on literally any surface including glass. Flow software lets you drag files between computers like magic.",
     aspectRatio: 0.85,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 45000,
+    shares: 4500,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -1038,12 +1032,12 @@ export const TECH_PRODUCTS: Product[] = [
     title: "Desk Mat Pro (Leather)",
     brand: "Bellroy",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1592899677112-8b637e8cb1ea?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=600&q=80",
       alt: "Bellroy leather desk mat in tan with keyboard and mouse arranged on top",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1592899677112-8b637e8cb1ea?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=1200&q=80",
         alt: "Bellroy leather desk mat in tan with keyboard and mouse arranged on top",
       },
       {
@@ -1068,8 +1062,8 @@ export const TECH_PRODUCTS: Product[] = [
     description:
       "A leather desk mat that gets better with age. The vegetable-tanned surface starts smooth and develops a rich patina unique to how you use it. The microfiber backing grips the desk without any adhesive, and the rolled edges stay perfectly flat.",
     aspectRatio: 0.65,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 9800,
+    shares: 980,
     gumiedByFriends: getRandomGumiFriends(),
   },
 ];

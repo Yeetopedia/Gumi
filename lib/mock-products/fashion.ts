@@ -1,13 +1,6 @@
 import { Product } from "@/types";
 import { getRandomGumiFriends } from "../mock-users";
 
-function rg(): number {
-  const r = [[50,500],[500,5000],[5000,50000],[50000,500000]];
-  const x = r[Math.floor(Math.random()*r.length)];
-  return Math.floor(Math.random()*(x[1]-x[0])+x[0]);
-}
-function rs(): number { return Math.floor(Math.random()*2000)+10; }
-
 export const FASHION_PRODUCTS: Product[] = [
   {
     id: "fashion-1",
@@ -43,8 +36,8 @@ export const FASHION_PRODUCTS: Product[] = [
     description:
       "Impossibly soft Grade-A Mongolian cashmere in a timeless crew silhouette. The kind of sweater you reach for every single morning without thinking.",
     aspectRatio: 0.8,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 12400,
+    shares: 1240,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -52,12 +45,12 @@ export const FASHION_PRODUCTS: Product[] = [
     title: "Oversized Double-Breasted Blazer",
     brand: "The Row",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1434389677669-e08b4cda3a20?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1583744946564-b52ac1c389c8?w=600&q=80",
       alt: "Oversized tailored blazer in charcoal wool",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1434389677669-e08b4cda3a20?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1583744946564-b52ac1c389c8?w=1200&q=80",
         alt: "Oversized tailored blazer in charcoal wool",
       },
       {
@@ -78,8 +71,8 @@ export const FASHION_PRODUCTS: Product[] = [
     description:
       "An architectural masterpiece in Italian virgin wool. The Row's signature oversized blazer redefines modern tailoring with a silhouette that's both commanding and effortless.",
     aspectRatio: 0.72,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 87000,
+    shares: 8700,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -117,8 +110,8 @@ export const FASHION_PRODUCTS: Product[] = [
     description:
       "The internet's favorite jean for a reason. AGOLDE's pinch waist delivers that effortless vintage silhouette with a modern rise that flatters everyone.",
     aspectRatio: 0.68,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 18500,
+    shares: 1850,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -151,8 +144,8 @@ export const FASHION_PRODUCTS: Product[] = [
     description:
       "The dress that works for literally everything. Reformation's silk midi glides over the body in a bias cut that feels as good as it looks. Date night, wedding guest, Tuesday.",
     aspectRatio: 0.65,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 21000,
+    shares: 1890,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -189,8 +182,8 @@ export const FASHION_PRODUCTS: Product[] = [
     description:
       "The perfect white tee actually exists. Lady White Co. crafts each one in LA from heavyweight tubular cotton that gets softer with every wash and never loses its shape.",
     aspectRatio: 1.1,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 5800,
+    shares: 580,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -223,8 +216,8 @@ export const FASHION_PRODUCTS: Product[] = [
     description:
       "Staud's silk camisole walks the line between lingerie and ready-to-wear. Layer under a blazer for the office or wear solo for evening with effortless sophistication.",
     aspectRatio: 0.85,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 14200,
+    shares: 1280,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -258,8 +251,8 @@ export const FASHION_PRODUCTS: Product[] = [
     description:
       "Theory's signature trouser in Italian stretch wool sits perfectly at the waist with a clean pressed crease. The trouser that makes everything else in your closet look better.",
     aspectRatio: 0.7,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 32000,
+    shares: 3040,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -293,8 +286,8 @@ export const FASHION_PRODUCTS: Product[] = [
     description:
       "Everlane took post-consumer cashmere scraps and turned them into the coziest cardigan you'll ever own. Same luxurious softness, fraction of the environmental impact.",
     aspectRatio: 1.0,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 16500,
+    shares: 1490,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -302,12 +295,12 @@ export const FASHION_PRODUCTS: Product[] = [
     title: "Structured Wool Overcoat",
     brand: "Toteme",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1544022613-e10091c39da4?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1594938328870-9623159c8c99?w=600&q=80",
       alt: "Structured wool overcoat in camel",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1544022613-e10091c39da4?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1594938328870-9623159c8c99?w=1200&q=80",
         alt: "Structured wool overcoat in camel",
       },
       {
@@ -328,8 +321,8 @@ export const FASHION_PRODUCTS: Product[] = [
     description:
       "Toteme's definitive overcoat in double-faced Italian wool. Perfectly balanced between minimal and monumental, this is the coat that anchors your entire cold-weather wardrobe.",
     aspectRatio: 0.67,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 28000,
+    shares: 2520,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -362,8 +355,8 @@ export const FASHION_PRODUCTS: Product[] = [
     description:
       "COS delivers architectural volume in these flowing wide-leg trousers. Deep pleats create a sculptural drape that moves beautifully, blurring the line between tailoring and ease.",
     aspectRatio: 1.3,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 9800,
+    shares: 880,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -396,8 +389,8 @@ export const FASHION_PRODUCTS: Product[] = [
     description:
       "The quintessential summer staple in crisp European linen. Club Monaco nails the balance between polished and undone with a relaxed fit that looks effortlessly put together.",
     aspectRatio: 0.92,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 11200,
+    shares: 1010,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -431,8 +424,8 @@ export const FASHION_PRODUCTS: Product[] = [
     description:
       "The Skims dress that broke the internet. Their signature soft rib knit sculpts and skims the body in a midi length that's equal parts comfortable and head-turning.",
     aspectRatio: 0.66,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 22000,
+    shares: 1980,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -465,8 +458,8 @@ export const FASHION_PRODUCTS: Product[] = [
     description:
       "COS's answer to the knit vest trend is a study in proportion. Oversized in chunky merino with a deep V-neck that layers perfectly over everything from tees to button-downs.",
     aspectRatio: 1.15,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 8400,
+    shares: 756,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -499,8 +492,8 @@ export const FASHION_PRODUCTS: Product[] = [
     description:
       "Fluid recycled satin wraps and ties at the waist for an adjustable, flattering fit. The subtle side slit adds movement while the olive hue works across all seasons.",
     aspectRatio: 0.78,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 7600,
+    shares: 684,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -534,8 +527,8 @@ export const FASHION_PRODUCTS: Product[] = [
     description:
       "Jenni Kayne's cashmere lounge set is the ultimate luxury at home. Sold as a matching set in the softest Mongolian cashmere that makes sweatpants feel like a downgrade.",
     aspectRatio: 1.45,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 19500,
+    shares: 1755,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -568,8 +561,8 @@ export const FASHION_PRODUCTS: Product[] = [
     description:
       "Weightless cashmere gauze that drapes like a whisper. The Row's wrap is impossibly light yet warm, finished by hand in Italy with raw edges that give it a quiet, lived-in feel.",
     aspectRatio: 1.55,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 112000,
+    shares: 10080,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -602,8 +595,8 @@ export const FASHION_PRODUCTS: Product[] = [
     description:
       "Everlane stripped the classic oxford down to its essentials and rebuilt it in organic cotton poplin with corozo buttons. Clean, crisp, and transparently priced at $58.",
     aspectRatio: 0.95,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 13800,
+    shares: 1242,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -637,8 +630,8 @@ export const FASHION_PRODUCTS: Product[] = [
     description:
       "The bodysuit that launched a billion-dollar empire. Skims' sculpting fabric smooths without squeezing, in a shade range that actually matches real skin tones.",
     aspectRatio: 0.75,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 24500,
+    shares: 2205,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -646,12 +639,12 @@ export const FASHION_PRODUCTS: Product[] = [
     title: "Wool-Cashmere Wrap Dress",
     brand: "Vince",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1577900232427-18219b9daa25?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1590548784585-643d2b9f2925?w=600&q=80",
       alt: "Elegant wool-cashmere wrap dress in burgundy",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1577900232427-18219b9daa25?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1590548784585-643d2b9f2925?w=1200&q=80",
         alt: "Elegant wool-cashmere wrap dress in burgundy",
       },
       {
@@ -672,8 +665,8 @@ export const FASHION_PRODUCTS: Product[] = [
     description:
       "Vince masters the art of understated luxury with this wool-cashmere wrap dress. The true wrap construction creates a universally flattering silhouette that transitions seamlessly from office to evening.",
     aspectRatio: 0.73,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 17200,
+    shares: 1548,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -707,8 +700,8 @@ export const FASHION_PRODUCTS: Product[] = [
     description:
       "Aritzia's bestselling quilted vest is the ultimate layering piece for transitional weather. Recycled down fill keeps you warm without bulk, and the diamond quilting adds understated texture.",
     aspectRatio: 1.2,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 15600,
+    shares: 1404,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -741,8 +734,8 @@ export const FASHION_PRODUCTS: Product[] = [
     description:
       "The everyday tank elevated. Madewell's ribbed cotton has just enough stretch to hug without clinging, and the organic cotton gets more comfortable every time you wash it.",
     aspectRatio: 1.05,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 10500,
+    shares: 945,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -750,12 +743,12 @@ export const FASHION_PRODUCTS: Product[] = [
     title: "Cropped Wool Jacket",
     brand: "Sezane",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1523381294911-8d3cead13b03?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1614676471928-2ed0ad1061a4?w=600&q=80",
       alt: "Cropped boucle wool jacket in powder blue",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1523381294911-8d3cead13b03?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1614676471928-2ed0ad1061a4?w=1200&q=80",
         alt: "Cropped boucle wool jacket in powder blue",
       },
       {
@@ -776,8 +769,8 @@ export const FASHION_PRODUCTS: Product[] = [
     description:
       "Sezane channels Parisian je ne sais quoi in this cropped boucle jacket. Gold buttons and a collarless silhouette give it a vintage charm that pairs with everything from jeans to midi skirts.",
     aspectRatio: 0.88,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 13000,
+    shares: 1170,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -811,8 +804,8 @@ export const FASHION_PRODUCTS: Product[] = [
     description:
       "Eileen Fisher's system-dressing staple in organic cotton ponte. The wide waistband never digs, the ponte holds its shape all day, and the ankle length works with every shoe in your closet.",
     aspectRatio: 0.69,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 11800,
+    shares: 1062,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -846,8 +839,8 @@ export const FASHION_PRODUCTS: Product[] = [
     description:
       "The hoodie that elevated streetwear to luxury. ALD's uniform hoodie in 14oz Canadian-made fleece is the gold standard: heavyweight, perfectly boxy, and built to last decades.",
     aspectRatio: 1.0,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 42000,
+    shares: 3780,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -880,8 +873,8 @@ export const FASHION_PRODUCTS: Product[] = [
     description:
       "Vince's silk charmeuse blouse drapes with an effortless fluidity that only real silk delivers. French seam construction ensures a clean interior, and the concealed placket keeps the focus on the fabric.",
     aspectRatio: 0.82,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 15800,
+    shares: 1422,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -915,8 +908,8 @@ export const FASHION_PRODUCTS: Product[] = [
     description:
       "The sweatpant that you can actually wear outside. ALD's tapered silhouette in reverse-weave fleece sits perfectly between athletic and refined, with a weight that holds its structure season after season.",
     aspectRatio: 1.35,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 36000,
+    shares: 3240,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -950,8 +943,8 @@ export const FASHION_PRODUCTS: Product[] = [
     description:
       "Sezane channels effortless French summer in this tiered cotton midi. The smocked bodice and puff sleeves feel romantic without being precious, and yes, it has pockets.",
     aspectRatio: 0.76,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 14600,
+    shares: 1314,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -959,12 +952,12 @@ export const FASHION_PRODUCTS: Product[] = [
     title: "Tailored Bermuda Short",
     brand: "Theory",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1601924994987-69e26d50dc64?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80",
       alt: "Tailored Bermuda shorts in sand linen blend",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1601924994987-69e26d50dc64?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&q=80",
         alt: "Tailored Bermuda shorts in sand linen blend",
       },
       {
@@ -985,8 +978,8 @@ export const FASHION_PRODUCTS: Product[] = [
     description:
       "Theory proves that shorts can be refined. These tailored Bermudas in a linen-cotton blend hit at the knee with a pressed crease that brings suiting polish to warm-weather dressing.",
     aspectRatio: 1.4,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 28500,
+    shares: 2565,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -994,12 +987,12 @@ export const FASHION_PRODUCTS: Product[] = [
     title: "Alpaca Blend Turtleneck",
     brand: "Toteme",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1520903920243-00d872a2d1c8?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=600&q=80",
       alt: "Oversized alpaca turtleneck in charcoal",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1520903920243-00d872a2d1c8?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=1200&q=80",
         alt: "Oversized alpaca turtleneck in charcoal",
       },
       {
@@ -1020,8 +1013,8 @@ export const FASHION_PRODUCTS: Product[] = [
     description:
       "Toteme's alpaca turtleneck is a masterclass in Scandinavian minimalism. The baby alpaca blend creates a halo-like softness with an oversized silhouette that feels like wearing a cloud.",
     aspectRatio: 0.9,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 31000,
+    shares: 2790,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -1055,8 +1048,8 @@ export const FASHION_PRODUCTS: Product[] = [
     description:
       "Aritzia blurs the line between loungewear and going-out pants with this satin jogger. The liquid drape catches the light beautifully while the elastic waist keeps things comfortable.",
     aspectRatio: 0.71,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 9200,
+    shares: 828,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -1089,8 +1082,8 @@ export const FASHION_PRODUCTS: Product[] = [
     description:
       "The everyday tote that replaces all your other totes. Madewell's heavyweight organic canvas gets better with age, and the reinforced leather handles can take whatever you throw in it.",
     aspectRatio: 1.5,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 8100,
+    shares: 729,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -1124,8 +1117,8 @@ export const FASHION_PRODUCTS: Product[] = [
     description:
       "Eileen Fisher's crepe wide-leg pant moves like water. The pull-on elastic waist disappears under tops while the full-width leg creates an elegant column of fluid drape.",
     aspectRatio: 0.86,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 12600,
+    shares: 1134,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -1159,8 +1152,8 @@ export const FASHION_PRODUCTS: Product[] = [
     description:
       "Toteme's twisted seam skirt is functional sculpture. The signature spiraling seam creates visual movement around a clean A-line silhouette in structured organic cotton.",
     aspectRatio: 0.77,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 25000,
+    shares: 2250,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -1193,8 +1186,8 @@ export const FASHION_PRODUCTS: Product[] = [
     description:
       "Everlane proves a great tee doesn't need to cost a fortune. Pima cotton gives this relaxed tee a buttery handfeel that outperforms shirts three times the price.",
     aspectRatio: 1.25,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 10800,
+    shares: 972,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -1232,8 +1225,8 @@ export const FASHION_PRODUCTS: Product[] = [
     description:
       "The Row's ultimate trouser statement in Japanese wool flannel. A single pleat creates volume that falls into a wide leg with quiet authority. The kind of pant that makes people ask where it's from.",
     aspectRatio: 0.74,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 95000,
+    shares: 8550,
     gumiedByFriends: getRandomGumiFriends(),
   },
 ];

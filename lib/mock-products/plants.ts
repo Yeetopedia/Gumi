@@ -1,13 +1,6 @@
 import { Product } from "@/types";
 import { getRandomGumiFriends } from "../mock-users";
 
-function rg(): number {
-  const r = [[50,500],[500,5000],[5000,50000],[50000,500000]];
-  const x = r[Math.floor(Math.random()*r.length)];
-  return Math.floor(Math.random()*(x[1]-x[0])+x[0]);
-}
-function rs(): number { return Math.floor(Math.random()*2000)+10; }
-
 export const PLANTS_PRODUCTS: Product[] = [
   {
     id: "plants-1",
@@ -43,8 +36,8 @@ export const PLANTS_PRODUCTS: Product[] = [
     description:
       "The statement plant that transformed a million apartments. Bloomscape ships this fiddle leaf fig healthy and ready to thrive, so you skip the garden center gamble entirely.",
     aspectRatio: 0.72,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 62000,
+    shares: 7400,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -77,8 +70,8 @@ export const PLANTS_PRODUCTS: Product[] = [
     description:
       "The Swiss cheese plant that took over Instagram and never left. The Sill's monstera arrives with dramatic fenestrations and enough personality to anchor any room.",
     aspectRatio: 0.85,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 78500,
+    shares: 9800,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -115,8 +108,8 @@ export const PLANTS_PRODUCTS: Product[] = [
     description:
       "The plant even your most neglectful friend can keep alive. Golden pothos trails elegantly from shelves and hangers while quietly purifying your air.",
     aspectRatio: 1.15,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 34000,
+    shares: 4200,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -149,8 +142,8 @@ export const PLANTS_PRODUCTS: Product[] = [
     description:
       "The bedroom plant that works the night shift. Snake plants release oxygen while you sleep and demand almost nothing in return — water every few weeks and you're golden.",
     aspectRatio: 0.68,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 28500,
+    shares: 3600,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -187,8 +180,8 @@ export const PLANTS_PRODUCTS: Product[] = [
     description:
       "The effortless botanical that makes every shelf look curated. Terrain's dried eucalyptus holds its silvery color for months and fills the room with a subtle, spa-like fragrance.",
     aspectRatio: 1.0,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 18200,
+    shares: 2300,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -221,8 +214,8 @@ export const PLANTS_PRODUCTS: Product[] = [
     description:
       "The planter that makes you feel something. East Fork's stoneware vessels are hand-thrown by artisans in Asheville, each one carrying subtle variations that mass production could never replicate.",
     aspectRatio: 1.05,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 14800,
+    shares: 1800,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -259,8 +252,8 @@ export const PLANTS_PRODUCTS: Product[] = [
     description:
       "For people who love plants but forget everything. JOMO's self-watering system uses a cotton wick to pull moisture from a hidden reservoir, keeping roots perfectly hydrated for weeks.",
     aspectRatio: 0.92,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 11600,
+    shares: 1450,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -293,8 +286,8 @@ export const PLANTS_PRODUCTS: Product[] = [
     description:
       "Turn one plant into many and watch it happen. Areaware's propagation station lets you root cuttings in glass tubes, turning the science of plant multiplication into living decor.",
     aspectRatio: 1.35,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 8900,
+    shares: 1100,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -315,7 +308,7 @@ export const PLANTS_PRODUCTS: Product[] = [
         alt: "Herb garden on sunny kitchen windowsill",
       },
       {
-        url: "https://images.unsplash.com/photo-1501004318855-cdaf2a320553?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e?w=1200&q=80",
         alt: "Fresh herbs being snipped for cooking",
       },
     ],
@@ -331,8 +324,8 @@ export const PLANTS_PRODUCTS: Product[] = [
     description:
       "Grow your dinner's finishing touch on the windowsill. This all-in-one herb kit comes with heirloom seeds, organic soil, and a self-watering planter — no green thumb required.",
     aspectRatio: 1.45,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 7200,
+    shares: 900,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -349,7 +342,7 @@ export const PLANTS_PRODUCTS: Product[] = [
         alt: "Glass terrarium with succulents, sand layers, and decorative stones",
       },
       {
-        url: "https://images.unsplash.com/photo-1501004318855-cdaf2a320553?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e?w=1200&q=80",
         alt: "Hands assembling a desert terrarium with tweezers",
       },
     ],
@@ -365,8 +358,8 @@ export const PLANTS_PRODUCTS: Product[] = [
     description:
       "A tiny desert ecosystem you build yourself. Plant Circle's terrarium kit includes everything from the hand-blown glass to the colored sand layers, making a meditative weekend project.",
     aspectRatio: 1.0,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 5800,
+    shares: 720,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -374,12 +367,12 @@ export const PLANTS_PRODUCTS: Product[] = [
     title: "Japanese Juniper Bonsai Starter",
     brand: "Greenery Unlimited",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1501004318855-cdaf2a320553?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e?w=600&q=80",
       alt: "Young juniper bonsai in traditional ceramic training pot",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1501004318855-cdaf2a320553?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e?w=1200&q=80",
         alt: "Young juniper bonsai in traditional ceramic training pot",
       },
       {
@@ -387,7 +380,7 @@ export const PLANTS_PRODUCTS: Product[] = [
         alt: "Bonsai tool kit with pruning shears and wire",
       },
       {
-        url: "https://images.unsplash.com/photo-1530968831187-a937ade89d1e?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1509587584298-0f3b3a3a1797?w=1200&q=80",
         alt: "Bonsai displayed on wooden stand near window",
       },
     ],
@@ -404,8 +397,8 @@ export const PLANTS_PRODUCTS: Product[] = [
     description:
       "An ancient art form, simplified for modern beginners. This pre-trained juniper arrives with everything you need to start shaping your own miniature tree — patience sold separately.",
     aspectRatio: 0.88,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 4300,
+    shares: 540,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -422,7 +415,7 @@ export const PLANTS_PRODUCTS: Product[] = [
         alt: "Hand-knotted macrame plant hanger holding a trailing plant",
       },
       {
-        url: "https://images.unsplash.com/photo-1530968831187-a937ade89d1e?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1509587584298-0f3b3a3a1797?w=1200&q=80",
         alt: "Three macrame hangers at staggered heights by window",
       },
     ],
@@ -438,8 +431,8 @@ export const PLANTS_PRODUCTS: Product[] = [
     description:
       "The fastest way to add dimension to a room without furniture. Terrain's hand-knotted macrame hanger turns any trailing plant into a floating sculptural moment.",
     aspectRatio: 0.65,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 21000,
+    shares: 2600,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -447,12 +440,12 @@ export const PLANTS_PRODUCTS: Product[] = [
     title: "Brass Plant Mister",
     brand: "Haws",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1530968831187-a937ade89d1e?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1509587584298-0f3b3a3a1797?w=600&q=80",
       alt: "Polished brass plant mister with fine spray nozzle",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1530968831187-a937ade89d1e?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1509587584298-0f3b3a3a1797?w=1200&q=80",
         alt: "Polished brass plant mister with fine spray nozzle",
       },
       {
@@ -476,8 +469,8 @@ export const PLANTS_PRODUCTS: Product[] = [
     description:
       "A plant care tool beautiful enough to leave on the shelf. Haws has been crafting brass misters in England since 1886, and this one produces the finest mist your ferns will ever feel.",
     aspectRatio: 0.78,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 19500,
+    shares: 2400,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -511,8 +504,8 @@ export const PLANTS_PRODUCTS: Product[] = [
     description:
       "Garden tools that feel like they belong in a gallery. Sophie Conran's set pairs FSC-certified beech handles with mirror-polished stainless steel — built to last decades of weekend potting sessions.",
     aspectRatio: 1.25,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 12400,
+    shares: 1550,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -550,8 +543,8 @@ export const PLANTS_PRODUCTS: Product[] = [
     description:
       "Everything you need to start a garden from scratch, minus the overwhelm. Biodegradable cells go straight into the ground when seedlings are ready, so there's zero plastic waste.",
     aspectRatio: 1.42,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 6700,
+    shares: 840,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -588,8 +581,8 @@ export const PLANTS_PRODUCTS: Product[] = [
     description:
       "A living centerpiece that practically takes care of itself. Lively Root hand-selects each succulent for color and texture, creating an arrangement that looks professionally styled from day one.",
     aspectRatio: 1.2,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 31000,
+    shares: 3900,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -622,8 +615,8 @@ export const PLANTS_PRODUCTS: Product[] = [
     description:
       "The gift that outclasses every bouquet. Urban Stems' double-stem phalaenopsis arrives in a glazed ceramic pot, ready to bloom for months — far outlasting any cut flowers.",
     aspectRatio: 0.75,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 9600,
+    shares: 1200,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -640,7 +633,7 @@ export const PLANTS_PRODUCTS: Product[] = [
         alt: "Tillandsia air plants in brass geometric display frames",
       },
       {
-        url: "https://images.unsplash.com/photo-1470058869958-2a77d9d30024?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1497250681960-ef046c08a56e?w=1200&q=80",
         alt: "Air plant display on floating shelf with books",
       },
       {
@@ -660,8 +653,8 @@ export const PLANTS_PRODUCTS: Product[] = [
     description:
       "Plants that float in midair — almost. These brass geometric frames cradle living tillandsia that need nothing but a weekly mist, making them the lowest-maintenance decor you'll ever own.",
     aspectRatio: 1.0,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 4800,
+    shares: 600,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -669,12 +662,12 @@ export const PLANTS_PRODUCTS: Product[] = [
     title: "Heritage Copper Watering Can",
     brand: "Haws",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1470058869958-2a77d9d30024?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1497250681960-ef046c08a56e?w=600&q=80",
       alt: "Handmade copper watering can with brass rose attachment",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1470058869958-2a77d9d30024?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1497250681960-ef046c08a56e?w=1200&q=80",
         alt: "Handmade copper watering can with brass rose attachment",
       },
       {
@@ -695,8 +688,8 @@ export const PLANTS_PRODUCTS: Product[] = [
     description:
       "The watering can your great-grandchildren will fight over. Haws has been hand-spinning copper in England for over a century, and each can develops a one-of-a-kind patina that only gets better with age.",
     aspectRatio: 1.1,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 16500,
+    shares: 2050,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -734,8 +727,8 @@ export const PLANTS_PRODUCTS: Product[] = [
     description:
       "Elevate your favorite plant — literally. This walnut stand lifts floor plants to eye level with mid-century lines and brass details that nod to the furniture icons of the 1950s.",
     aspectRatio: 0.7,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 13800,
+    shares: 1720,
     gumiedByFriends: getRandomGumiFriends(),
   },
 ];

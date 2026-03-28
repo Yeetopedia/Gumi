@@ -1,13 +1,6 @@
 import { Product } from "@/types";
 import { getRandomGumiFriends } from "../mock-users";
 
-function rg(): number {
-  const r = [[50,500],[500,5000],[5000,50000],[50000,500000]];
-  const x = r[Math.floor(Math.random()*r.length)];
-  return Math.floor(Math.random()*(x[1]-x[0])+x[0]);
-}
-function rs(): number { return Math.floor(Math.random()*2000)+10; }
-
 export const BOOKS_STATIONERY_PRODUCTS: Product[] = [
   {
     id: "books-1",
@@ -33,8 +26,8 @@ export const BOOKS_STATIONERY_PRODUCTS: Product[] = [
     ],
     description: "The definitive A-to-Z guide to 600 great artists spanning medieval to contemporary art. Each entry features a full-page color reproduction and a concise text placing the work in its historical context.",
     aspectRatio: 1.35,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 62000,
+    shares: 4960,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -60,8 +53,8 @@ export const BOOKS_STATIONERY_PRODUCTS: Product[] = [
     ],
     description: "A beautifully crafted refillable travel journal wrapped in natural linen. The lay-flat binding and premium Midori MD paper make it a joy to write in whether you're sketching cityscapes or jotting down travel notes.",
     aspectRatio: 0.75,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 28000,
+    shares: 2240,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -88,8 +81,8 @@ export const BOOKS_STATIONERY_PRODUCTS: Product[] = [
     ],
     description: "The iconic Kaweco AL Sport in raw brass that develops a gorgeous patina over time. The compact pocket size and reliable steel nib make it the perfect everyday carry fountain pen for discerning writers.",
     aspectRatio: 0.65,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 6800,
+    shares: 544,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -115,8 +108,8 @@ export const BOOKS_STATIONERY_PRODUCTS: Product[] = [
     ],
     description: "An elegant wax seal kit featuring Rifle Paper Co.'s signature botanical motif engraved into a solid brass stamp. Includes richly pigmented sealing wax sticks in garden-inspired colors for beautiful correspondence.",
     aspectRatio: 1.0,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 4200,
+    shares: 336,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -144,8 +137,8 @@ export const BOOKS_STATIONERY_PRODUCTS: Product[] = [
     ],
     description: "A thoughtfully designed daily planner wrapped in natural bookcloth with gold foil accents. Each day gets a full page with hourly time slots, notes sections, and priority lists to keep you organized year-round.",
     aspectRatio: 0.82,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 22000,
+    shares: 1760,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -171,8 +164,8 @@ export const BOOKS_STATIONERY_PRODUCTS: Product[] = [
     ],
     description: "A curated set of twelve hand-carved rubber stamps featuring vintage botanical illustrations and typographic elements. Perfect for adding artisan touches to journals, letters, and gift wrapping.",
     aspectRatio: 1.15,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 3500,
+    shares: 280,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -198,8 +191,8 @@ export const BOOKS_STATIONERY_PRODUCTS: Product[] = [
     ],
     description: "Twenty-four letterpress-printed postcards featuring original illustrations of the world's most captivating cities. Printed on luxurious cotton card stock, each card is a miniature piece of art worth framing.",
     aspectRatio: 1.45,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 5100,
+    shares: 408,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -226,8 +219,8 @@ export const BOOKS_STATIONERY_PRODUCTS: Product[] = [
     ],
     description: "A stunning visual journey through the golden age of luxury travel, curated by Assouline. Over 200 archival photographs are printed on art-grade paper and bound in a silk hardcover with gilt-edged pages.",
     aspectRatio: 1.25,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 45000,
+    shares: 3600,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -253,8 +246,8 @@ export const BOOKS_STATIONERY_PRODUCTS: Product[] = [
     ],
     description: "A collection of 85 recipes designed for intimate gatherings, paired with Kinfolk's signature minimalist photography. Each chapter features stories from hosts around the world who share their philosophy on bringing people together over food.",
     aspectRatio: 0.90,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 38000,
+    shares: 3040,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -280,8 +273,8 @@ export const BOOKS_STATIONERY_PRODUCTS: Product[] = [
     ],
     description: "A refined leather bookmark crafted from vegetable-tanned Italian hide that ages beautifully over time. The slim profile slips between pages without stressing book spines, making it a thoughtful gift for avid readers.",
     aspectRatio: 0.68,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 2800,
+    shares: 224,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -307,8 +300,8 @@ export const BOOKS_STATIONERY_PRODUCTS: Product[] = [
     ],
     description: "A beautifully restrained desk calendar printed on premium GF Smith paper and bound with brass wire. The clean typographic layout keeps your desk looking sharp while the reverse side provides a full year overview.",
     aspectRatio: 1.10,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 3200,
+    shares: 256,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -335,8 +328,8 @@ export const BOOKS_STATIONERY_PRODUCTS: Product[] = [
     ],
     description: "A compact field watercolor set featuring 18 richly pigmented artist-grade pans in a magnetic closure tin. The lid doubles as a generous mixing palette, making it the perfect companion for plein-air painting and travel sketching.",
     aspectRatio: 1.40,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 5800,
+    shares: 464,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -363,8 +356,8 @@ export const BOOKS_STATIONERY_PRODUCTS: Product[] = [
     ],
     description: "A precision-machined brass oblique pen holder paired with five interchangeable steel nibs for pointed-pen calligraphy. The set includes a bottle of archival carbon ink and a practice guide to help beginners find their stroke.",
     aspectRatio: 0.72,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 2400,
+    shares: 192,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -390,8 +383,8 @@ export const BOOKS_STATIONERY_PRODUCTS: Product[] = [
     ],
     description: "An ultra-slim rechargeable reading light designed to clip seamlessly onto any book or e-reader. Three warm-toned brightness levels and a 20-hour battery life make it ideal for late-night reading sessions.",
     aspectRatio: 0.95,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 18000,
+    shares: 1440,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -417,8 +410,8 @@ export const BOOKS_STATIONERY_PRODUCTS: Product[] = [
     ],
     description: "A rugged waxed canvas book sleeve with a plush fleece-lined interior to protect your favorite reads on the go. The brass zipper and reinforced stitching ensure this sleeve is built to last through years of daily commutes.",
     aspectRatio: 1.05,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 4600,
+    shares: 368,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -431,7 +424,7 @@ export const BOOKS_STATIONERY_PRODUCTS: Product[] = [
     },
     images: [
       { url: "https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=1200&q=80", alt: "Blackwing 602 pencil set in box" },
-      { url: "https://images.unsplash.com/photo-1510172951991-856a62a9df9f?w=1200&q=80", alt: "Single Blackwing pencil on paper with shavings" },
+      { url: "https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=1200&q=80", alt: "Single Blackwing pencil on paper with shavings" },
     ],
     price: { min: 2800, max: 3500, currency: "USD" },
     rating: { average: 4.8, count: 4200 },
@@ -445,8 +438,8 @@ export const BOOKS_STATIONERY_PRODUCTS: Product[] = [
     ],
     description: "The legendary Blackwing 602 pencil, beloved by creators since the 1930s, features a firm yet smooth Japanese graphite core in a genuine incense-cedar barrel. The iconic flat ferrule with replaceable eraser is instantly recognizable.",
     aspectRatio: 0.70,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 14500,
+    shares: 1160,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -454,13 +447,13 @@ export const BOOKS_STATIONERY_PRODUCTS: Product[] = [
     title: "Letterpress Letter Writing Kit",
     brand: "Crane & Co.",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1510172951991-856a62a9df9f?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=600&q=80",
       alt: "Elegant letter writing set with cream stationery and envelopes",
     },
     images: [
-      { url: "https://images.unsplash.com/photo-1510172951991-856a62a9df9f?w=1200&q=80", alt: "Crane letter writing kit overview" },
+      { url: "https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=1200&q=80", alt: "Crane letter writing kit overview" },
       { url: "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=1200&q=80", alt: "Letterpress detail on stationery" },
-      { url: "https://images.unsplash.com/photo-1432821596592-e2c18b78144a?w=1200&q=80", alt: "Handwritten letter on Crane paper" },
+      { url: "https://images.unsplash.com/photo-1553729784-e91953dec042?w=1200&q=80", alt: "Handwritten letter on Crane paper" },
     ],
     price: { min: 4800, max: 6500, currency: "USD" },
     rating: { average: 4.7, count: 680 },
@@ -473,8 +466,8 @@ export const BOOKS_STATIONERY_PRODUCTS: Product[] = [
     ],
     description: "Exquisite letter writing stationery featuring deep-impression letterpress printing on Crane's signature 100% cotton Lettra paper. The kit includes twenty sheets and matching lined envelopes, all presented in an elegant keepsake box.",
     aspectRatio: 1.30,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 5600,
+    shares: 448,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -487,7 +480,7 @@ export const BOOKS_STATIONERY_PRODUCTS: Product[] = [
     },
     images: [
       { url: "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=1200&q=80", alt: "Hobonichi planner cover close-up" },
-      { url: "https://images.unsplash.com/photo-1432821596592-e2c18b78144a?w=1200&q=80", alt: "Hobonichi weekly spread layout" },
+      { url: "https://images.unsplash.com/photo-1553729784-e91953dec042?w=1200&q=80", alt: "Hobonichi weekly spread layout" },
     ],
     price: { min: 3200, max: 4500, currency: "USD" },
     rating: { average: 4.8, count: 3650 },
@@ -501,8 +494,8 @@ export const BOOKS_STATIONERY_PRODUCTS: Product[] = [
     ],
     description: "The cult-favorite Hobonichi Techo Weeks fits in your back pocket yet provides a full year of weekly planning on iconic Tomoe River paper. The left-side weekly layout paired with a right-side memo page strikes the perfect balance between structure and freedom.",
     aspectRatio: 0.78,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 35000,
+    shares: 2800,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -510,11 +503,11 @@ export const BOOKS_STATIONERY_PRODUCTS: Product[] = [
     title: "Stone Memo Block",
     brand: "Postalco",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1432821596592-e2c18b78144a?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1553729784-e91953dec042?w=600&q=80",
       alt: "Cuboid memo pad on a desk next to a pen holder",
     },
     images: [
-      { url: "https://images.unsplash.com/photo-1432821596592-e2c18b78144a?w=1200&q=80", alt: "Postalco memo block close-up" },
+      { url: "https://images.unsplash.com/photo-1553729784-e91953dec042?w=1200&q=80", alt: "Postalco memo block close-up" },
       { url: "https://images.unsplash.com/photo-1553729784-e91953dec042?w=1200&q=80", alt: "Memo block with handwritten notes" },
     ],
     price: { min: 1400, max: 1800, currency: "USD" },
@@ -528,8 +521,8 @@ export const BOOKS_STATIONERY_PRODUCTS: Product[] = [
     ],
     description: "A dense cube of 480 stone paper sheets that sits elegantly on any desk. The water-resistant, ultra-smooth paper works beautifully with any pen and the compact form factor makes it an endlessly useful desk companion.",
     aspectRatio: 1.00,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 2100,
+    shares: 168,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -555,8 +548,8 @@ export const BOOKS_STATIONERY_PRODUCTS: Product[] = [
     ],
     description: "Transparent sticky notes that let you annotate directly over text without obscuring the words beneath. The set includes six pastel colors in three sizes, with a gentle adhesive that repositions cleanly on any paper surface.",
     aspectRatio: 1.55,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 16000,
+    shares: 1280,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -582,8 +575,8 @@ export const BOOKS_STATIONERY_PRODUCTS: Product[] = [
     ],
     description: "A hand-polished obsidian paperweight that doubles as a sculptural desk object. Each piece is cut from natural volcanic glass with organic asymmetry, meaning no two are alike. The satisfying weight keeps papers firmly in place.",
     aspectRatio: 0.88,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 2600,
+    shares: 208,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -611,8 +604,8 @@ export const BOOKS_STATIONERY_PRODUCTS: Product[] = [
     ],
     description: "The go-to notebook for bullet journaling, sketching, and note-taking, featuring 123 numbered dot grid pages on smooth 80gsm acid-free paper. The softcover flexes easily in hand while the thread binding ensures it opens completely flat.",
     aspectRatio: 0.80,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 31000,
+    shares: 2480,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -639,8 +632,8 @@ export const BOOKS_STATIONERY_PRODUCTS: Product[] = [
     ],
     description: "Field Notes' most durable memo book, printed on waterproof Yupo synthetic paper that stands up to rain, sweat, and spills. The pocket-sized format and graph-ruled pages make these indispensable for field work, hiking, or any outdoor adventure.",
     aspectRatio: 0.67,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 11000,
+    shares: 880,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -667,8 +660,8 @@ export const BOOKS_STATIONERY_PRODUCTS: Product[] = [
     ],
     description: "A charming social stationery set featuring Rifle Paper Co.'s hand-painted garden illustrations with gold foil accents. Twelve flat cards and matching lined envelopes are printed on luxurious heavyweight cotton paper for correspondence that feels truly special.",
     aspectRatio: 1.20,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 7200,
+    shares: 576,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -695,8 +688,8 @@ export const BOOKS_STATIONERY_PRODUCTS: Product[] = [
     ],
     description: "A curated set of twelve premium graphite pencils spanning HB through 6B, housed in a handcrafted cedar presentation box. Each pencil features California incense-cedar and a silky Japanese graphite core that lays down smooth, rich lines.",
     aspectRatio: 1.48,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 9500,
+    shares: 760,
     gumiedByFriends: getRandomGumiFriends(),
   },
 ];

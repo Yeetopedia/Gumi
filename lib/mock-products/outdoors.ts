@@ -1,13 +1,6 @@
 import { Product } from "@/types";
 import { getRandomGumiFriends } from "../mock-users";
 
-function rg(): number {
-  const r = [[50,500],[500,5000],[5000,50000],[50000,500000]];
-  const x = r[Math.floor(Math.random()*r.length)];
-  return Math.floor(Math.random()*(x[1]-x[0])+x[0]);
-}
-function rs(): number { return Math.floor(Math.random()*2000)+10; }
-
 export const OUTDOORS_PRODUCTS: Product[] = [
   {
     id: "outdoors-1",
@@ -39,8 +32,8 @@ export const OUTDOORS_PRODUCTS: Product[] = [
     description:
       "The bottle that launched a thousand trail selfies. Hydro Flask's 32oz wide mouth keeps ice frozen through a full day hike and doubles as a camp kitchen staple.",
     aspectRatio: 0.68,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 87300,
+    shares: 9600,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -74,8 +67,8 @@ export const OUTDOORS_PRODUCTS: Product[] = [
     description:
       "Patagonia's best-selling fleece looks polished enough for the coffee shop but performs on the mountain. Made entirely from recycled polyester, it's warm proof that sustainability doesn't sacrifice comfort.",
     aspectRatio: 0.78,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 124500,
+    shares: 13700,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -113,8 +106,8 @@ export const OUTDOORS_PRODUCTS: Product[] = [
     description:
       "Away's aluminum carry-on is the suitcase frequent flyers never check. The unibody shell laughs at overhead bin abuse while the interior compression system fits a week into a weekend bag.",
     aspectRatio: 0.85,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 18200,
+    shares: 2000,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -147,8 +140,8 @@ export const OUTDOORS_PRODUCTS: Product[] = [
     description:
       "Peak Design's packing cubes compress chaos into order. The tear-away zippers let you grab what you need without dismantling your entire suitcase, and the recycled nylon is nearly indestructible.",
     aspectRatio: 1.25,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 6400,
+    shares: 700,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -181,8 +174,8 @@ export const OUTDOORS_PRODUCTS: Product[] = [
     description:
       "At just 2.8 ounces, this titanium mug is barely there in your pack but completely transforms camp mornings. Heat water directly over a flame, sip your coffee, and rinse — the ultralight trifecta.",
     aspectRatio: 0.92,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 28700,
+    shares: 3200,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -203,7 +196,7 @@ export const OUTDOORS_PRODUCTS: Product[] = [
         alt: "Puffer jacket worn layered over flannel on mountain overlook",
       },
       {
-        url: "https://images.unsplash.com/photo-1581553680321-4fffff48f6e4?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1553531384-397c80973a0b?w=1200&q=80",
         alt: "Hiker wearing puffer jacket on ridgeline trail at dawn",
       },
     ],
@@ -220,8 +213,8 @@ export const OUTDOORS_PRODUCTS: Product[] = [
     description:
       "The Nano Puff packs down smaller than a paperback and punches way above its weight in warmth. Patagonia's workhorse synthetic layer handles everything from unexpected cold snaps to last-minute red-eye flights.",
     aspectRatio: 0.75,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 105000,
+    shares: 11600,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -238,7 +231,7 @@ export const OUTDOORS_PRODUCTS: Product[] = [
         alt: "Technical merino hiking socks laid flat showing cushion zones",
       },
       {
-        url: "https://images.unsplash.com/photo-1581553680321-4fffff48f6e4?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1553531384-397c80973a0b?w=1200&q=80",
         alt: "Trail runner on mountain path with performance socks visible",
       },
     ],
@@ -254,8 +247,8 @@ export const OUTDOORS_PRODUCTS: Product[] = [
     description:
       "Smartwool's PhD socks are the secret weapon against blisters on long trail days. The merino blend wicks faster than synthetics, regulates heat, and still feels fresh at mile twenty.",
     aspectRatio: 1.15,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 14300,
+    shares: 1600,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -263,12 +256,12 @@ export const OUTDOORS_PRODUCTS: Product[] = [
     title: "Original Puffy Blanket",
     brand: "Rumpl",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1581553680321-4fffff48f6e4?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1553531384-397c80973a0b?w=600&q=80",
       alt: "Rumpl puffy blanket draped over camp chair at sunset campsite",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1581553680321-4fffff48f6e4?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1553531384-397c80973a0b?w=1200&q=80",
         alt: "Rumpl puffy blanket draped over camp chair at sunset campsite",
       },
       {
@@ -293,8 +286,8 @@ export const OUTDOORS_PRODUCTS: Product[] = [
     description:
       "Rumpl turned sleeping bag tech into the only blanket you'll ever want. Whether you're truck-bed stargazing or commandeering the couch, the Original Puffy keeps you wrapped in campfire-level warmth.",
     aspectRatio: 1.35,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 5800,
+    shares: 640,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -327,8 +320,8 @@ export const OUTDOORS_PRODUCTS: Product[] = [
     description:
       "Sea to Summit's Ultra-Sil is the dry bag ultralight backpackers trust with their electronics and down layers. At under two ounces, there's no excuse not to carry bombproof waterproofing.",
     aspectRatio: 0.7,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 3900,
+    shares: 430,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -361,8 +354,8 @@ export const OUTDOORS_PRODUCTS: Product[] = [
     description:
       "Fjallraven's Wash Pouch is built from the same rugged G-1000 fabric as their legendary jackets. The hanging hook turns any bathroom door into organized base camp for your travel essentials.",
     aspectRatio: 1.1,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 10700,
+    shares: 1180,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -400,8 +393,8 @@ export const OUTDOORS_PRODUCTS: Product[] = [
     description:
       "Osprey's Atmos AG carries 40 pounds like it's 25 thanks to the Anti-Gravity suspension that floats the load off your back. Three-season thru-hikers and weekend warriors swear by it for good reason.",
     aspectRatio: 0.65,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 22400,
+    shares: 2470,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -435,8 +428,8 @@ export const OUTDOORS_PRODUCTS: Product[] = [
     description:
       "Arc'teryx engineered these boots to feel broken-in straight out of the box. The GORE-TEX liner keeps your feet dry through creek crossings while Vibram rubber grips wet granite like velcro.",
     aspectRatio: 1.3,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 76800,
+    shares: 8450,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -469,8 +462,8 @@ export const OUTDOORS_PRODUCTS: Product[] = [
     description:
       "The 250-weight sweet spot: warm enough for January summit bids, breathable enough for high-output touring. Merino's natural odor resistance means you can go days without the laundry guilt.",
     aspectRatio: 0.82,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 13600,
+    shares: 1500,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -504,8 +497,8 @@ export const OUTDOORS_PRODUCTS: Product[] = [
     description:
       "Black Diamond's Spot 400 is the headlamp that lives in every serious hiker's lid pocket. PowerTap lets you toggle brightness with a tap, and the red mode preserves your night vision for stargazing.",
     aspectRatio: 1.0,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 9200,
+    shares: 1010,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -522,7 +515,7 @@ export const OUTDOORS_PRODUCTS: Product[] = [
         alt: "Yeti soft cooler packed with ice and drinks at lake shore camp",
       },
       {
-        url: "https://images.unsplash.com/photo-1527004013197-933c4588cf2d?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1533240332313-0db49b459ad6?w=1200&q=80",
         alt: "Cooler detail showing HydroLok zipper and ColdCell insulation",
       },
     ],
@@ -539,8 +532,8 @@ export const OUTDOORS_PRODUCTS: Product[] = [
     description:
       "Yeti's Hopper Flip turns a day at the river into an all-day affair. The leak-proof HydroLok zipper means you can toss it in the truck bed sideways and still arrive with ice-cold drinks and dry gear.",
     aspectRatio: 1.2,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 93500,
+    shares: 10300,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -548,12 +541,12 @@ export const OUTDOORS_PRODUCTS: Product[] = [
     title: "Universal Travel Adapter",
     brand: "Goal Zero",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1527004013197-933c4588cf2d?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1533240332313-0db49b459ad6?w=600&q=80",
       alt: "Compact universal travel adapter with multiple plug types extended",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1527004013197-933c4588cf2d?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1533240332313-0db49b459ad6?w=1200&q=80",
         alt: "Compact universal travel adapter with multiple plug types extended",
       },
       {
@@ -573,8 +566,8 @@ export const OUTDOORS_PRODUCTS: Product[] = [
     description:
       "One adapter for every outlet on Earth. Goal Zero's universal adapter handles US, EU, UK, and AU plugs while the dual USB-C PD ports charge your laptop and phone simultaneously.",
     aspectRatio: 1.0,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 4700,
+    shares: 520,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -612,8 +605,8 @@ export const OUTDOORS_PRODUCTS: Product[] = [
     description:
       "Sea to Summit shaved every possible gram from this hammock without touching the 400-pound weight rating. At 7.4 ounces with straps, it weighs less than your trail snacks and transforms any two trees into paradise.",
     aspectRatio: 1.45,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 3200,
+    shares: 350,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -646,8 +639,8 @@ export const OUTDOORS_PRODUCTS: Product[] = [
     description:
       "REI Co-op's bike multi-tool covers every trailside emergency from a thrown chain to a loose headset. Nineteen tools fold into a package that fits in a jersey pocket — ride farther, worry less.",
     aspectRatio: 1.05,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 8900,
+    shares: 980,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -680,8 +673,8 @@ export const OUTDOORS_PRODUCTS: Product[] = [
     description:
       "Yeti solved the overlanding cup problem — the Rambler 26oz stacks neatly when you're packing out and keeps your cold brew glacial for hours when you're not. The MagSlider lid is splash-proof for washboard roads.",
     aspectRatio: 0.72,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 68400,
+    shares: 7500,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -719,8 +712,8 @@ export const OUTDOORS_PRODUCTS: Product[] = [
     description:
       "Every Del Día Batac is unique because each one is sewn from leftover fabrics that would otherwise go to waste. Cotopaxi gives their makers creative freedom, so no two packs look the same — sustainable style you literally cannot copy.",
     aspectRatio: 0.78,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 16800,
+    shares: 1850,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -754,8 +747,8 @@ export const OUTDOORS_PRODUCTS: Product[] = [
     description:
       "Goal Zero's Venture 75 unfolds into a serious power station on any sunny ridge. The monocrystalline cells squeeze maximum wattage from even overcast skies, keeping your devices and camp lights running indefinitely.",
     aspectRatio: 1.4,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 5100,
+    shares: 560,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -788,8 +781,8 @@ export const OUTDOORS_PRODUCTS: Product[] = [
     description:
       "Herschel's Classic has the timeless silhouette of a heritage rucksack with the modern guts for daily carry. The padded laptop sleeve and internal organizers mean it transitions from commute to weekend trip without missing a beat.",
     aspectRatio: 0.88,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 12300,
+    shares: 1350,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -827,8 +820,8 @@ export const OUTDOORS_PRODUCTS: Product[] = [
     description:
       "The Kanken was designed in 1978 to save Swedish schoolchildren's backs and it's still going strong. The boxy silhouette and Vinylon F fabric have become iconic — equal parts practical and impossibly cool.",
     aspectRatio: 0.95,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 19600,
+    shares: 2160,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -862,8 +855,8 @@ export const OUTDOORS_PRODUCTS: Product[] = [
     description:
       "MSR's PocketRocket Deluxe is the stove that made canister cooking mainstream. The pressure regulator maintains a steady flame even when the canister runs low, and the whole thing folds smaller than a hockey puck.",
     aspectRatio: 1.55,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 7200,
+    shares: 790,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -897,8 +890,8 @@ export const OUTDOORS_PRODUCTS: Product[] = [
     description:
       "The Nalgene is the cockroach of water bottles — it simply will not die. Now made from 50% recycled Tritan plastic, the wide mouth fits ice and a water filter alike. There's a reason every national park gift shop stocks them.",
     aspectRatio: 0.7,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 24700,
+    shares: 2720,
     gumiedByFriends: getRandomGumiFriends(),
   },
 ];

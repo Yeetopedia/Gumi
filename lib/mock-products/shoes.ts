@@ -1,12 +1,6 @@
 import { Product } from "@/types";
 import { getRandomGumiFriends } from "../mock-users";
 
-function rg(): number {
-  const r = [[50,500],[500,5000],[5000,50000],[50000,500000]];
-  const x = r[Math.floor(Math.random()*r.length)];
-  return Math.floor(Math.random()*(x[1]-x[0])+x[0]);
-}
-function rs(): number { return Math.floor(Math.random()*2000)+10; }
 
 export const SHOES_PRODUCTS: Product[] = [
   {
@@ -39,8 +33,8 @@ export const SHOES_PRODUCTS: Product[] = [
     description:
       "The New Balance 550 is a heritage court classic that's become the defining sneaker of quiet luxury. Originally released in 1989, its clean leather build and understated lines make it the perfect everyday shoe for those who know.",
     aspectRatio: 0.85,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 18400,
+    shares: 1840,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -73,8 +67,8 @@ export const SHOES_PRODUCTS: Product[] = [
     description:
       "The Birkenstock Boston has transcended its granola roots to become fashion's most coveted clog. Its molded cork footbed delivers orthopedic-grade support, while the buttery suede upper ages beautifully with every wear.",
     aspectRatio: 1.15,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 22100,
+    shares: 2210,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -112,8 +106,8 @@ export const SHOES_PRODUCTS: Product[] = [
     description:
       "Born from ultra-marathon racing DNA, the Salomon XT-6 has been adopted by the fashion world for its aggressive technical aesthetic. It's the trail shoe that looks equally at home on mountain singletrack and city sidewalks.",
     aspectRatio: 0.75,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 14200,
+    shares: 1420,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -146,8 +140,8 @@ export const SHOES_PRODUCTS: Product[] = [
     description:
       "The sneaker that started the luxury minimalist movement. Common Projects' Achilles Low is crafted from butter-soft Italian leather with zero branding save for the iconic gold serial number. It's the platonic ideal of a white sneaker.",
     aspectRatio: 1.0,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 25600,
+    shares: 2560,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -180,8 +174,8 @@ export const SHOES_PRODUCTS: Product[] = [
     description:
       "Originally designed for frozen football pitches in 1950, the Adidas Samba has become the world's most-wanted sneaker. The OG colorway with gum sole is a masterclass in timeless design that pairs with literally everything.",
     aspectRatio: 1.35,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 19800,
+    shares: 1980,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -214,8 +208,8 @@ export const SHOES_PRODUCTS: Product[] = [
     description:
       "Bill Bowerman's first masterpiece and one of Nike's founding silhouettes. The Cortez is a cultural icon that transcends sport, fashion, and decades. Clean lines and a low-profile shape make it endlessly versatile.",
     aspectRatio: 0.9,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 11300,
+    shares: 1130,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -249,8 +243,8 @@ export const SHOES_PRODUCTS: Product[] = [
     description:
       "Veja proved that sustainability and style aren't mutually exclusive. The Campo uses ChromeFree leather and Amazonian wild rubber to create a sneaker that looks premium while keeping its environmental footprint to a minimum.",
     aspectRatio: 1.2,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 16700,
+    shares: 1670,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -288,8 +282,8 @@ export const SHOES_PRODUCTS: Product[] = [
     description:
       "Six decades of counterculture credibility in one boot. The 1460 is Dr. Martens' original 8-eye silhouette, featuring the indestructible AirWair sole and yellow stitching that have become universal symbols of self-expression.",
     aspectRatio: 0.72,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 12900,
+    shares: 1290,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -323,8 +317,8 @@ export const SHOES_PRODUCTS: Product[] = [
     description:
       "Tasmania's toughest boot has been protecting feet since 1870. The #500 Chelsea is the perfect all-weather companion — slip it on for coffee runs, wear it through rainstorms, and let the patina tell your story.",
     aspectRatio: 1.45,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 9400,
+    shares: 940,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -357,8 +351,8 @@ export const SHOES_PRODUCTS: Product[] = [
     description:
       "Suicoke brought technical sandals from the outdoors to the runway. The MOTO-Cab features Vibram soles and a sculptural nylon strap system that delivers gorpcore credibility with genuine all-terrain performance.",
     aspectRatio: 1.1,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 5800,
+    shares: 580,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -391,8 +385,8 @@ export const SHOES_PRODUCTS: Product[] = [
     description:
       "The Olsen twins' masterclass in stealth wealth. The Row's Soft Loafer is unlined, unbranded, and unforgettable — crafted from calfskin so supple it folds like fabric. This is what happens when perfection is the only metric.",
     aspectRatio: 0.68,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 134000,
+    shares: 13400,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -425,8 +419,8 @@ export const SHOES_PRODUCTS: Product[] = [
     description:
       "Alaïa's fishnet-inspired ballet flat is the shoe that launched a thousand waitlists. The laser-cut perforations are engineered for both beauty and breathability, while the padded insole proves luxury and comfort aren't opposites.",
     aspectRatio: 1.5,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 88000,
+    shares: 8800,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -460,8 +454,8 @@ export const SHOES_PRODUCTS: Product[] = [
     description:
       "The Chuck 70 is not your average Converse. It upgrades the classic All Star with heavyweight canvas, cushioned insoles, and that unmistakable vintage-tinged egret midsole. The sneaker your favorite designer wears to their own shows.",
     aspectRatio: 0.82,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 27300,
+    shares: 2730,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -494,8 +488,8 @@ export const SHOES_PRODUCTS: Product[] = [
     description:
       "Designed for the 1966 Olympics and made famous by Uma Thurman's Kill Bill appearance. The Mexico 66 is Japanese craftsmanship distilled into a razor-thin sneaker that epitomizes understated cool.",
     aspectRatio: 1.25,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 13500,
+    shares: 1350,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -529,8 +523,8 @@ export const SHOES_PRODUCTS: Product[] = [
     description:
       "Hoka's Clifton 9 is the max-cushion daily trainer that converted the fashion world to chunky running shoes. The pillowy midsole absorbs impact like nothing else, making every step feel like running on clouds.",
     aspectRatio: 0.95,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 15600,
+    shares: 1560,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -564,8 +558,8 @@ export const SHOES_PRODUCTS: Product[] = [
     description:
       "Swiss-engineered with a proprietary CloudTec sole that cushions on landing and propels on takeoff. The Cloud 5 is the shoe that made Silicon Valley its unofficial uniform — clean, technical, and effortlessly minimal.",
     aspectRatio: 1.4,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 10800,
+    shares: 1080,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -599,8 +593,8 @@ export const SHOES_PRODUCTS: Product[] = [
     description:
       "Madewell's Milo boot is the transitional ankle boot that works from September to May. Its slightly pointed toe and just-right heel height walk the line between refined and relaxed — exactly where Madewell lives.",
     aspectRatio: 0.78,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 8700,
+    shares: 870,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -633,8 +627,8 @@ export const SHOES_PRODUCTS: Product[] = [
     description:
       "Cole Haan bridges the gap between dressy and casual with the GrandPro Rally. Its proprietary Grand.OS cushioning delivers sneaker comfort in a package clean enough for client meetings and Friday nights alike.",
     aspectRatio: 1.05,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 9200,
+    shares: 920,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -667,8 +661,8 @@ export const SHOES_PRODUCTS: Product[] = [
     description:
       "The Nudistcurve is Stuart Weitzman's signature evening sandal, engineered to disappear on the foot while the sculptural heel does all the talking. A red-carpet staple beloved by stylists for its leg-lengthening silhouette.",
     aspectRatio: 0.7,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 31400,
+    shares: 3140,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -702,8 +696,8 @@ export const SHOES_PRODUCTS: Product[] = [
     description:
       "Allbirds' Tree Dasher 2 is the running shoe for people who care about their footprint — both on the trail and on the planet. Made from eucalyptus fiber and sugarcane foam, it proves performance footwear can be genuinely sustainable.",
     aspectRatio: 1.3,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 11600,
+    shares: 1160,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -736,8 +730,8 @@ export const SHOES_PRODUCTS: Product[] = [
     description:
       "Mango delivers runway aesthetics at real-world prices with this polished penny loafer. The rich cognac leather develops a gorgeous patina over time, while the classic silhouette keeps it forever relevant.",
     aspectRatio: 0.88,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 4300,
+    shares: 430,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -754,7 +748,7 @@ export const SHOES_PRODUCTS: Product[] = [
         alt: "& Other Stories leather platform sandal in cream with chunky sole",
       },
       {
-        url: "https://images.unsplash.com/photo-1612681621150-a67e5fb3e803?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1614252369475-531eba835eb1?w=1200&q=80",
         alt: "& Other Stories sandal showing padded crossover straps",
       },
     ],
@@ -770,8 +764,8 @@ export const SHOES_PRODUCTS: Product[] = [
     description:
       "The platform sandal that dominated fashion TikTok. & Other Stories nails the balance between trending and timeless with this sculptural leather sandal that adds inches without sacrificing walkability.",
     aspectRatio: 1.55,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 6100,
+    shares: 610,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -792,7 +786,7 @@ export const SHOES_PRODUCTS: Product[] = [
         alt: "Nike Air Force 1 showing encapsulated Air cushioning and pivot traction",
       },
       {
-        url: "https://images.unsplash.com/photo-1580480055002-4ecc3f78f50b?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1539185441755-769473a23570?w=1200&q=80",
         alt: "Nike Air Force 1 '07 side profile showing chunky midsole",
       },
     ],
@@ -809,8 +803,8 @@ export const SHOES_PRODUCTS: Product[] = [
     description:
       "The shoe that needs no introduction. Since 1982, the Air Force 1 has been the undisputed king of street culture. The triple-white '07 is the blank canvas that launched a million outfits and will launch a million more.",
     aspectRatio: 0.92,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 24700,
+    shares: 2470,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -818,12 +812,12 @@ export const SHOES_PRODUCTS: Product[] = [
     title: "Adidas Gazelle",
     brand: "Adidas",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1612681621150-a67e5fb3e803?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1614252369475-531eba835eb1?w=600&q=80",
       alt: "Adidas Gazelle in collegiate navy suede with white stripes",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1612681621150-a67e5fb3e803?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1614252369475-531eba835eb1?w=1200&q=80",
         alt: "Adidas Gazelle in collegiate navy suede with white stripes",
       },
       {
@@ -844,8 +838,8 @@ export const SHOES_PRODUCTS: Product[] = [
     description:
       "The Adidas Gazelle is the terrace culture icon that refuses to fade. First laced up in 1966, its suede upper and low-slung profile have been adopted by everyone from Britpop bands to fashion editors. Always relevant, never trying too hard.",
     aspectRatio: 1.12,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 21500,
+    shares: 2150,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -883,8 +877,8 @@ export const SHOES_PRODUCTS: Product[] = [
     description:
       "The 2002R resurrects New Balance's early-2000s running tech with a pre-aged aesthetic that looks like it's been in your closet for years — in the best way. Dual cushioning systems make it a sneaker you can actually run errands in all day.",
     aspectRatio: 0.76,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 17200,
+    shares: 1720,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -892,12 +886,12 @@ export const SHOES_PRODUCTS: Product[] = [
     title: "The Row Billie Sneaker",
     brand: "The Row",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1580480055002-4ecc3f78f50b?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1539185441755-769473a23570?w=600&q=80",
       alt: "The Row Billie low-top sneaker in off-white Nappa leather",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1580480055002-4ecc3f78f50b?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1539185441755-769473a23570?w=1200&q=80",
         alt: "The Row Billie low-top sneaker in off-white Nappa leather",
       },
       {
@@ -917,8 +911,8 @@ export const SHOES_PRODUCTS: Product[] = [
     description:
       "The Row's Billie is what happens when a $900 sneaker actually justifies the price. Hand-stitched Italian Nappa leather, zero logos, and a shape so clean it makes every other white sneaker look overdone. Stealth wealth, foot edition.",
     aspectRatio: 1.0,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 112000,
+    shares: 11200,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -952,8 +946,8 @@ export const SHOES_PRODUCTS: Product[] = [
     description:
       "The sandal that conquered fashion by refusing to compromise on comfort. Birkenstock's Arizona Soft Footbed adds an extra layer of cushion to the legendary cork base, delivering a walking-on-clouds feel that converted a generation of skeptics.",
     aspectRatio: 1.48,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 20300,
+    shares: 2030,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -987,8 +981,8 @@ export const SHOES_PRODUCTS: Product[] = [
     description:
       "Born on college basketball courts in 1985, the Dunk Low became the most hyped sneaker of the 2020s. The Panda colorway is the modern go-to — bold enough to make a statement, clean enough to wear every day.",
     aspectRatio: 0.83,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 23100,
+    shares: 2310,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -1021,8 +1015,8 @@ export const SHOES_PRODUCTS: Product[] = [
     description:
       "Common Projects' BBall Low offers a sportier alternative to the Achilles, with vintage basketball-inspired paneling that adds visual depth without sacrificing the brand's signature minimalism. The gold serial number remains the only branding you need.",
     aspectRatio: 1.18,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 28900,
+    shares: 2890,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -1056,8 +1050,8 @@ export const SHOES_PRODUCTS: Product[] = [
     description:
       "Veja's Recife brings the environmental ethos into a retro velcro silhouette that's as fun to wear as it is to look at. The triple-strap design adds personality, while ChromeFree leather and wild rubber keep the planet in mind.",
     aspectRatio: 0.65,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 14800,
+    shares: 1480,
     gumiedByFriends: getRandomGumiFriends(),
   },
 ];

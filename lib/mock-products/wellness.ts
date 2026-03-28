@@ -1,12 +1,6 @@
 import { Product } from "@/types";
 import { getRandomGumiFriends } from "../mock-users";
 
-function rg(): number {
-  const r = [[50,500],[500,5000],[5000,50000],[50000,500000]];
-  const x = r[Math.floor(Math.random()*r.length)];
-  return Math.floor(Math.random()*(x[1]-x[0])+x[0]);
-}
-function rs(): number { return Math.floor(Math.random()*2000)+10; }
 
 export const WELLNESS_PRODUCTS: Product[] = [
   {
@@ -43,8 +37,8 @@ export const WELLNESS_PRODUCTS: Product[] = [
     description:
       "The cult-favorite weighted bangles that redefined at-home fitness. Sleek enough for a walk around the block and stylish enough to forget you're working out. Each set adds a subtle 2 lb challenge to any movement.",
     aspectRatio: 1.0,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 12400,
+    shares: 1240,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -77,8 +71,8 @@ export const WELLNESS_PRODUCTS: Product[] = [
     description:
       "The original silk pillowcase trusted by dermatologists and hairstylists worldwide. Crafted from the highest grade long-fiber mulberry silk for noticeably smoother skin and hair by morning.",
     aspectRatio: 1.35,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 5800,
+    shares: 580,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -116,8 +110,8 @@ export const WELLNESS_PRODUCTS: Product[] = [
     description:
       "A design-forward essential oil diffuser wrapped in hand-finished porcelain. Whisper-quiet ultrasonic technology disperses a fine cool mist that fills any room without overpowering it.",
     aspectRatio: 0.85,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 4200,
+    shares: 420,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -150,8 +144,8 @@ export const WELLNESS_PRODUCTS: Product[] = [
     description:
       "A crescent-shaped meditation zafu designed to tilt the pelvis forward and support a natural spinal curve. Filled with organic buckwheat hulls that conform to your body and never go flat.",
     aspectRatio: 1.15,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 22000,
+    shares: 2200,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -184,8 +178,8 @@ export const WELLNESS_PRODUCTS: Product[] = [
     description:
       "A luxurious oil-to-foam body wash that cleanses without stripping. Packed with five essential oils including marula, cacay, and meadowfoam seed to leave skin impossibly soft after every shower.",
     aspectRatio: 0.7,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 9600,
+    shares: 960,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -219,8 +213,8 @@ export const WELLNESS_PRODUCTS: Product[] = [
     description:
       "An infrared-infused acupressure mat with thousands of precision points that stimulate blood flow and melt away tension. Fifteen minutes on this mat feels like an hour-long massage.",
     aspectRatio: 1.45,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 14500,
+    shares: 1450,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -257,8 +251,8 @@ export const WELLNESS_PRODUCTS: Product[] = [
     description:
       "The most portable percussive therapy device in the Therabody lineup. Small enough for a carry-on yet powerful enough to reach deep muscle tissue wherever tension lives.",
     aspectRatio: 0.9,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 87000,
+    shares: 8700,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -291,8 +285,8 @@ export const WELLNESS_PRODUCTS: Product[] = [
     description:
       "A potent mineral soak harvested from the Dead Sea and blended with eucalyptus and hinoki essential oils. Dissolves into bathwater to draw out impurities and ease sore muscles from the day.",
     aspectRatio: 0.75,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 3100,
+    shares: 310,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -330,8 +324,8 @@ export const WELLNESS_PRODUCTS: Product[] = [
     description:
       "A sustainably harvested cork yoga mat that actually grips better when your palms sweat. The natural antimicrobial surface stays fresh without chemical treatments and the TPE base provides joint-friendly cushion.",
     aspectRatio: 1.5,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 48000,
+    shares: 4800,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -364,8 +358,8 @@ export const WELLNESS_PRODUCTS: Product[] = [
     description:
       "A vibrating foam roller that combines deep tissue percussion with classic myofascial release. Connect via Bluetooth to follow guided routines designed by sports therapists.",
     aspectRatio: 1.25,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 19800,
+    shares: 1980,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -399,8 +393,8 @@ export const WELLNESS_PRODUCTS: Product[] = [
     description:
       "The robe that broke the internet, now in a machine-washable silk that feels even more luxurious than it looks. Interior and exterior closures keep everything in place from bedroom to coffee run.",
     aspectRatio: 0.65,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 31000,
+    shares: 3100,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -433,8 +427,8 @@ export const WELLNESS_PRODUCTS: Product[] = [
     description:
       "A delicious blackberry-flavored gummy that combines melatonin with L-theanine and chamomile to ease you into deep, restful sleep. No groggy morning-after feeling, just calm, consistent rest.",
     aspectRatio: 0.8,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 26000,
+    shares: 2600,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -451,7 +445,7 @@ export const WELLNESS_PRODUCTS: Product[] = [
         alt: "Agent Nateur magnesium lotion on marble surface",
       },
       {
-        url: "https://images.unsplash.com/photo-1540555700478-4be289fbec6d?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1599447421416-3414500d18a5?w=1200&q=80",
         alt: "Applying magnesium body lotion to skin",
       },
     ],
@@ -467,8 +461,8 @@ export const WELLNESS_PRODUCTS: Product[] = [
     description:
       "A velvety body lotion infused with pharmaceutical-grade magnesium that absorbs through the skin to ease muscle cramps and promote deep relaxation. Apply before bed for noticeably better sleep.",
     aspectRatio: 1.1,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 4800,
+    shares: 480,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -476,12 +470,12 @@ export const WELLNESS_PRODUCTS: Product[] = [
     title: "Sisal Dry Body Brush",
     brand: "Esker",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1540555700478-4be289fbec6d?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1599447421416-3414500d18a5?w=600&q=80",
       alt: "Natural bristle dry brush on linen towel",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1540555700478-4be289fbec6d?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1599447421416-3414500d18a5?w=1200&q=80",
         alt: "Natural bristle dry brush on linen towel",
       },
       {
@@ -501,8 +495,8 @@ export const WELLNESS_PRODUCTS: Product[] = [
     description:
       "A firm-bristled body brush carved from beechwood for the ancient practice of dry brushing. Sweep toward the heart before showering to boost circulation, exfoliate, and wake up every nerve ending.",
     aspectRatio: 0.95,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 2900,
+    shares: 290,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -535,8 +529,8 @@ export const WELLNESS_PRODUCTS: Product[] = [
     description:
       "A gently weighted neck wrap filled with linseed that you microwave for soothing warmth on demand. The ergonomic contour drapes over shoulders and neck to release tension exactly where it builds up.",
     aspectRatio: 1.3,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 8500,
+    shares: 850,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -569,8 +563,8 @@ export const WELLNESS_PRODUCTS: Product[] = [
     description:
       "A simple weighted eye pillow filled with organic flaxseed and dried French lavender. The gentle pressure on the eyelids triggers the relaxation response, making it perfect for meditation or savasana.",
     aspectRatio: 1.55,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 2200,
+    shares: 220,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -603,8 +597,8 @@ export const WELLNESS_PRODUCTS: Product[] = [
     description:
       "A structured daily journal with morning and evening prompts that takes just five minutes to complete. Backed by positive psychology research, it rewires your brain to notice the good over six months of consistent practice.",
     aspectRatio: 0.72,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 35000,
+    shares: 3500,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -642,8 +636,8 @@ export const WELLNESS_PRODUCTS: Product[] = [
     description:
       "A smart sleep assistant that gently wakes you with a simulated sunrise and lulls you to sleep with curated soundscapes. Replace the harsh alarm with a gradual light that syncs with your circadian rhythm.",
     aspectRatio: 1.0,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 42000,
+    shares: 4200,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -676,8 +670,8 @@ export const WELLNESS_PRODUCTS: Product[] = [
     description:
       "A purse-sized aromatherapy roller blending lavender, roman chamomile, and frankincense in a jojoba carrier. Swipe on pulse points whenever anxiety creeps in for an instant reset.",
     aspectRatio: 0.68,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 3600,
+    shares: 360,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -710,8 +704,8 @@ export const WELLNESS_PRODUCTS: Product[] = [
     description:
       "Hydrolyzed collagen peptides sourced from grass-fed, pasture-raised bovine. Stir into coffee, smoothies, or water daily for stronger nails, bouncier skin, and healthier joints within weeks.",
     aspectRatio: 1.2,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 11000,
+    shares: 1100,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -744,8 +738,8 @@ export const WELLNESS_PRODUCTS: Product[] = [
     description:
       "Fourteen ultra-soft organic cotton rounds that replace thousands of single-use pads. The dual-sided design offers a smooth side for toner and a textured side for gentle exfoliation.",
     aspectRatio: 1.05,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 5200,
+    shares: 520,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -778,8 +772,8 @@ export const WELLNESS_PRODUCTS: Product[] = [
     description:
       "A thoughtfully curated set of five essential crystals for beginners. Each stone is ethically sourced and hand-selected, accompanied by a guide explaining properties, cleansing rituals, and placement.",
     aspectRatio: 1.4,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 2700,
+    shares: 270,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -817,8 +811,8 @@ export const WELLNESS_PRODUCTS: Product[] = [
     description:
       "The at-home biohacking mat combining far infrared heat with pulsed electromagnetic field therapy. Layered with amethyst and tourmaline crystals to amplify healing frequencies and deepen recovery.",
     aspectRatio: 1.5,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 72000,
+    shares: 7200,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -851,8 +845,8 @@ export const WELLNESS_PRODUCTS: Product[] = [
     description:
       "A clinical-grade face serum built on a potent hyaluronic acid complex and purslane, a powerful anti-inflammatory. Absorbs instantly to plump, hydrate, and calm reactive skin without any residue.",
     aspectRatio: 0.75,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 28500,
+    shares: 2850,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -890,8 +884,8 @@ export const WELLNESS_PRODUCTS: Product[] = [
     description:
       "The sleep set that feels like slipping into a cloud. Machine-washable silk charmeuse naturally regulates temperature so you stay cool all night. The camisole and shorts set is equal parts functional and beautiful.",
     aspectRatio: 0.82,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 16200,
+    shares: 1620,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -924,8 +918,8 @@ export const WELLNESS_PRODUCTS: Product[] = [
     description:
       "Courtney Cox's line brings fine fragrance to everyday handwashing. The neroli and bergamot scent lingers just long enough to feel luxurious while plant-derived cleansers leave skin soft, never stripped.",
     aspectRatio: 0.88,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 22000,
+    shares: 2200,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -958,8 +952,8 @@ export const WELLNESS_PRODUCTS: Product[] = [
     description:
       "A reimagined yoga block that doubles as a dumbbell and foam roller. The 6-pound silicone-wrapped block supports poses, adds resistance to strength moves, and rolls out tight spots.",
     aspectRatio: 1.15,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 34500,
+    shares: 3450,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -992,8 +986,8 @@ export const WELLNESS_PRODUCTS: Product[] = [
     description:
       "A potent blend of ashwagandha, reishi, cordyceps, and maca designed to balance cortisol and combat the effects of chronic stress. Add a spoonful to your morning coffee or smoothie for sustained calm energy.",
     aspectRatio: 0.92,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 18700,
+    shares: 1870,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -1026,8 +1020,8 @@ export const WELLNESS_PRODUCTS: Product[] = [
     description:
       "Drop one of these effervescent tablets on the shower floor and let the steam release a cloud of pure eucalyptus. Clears sinuses, sharpens focus, and turns a basic shower into a spa moment.",
     aspectRatio: 1.35,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 112000,
+    shares: 11200,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -1065,8 +1059,8 @@ export const WELLNESS_PRODUCTS: Product[] = [
     description:
       "The professional-grade percussive therapy device with a built-in force meter that shows exactly how much pressure you're applying. Whisper-quiet engineering means you can use it during a Zoom call without anyone knowing.",
     aspectRatio: 1.08,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 8400,
+    shares: 840,
     gumiedByFriends: getRandomGumiFriends(),
   },
 ];

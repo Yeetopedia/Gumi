@@ -1,12 +1,6 @@
 import { Product } from "@/types";
 import { getRandomGumiFriends } from "../mock-users";
 
-function rg(): number {
-  const r = [[50,500],[500,5000],[5000,50000],[50000,500000]];
-  const x = r[Math.floor(Math.random()*r.length)];
-  return Math.floor(Math.random()*(x[1]-x[0])+x[0]);
-}
-function rs(): number { return Math.floor(Math.random()*2000)+10; }
 
 export const ART_PRODUCTS: Product[] = [
   // ─── 1. Abstract Brush Stroke Print ─────────────────
@@ -28,8 +22,8 @@ export const ART_PRODUCTS: Product[] = [
     topFeatures: ["Museum-quality giclée print", "Acid-free 230gsm paper", "Available in 3 sizes", "Unframed"],
     description: "A sweeping composition of gestural brush strokes that brings energy to any room. Printed on heavyweight archival paper with pigment-based inks for lasting color fidelity. Each print ships rolled in a protective tube.",
     aspectRatio: 1.42,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 14500,
+    shares: 1595,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 2. Botanical Illustration ──────────────────────
@@ -44,7 +38,7 @@ export const ART_PRODUCTS: Product[] = [
     images: [
       { url: "https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=1200&q=80", alt: "Delicate eucalyptus branch botanical illustration" },
       { url: "https://images.unsplash.com/photo-1547891654-e66ed7ebb968?w=1200&q=80", alt: "Botanical print in oak frame on shelf" },
-      { url: "https://images.unsplash.com/photo-1578301978693-85fa9fd0c4d2?w=1200&q=80", alt: "Close-up detail of botanical linework" },
+      { url: "https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?w=1200&q=80", alt: "Close-up detail of botanical linework" },
     ],
     price: { min: 3800, max: 7200, currency: "USD" },
     rating: { average: 4.8, count: 1345 },
@@ -52,8 +46,8 @@ export const ART_PRODUCTS: Product[] = [
     topFeatures: ["Hand-drawn original artwork", "Matte finish", "100% cotton rag paper", "Ships flat"],
     description: "A graceful eucalyptus branch rendered in soft sage and forest greens with precise botanical detail. The understated palette makes this a timeless addition to bedrooms, bathrooms, or living spaces. Printed on cotton rag paper for a museum-quality feel.",
     aspectRatio: 1.50,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 18000,
+    shares: 2160,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 3. Coastal Photography Print ───────────────────
@@ -67,7 +61,7 @@ export const ART_PRODUCTS: Product[] = [
     },
     images: [
       { url: "https://images.unsplash.com/photo-1547891654-e66ed7ebb968?w=1200&q=80", alt: "Aerial view of turquoise ocean meeting rocky coast" },
-      { url: "https://images.unsplash.com/photo-1578301978693-85fa9fd0c4d2?w=1200&q=80", alt: "Wide coastal landscape at golden hour" },
+      { url: "https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?w=1200&q=80", alt: "Wide coastal landscape at golden hour" },
     ],
     price: { min: 5800, max: 18000, currency: "USD" },
     rating: { average: 4.6, count: 678 },
@@ -75,8 +69,8 @@ export const ART_PRODUCTS: Product[] = [
     topFeatures: ["Limited edition of 250", "Signed by photographer", "Lustre photo paper", "Custom framing available"],
     description: "A breathtaking aerial perspective capturing where the Pacific meets volcanic coastline. The jewel-tone waters and dramatic rock formations create a piece that transforms any wall into a window. Available in limited quantities with a certificate of authenticity.",
     aspectRatio: 0.75,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 32000,
+    shares: 4160,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 4. Bauhaus Exhibition Poster ───────────────────
@@ -85,13 +79,13 @@ export const ART_PRODUCTS: Product[] = [
     title: "Bauhaus Exhibition Poster — Geometric Composition",
     brand: "King & McGaw",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1578301978693-85fa9fd0c4d2?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?w=600&q=80",
       alt: "Bold Bauhaus-style geometric poster with primary colors",
     },
     images: [
-      { url: "https://images.unsplash.com/photo-1578301978693-85fa9fd0c4d2?w=1200&q=80", alt: "Bold Bauhaus-style geometric poster with primary colors" },
+      { url: "https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?w=1200&q=80", alt: "Bold Bauhaus-style geometric poster with primary colors" },
       { url: "https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?w=1200&q=80", alt: "Exhibition poster framed on concrete wall" },
-      { url: "https://images.unsplash.com/photo-1490750967868-88aa4f44baee?w=1200&q=80", alt: "Detail of typography and geometric forms" },
+      { url: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80", alt: "Detail of typography and geometric forms" },
     ],
     price: { min: 3500, max: 6500, currency: "USD" },
     rating: { average: 4.5, count: 2340 },
@@ -99,8 +93,8 @@ export const ART_PRODUCTS: Product[] = [
     topFeatures: ["Officially licensed reproduction", "Heavyweight 250gsm paper", "Vivid archival inks", "Multiple sizes"],
     description: "A faithful reproduction of a 1923 Bauhaus exhibition poster featuring bold geometric forms in red, yellow, and blue. The iconic design brings mid-century modernist energy to contemporary spaces. Printed on heavyweight paper with museum-grade inks.",
     aspectRatio: 1.45,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 28000,
+    shares: 3360,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 5. Line Art Portrait ───────────────────────────
@@ -114,7 +108,7 @@ export const ART_PRODUCTS: Product[] = [
     },
     images: [
       { url: "https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?w=1200&q=80", alt: "Minimal single-line drawing of a woman in profile" },
-      { url: "https://images.unsplash.com/photo-1490750967868-88aa4f44baee?w=1200&q=80", alt: "Line art print in slim black frame" },
+      { url: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80", alt: "Line art print in slim black frame" },
     ],
     price: { min: 2200, max: 4500, currency: "USD" },
     rating: { average: 4.6, count: 3120 },
@@ -122,8 +116,8 @@ export const ART_PRODUCTS: Product[] = [
     topFeatures: ["Minimalist Scandinavian design", "Premium matte paper", "Available unframed or framed", "Fast delivery"],
     description: "An elegant continuous-line drawing that captures the quiet beauty of the human form with just a single unbroken stroke. The clean white background and black ink create striking contrast that pairs with any interior style. A bestselling Desenio original.",
     aspectRatio: 1.35,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 11500,
+    shares: 1380,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 6. Minimalist Typography Print ─────────────────
@@ -132,11 +126,11 @@ export const ART_PRODUCTS: Product[] = [
     title: "Minimalist Typography Print — 'Be Still'",
     brand: "Paper Collective",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1490750967868-88aa4f44baee?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80",
       alt: "Minimalist black and white typography art print",
     },
     images: [
-      { url: "https://images.unsplash.com/photo-1490750967868-88aa4f44baee?w=1200&q=80", alt: "Minimalist black and white typography art print" },
+      { url: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80", alt: "Minimalist black and white typography art print" },
       { url: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80", alt: "Typography print styled on bedroom wall" },
     ],
     price: { min: 3200, max: 5800, currency: "USD" },
@@ -145,8 +139,8 @@ export const ART_PRODUCTS: Product[] = [
     topFeatures: ["FSC-certified paper", "Soy-based inks", "Danish design studio", "Pairs well in gallery walls"],
     description: "A serene typographic composition that brings calm to any space with its carefully chosen words and balanced layout. Printed in Copenhagen on sustainably sourced paper with eco-friendly soy-based inks. Part of Paper Collective's mindfulness series.",
     aspectRatio: 1.40,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 9500,
+    shares: 1140,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 7. Japanese Woodblock Reproduction ─────────────
@@ -168,8 +162,8 @@ export const ART_PRODUCTS: Product[] = [
     topFeatures: ["Archival museum reproduction", "Textured washi-style paper", "Vivid period-accurate colors", "Certificate of authenticity"],
     description: "An exquisite reproduction of Katsushika Hokusai's iconic 1831 woodblock masterpiece, printed on textured paper that evokes traditional washi. The dynamic composition and indigo palette remain as captivating as ever. A timeless statement piece for any collector.",
     aspectRatio: 0.72,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 55000,
+    shares: 6600,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 8. Figure Drawing Study ────────────────────────
@@ -191,8 +185,8 @@ export const ART_PRODUCTS: Product[] = [
     topFeatures: ["Original artwork", "Signed and numbered", "Emerging artist", "Gallery-quality framing available"],
     description: "A bold yet intimate charcoal study that captures the fluidity of the human form in confident, gestural marks. Created by an emerging Brooklyn-based artist whose work explores the tension between movement and stillness. Each piece is a unique original.",
     aspectRatio: 1.50,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 4200,
+    shares: 504,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 9. Landscape Photograph ────────────────────────
@@ -214,8 +208,8 @@ export const ART_PRODUCTS: Product[] = [
     topFeatures: ["Edition of 150 worldwide", "Archival pigment print", "Framed in solid ash", "UV-protective glass"],
     description: "The Dolomites emerge from a sea of morning mist in this ethereal landscape captured at golden hour. Printed on Hahnemühle fine art paper and framed in sustainably sourced ash with UV-protective glass. A collector's piece that brings the grandeur of nature indoors.",
     aspectRatio: 0.75,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 22000,
+    shares: 2640,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 10. Vintage Travel Poster ──────────────────────
@@ -230,7 +224,7 @@ export const ART_PRODUCTS: Product[] = [
     images: [
       { url: "https://images.unsplash.com/photo-1561214115-f2f134cc4912?w=1200&q=80", alt: "Retro-style travel poster depicting the Amalfi Coast" },
       { url: "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=1200&q=80", alt: "Travel poster in gold frame on shelf" },
-      { url: "https://images.unsplash.com/photo-1536924940564-c532d1a04bf9?w=1200&q=80", alt: "Detail of vintage illustration and typography" },
+      { url: "https://images.unsplash.com/photo-1544967082-d9d25d867d66?w=1200&q=80", alt: "Detail of vintage illustration and typography" },
     ],
     price: { min: 1800, max: 3600, currency: "USD" },
     rating: { average: 4.5, count: 4780 },
@@ -238,8 +232,8 @@ export const ART_PRODUCTS: Product[] = [
     topFeatures: ["Retro illustration style", "Thick 200gsm paper", "Vibrant color palette", "Great for gallery walls"],
     description: "Transport yourself to the sun-drenched Italian coast with this art deco-inspired travel poster featuring pastel buildings and azure waters. The nostalgic illustration style and warm color palette evoke the golden age of travel. A perennial bestseller.",
     aspectRatio: 1.50,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 21000,
+    shares: 2520,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 11. Contemporary Sculpture ─────────────────────
@@ -253,7 +247,7 @@ export const ART_PRODUCTS: Product[] = [
     },
     images: [
       { url: "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=1200&q=80", alt: "Organic form ceramic sculpture in matte white glaze" },
-      { url: "https://images.unsplash.com/photo-1536924940564-c532d1a04bf9?w=1200&q=80", alt: "Sculpture detail showing hand-finished texture" },
+      { url: "https://images.unsplash.com/photo-1544967082-d9d25d867d66?w=1200&q=80", alt: "Sculpture detail showing hand-finished texture" },
     ],
     price: { min: 42000, max: 85000, currency: "USD" },
     rating: { average: 4.8, count: 62 },
@@ -261,8 +255,8 @@ export const ART_PRODUCTS: Product[] = [
     topFeatures: ["Handcrafted one-of-a-kind", "High-fire stoneware", "Matte glaze finish", "Signed by artist"],
     description: "A striking sculptural form that balances organic curves with architectural presence, hand-built from high-fire stoneware. The velvety matte white glaze catches light beautifully throughout the day. Each piece is unique, shaped by the artist's hands in her Brooklyn studio.",
     aspectRatio: 0.85,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 3800,
+    shares: 456,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 12. Ceramic Art Object ─────────────────────────
@@ -271,11 +265,11 @@ export const ART_PRODUCTS: Product[] = [
     title: "Hand-Thrown Ceramic Vessel — Earth Tones",
     brand: "Artfully Walls",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1536924940564-c532d1a04bf9?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1544967082-d9d25d867d66?w=600&q=80",
       alt: "Textured ceramic vessel in warm earth tones",
     },
     images: [
-      { url: "https://images.unsplash.com/photo-1536924940564-c532d1a04bf9?w=1200&q=80", alt: "Textured ceramic vessel in warm earth tones" },
+      { url: "https://images.unsplash.com/photo-1544967082-d9d25d867d66?w=1200&q=80", alt: "Textured ceramic vessel in warm earth tones" },
       { url: "https://images.unsplash.com/photo-1544967082-d9d25d867d66?w=1200&q=80", alt: "Ceramic vessel styled on wooden console" },
     ],
     price: { min: 12000, max: 22000, currency: "USD" },
@@ -284,8 +278,8 @@ export const ART_PRODUCTS: Product[] = [
     topFeatures: ["Wheel-thrown stoneware", "Food-safe glaze", "Reactive glaze variation", "Approx. 8 inches tall"],
     description: "A beautifully imperfect hand-thrown vessel featuring a reactive glaze that creates unique earth-tone patterns on every piece. The organic silhouette works equally well as a standalone art object or a functional vase. Made in a small-batch ceramics studio in Joshua Tree.",
     aspectRatio: 0.90,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 5500,
+    shares: 660,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 13. Photography Book ───────────────────────────
@@ -299,7 +293,7 @@ export const ART_PRODUCTS: Product[] = [
     },
     images: [
       { url: "https://images.unsplash.com/photo-1544967082-d9d25d867d66?w=1200&q=80", alt: "Heavyweight photography book on marble surface" },
-      { url: "https://images.unsplash.com/photo-1549887534-1541e9326642?w=1200&q=80", alt: "Open spread showing iconic contact sheets" },
+      { url: "https://images.unsplash.com/photo-1579541814924-49fef17c5be5?w=1200&q=80", alt: "Open spread showing iconic contact sheets" },
     ],
     price: { min: 6500, max: 6500, currency: "USD" },
     rating: { average: 4.9, count: 1560 },
@@ -307,8 +301,8 @@ export const ART_PRODUCTS: Product[] = [
     topFeatures: ["320 pages, hardcover", "Linen cloth binding", "Tritone printing", "Includes 100+ photographers"],
     description: "A definitive collection of contact sheets from Magnum's legendary photographers, revealing the creative process behind iconic images. The oversized format and tritone printing reproduce each frame with stunning fidelity. An essential volume for any photography lover's library.",
     aspectRatio: 0.80,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 38000,
+    shares: 4560,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 14. Gallery Frame ──────────────────────────────
@@ -317,11 +311,11 @@ export const ART_PRODUCTS: Product[] = [
     title: "Modern Gallery Frame — Solid Oak",
     brand: "Framebridge",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1549887534-1541e9326642?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1579541814924-49fef17c5be5?w=600&q=80",
       alt: "Clean solid oak gallery frame with white mat",
     },
     images: [
-      { url: "https://images.unsplash.com/photo-1549887534-1541e9326642?w=1200&q=80", alt: "Clean solid oak gallery frame with white mat" },
+      { url: "https://images.unsplash.com/photo-1579541814924-49fef17c5be5?w=1200&q=80", alt: "Clean solid oak gallery frame with white mat" },
       { url: "https://images.unsplash.com/photo-1579541814924-49fef17c5be5?w=1200&q=80", alt: "Oak frame displayed on light wall" },
     ],
     price: { min: 6900, max: 18900, currency: "USD" },
@@ -330,8 +324,8 @@ export const ART_PRODUCTS: Product[] = [
     topFeatures: ["Sustainably sourced white oak", "Acid-free mat included", "UV-protective acrylic glazing", "Ready to hang"],
     description: "A beautifully simple frame crafted from solid white oak with a natural finish that showcases the grain. Includes an acid-free mat and UV-protective acrylic to keep your artwork safe for decades. Arrives ready to hang with all hardware included.",
     aspectRatio: 1.30,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 16000,
+    shares: 1920,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 15. Art Print Set ──────────────────────────────
@@ -354,8 +348,8 @@ export const ART_PRODUCTS: Product[] = [
     topFeatures: ["5 complementary prints", "Mix of sizes included", "Hanging template provided", "Styled by in-house team"],
     description: "Take the guesswork out of gallery walls with this expertly curated set of five complementary prints in a mix of abstract, botanical, and photographic styles. Includes a hanging template for effortless installation. An instant room transformation.",
     aspectRatio: 0.85,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 19500,
+    shares: 2340,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 16. Mixed Media Collage ────────────────────────
@@ -377,8 +371,8 @@ export const ART_PRODUCTS: Product[] = [
     topFeatures: ["Original mixed media work", "Signed and dated", "Museum-wrapped canvas", "Certificate of authenticity"],
     description: "An original mixed media work combining vintage ephemera, acrylic paint, and handmade paper in a rich urban palette. The complex layering rewards close viewing with surprising details and textures. Created by an LA-based artist whose work has been featured in Architectural Digest.",
     aspectRatio: 1.00,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 6800,
+    shares: 816,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 17. Geometric Print ────────────────────────────
@@ -393,7 +387,7 @@ export const ART_PRODUCTS: Product[] = [
     images: [
       { url: "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?w=1200&q=80", alt: "Geometric gradient print in emerald green and gold" },
       { url: "https://images.unsplash.com/photo-1544145945-f90425340c7e?w=1200&q=80", alt: "Geometric print in home office setting" },
-      { url: "https://images.unsplash.com/photo-1571115764595-644a1f56a55c?w=1200&q=80", alt: "Print edge detail showing paper texture" },
+      { url: "https://images.unsplash.com/photo-1577720643272-265f09367456?w=1200&q=80", alt: "Print edge detail showing paper texture" },
     ],
     price: { min: 2500, max: 6500, currency: "USD" },
     rating: { average: 4.3, count: 1890 },
@@ -401,8 +395,8 @@ export const ART_PRODUCTS: Product[] = [
     topFeatures: ["Vibrant dye-sub printing", "Natural white border", "Ships worldwide", "Artist profit share"],
     description: "A mesmerizing geometric composition where emerald facets dissolve into gold through a series of precise gradients. The jewel-tone palette brings warmth and sophistication to modern interiors. Each purchase supports the independent artist directly through Society6's profit-sharing model.",
     aspectRatio: 1.42,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 12000,
+    shares: 1440,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 18. Nature Macro Photograph ────────────────────
@@ -416,7 +410,7 @@ export const ART_PRODUCTS: Product[] = [
     },
     images: [
       { url: "https://images.unsplash.com/photo-1544145945-f90425340c7e?w=1200&q=80", alt: "Extreme close-up of monstera leaf showing cellular detail" },
-      { url: "https://images.unsplash.com/photo-1571115764595-644a1f56a55c?w=1200&q=80", alt: "Macro photograph in minimal white frame" },
+      { url: "https://images.unsplash.com/photo-1577720643272-265f09367456?w=1200&q=80", alt: "Macro photograph in minimal white frame" },
     ],
     price: { min: 18000, max: 48000, currency: "USD" },
     rating: { average: 4.7, count: 312 },
@@ -424,8 +418,8 @@ export const ART_PRODUCTS: Product[] = [
     topFeatures: ["Numbered edition of 75", "Diasec mounting available", "Museum-grade C-print", "Gallery provenance"],
     description: "An intimate macro study that reveals the architectural beauty hidden within a single monstera leaf. The rich green palette and cellular detail create an almost abstract composition. Printed as a museum-grade C-print with Diasec mounting option for a frameless gallery presentation.",
     aspectRatio: 1.35,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 24000,
+    shares: 2880,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 19. Architectural Photography ──────────────────
@@ -434,11 +428,11 @@ export const ART_PRODUCTS: Product[] = [
     title: "Brutalist Architecture — Concrete Geometry",
     brand: "Sonic Editions",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1571115764595-644a1f56a55c?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1577720643272-265f09367456?w=600&q=80",
       alt: "Dramatic black and white photograph of brutalist building",
     },
     images: [
-      { url: "https://images.unsplash.com/photo-1571115764595-644a1f56a55c?w=1200&q=80", alt: "Dramatic black and white photograph of brutalist building" },
+      { url: "https://images.unsplash.com/photo-1577720643272-265f09367456?w=1200&q=80", alt: "Dramatic black and white photograph of brutalist building" },
       { url: "https://images.unsplash.com/photo-1577720643272-265f09367456?w=1200&q=80", alt: "Architecture print in black aluminum frame" },
     ],
     price: { min: 12000, max: 32000, currency: "USD" },
@@ -447,8 +441,8 @@ export const ART_PRODUCTS: Product[] = [
     topFeatures: ["Silver gelatin print option", "Framed in anodized aluminum", "Edition of 200", "Archival quality"],
     description: "Raw concrete and bold geometry converge in this striking architectural photograph that celebrates brutalist design. The high-contrast black and white treatment emphasizes the interplay of light, shadow, and form. Available as a silver gelatin print for collectors seeking the ultimate photographic quality.",
     aspectRatio: 1.30,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 20000,
+    shares: 2400,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 20. Watercolor Landscape ───────────────────────
@@ -471,8 +465,8 @@ export const ART_PRODUCTS: Product[] = [
     topFeatures: ["Independent artist design", "Custom sizing available", "Eco-friendly printing", "30-day returns"],
     description: "Layers of translucent watercolor washes create a dreamy landscape that hovers between abstraction and representation. The soft palette of dusty blues, warm greys, and blush evokes a peaceful twilight. Selected from Minted's community of independent artists through their design competition.",
     aspectRatio: 0.75,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 13500,
+    shares: 1620,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 21. Risograph Print ────────────────────────────
@@ -494,8 +488,8 @@ export const ART_PRODUCTS: Product[] = [
     topFeatures: ["Printed on vintage Risograph", "Soy-based inks", "A3 format", "Slight variation per print"],
     description: "A playful two-color risograph print that celebrates summer leisure with bold, simplified forms and the characteristic grain of soy-based riso ink. The slight variation in each print makes every copy unique. Printed in Copenhagen on a lovingly maintained vintage Risograph machine.",
     aspectRatio: 1.42,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 7200,
+    shares: 864,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 22. Abstract Oil Painting Print ────────────────
@@ -517,8 +511,8 @@ export const ART_PRODUCTS: Product[] = [
     topFeatures: ["Giclée on canvas option", "Gallery-wrapped edges", "Rich color reproduction", "Interior designer favorite"],
     description: "Rich layers of terracotta, burnt sienna, and golden ochre create a warmth-filled abstract composition that anchors any room. The visible brushwork and textural quality are faithfully reproduced through giclée printing on fine art canvas. Curated by the Artfully Walls design team for spaces that need warmth.",
     aspectRatio: 1.20,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 15000,
+    shares: 1800,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 23. Black & White Photography ──────────────────
@@ -541,8 +535,8 @@ export const ART_PRODUCTS: Product[] = [
     topFeatures: ["Limited edition of 100", "Baryta fine art paper", "Anti-reflective museum glass", "Gallery representation"],
     description: "A cinematic moment frozen in silver — a solitary figure crosses a rain-slicked boulevard as city lights dissolve into liquid reflections. Printed on baryta fine art paper that delivers the tonal depth and silver-rich blacks of a traditional darkroom print. From Lumas' curated gallery of contemporary photography.",
     aspectRatio: 1.50,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 45000,
+    shares: 5400,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 24. Matisse-Style Cut-Out Print ────────────────
@@ -564,8 +558,8 @@ export const ART_PRODUCTS: Product[] = [
     topFeatures: ["Exclusive artist collaboration", "Uncoated premium paper", "Vibrant ultramarine blue", "Scandinavian design"],
     description: "A contemporary homage to Matisse's paper cut-outs, featuring bold ultramarine forms against a warm cream background. The deceptively simple composition carries the joyful energy of the original gouache technique. An exclusive collaboration with a Copenhagen-based illustrator.",
     aspectRatio: 1.45,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 17500,
+    shares: 2100,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 25. Nature Photography — Forest ────────────────
@@ -587,8 +581,8 @@ export const ART_PRODUCTS: Product[] = [
     topFeatures: ["Up to 40x60 inch size", "Metallic paper option", "Independently photographed", "Foil-pressed signature"],
     description: "Shafts of morning light pierce a moss-draped forest canopy in this immersive large-format photograph. The sense of depth and atmosphere is extraordinary, drawing viewers into the scene. Available in sizes up to 40x60 inches with a metallic paper option that adds luminosity.",
     aspectRatio: 1.33,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 10500,
+    shares: 1260,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 26. Mid-Century Modern Print ───────────────────
@@ -611,8 +605,8 @@ export const ART_PRODUCTS: Product[] = [
     topFeatures: ["Multiple format options", "Framed or unframed", "Vibrant fade-resistant inks", "Supports independent artist"],
     description: "Channel the optimistic energy of the Space Age with this retro-modern starburst print in a punchy mustard and teal palette. The clean lines and bold forms are a natural fit for mid-century-inspired interiors. Available as a print, canvas, or even a throw pillow from Society6.",
     aspectRatio: 1.00,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 8500,
+    shares: 1020,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 27. Ocean Photography ──────────────────────────
@@ -634,8 +628,8 @@ export const ART_PRODUCTS: Product[] = [
     topFeatures: ["120-second exposure technique", "Hahnemühle Photo Rag", "Framed in brushed steel", "Edition of 175"],
     description: "A two-minute exposure transforms the restless sea into a dreamlike plane of liquid silk beneath a gradient sky. The meditative quality of this image brings an instant sense of calm to any room. Printed on Hahnemühle Photo Rag and framed in brushed stainless steel.",
     aspectRatio: 0.70,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 26000,
+    shares: 3120,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 28. Sculptural Wall Object ─────────────────────
@@ -657,8 +651,8 @@ export const ART_PRODUCTS: Product[] = [
     topFeatures: ["Limited IKEA Art Event edition", "Handwoven natural jute", "Approx. 24 inches diameter", "Mounting hardware included"],
     description: "A striking hand-woven wall sculpture that adds organic texture and dimension to any space. Created from natural jute fibers as part of IKEA's annual Art Event collaboration with contemporary artists. The circular form and earthy tones complement both minimalist and bohemian interiors.",
     aspectRatio: 1.00,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 14000,
+    shares: 1680,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 29. Custom Pet Portrait ────────────────────────
@@ -681,8 +675,8 @@ export const ART_PRODUCTS: Product[] = [
     topFeatures: ["Custom from your photo", "Digital illustration by artist", "Multiple background options", "Rush delivery available"],
     description: "Turn your beloved pet into a work of art with this custom digital portrait rendered in a rich, painterly style by a Minted artist. Simply upload your favorite photo and receive a stunning illustration. The perfect sentimental gift for any pet lover.",
     aspectRatio: 1.30,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 23000,
+    shares: 2760,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 30. Oversized Abstract Canvas ──────────────────
@@ -704,8 +698,8 @@ export const ART_PRODUCTS: Product[] = [
     topFeatures: ["Two-panel diptych", "Original acrylic on canvas", "60x80 inches total", "White glove delivery included"],
     description: "A commanding two-panel abstract work that envelops a room in soft washes of ivory, blush, and warm grey. The generous scale and meditative palette create an atmosphere of quiet luxury. Includes white-glove delivery and installation in select metropolitan areas.",
     aspectRatio: 0.65,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 5200,
+    shares: 624,
     gumiedByFriends: getRandomGumiFriends(),
   },
 ];

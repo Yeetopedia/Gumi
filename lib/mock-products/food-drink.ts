@@ -1,25 +1,18 @@
 import { Product } from "@/types";
 import { getRandomGumiFriends } from "../mock-users";
 
-function rg(): number {
-  const r = [[50,500],[500,5000],[5000,50000],[50000,500000]];
-  const x = r[Math.floor(Math.random()*r.length)];
-  return Math.floor(Math.random()*(x[1]-x[0])+x[0]);
-}
-function rs(): number { return Math.floor(Math.random()*2000)+10; }
-
 export const FOOD_DRINK_PRODUCTS: Product[] = [
   {
     id: "food-1",
     title: "Drizzle Extra Virgin Olive Oil (Squeeze Bottle)",
     brand: "Graza",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1474979266404-7eaacdc50f73?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1510627498534-cf7e9002facc?w=600&q=80",
       alt: "Premium extra virgin olive oil in a bright squeeze bottle",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1474979266404-7eaacdc50f73?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1510627498534-cf7e9002facc?w=1200&q=80",
         alt: "Premium extra virgin olive oil in a bright squeeze bottle",
       },
       {
@@ -39,8 +32,8 @@ export const FOOD_DRINK_PRODUCTS: Product[] = [
     description:
       "The olive oil that broke the internet. Graza's Drizzle is a finishing oil made from early-harvest Picual olives, designed to go on everything from toast to ice cream.",
     aspectRatio: 0.75,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 62000,
+    shares: 7440,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -74,8 +67,8 @@ export const FOOD_DRINK_PRODUCTS: Product[] = [
     description:
       "Made with premium Sichuan tribute peppers and a proprietary blend of spices. This chili crisp delivers a tingly, numbing heat that elevates literally everything you put it on.",
     aspectRatio: 1.0,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 84000,
+    shares: 10080,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -92,7 +85,7 @@ export const FOOD_DRINK_PRODUCTS: Product[] = [
         alt: "Elegant aperitivo spritz in a stemmed glass with citrus garnish",
       },
       {
-        url: "https://images.unsplash.com/photo-1536256263959-770b48d29dee?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=1200&q=80",
         alt: "Bottle of Ghia aperitivo on a marble countertop",
       },
     ],
@@ -108,8 +101,8 @@ export const FOOD_DRINK_PRODUCTS: Product[] = [
     description:
       "A sophisticated non-alcoholic aperitivo made with Mediterranean botanicals. Bittersweet, herbal, and complex enough to hold its own at any cocktail hour.",
     aspectRatio: 0.68,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 14500,
+    shares: 1740,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -117,12 +110,12 @@ export const FOOD_DRINK_PRODUCTS: Product[] = [
     title: "Ceremonial Grade Single Origin Matcha",
     brand: "Brightland",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1536256263959-770b48d29dee?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=600&q=80",
       alt: "Vivid green matcha powder in a ceramic bowl with bamboo whisk",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1536256263959-770b48d29dee?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=1200&q=80",
         alt: "Vivid green matcha powder in a ceramic bowl with bamboo whisk",
       },
       {
@@ -143,8 +136,8 @@ export const FOOD_DRINK_PRODUCTS: Product[] = [
     description:
       "Sourced from a single farm in Uji, Japan, this ceremonial grade matcha is shade-grown for 21 days to maximize chlorophyll and amino acids. Smooth, creamy, and impossibly green.",
     aspectRatio: 1.1,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 11200,
+    shares: 1344,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -177,8 +170,8 @@ export const FOOD_DRINK_PRODUCTS: Product[] = [
     description:
       "The original hot honey that started it all. A blend of pure wildflower honey and chili peppers that delivers a sweet heat perfect for drizzling on pizza, fried chicken, and everything in between.",
     aspectRatio: 0.85,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 22000,
+    shares: 2640,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -215,8 +208,8 @@ export const FOOD_DRINK_PRODUCTS: Product[] = [
     description:
       "A trio of living-culture bitters fermented in small batches. Each bottle brings a different dimension to cocktails, from citrus-forward to deeply aromatic, herbaceous notes.",
     aspectRatio: 1.35,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 4800,
+    shares: 576,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -249,8 +242,8 @@ export const FOOD_DRINK_PRODUCTS: Product[] = [
     description:
       "Everything you need for bakery-quality sourdough at home. This kit includes heritage grain flour and a dried sourdough starter that produces tangy, chewy loaves with an incredible crust.",
     aspectRatio: 1.2,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 3200,
+    shares: 384,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -283,8 +276,8 @@ export const FOOD_DRINK_PRODUCTS: Product[] = [
     description:
       "A bean-to-bar dark chocolate made from single-origin cacao, finished with flaky sea salt. Deep, fruity notes balanced by a perfect saline crunch on every bite.",
     aspectRatio: 0.65,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 5600,
+    shares: 672,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -301,7 +294,7 @@ export const FOOD_DRINK_PRODUCTS: Product[] = [
         alt: "Freshly roasted specialty coffee beans in a kraft bag",
       },
       {
-        url: "https://images.unsplash.com/photo-1447933601403-56dc2f2c2c3a?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1559525839-b184a4d698c7?w=1200&q=80",
         alt: "Pour-over coffee setup with beans and ceramic dripper",
       },
     ],
@@ -318,8 +311,8 @@ export const FOOD_DRINK_PRODUCTS: Product[] = [
     description:
       "Counter Culture's flagship single origin, rotating seasonally to showcase the best coffees from around the world. Always bright, always complex, always ethically sourced.",
     aspectRatio: 0.9,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 28000,
+    shares: 3360,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -327,12 +320,12 @@ export const FOOD_DRINK_PRODUCTS: Product[] = [
     title: "Tahitian Vanilla Extract",
     brand: "Diaspora Co.",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1447933601403-56dc2f2c2c3a?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1559525839-b184a4d698c7?w=600&q=80",
       alt: "Bottle of pure Tahitian vanilla extract with vanilla beans",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1447933601403-56dc2f2c2c3a?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1559525839-b184a4d698c7?w=1200&q=80",
         alt: "Bottle of pure Tahitian vanilla extract with vanilla beans",
       },
       {
@@ -352,8 +345,8 @@ export const FOOD_DRINK_PRODUCTS: Product[] = [
     description:
       "Sourced directly from smallholder farmers, this Tahitian vanilla extract has an intoxicating floral aroma that transforms baked goods. Once you taste the real thing, you never go back.",
     aspectRatio: 0.72,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 47000,
+    shares: 5640,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -391,8 +384,8 @@ export const FOOD_DRINK_PRODUCTS: Product[] = [
     description:
       "Three bold Southeast Asian sauce starters that bring restaurant-quality flavor home. Each sachet is packed with the aromatics, spices, and sauces you need for an incredible meal in minutes.",
     aspectRatio: 1.45,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 18500,
+    shares: 2220,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -425,8 +418,8 @@ export const FOOD_DRINK_PRODUCTS: Product[] = [
     description:
       "Restaurant-quality bronze-cut pasta slow-dried over 48 hours for the perfect al dente texture. The rough surface grips sauce in a way mass-produced pasta simply cannot.",
     aspectRatio: 1.0,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 2800,
+    shares: 336,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -459,8 +452,8 @@ export const FOOD_DRINK_PRODUCTS: Product[] = [
     description:
       "Giant, crunchy clusters of oats, pecans, and real Vermont maple syrup baked to golden perfection. Free from the top 9 allergens but full of everything you actually want in a granola.",
     aspectRatio: 1.15,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 3900,
+    shares: 468,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -493,8 +486,8 @@ export const FOOD_DRINK_PRODUCTS: Product[] = [
     description:
       "Hand-harvested from the cold, pristine waters of Netarts Bay, Oregon. These delicate, pyramid-shaped flakes deliver a clean burst of salinity that elevates any dish from good to transcendent.",
     aspectRatio: 0.95,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 16000,
+    shares: 1920,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -532,8 +525,8 @@ export const FOOD_DRINK_PRODUCTS: Product[] = [
     description:
       "A curated journey through five single-origin teas sourced directly from small farms around the world. From a smoky Lapsang Souchong to a floral Darjeeling, each tin tells its own story.",
     aspectRatio: 1.3,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 5100,
+    shares: 612,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -566,8 +559,8 @@ export const FOOD_DRINK_PRODUCTS: Product[] = [
     description:
       "A crisp, aggressively carbonated sparkling water infused with real cucumber and yuzu essence. Refreshing enough to replace your afternoon coffee, beautiful enough to bring to a dinner party.",
     aspectRatio: 0.7,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 4200,
+    shares: 504,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -604,8 +597,8 @@ export const FOOD_DRINK_PRODUCTS: Product[] = [
     description:
       "A concentrated botanical spirit designed to be mixed just like the real thing. Gentian root, yuzu, and rosemary create a bittersweet complexity that makes you forget it is alcohol-free.",
     aspectRatio: 0.78,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 12800,
+    shares: 1536,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -639,8 +632,8 @@ export const FOOD_DRINK_PRODUCTS: Product[] = [
     description:
       "Oprah's favorite latte mix, powered by adaptogenic mushrooms and oat milk. Just add hot water for a creamy, golden latte that supports focus without the caffeine crash.",
     aspectRatio: 1.4,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 9700,
+    shares: 1164,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -673,8 +666,8 @@ export const FOOD_DRINK_PRODUCTS: Product[] = [
     description:
       "Made from a single ingredient: Ethiopian Humera sesame seeds, stone-ground to a silky, pourable consistency. This is the tahini that converts people who think they do not like tahini.",
     aspectRatio: 0.88,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 6800,
+    shares: 816,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -707,8 +700,8 @@ export const FOOD_DRINK_PRODUCTS: Product[] = [
     description:
       "Real black truffle infused into cold-pressed Greek extra virgin olive oil. You can see the truffle pieces floating in the bottle. A few drops transform any dish into something extraordinary.",
     aspectRatio: 0.68,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 3600,
+    shares: 432,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -725,7 +718,7 @@ export const FOOD_DRINK_PRODUCTS: Product[] = [
         alt: "Jar of preserved lemons with visible spices and brine",
       },
       {
-        url: "https://images.unsplash.com/photo-1541167760496-9dc533c8c73b?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1563636619-e9143da7973b?w=1200&q=80",
         alt: "Preserved lemon being chopped for use in a tagine",
       },
     ],
@@ -741,8 +734,8 @@ export const FOOD_DRINK_PRODUCTS: Product[] = [
     description:
       "Lemons salt-cured and fermented for over 30 days until they develop an intense, almost umami citrus flavor. The secret weapon professional chefs keep in their fridges at all times.",
     aspectRatio: 1.05,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 2500,
+    shares: 300,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -750,12 +743,12 @@ export const FOOD_DRINK_PRODUCTS: Product[] = [
     title: "Smoked Salmon Kit",
     brand: "Fishwife",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1541167760496-9dc533c8c73b?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1563636619-e9143da7973b?w=600&q=80",
       alt: "Beautifully packaged smoked salmon tins with retro design",
     },
     images: [
       {
-        url: "https://images.unsplash.com/photo-1541167760496-9dc533c8c73b?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1563636619-e9143da7973b?w=1200&q=80",
         alt: "Beautifully packaged smoked salmon tins with retro design",
       },
       {
@@ -776,8 +769,8 @@ export const FOOD_DRINK_PRODUCTS: Product[] = [
     description:
       "Wild-caught Pacific salmon, slow-smoked over alderwood and packed in the most beautiful tins you have ever seen. Fishwife is single-handedly making tinned fish cool again.",
     aspectRatio: 1.55,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 21000,
+    shares: 2520,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -814,8 +807,8 @@ export const FOOD_DRINK_PRODUCTS: Product[] = [
     description:
       "The everyday cooking counterpart to Graza's Drizzle. Made from later-harvest olives with a higher smoke point and milder flavor, perfect for sauteing, roasting, and everything in between.",
     aspectRatio: 0.75,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 55000,
+    shares: 6600,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -836,7 +829,7 @@ export const FOOD_DRINK_PRODUCTS: Product[] = [
         alt: "Vibrant spices measured into small bowls for cooking",
       },
       {
-        url: "https://images.unsplash.com/photo-1474979266404-7eaacdc50f73?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1510627498534-cf7e9002facc?w=1200&q=80",
         alt: "Spice jars arranged on a wooden spice rack",
       },
     ],
@@ -853,8 +846,8 @@ export const FOOD_DRINK_PRODUCTS: Product[] = [
     description:
       "Six single-origin spices sourced directly from smallholder farms, so fresh they will make your grocery store spices taste like sawdust. Each jar comes with the story of the farmer who grew it.",
     aspectRatio: 1.25,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 7400,
+    shares: 888,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -871,7 +864,7 @@ export const FOOD_DRINK_PRODUCTS: Product[] = [
         alt: "Minimalist sachets of instant matcha latte powder",
       },
       {
-        url: "https://images.unsplash.com/photo-1474979266404-7eaacdc50f73?w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1510627498534-cf7e9002facc?w=1200&q=80",
         alt: "Matcha latte being made by adding water to powder",
       },
     ],
@@ -888,8 +881,8 @@ export const FOOD_DRINK_PRODUCTS: Product[] = [
     description:
       "Blank Street's cult-favorite matcha latte, now in single-serve sachets with oat milk powder built right in. Just add hot water, stir, and you have a cafe-quality matcha latte in 30 seconds flat.",
     aspectRatio: 0.82,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 3100,
+    shares: 372,
     gumiedByFriends: getRandomGumiFriends(),
   },
 ];

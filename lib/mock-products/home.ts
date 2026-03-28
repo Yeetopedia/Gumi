@@ -1,12 +1,6 @@
 import { Product } from "@/types";
 import { getRandomGumiFriends } from "../mock-users";
 
-function rg(): number {
-  const r = [[50,500],[500,5000],[5000,50000],[50000,500000]];
-  const x = r[Math.floor(Math.random()*r.length)];
-  return Math.floor(Math.random()*(x[1]-x[0])+x[0]);
-}
-function rs(): number { return Math.floor(Math.random()*2000)+10; }
 
 export const HOME_PRODUCTS: Product[] = [
   // ─── 1. Boucle Sofa ──────────────────────────────────
@@ -28,8 +22,8 @@ export const HOME_PRODUCTS: Product[] = [
     topFeatures: ["Boucle Upholstery", "Solid Oak Legs", "86\" Width", "Removable Cushion Covers"],
     description: "A statement sofa wrapped in plush ivory boucle fabric. The clean mid-century silhouette pairs effortlessly with any living room style while the deep seat invites you to sink in and stay awhile.",
     aspectRatio: 1.45,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 14200,
+    shares: 1560,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 2. Travertine Coffee Table ───────────────────────
@@ -51,8 +45,8 @@ export const HOME_PRODUCTS: Product[] = [
     topFeatures: ["Natural Travertine", "36\" Diameter", "Pedestal Base", "Each Piece Unique"],
     description: "Carved from a single block of Italian travertine, this sculptural coffee table brings organic warmth to any space. Natural veining ensures no two tables are alike.",
     aspectRatio: 0.95,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 18700,
+    shares: 2050,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 3. Ceramic Table Lamp ────────────────────────────
@@ -74,8 +68,8 @@ export const HOME_PRODUCTS: Product[] = [
     topFeatures: ["Hand-Glazed Ceramic", "Linen Drum Shade", "3-Way Switch", "UL Listed"],
     description: "A hand-glazed ceramic base gives this lamp an artisan feel that elevates any bedside or console. The natural linen shade casts a warm, inviting glow throughout the room.",
     aspectRatio: 1.35,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 9800,
+    shares: 1070,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 4. Arch Floor Mirror ─────────────────────────────
@@ -97,8 +91,8 @@ export const HOME_PRODUCTS: Product[] = [
     topFeatures: ["Brass-Finished Frame", "70\" x 30\"", "Wall Mount or Lean", "Shatter-Resistant"],
     description: "This oversized arch mirror instantly opens up any room and adds a touch of timeless elegance. The slim brass frame keeps it feeling light and modern, whether mounted or casually leaned against a wall.",
     aspectRatio: 0.65,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 22400,
+    shares: 2460,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 5. Sculptural Bookend Set ────────────────────────
@@ -120,8 +114,8 @@ export const HOME_PRODUCTS: Product[] = [
     topFeatures: ["Cast Resin", "Set of 2", "Non-Scratch Base", "Weighted Design"],
     description: "These sculptural bookends double as standalone art pieces. The abstract organic shapes add visual interest to any shelf while keeping your favorite reads firmly in place.",
     aspectRatio: 1.0,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 11300,
+    shares: 1240,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 6. Marble Decorative Tray ────────────────────────
@@ -143,8 +137,8 @@ export const HOME_PRODUCTS: Product[] = [
     topFeatures: ["Calacatta Marble", "Brass Handles", "12\" x 8\"", "Felt-Padded Base"],
     description: "Elevate your vanity, coffee table, or bathroom counter with this polished Calacatta marble tray. Brass handles add a refined touch, making it as functional as it is beautiful.",
     aspectRatio: 1.3,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 5600,
+    shares: 615,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 7. Terracotta Planter ────────────────────────────
@@ -166,8 +160,8 @@ export const HOME_PRODUCTS: Product[] = [
     topFeatures: ["Handmade in Oaxaca", "Drainage Hole", "Weather Resistant", "Indoor/Outdoor"],
     description: "Hand-shaped by artisans in Oaxaca, this ribbed terracotta planter brings earthy warmth to your plant collection. Each piece bears subtle variations that make it one of a kind.",
     aspectRatio: 0.85,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 4200,
+    shares: 460,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 8. Linen Curtain Panels ──────────────────────────
@@ -189,8 +183,8 @@ export const HOME_PRODUCTS: Product[] = [
     topFeatures: ["100% Belgian Linen", "Rod Pocket or Clip Ring", "50\" x 96\"", "OEKO-TEX Certified"],
     description: "These washed Belgian linen panels filter light beautifully while adding effortless texture to any window. The pre-washed finish gives them a soft, lived-in drape from day one.",
     aspectRatio: 0.70,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 19600,
+    shares: 2150,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 9. Woven Seagrass Basket ─────────────────────────
@@ -212,8 +206,8 @@ export const HOME_PRODUCTS: Product[] = [
     topFeatures: ["Hand-Woven Seagrass", "Leather Handles", "Collapsible", "Fair Trade Certified"],
     description: "An endlessly versatile storage basket woven from sustainably harvested seagrass. Use it for throw blankets, magazines, toys, or laundry — it looks stunning wherever you put it.",
     aspectRatio: 1.05,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 3800,
+    shares: 415,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 10. Velvet Throw Pillow ──────────────────────────
@@ -235,8 +229,8 @@ export const HOME_PRODUCTS: Product[] = [
     topFeatures: ["Cotton Velvet", "Down-Feather Insert", "12\" x 20\"", "Hidden Zipper"],
     description: "Rich cotton velvet in a moody sage tone makes this lumbar pillow the perfect finishing touch. The plump down-feather insert keeps it looking full and inviting for years.",
     aspectRatio: 1.40,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 12800,
+    shares: 1400,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 11. Wool Area Rug ────────────────────────────────
@@ -250,7 +244,7 @@ export const HOME_PRODUCTS: Product[] = [
     },
     images: [
       { url: "https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=1200&q=80", alt: "Textured wool area rug in neutral tones" },
-      { url: "https://images.unsplash.com/photo-1616137466211-f939a16a18f7?w=1200&q=80", alt: "Rug in living room setting" },
+      { url: "https://images.unsplash.com/photo-1578500494198-246f612d3b3d?w=1200&q=80", alt: "Rug in living room setting" },
     ],
     price: { min: 89900, max: 249900, currency: "USD" },
     rating: { average: 4.8, count: 712 },
@@ -258,8 +252,8 @@ export const HOME_PRODUCTS: Product[] = [
     topFeatures: ["100% New Zealand Wool", "Handwoven", "5' x 8' to 9' x 12'", "GoodWeave Certified"],
     description: "This handwoven area rug grounds any room with its rich texture and creamy neutral palette. Crafted from New Zealand wool, it feels incredibly soft underfoot and only gets better with age.",
     aspectRatio: 1.50,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 16500,
+    shares: 1810,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 12. Floating Shelf ───────────────────────────────
@@ -268,11 +262,11 @@ export const HOME_PRODUCTS: Product[] = [
     title: "Oak Floating Shelf",
     brand: "Schoolhouse",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1616137466211-f939a16a18f7?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?w=600&q=80",
       alt: "Floating oak shelf with decor objects",
     },
     images: [
-      { url: "https://images.unsplash.com/photo-1616137466211-f939a16a18f7?w=1200&q=80", alt: "Floating oak shelf with decor objects" },
+      { url: "https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?w=1200&q=80", alt: "Floating oak shelf with decor objects" },
       { url: "https://images.unsplash.com/photo-1618219740975-d40978bb7378?w=1200&q=80", alt: "Shelf installation" },
     ],
     price: { min: 14900, max: 24900, currency: "USD" },
@@ -281,8 +275,8 @@ export const HOME_PRODUCTS: Product[] = [
     topFeatures: ["White Oak", "Hidden Bracket", "24\" / 36\" / 48\"", "Made in Portland"],
     description: "A clean, minimal floating shelf in warm white oak that lets your objects shine. The hidden bracket system creates a seamless look and supports up to 30 pounds.",
     aspectRatio: 1.55,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 7300,
+    shares: 800,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 13. Ceramic Vase ─────────────────────────────────
@@ -305,8 +299,8 @@ export const HOME_PRODUCTS: Product[] = [
     topFeatures: ["Handmade in Asheville", "Lead-Free Glaze", "Dishwasher Safe", "Watertight"],
     description: "A beautifully proportioned bud vase hand-thrown in East Fork's Asheville studio. The reactive glaze creates gorgeous color variations that make each piece truly unique.",
     aspectRatio: 0.75,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 6100,
+    shares: 670,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 14. Scented Candle ───────────────────────────────
@@ -328,8 +322,8 @@ export const HOME_PRODUCTS: Product[] = [
     topFeatures: ["100% Soy Wax", "Cotton Wick", "60-Hour Burn", "Made in USA"],
     description: "Notes of cedar, clove, and warm amber fill your space with the cozy scent of a crackling fire. Poured from clean-burning soy wax in a reusable amber glass vessel.",
     aspectRatio: 0.80,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 4800,
+    shares: 525,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 15. Duvet Cover Set ──────────────────────────────
@@ -352,8 +346,8 @@ export const HOME_PRODUCTS: Product[] = [
     topFeatures: ["100% French Linen", "Includes 2 Shams", "Button Closure", "Pre-Washed"],
     description: "Sleep enveloped in the luxurious softness of pre-washed French linen. This duvet set includes two matching shams and only gets softer with every wash — a bedroom essential you will reach for season after season.",
     aspectRatio: 1.20,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 21300,
+    shares: 2340,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 16. Side Table ───────────────────────────────────
@@ -375,8 +369,8 @@ export const HOME_PRODUCTS: Product[] = [
     topFeatures: ["Solid Walnut", "Shelf Storage", "20\" Height", "Tapered Legs"],
     description: "A mid-century inspired side table in rich walnut that works as hard as it looks. The lower shelf provides extra storage for books and remotes without adding visual bulk.",
     aspectRatio: 0.90,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 13700,
+    shares: 1500,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 17. Pendant Light ────────────────────────────────
@@ -390,7 +384,7 @@ export const HOME_PRODUCTS: Product[] = [
     },
     images: [
       { url: "https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?w=1200&q=80", alt: "Woven rattan pendant lamp" },
-      { url: "https://images.unsplash.com/photo-1616594266478-1a2fdb785a21?w=1200&q=80", alt: "Pendant lamp casting shadows" },
+      { url: "https://images.unsplash.com/photo-1618221381711-42ca8ab6e908?w=1200&q=80", alt: "Pendant lamp casting shadows" },
     ],
     price: { min: 34800, max: 49800, currency: "USD" },
     rating: { average: 4.7, count: 234 },
@@ -398,8 +392,8 @@ export const HOME_PRODUCTS: Product[] = [
     topFeatures: ["Hand-Woven Rattan", "18\" Diameter", "Adjustable Drop", "Dimmable Compatible"],
     description: "This hand-woven rattan pendant casts beautiful dappled shadows and brings instant warmth to kitchens, dining rooms, and entryways. The natural material adds organic texture overhead.",
     aspectRatio: 0.75,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 17200,
+    shares: 1890,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 18. Wall Hooks ───────────────────────────────────
@@ -408,11 +402,11 @@ export const HOME_PRODUCTS: Product[] = [
     title: "Brass Wall Hook Set",
     brand: "Schoolhouse",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1616594266478-1a2fdb785a21?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1616046229478-9901c5536a45?w=600&q=80",
       alt: "Brass wall hooks with items hanging",
     },
     images: [
-      { url: "https://images.unsplash.com/photo-1616594266478-1a2fdb785a21?w=1200&q=80", alt: "Brass wall hooks with items hanging" },
+      { url: "https://images.unsplash.com/photo-1616046229478-9901c5536a45?w=1200&q=80", alt: "Brass wall hooks with items hanging" },
       { url: "https://images.unsplash.com/photo-1618221381711-42ca8ab6e908?w=1200&q=80", alt: "Hook detail shot" },
     ],
     price: { min: 4900, max: 7900, currency: "USD" },
@@ -421,8 +415,8 @@ export const HOME_PRODUCTS: Product[] = [
     topFeatures: ["Solid Brass", "Set of 3", "Holds 10 lbs Each", "Made in Portland"],
     description: "Simple, solid, and beautifully made. These cast brass hooks are built to last a lifetime and develop a gorgeous patina over time. Perfect for entryways, bathrooms, and bedrooms.",
     aspectRatio: 1.10,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 5900,
+    shares: 645,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 19. Desk Lamp ────────────────────────────────────
@@ -436,7 +430,7 @@ export const HOME_PRODUCTS: Product[] = [
     },
     images: [
       { url: "https://images.unsplash.com/photo-1618221381711-42ca8ab6e908?w=1200&q=80", alt: "Minimal desk lamp on workspace" },
-      { url: "https://images.unsplash.com/photo-1615529328331-b00e26ea5d36?w=1200&q=80", alt: "Lamp in home office" },
+      { url: "https://images.unsplash.com/photo-1618221381711-42ca8ab6e908?w=1200&q=80", alt: "Lamp in home office" },
     ],
     price: { min: 11900, max: 15900, currency: "USD" },
     rating: { average: 4.6, count: 423 },
@@ -444,8 +438,8 @@ export const HOME_PRODUCTS: Product[] = [
     topFeatures: ["Die-Cast Aluminum", "Adjustable Arm", "LED Bulb Included", "Color: Soft Black"],
     description: "A Danish-designed task lamp that nails the balance between form and function. The fully adjustable arm directs light exactly where you need it, while the streamlined profile keeps your desk looking clean.",
     aspectRatio: 1.15,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 38400,
+    shares: 4220,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 20. Storage Ottoman ──────────────────────────────
@@ -454,11 +448,11 @@ export const HOME_PRODUCTS: Product[] = [
     title: "Boucle Storage Ottoman",
     brand: "West Elm",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1615529328331-b00e26ea5d36?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=600&q=80",
       alt: "Round boucle ottoman with storage",
     },
     images: [
-      { url: "https://images.unsplash.com/photo-1615529328331-b00e26ea5d36?w=1200&q=80", alt: "Round boucle ottoman with storage" },
+      { url: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&q=80", alt: "Round boucle ottoman with storage" },
       { url: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&q=80", alt: "Ottoman in living room" },
     ],
     price: { min: 34900, max: 44900, currency: "USD" },
@@ -467,8 +461,8 @@ export const HOME_PRODUCTS: Product[] = [
     topFeatures: ["Boucle Fabric", "Hidden Storage", "Solid Wood Legs", "25\" Diameter"],
     description: "This plush boucle ottoman works triple duty as a footrest, extra seat, and clever storage solution. Lift the cushion top to reveal a generous interior that stashes blankets, pillows, or toys.",
     aspectRatio: 1.00,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 15900,
+    shares: 1745,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 21. Woven Throw Blanket ──────────────────────────
@@ -490,8 +484,8 @@ export const HOME_PRODUCTS: Product[] = [
     topFeatures: ["Baby Alpaca Wool", "60\" x 80\"", "Hand-Loomed in Peru", "Hypoallergenic"],
     description: "Woven from baby alpaca wool by artisans in the Peruvian highlands, this throw is impossibly soft and lightweight. The subtle stripe pattern adds just enough visual interest without overwhelming your sofa.",
     aspectRatio: 0.80,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 7600,
+    shares: 835,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 22. Abstract Wall Art ────────────────────────────
@@ -513,8 +507,8 @@ export const HOME_PRODUCTS: Product[] = [
     topFeatures: ["Giclée on Canvas", "Gallery Wrapped", "24\" x 36\" / 36\" x 48\"", "Ready to Hang"],
     description: "A museum-quality giclée print on gallery-wrapped canvas that brings movement and color to any blank wall. The abstract composition works in both modern and traditional spaces.",
     aspectRatio: 0.70,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 10400,
+    shares: 1140,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 23. Linen Napkin Set ─────────────────────────────
@@ -536,8 +530,8 @@ export const HOME_PRODUCTS: Product[] = [
     topFeatures: ["Stonewashed Linen", "Set of 4", "20\" x 20\"", "OEKO-TEX Certified"],
     description: "Elevate every meal with these stonewashed linen napkins in muted earth tones. They soften beautifully with each wash and add effortless European elegance to your table.",
     aspectRatio: 1.0,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 29700,
+    shares: 3260,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 24. Ceramic Candle Holder ────────────────────────
@@ -559,8 +553,8 @@ export const HOME_PRODUCTS: Product[] = [
     topFeatures: ["Hand-Thrown Stoneware", "Fits Standard Tapers", "Weighted Base", "Reactive Glaze"],
     description: "A perfectly proportioned taper holder hand-thrown in East Fork's signature reactive glaze. The weighted base keeps candles stable, and the organic shape adds a handmade touch to any table.",
     aspectRatio: 0.70,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 5200,
+    shares: 570,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 25. Jute Area Rug ───────────────────────────────
@@ -582,8 +576,8 @@ export const HOME_PRODUCTS: Product[] = [
     topFeatures: ["100% Natural Jute", "Reversible", "6' x 9' to 10' x 14'", "Low Profile"],
     description: "A classic braided jute rug that layers beautifully and works in virtually every room. The natural fiber construction is durable, sustainable, and brings instant coastal warmth to your floors.",
     aspectRatio: 1.40,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 24600,
+    shares: 2700,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 26. Vanity Mirror ────────────────────────────────
@@ -597,7 +591,7 @@ export const HOME_PRODUCTS: Product[] = [
     },
     images: [
       { url: "https://images.unsplash.com/photo-1600607688969-a5bfcd646154?w=1200&q=80", alt: "Round mirror above bathroom vanity" },
-      { url: "https://images.unsplash.com/photo-1616593871468-07428e30463c?w=1200&q=80", alt: "Mirror in styled space" },
+      { url: "https://images.unsplash.com/photo-1600607688969-a5bfcd646154?w=1200&q=80", alt: "Mirror in styled space" },
     ],
     price: { min: 29900, max: 44900, currency: "USD" },
     rating: { average: 4.7, count: 312 },
@@ -605,8 +599,8 @@ export const HOME_PRODUCTS: Product[] = [
     topFeatures: ["Oil-Rubbed Bronze Frame", "30\" Diameter", "Beveled Edge", "Wall Mount Hardware Included"],
     description: "A beautifully proportioned round mirror that softens the lines of any room. The slim oil-rubbed bronze frame adds subtle contrast, and the beveled edge catches light for extra depth.",
     aspectRatio: 0.90,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 8500,
+    shares: 930,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 27. Cotton Bedsheet Set ──────────────────────────
@@ -615,12 +609,12 @@ export const HOME_PRODUCTS: Product[] = [
     title: "Percale Sheet Set",
     brand: "Crate & Barrel",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1616593871468-07428e30463c?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=600&q=80",
       alt: "Crisp white sheets on bed",
     },
     images: [
-      { url: "https://images.unsplash.com/photo-1616593871468-07428e30463c?w=1200&q=80", alt: "Crisp white sheets on bed" },
-      { url: "https://images.unsplash.com/photo-1612965110667-4175024b0997?w=1200&q=80", alt: "Sheet texture detail" },
+      { url: "https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=1200&q=80", alt: "Crisp white sheets on bed" },
+      { url: "https://images.unsplash.com/photo-1615874959474-d609969a20ed?w=1200&q=80", alt: "Sheet texture detail" },
     ],
     price: { min: 14900, max: 22900, currency: "USD" },
     rating: { average: 4.6, count: 1123 },
@@ -628,8 +622,8 @@ export const HOME_PRODUCTS: Product[] = [
     topFeatures: ["400-Thread-Count Percale", "Long-Staple Cotton", "Deep Pocket Fitted", "OEKO-TEX Certified"],
     description: "Hotel-quality percale sheets with that satisfying crisp hand-feel. Long-staple cotton ensures durability and softness that improves with every wash. The perfect foundation for a well-made bed.",
     aspectRatio: 1.30,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 11900,
+    shares: 1305,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 28. Modular Shelving ─────────────────────────────
@@ -638,11 +632,11 @@ export const HOME_PRODUCTS: Product[] = [
     title: "Modular Wall Shelving System",
     brand: "Muji",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1612965110667-4175024b0997?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?w=600&q=80",
       alt: "Minimalist modular shelving unit",
     },
     images: [
-      { url: "https://images.unsplash.com/photo-1612965110667-4175024b0997?w=1200&q=80", alt: "Minimalist modular shelving unit" },
+      { url: "https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?w=1200&q=80", alt: "Minimalist modular shelving unit" },
       { url: "https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=1200&q=80", alt: "Shelving with styled objects" },
     ],
     price: { min: 24900, max: 44900, currency: "USD" },
@@ -651,8 +645,8 @@ export const HOME_PRODUCTS: Product[] = [
     topFeatures: ["Pine Wood", "Customizable Configuration", "Wall-Mounted", "Tool-Free Assembly"],
     description: "Muji's iconic modular shelving adapts to any space and any need. The clean pine construction disappears into your wall while giving you complete freedom to rearrange shelves, drawers, and cabinets.",
     aspectRatio: 0.75,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 42300,
+    shares: 4645,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 29. Stoneware Dinner Set ─────────────────────────
@@ -667,7 +661,7 @@ export const HOME_PRODUCTS: Product[] = [
     images: [
       { url: "https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=1200&q=80", alt: "Handmade stoneware dinnerware stack" },
       { url: "https://images.unsplash.com/photo-1615874959474-d609969a20ed?w=1200&q=80", alt: "Place setting" },
-      { url: "https://images.unsplash.com/photo-1617325710236-4a36d46b48c5?w=1200&q=80", alt: "Dinnerware collection" },
+      { url: "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=1200&q=80", alt: "Dinnerware collection" },
     ],
     price: { min: 18500, max: 29500, currency: "USD" },
     rating: { average: 4.9, count: 1567 },
@@ -675,8 +669,8 @@ export const HOME_PRODUCTS: Product[] = [
     topFeatures: ["16-Piece Set", "Handmade in NC", "Microwave & Dishwasher Safe", "Lead-Free Glaze"],
     description: "A complete dinnerware set for four in East Fork's beloved reactive glaze. Each piece is hand-thrown by their team of potters in Asheville, resulting in slight variations that make every meal feel special.",
     aspectRatio: 1.05,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 6800,
+    shares: 745,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 30. Accent Chair ─────────────────────────────────
@@ -690,7 +684,7 @@ export const HOME_PRODUCTS: Product[] = [
     },
     images: [
       { url: "https://images.unsplash.com/photo-1615874959474-d609969a20ed?w=1200&q=80", alt: "Mid-century accent chair in olive" },
-      { url: "https://images.unsplash.com/photo-1617325710236-4a36d46b48c5?w=1200&q=80", alt: "Chair in living room" },
+      { url: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1200&q=80", alt: "Chair in living room" },
     ],
     price: { min: 79900, max: 119900, currency: "USD" },
     rating: { average: 4.7, count: 534 },
@@ -698,8 +692,8 @@ export const HOME_PRODUCTS: Product[] = [
     topFeatures: ["Performance Fabric", "Solid Oak Frame", "High-Density Foam", "30\" Wide"],
     description: "A sculptural accent chair that commands attention without overwhelming a room. The performance fabric resists stains while the high-density foam seat keeps its shape through years of everyday use.",
     aspectRatio: 0.85,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 16800,
+    shares: 1845,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 31. Diffuser ─────────────────────────────────────
@@ -708,11 +702,11 @@ export const HOME_PRODUCTS: Product[] = [
     title: "Reed Diffuser — Eucalyptus",
     brand: "Muji",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1617325710236-4a36d46b48c5?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80",
       alt: "Minimal reed diffuser on shelf",
     },
     images: [
-      { url: "https://images.unsplash.com/photo-1617325710236-4a36d46b48c5?w=1200&q=80", alt: "Minimal reed diffuser on shelf" },
+      { url: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80", alt: "Minimal reed diffuser on shelf" },
       { url: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80", alt: "Diffuser in bathroom" },
     ],
     price: { min: 2400, max: 3200, currency: "USD" },
@@ -721,8 +715,8 @@ export const HOME_PRODUCTS: Product[] = [
     topFeatures: ["Essential Oil Blend", "Glass Vessel", "6 Reeds Included", "Lasts 3 Months"],
     description: "A clean, flame-free way to scent any room with refreshing eucalyptus. The frosted glass vessel looks elegant on any surface, and the natural rattan reeds disperse fragrance continuously.",
     aspectRatio: 0.68,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 31200,
+    shares: 3425,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 32. Dining Table ─────────────────────────────────
@@ -744,8 +738,8 @@ export const HOME_PRODUCTS: Product[] = [
     topFeatures: ["Solid Acacia Wood", "Extends to 86\"", "Seats 6-8", "Protective Lacquer Finish"],
     description: "A warm acacia wood dining table that grows with your gatherings. The built-in leaf extends the surface to seat eight comfortably, then tucks away for everyday use.",
     aspectRatio: 1.45,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 20100,
+    shares: 2205,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 33. Wall Planter ─────────────────────────────────
@@ -767,8 +761,8 @@ export const HOME_PRODUCTS: Product[] = [
     topFeatures: ["Glazed Stoneware", "Built-In Drainage", "Mounting Hardware Included", "6\" Opening"],
     description: "A charming wall-mounted planter perfect for trailing pothos or ferns. The speckled glaze adds artisan character to any wall, turning your plants into living art.",
     aspectRatio: 0.85,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 9300,
+    shares: 1020,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 34. Throw Pillow Cover ───────────────────────────
@@ -790,8 +784,8 @@ export const HOME_PRODUCTS: Product[] = [
     topFeatures: ["100% Linen", "22\" x 22\"", "Hidden Zipper", "Insert Sold Separately"],
     description: "A beautifully textured linen pillow cover in a soft oatmeal tone that pairs with everything. The slubby weave adds visual depth and dimension to your sofa or bed.",
     aspectRatio: 1.0,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 4500,
+    shares: 495,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 35. Media Console ────────────────────────────────
@@ -813,8 +807,8 @@ export const HOME_PRODUCTS: Product[] = [
     topFeatures: ["Solid White Oak", "Cable Management", "Soft-Close Doors", "72\" Width"],
     description: "A clean-lined media console in warm white oak that keeps your entertainment setup organized and stylish. Soft-close doors hide clutter while the integrated cable management keeps cords out of sight.",
     aspectRatio: 1.55,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 23800,
+    shares: 2615,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 36. Scented Candle (Luxury) ──────────────────────
@@ -837,8 +831,8 @@ export const HOME_PRODUCTS: Product[] = [
     topFeatures: ["Coconut-Soy Blend", "Three Wicks", "80-Hour Burn", "Reusable Ceramic Vessel"],
     description: "The cult-favorite candle that smells like a Mediterranean garden in summer. Notes of ripe fig, green leaf, and warm cedar fill even large rooms, and the ceramic vessel makes a gorgeous planter when the wax is gone.",
     aspectRatio: 0.90,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 13100,
+    shares: 1440,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 37. Bench ────────────────────────────────────────
@@ -860,8 +854,8 @@ export const HOME_PRODUCTS: Product[] = [
     topFeatures: ["Solid Maple", "48\" Width", "Wool Seat Cushion", "Made in USA"],
     description: "A Shaker-inspired bench crafted from solid maple that serves as the anchor of any entryway. The included wool cushion adds comfort and warmth to the clean, heirloom-quality design.",
     aspectRatio: 1.35,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 6400,
+    shares: 700,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 38. Oversized Vase ───────────────────────────────
@@ -883,8 +877,8 @@ export const HOME_PRODUCTS: Product[] = [
     topFeatures: ["Earthenware", "Matte Glaze", "24\" Tall", "Watertight Interior"],
     description: "A statement floor vase in smooth matte white that instantly elevates a bare corner. Fill it with dried pampas grass, branches, or leave it empty as a sculptural accent piece.",
     aspectRatio: 0.65,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 10700,
+    shares: 1175,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 39. Cotton Waffle Towels ─────────────────────────
@@ -906,8 +900,8 @@ export const HOME_PRODUCTS: Product[] = [
     topFeatures: ["Organic Cotton Waffle", "Set of 2 Bath Towels", "Quick-Drying", "Lightweight"],
     description: "These organic cotton waffle towels are light, absorbent, and quick-drying — perfect for minimalist bathrooms. The textured weave looks elegant on a ladder rack or rolled on a shelf.",
     aspectRatio: 1.15,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 35600,
+    shares: 3915,
     gumiedByFriends: getRandomGumiFriends(),
   },
   // ─── 40. Picture Ledge ────────────────────────────────
@@ -930,8 +924,8 @@ export const HOME_PRODUCTS: Product[] = [
     topFeatures: ["Powder-Coated Steel", "36\" Width", "3\" Lip", "Holds Up to 15 lbs"],
     description: "A sleek picture ledge that lets you swap out art and photos without putting new holes in the wall. The slim powder-coated steel profile adds a gallery-like feel to any room.",
     aspectRatio: 1.50,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 27500,
+    shares: 3020,
     gumiedByFriends: getRandomGumiFriends(),
   },
 ];

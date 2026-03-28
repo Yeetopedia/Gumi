@@ -1,12 +1,6 @@
 import { Product } from "@/types";
 import { getRandomGumiFriends } from "../mock-users";
 
-function rg(): number {
-  const r = [[50,500],[500,5000],[5000,50000],[50000,500000]];
-  const x = r[Math.floor(Math.random()*r.length)];
-  return Math.floor(Math.random()*(x[1]-x[0])+x[0]);
-}
-function rs(): number { return Math.floor(Math.random()*2000)+10; }
 
 export const JEWELRY_PRODUCTS: Product[] = [
   {
@@ -32,8 +26,8 @@ export const JEWELRY_PRODUCTS: Product[] = [
     ],
     description: "Classic gold vermeil hoops that transition seamlessly from day to night. The lightweight construction and secure hinged closure make these a reliable go-to for any occasion.",
     aspectRatio: 0.85,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 28400,
+    shares: 2560,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -46,7 +40,7 @@ export const JEWELRY_PRODUCTS: Product[] = [
     },
     images: [
       { url: "https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=1200&q=80", alt: "Pearl drop earrings detail" },
-      { url: "https://images.unsplash.com/photo-1515562141589-67f0d569b6f3?w=1200&q=80", alt: "Pearl drop earrings styled" },
+      { url: "https://images.unsplash.com/photo-1596944924616-7b38e7cfac36?w=1200&q=80", alt: "Pearl drop earrings styled" },
       { url: "https://images.unsplash.com/photo-1611107683227-e9060eccd846?w=1200&q=80", alt: "Pearl drop earrings on model" }
     ],
     price: { min: 12800, max: 17500, currency: "USD" },
@@ -60,8 +54,8 @@ export const JEWELRY_PRODUCTS: Product[] = [
     ],
     description: "Elegant freshwater pearl drops suspended from delicate gold vermeil hooks. Each pearl is uniquely shaped, making every pair one of a kind. Perfect for adding sophistication to any look.",
     aspectRatio: 1.25,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 34700,
+    shares: 3120,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -87,8 +81,8 @@ export const JEWELRY_PRODUCTS: Product[] = [
     ],
     description: "A statement-making chunky chain bracelet crafted from recycled brass with a warm 14k gold plating. The oversized links give an effortlessly cool edge to any wrist stack.",
     aspectRatio: 1.1,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 7200,
+    shares: 650,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -114,8 +108,8 @@ export const JEWELRY_PRODUCTS: Product[] = [
     ],
     description: "A timeless signet ring in 14k solid gold with a smooth, polished oval face. Wear it as a minimalist statement or get it engraved for a personal touch.",
     aspectRatio: 0.95,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 22100,
+    shares: 1990,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -123,11 +117,11 @@ export const JEWELRY_PRODUCTS: Product[] = [
     title: "Layering Necklace Set",
     brand: "Gorjana",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1515562141589-67f0d569b6f3?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1596944924616-7b38e7cfac36?w=600&q=80",
       alt: "Set of three layered gold necklaces",
     },
     images: [
-      { url: "https://images.unsplash.com/photo-1515562141589-67f0d569b6f3?w=1200&q=80", alt: "Layering necklace set styled" },
+      { url: "https://images.unsplash.com/photo-1596944924616-7b38e7cfac36?w=1200&q=80", alt: "Layering necklace set styled" },
       { url: "https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?w=1200&q=80", alt: "Layering necklaces detail" },
       { url: "https://images.unsplash.com/photo-1611652022419-a9419f74343d?w=1200&q=80", alt: "Layering necklaces on model" }
     ],
@@ -143,8 +137,8 @@ export const JEWELRY_PRODUCTS: Product[] = [
     ],
     description: "The ultimate layering set with three complementary necklaces at different lengths. Each chain features a different style for a curated look without the effort. Comes in a gift-ready box.",
     aspectRatio: 0.75,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 31500,
+    shares: 2835,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -170,8 +164,8 @@ export const JEWELRY_PRODUCTS: Product[] = [
     ],
     description: "A classic tennis bracelet that sparkles without the luxury price tag. Each stone is hand-set in gold vermeil for a seamless line of brilliance around the wrist.",
     aspectRatio: 1.35,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 14800,
+    shares: 1330,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -197,8 +191,8 @@ export const JEWELRY_PRODUCTS: Product[] = [
     ],
     description: "An architectural ear cuff that adds instant edge without a piercing. The sculptural design wraps snugly around the cartilage with an adjustable fit that stays put all day.",
     aspectRatio: 0.7,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 5600,
+    shares: 504,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -225,8 +219,8 @@ export const JEWELRY_PRODUCTS: Product[] = [
     ],
     description: "A richly textured medallion pendant with an artisan, almost ancient quality. Each piece is hand-cast in bronze and dipped in 24k gold, ensuring subtle variations that make it truly unique.",
     aspectRatio: 0.8,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 21300,
+    shares: 1920,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -239,7 +233,7 @@ export const JEWELRY_PRODUCTS: Product[] = [
     },
     images: [
       { url: "https://images.unsplash.com/photo-1588444837495-c6cfeb53f32d?w=1200&q=80", alt: "Chain link necklace detail" },
-      { url: "https://images.unsplash.com/photo-1602752250015-52934bc67458?w=1200&q=80", alt: "Chain link necklace on model" }
+      { url: "https://images.unsplash.com/photo-1598560917807-1bae44bd2be8?w=1200&q=80", alt: "Chain link necklace on model" }
     ],
     price: { min: 19500, max: 27000, currency: "USD" },
     rating: { average: 4.7, count: 540 },
@@ -252,8 +246,8 @@ export const JEWELRY_PRODUCTS: Product[] = [
     ],
     description: "A bold chain link necklace that sits perfectly at the collarbone. Crafted from recycled brass and finished with 14k gold, it brings an Italian-inspired elegance with a modern attitude.",
     aspectRatio: 1.0,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 8900,
+    shares: 800,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -280,8 +274,8 @@ export const JEWELRY_PRODUCTS: Product[] = [
     ],
     description: "Timeless diamond studs featuring ethically sourced lab-grown diamonds in a classic four-prong 14k gold setting. These everyday essentials add a quiet sparkle that never goes out of style.",
     aspectRatio: 1.0,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 33200,
+    shares: 2990,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -308,8 +302,8 @@ export const JEWELRY_PRODUCTS: Product[] = [
     ],
     description: "A modern interpretation of the classic pearl choker using lustrous Akoya pearls. Each pearl is individually hand-knotted on silk for durability and a luxurious drape.",
     aspectRatio: 1.45,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 26800,
+    shares: 2410,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -335,8 +329,8 @@ export const JEWELRY_PRODUCTS: Product[] = [
     ],
     description: "A playful set of three beaded bracelets featuring natural gemstones and gold-filled accents. The stretch design makes them easy to slip on and mix with your existing bracelet collection.",
     aspectRatio: 1.15,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 18600,
+    shares: 1670,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -362,8 +356,8 @@ export const JEWELRY_PRODUCTS: Product[] = [
     ],
     description: "A barely-there gold anklet crafted from solid 14k gold. The delicate cable chain catches the light beautifully and is sturdy enough for everyday wear, even in the shower.",
     aspectRatio: 1.5,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 9400,
+    shares: 845,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -390,8 +384,8 @@ export const JEWELRY_PRODUCTS: Product[] = [
     ],
     description: "An artfully irregular statement ring that looks like a piece of wearable sculpture. Cast from recycled silver and finished in gold vermeil, it brings gallery-worthy design to your everyday look.",
     aspectRatio: 0.9,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 6100,
+    shares: 550,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -417,8 +411,8 @@ export const JEWELRY_PRODUCTS: Product[] = [
     ],
     description: "A clean-lined bar pendant in 14k solid gold, perfect for layering or wearing solo. Add custom engraving to make it a meaningful everyday piece that sits beautifully against the skin.",
     aspectRatio: 0.65,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 12300,
+    shares: 1110,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -431,7 +425,7 @@ export const JEWELRY_PRODUCTS: Product[] = [
     },
     images: [
       { url: "https://images.unsplash.com/photo-1515688594390-b649af70d282?w=1200&q=80", alt: "Huggie hoops close-up" },
-      { url: "https://images.unsplash.com/photo-1602751584552-8ba73aad5559?w=1200&q=80", alt: "Huggie hoops on model" }
+      { url: "https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=1200&q=80", alt: "Huggie hoops on model" }
     ],
     price: { min: 6800, max: 9500, currency: "USD" },
     rating: { average: 4.6, count: 2780 },
@@ -444,8 +438,8 @@ export const JEWELRY_PRODUCTS: Product[] = [
     ],
     description: "Petite huggie hoops with a row of sparkling micro pavé stones that hug the earlobe perfectly. Small enough for everyday wear yet eye-catching enough for an evening out.",
     aspectRatio: 1.0,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 29700,
+    shares: 2675,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -458,7 +452,7 @@ export const JEWELRY_PRODUCTS: Product[] = [
     },
     images: [
       { url: "https://images.unsplash.com/photo-1610694955371-d4a3e0ce4b52?w=1200&q=80", alt: "Sculptural bangle detail" },
-      { url: "https://images.unsplash.com/photo-1609552559488-f8e73cde8a48?w=1200&q=80", alt: "Sculptural bangle styled" },
+      { url: "https://images.unsplash.com/photo-1603974372039-adc49044b6bd?w=1200&q=80", alt: "Sculptural bangle styled" },
       { url: "https://images.unsplash.com/photo-1599459183200-59c7687a0275?w=1200&q=80", alt: "Sculptural bangle styled" }
     ],
     price: { min: 42000, max: 62000, currency: "USD" },
@@ -472,8 +466,8 @@ export const JEWELRY_PRODUCTS: Product[] = [
     ],
     description: "A sculptural bangle with an organic, fluid silhouette that wraps around the wrist like molten gold. The weighty feel and polished finish make it a conversation starter on its own.",
     aspectRatio: 1.2,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 22400,
+    shares: 2020,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -481,11 +475,11 @@ export const JEWELRY_PRODUCTS: Product[] = [
     title: "Coin Pendant Necklace",
     brand: "Missoma",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1602751584552-8ba73aad5559?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&q=80",
       alt: "Gold coin pendant on delicate chain",
     },
     images: [
-      { url: "https://images.unsplash.com/photo-1602751584552-8ba73aad5559?w=1200&q=80", alt: "Coin pendant detail" },
+      { url: "https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=1200&q=80", alt: "Coin pendant detail" },
       { url: "https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?w=1200&q=80", alt: "Coin pendant on model" }
     ],
     price: { min: 8900, max: 12500, currency: "USD" },
@@ -499,8 +493,8 @@ export const JEWELRY_PRODUCTS: Product[] = [
     ],
     description: "A textured coin pendant inspired by ancient Roman currency, hung on a fine gold chain. The vintage-feel motif adds a layer of intrigue and history to modern everyday styling.",
     aspectRatio: 0.78,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 19800,
+    shares: 1780,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -508,11 +502,11 @@ export const JEWELRY_PRODUCTS: Product[] = [
     title: "Twisted Gold Ring",
     brand: "Jenny Bird",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1612528443702-f264f23f0cfd?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?w=600&q=80",
       alt: "Twisted gold ring with crossover design",
     },
     images: [
-      { url: "https://images.unsplash.com/photo-1612528443702-f264f23f0cfd?w=1200&q=80", alt: "Twisted ring close-up" },
+      { url: "https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?w=1200&q=80", alt: "Twisted ring close-up" },
       { url: "https://images.unsplash.com/photo-1618077360395-f3068be8e001?w=1200&q=80", alt: "Twisted ring on hand" }
     ],
     price: { min: 6800, max: 9500, currency: "USD" },
@@ -526,8 +520,8 @@ export const JEWELRY_PRODUCTS: Product[] = [
     ],
     description: "A modern twisted ring where two bands gracefully cross over each other. The polished gold finish and comfortable fit make it an everyday ring you will never want to take off.",
     aspectRatio: 0.88,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 7800,
+    shares: 700,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -554,8 +548,8 @@ export const JEWELRY_PRODUCTS: Product[] = [
     ],
     description: "A statement ring featuring a large, irregularly shaped baroque pearl cradled in a sculpted gold vermeil setting. The organic beauty of the pearl makes each ring a one-of-a-kind piece.",
     aspectRatio: 1.05,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 5300,
+    shares: 480,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -563,11 +557,11 @@ export const JEWELRY_PRODUCTS: Product[] = [
     title: "Herringbone Chain Necklace",
     brand: "Ana Luisa",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1609552559488-f8e73cde8a48?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1603974372039-adc49044b6bd?w=600&q=80",
       alt: "Flat herringbone gold chain necklace",
     },
     images: [
-      { url: "https://images.unsplash.com/photo-1609552559488-f8e73cde8a48?w=1200&q=80", alt: "Herringbone chain detail" },
+      { url: "https://images.unsplash.com/photo-1603974372039-adc49044b6bd?w=1200&q=80", alt: "Herringbone chain detail" },
       { url: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=1200&q=80", alt: "Herringbone chain on model" }
     ],
     price: { min: 5500, max: 8500, currency: "USD" },
@@ -581,8 +575,8 @@ export const JEWELRY_PRODUCTS: Product[] = [
     ],
     description: "A silky-smooth herringbone chain that drapes flat against the skin for a liquid gold effect. Made from recycled gold vermeil as part of Ana Luisa's carbon-neutral commitment.",
     aspectRatio: 0.72,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 11200,
+    shares: 1010,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -608,8 +602,8 @@ export const JEWELRY_PRODUCTS: Product[] = [
     ],
     description: "Sleek ear climbers that trace the curve of the earlobe with a trail of graduated pave diamonds. Set in 14k solid gold, they give the look of multiple earrings with just one piercing.",
     aspectRatio: 0.68,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 41600,
+    shares: 3745,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -636,8 +630,8 @@ export const JEWELRY_PRODUCTS: Product[] = [
     ],
     description: "A wide, polished gold cuff that commands attention without feeling heavy. The open-ended design allows you to adjust the fit, and the tapered edges keep the look refined.",
     aspectRatio: 1.3,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 4900,
+    shares: 440,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -663,8 +657,8 @@ export const JEWELRY_PRODUCTS: Product[] = [
     ],
     description: "A whisper-thin gold chain dotted with tiny gold bead stations that catch the light as you move. Handcrafted in Brooklyn from solid 14k gold for a necklace that lasts a lifetime.",
     aspectRatio: 0.82,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 8300,
+    shares: 750,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -691,8 +685,8 @@ export const JEWELRY_PRODUCTS: Product[] = [
     ],
     description: "A richly detailed lion head pendant that channels old-world symbolism through a contemporary lens. Hand-cast in bronze and finished in 24k gold, each piece carries slight variations that tell its own story.",
     aspectRatio: 0.75,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 27500,
+    shares: 2475,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -700,12 +694,12 @@ export const JEWELRY_PRODUCTS: Product[] = [
     title: "Pave Diamond Huggies",
     brand: "Adina Reyter",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1602752250015-52934bc67458?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1598560917807-1bae44bd2be8?w=600&q=80",
       alt: "Small diamond pave huggie earrings",
     },
     images: [
-      { url: "https://images.unsplash.com/photo-1602752250015-52934bc67458?w=1200&q=80", alt: "Pave huggies close-up" },
-      { url: "https://images.unsplash.com/photo-1612528443702-f264f23f0cfd?w=1200&q=80", alt: "Pave huggies on model" },
+      { url: "https://images.unsplash.com/photo-1598560917807-1bae44bd2be8?w=1200&q=80", alt: "Pave huggies close-up" },
+      { url: "https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?w=1200&q=80", alt: "Pave huggies on model" },
       { url: "https://images.unsplash.com/photo-1600721391776-b5cd0e0048f9?w=1200&q=80", alt: "Pave huggies on model" }
     ],
     price: { min: 35000, max: 48000, currency: "USD" },
@@ -719,8 +713,8 @@ export const JEWELRY_PRODUCTS: Product[] = [
     ],
     description: "Petite huggie hoops encrusted with natural pave diamonds in 14k solid gold. They deliver maximum sparkle in a minimal, sleep-in-them-comfortable size.",
     aspectRatio: 1.1,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 48200,
+    shares: 4340,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -746,8 +740,8 @@ export const JEWELRY_PRODUCTS: Product[] = [
     ],
     description: "A versatile curb chain bracelet with a satisfying weight and a chic T-bar toggle. Perfect worn alone for a polished look or stacked with other bracelets for a curated arm party.",
     aspectRatio: 1.4,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 23600,
+    shares: 2125,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -773,8 +767,8 @@ export const JEWELRY_PRODUCTS: Product[] = [
     ],
     description: "A refined pearl strand bracelet featuring hand-selected freshwater pearls on silk thread. The modern slider clasp in gold vermeil allows for a perfect fit on any wrist size.",
     aspectRatio: 1.55,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 31800,
+    shares: 2860,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -801,8 +795,8 @@ export const JEWELRY_PRODUCTS: Product[] = [
     ],
     description: "A sleek, rounded dome ring in solid 14k gold that sits beautifully on the finger. The polished surface reflects light from every angle, creating a bold yet refined look.",
     aspectRatio: 0.92,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 17400,
+    shares: 1565,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -829,8 +823,8 @@ export const JEWELRY_PRODUCTS: Product[] = [
     ],
     description: "Vivid natural emeralds encased in smooth 14k gold bezels for a refined, modern take on colored gemstone studs. Each stone is hand-selected for its rich green hue and exceptional clarity.",
     aspectRatio: 0.95,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 38900,
+    shares: 3500,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -843,7 +837,7 @@ export const JEWELRY_PRODUCTS: Product[] = [
     },
     images: [
       { url: "https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=1200&q=80", alt: "Figaro chain detail" },
-      { url: "https://images.unsplash.com/photo-1515562141589-67f0d569b6f3?w=1200&q=80", alt: "Figaro chain styled" }
+      { url: "https://images.unsplash.com/photo-1596944924616-7b38e7cfac36?w=1200&q=80", alt: "Figaro chain styled" }
     ],
     price: { min: 14500, max: 19500, currency: "USD" },
     rating: { average: 4.6, count: 430 },
@@ -856,8 +850,8 @@ export const JEWELRY_PRODUCTS: Product[] = [
     ],
     description: "A classic figaro chain with its signature pattern of alternating short and elongated links. Made from recycled brass and plated in 14k gold for a sustainable take on a timeless silhouette.",
     aspectRatio: 0.85,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 6700,
+    shares: 605,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -865,11 +859,11 @@ export const JEWELRY_PRODUCTS: Product[] = [
     title: "Croissant Dome Earrings",
     brand: "Jenny Bird",
     primaryImage: {
-      url: "https://images.unsplash.com/photo-1616486029926-7e0d83564a80?w=600&q=80",
+      url: "https://images.unsplash.com/photo-1619119069152-a2b331eb392a?w=600&q=80",
       alt: "Croissant-shaped gold dome earrings",
     },
     images: [
-      { url: "https://images.unsplash.com/photo-1616486029926-7e0d83564a80?w=1200&q=80", alt: "Croissant earrings detail" },
+      { url: "https://images.unsplash.com/photo-1619119069152-a2b331eb392a?w=1200&q=80", alt: "Croissant earrings detail" },
       { url: "https://images.unsplash.com/photo-1630019852942-f89202989a59?w=1200&q=80", alt: "Croissant earrings on model" },
       { url: "https://images.unsplash.com/photo-1588444837495-c6cfeb53f32d?w=1200&q=80", alt: "Croissant earrings styling" }
     ],
@@ -884,8 +878,8 @@ export const JEWELRY_PRODUCTS: Product[] = [
     ],
     description: "Playful, croissant-textured dome earrings that bring sculptural energy to any outfit. The hollow construction keeps them surprisingly light despite their substantial, eye-catching size.",
     aspectRatio: 1.08,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 9100,
+    shares: 820,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -911,8 +905,8 @@ export const JEWELRY_PRODUCTS: Product[] = [
     ],
     description: "A delicate solid gold initial pendant that sits close to the heart. Made famous on the red carpet, this everyday necklace adds a personal, meaningful touch to any neckline.",
     aspectRatio: 0.7,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 15600,
+    shares: 1405,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -938,8 +932,8 @@ export const JEWELRY_PRODUCTS: Product[] = [
     ],
     description: "A curated set of three stacking rings in mixed metals that are meant to be worn together or spread across multiple fingers. The varying widths and finishes create a perfectly imperfect look.",
     aspectRatio: 0.98,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 4200,
+    shares: 380,
     gumiedByFriends: getRandomGumiFriends(),
   },
   {
@@ -953,7 +947,7 @@ export const JEWELRY_PRODUCTS: Product[] = [
     images: [
       { url: "https://images.unsplash.com/photo-1619119069152-a2b331eb392a?w=1200&q=80", alt: "Rope chain choker detail" },
       { url: "https://images.unsplash.com/photo-1610694955371-d4a3e0ce4b52?w=1200&q=80", alt: "Rope chain choker on model" },
-      { url: "https://images.unsplash.com/photo-1602751584552-8ba73aad5559?w=1200&q=80", alt: "Rope chain choker on model" }
+      { url: "https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=1200&q=80", alt: "Rope chain choker on model" }
     ],
     price: { min: 5500, max: 7500, currency: "USD" },
     rating: { average: 4.4, count: 1890 },
@@ -966,8 +960,8 @@ export const JEWELRY_PRODUCTS: Product[] = [
     ],
     description: "A textured rope chain choker that sits elegantly at the base of the neck. The twisted design adds visual interest and dimension, making it a standout layering piece or solo statement.",
     aspectRatio: 1.48,
-    gumis: rg(),
-    shares: rs(),
+    gumis: 13900,
+    shares: 1250,
     gumiedByFriends: getRandomGumiFriends(),
   },
 ];
