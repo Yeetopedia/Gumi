@@ -145,7 +145,7 @@ export default function Home() {
       />
 
       {/* Main content area */}
-      <div className="flex-1 w-full">
+      <div className="flex-1 min-w-0">
         {feedMode === "gallery" && (
           <div className="w-full">
             {/* Stories row — recent friend purchases */}

@@ -126,31 +126,6 @@ export default function Sidebar({
                 <span className="text-sm font-medium text-[var(--text-primary)]">Messages</span>
               </button>
             </div>
-
-            {/* Category pills */}
-            {feedMode === "gallery" && categories.length > 0 && (
-              <div className="mt-8 pt-6 border-t border-[var(--border)]">
-                <p className="text-xs uppercase tracking-widest text-[var(--text-tertiary)] font-semibold px-3 mb-3">Categories</p>
-                <div className="space-y-1">
-                  {categories.map((cat) => (
-                    <button
-                      key={cat.id}
-                      onClick={() => {
-                        onCategorySelect(cat.id);
-                        setIsOpen(false);
-                      }}
-                      className={`w-full text-left px-3 py-2.5 rounded-lg transition-colors text-sm ${
-                        activeCategory === cat.id
-                          ? "bg-[var(--accent)] text-white font-medium"
-                          : "text-[var(--text-secondary)] hover:bg-[var(--bg-secondary)]"
-                      }`}
-                    >
-                      {cat.label}
-                    </button>
-                  ))}
-                </div>
-              </div>
-            )}
           </nav>
 
           {/* Feed mode toggle */}

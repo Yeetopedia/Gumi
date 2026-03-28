@@ -69,7 +69,7 @@ export default function StoriesRow({ users, onStoryClick, viewedUserIds }: Stori
       {showLeftButton && (
         <button
           onClick={() => scroll("left")}
-          className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white/80 backdrop-blur-sm shadow-lg flex items-center justify-center hover:bg-white transition-all opacity-0 group-hover:opacity-100"
+          className="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white/80 backdrop-blur-sm shadow-lg flex items-center justify-center hover:bg-white transition-all opacity-0 group-hover:opacity-100"
           aria-label="Scroll left"
         >
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -82,7 +82,7 @@ export default function StoriesRow({ users, onStoryClick, viewedUserIds }: Stori
       {showRightButton && (
         <button
           onClick={() => scroll("right")}
-          className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white/80 backdrop-blur-sm shadow-lg flex items-center justify-center hover:bg-white transition-all opacity-0 group-hover:opacity-100"
+          className="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white/80 backdrop-blur-sm shadow-lg flex items-center justify-center hover:bg-white transition-all opacity-0 group-hover:opacity-100"
           aria-label="Scroll right"
         >
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -94,7 +94,7 @@ export default function StoriesRow({ users, onStoryClick, viewedUserIds }: Stori
       {/* Stories scroll container */}
       <div
         ref={scrollRef}
-        className="flex gap-4 overflow-x-auto hide-scrollbar pb-4 pt-1"
+        className="flex gap-4 overflow-x-auto hide-scrollbar pb-4 pt-6"
       >
         {users.map((user, index) => {
           const isViewed = viewedUserIds.has(user.id);
@@ -104,7 +104,7 @@ export default function StoriesRow({ users, onStoryClick, viewedUserIds }: Stori
               onClick={() => onStoryClick(user, index)}
               className="flex flex-col items-center gap-1.5 flex-shrink-0 group"
             >
-              <div className="relative w-16 h-16 md:w-[72px] md:h-[72px] group-hover:scale-105 transition-transform">
+              <div className="relative w-20 h-20 md:w-24 md:h-24">
                 <div
                   className={`absolute inset-0 flex items-center justify-center ${
                     user.hasStory ? "p-[3px]" : "p-0"
@@ -116,7 +116,7 @@ export default function StoriesRow({ users, onStoryClick, viewedUserIds }: Stori
                       alt={user.name}
                       fill
                       className="object-cover"
-                      sizes="64px"
+                      sizes="80px"
                     />
                   </div>
                 </div>
@@ -128,7 +128,7 @@ export default function StoriesRow({ users, onStoryClick, viewedUserIds }: Stori
                     className={`object-contain z-10 pointer-events-none transition-all ${
                       isViewed ? "grayscale" : ""
                     }`}
-                    sizes="72px"
+                    sizes="96px"
                   />
                 )}
                 {user.hasStory && !isViewed && (
@@ -137,7 +137,7 @@ export default function StoriesRow({ users, onStoryClick, viewedUserIds }: Stori
                   </div>
                 )}
               </div>
-              <span className={`text-[11px] truncate w-16 text-center ${
+              <span className={`text-[11px] truncate w-20 text-center ${
                 isViewed ? "text-[var(--text-tertiary)]" : "text-[var(--text-secondary)]"
               }`}>
                 {user.username}
