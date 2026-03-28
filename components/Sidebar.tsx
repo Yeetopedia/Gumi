@@ -17,6 +17,9 @@ type SidebarProps = {
   onCategorySelect: (categoryId: string) => void;
   onAlgorithmClick?: () => void;
   onProfileClick?: () => void;
+  activeSection?: "feed" | "games";
+  onHomeClick?: () => void;
+  onGamesClick?: () => void;
 };
 
 export default function Sidebar({
@@ -30,6 +33,9 @@ export default function Sidebar({
   onCategorySelect,
   onAlgorithmClick,
   onProfileClick,
+  activeSection = "feed",
+  onHomeClick,
+  onGamesClick,
 }: SidebarProps) {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -67,6 +73,7 @@ export default function Sidebar({
           <div
             className="flex items-center gap-2 mb-8 mt-2 flex-shrink-0 cursor-pointer"
             onClick={() => {
+              onHomeClick?.();
               onCategorySelect("for-you");
               onSearchChange("");
               window.scrollTo({ top: 0, behavior: "smooth" });
@@ -100,8 +107,11 @@ export default function Sidebar({
           {/* Main navigation links */}
           <nav className="flex-1 mb-6">
             <div className="space-y-2">
-              <button className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[var(--bg-secondary)] transition-colors text-left">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="var(--text-primary)" strokeWidth="1.5">
+              <button
+                onClick={() => { onHomeClick?.(); setIsOpen(false); }}
+                className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[var(--bg-secondary)] transition-colors text-left ${activeSection === "feed" ? "bg-[var(--bg-secondary)]" : ""}`}
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill={activeSection === "feed" ? "currentColor" : "none"} stroke="var(--text-primary)" strokeWidth={activeSection === "feed" ? "1.5" : "2"}>
                   <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
                 </svg>
                 <span className="text-sm font-medium text-[var(--text-primary)]">Home</span>
@@ -124,6 +134,22 @@ export default function Sidebar({
                   <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
                 </svg>
                 <span className="text-sm font-medium text-[var(--text-primary)]">Messages</span>
+              </button>
+              <button
+                onClick={() => { onGamesClick?.(); setIsOpen(false); }}
+                className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[var(--bg-secondary)] transition-colors text-left ${activeSection === "games" ? "bg-[var(--bg-secondary)]" : ""}`}
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill={activeSection === "games" ? "currentColor" : "none"} stroke="var(--text-primary)" strokeWidth="2">
+                  <rect x="2" y="6" width="20" height="12" rx="3" />
+                  <circle cx="9" cy="12" r="1.5" fill={activeSection === "games" ? "var(--card-bg)" : "var(--text-primary)"} stroke="none" />
+                  <circle cx="15" cy="10" r="1" fill={activeSection === "games" ? "var(--card-bg)" : "var(--text-primary)"} stroke="none" />
+                  <circle cx="17" cy="12" r="1" fill={activeSection === "games" ? "var(--card-bg)" : "var(--text-primary)"} stroke="none" />
+                  <circle cx="15" cy="14" r="1" fill={activeSection === "games" ? "var(--card-bg)" : "var(--text-primary)"} stroke="none" />
+                  <circle cx="13" cy="12" r="1" fill={activeSection === "games" ? "var(--card-bg)" : "var(--text-primary)"} stroke="none" />
+                  <line x1="7" y1="12" x2="11" y2="12" stroke={activeSection === "games" ? "var(--card-bg)" : "var(--text-primary)"} strokeWidth="1.5" />
+                  <line x1="9" y1="10" x2="9" y2="14" stroke={activeSection === "games" ? "var(--card-bg)" : "var(--text-primary)"} strokeWidth="1.5" />
+                </svg>
+                <span className="text-sm font-medium text-[var(--text-primary)]">Games</span>
               </button>
             </div>
           </nav>

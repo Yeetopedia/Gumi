@@ -20,6 +20,7 @@ import GumiToast from "@/components/GumiToast";
 import AlgorithmModal from "@/components/AlgorithmModal";
 import MyProfile from "@/components/MyProfile/MyProfile";
 import ChatBot from "@/components/ChatBot";
+import GamesHub from "@/components/GamesHub";
 
 export default function Home() {
   const router = useRouter();
@@ -42,6 +43,9 @@ export default function Home() {
 
   // My Profile
   const [myProfileOpen, setMyProfileOpen] = useState(false);
+
+  // App section
+  const [appSection, setAppSection] = useState<"feed" | "games">("feed");
 
   // Gumi toast state
   const [toastVisible, setToastVisible] = useState(false);
@@ -143,10 +147,17 @@ export default function Home() {
         onCategorySelect={handleCategorySelect}
         onAlgorithmClick={() => setAlgorithmOpen(true)}
         onProfileClick={() => setMyProfileOpen(true)}
+        activeSection={appSection}
+        onHomeClick={() => setAppSection("feed")}
+        onGamesClick={() => setAppSection("games")}
       />
 
       {/* Main content area */}
       <div className="flex-1 min-w-0">
+        {appSection === "games" ? (
+          <GamesHub />
+        ) : (
+        <>
         {feedMode === "gallery" && (
           <div className="w-full">
             {/* Stories row — recent friend purchases */}
@@ -261,6 +272,8 @@ export default function Home() {
               </button>
             </div>
           </div>
+        )}
+        </>
         )}
       </div>
 
