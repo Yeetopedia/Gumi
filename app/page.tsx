@@ -19,6 +19,7 @@ import UserProfile from "@/components/UserProfile";
 import GumiToast from "@/components/GumiToast";
 import AlgorithmModal from "@/components/AlgorithmModal";
 import MyProfile from "@/components/MyProfile/MyProfile";
+import ChatBot from "@/components/ChatBot";
 
 export default function Home() {
   const router = useRouter();
@@ -194,6 +195,15 @@ export default function Home() {
                   </div>
                 )}
               </div>
+            )}
+
+            {/* AI Search Chat */}
+            {activeSearch && (
+              <ChatBot
+                searchQuery={activeSearch}
+                currentProducts={displayedProducts}
+                onProductClick={handleProductClick}
+              />
             )}
 
             {/* Masonry grid */}
