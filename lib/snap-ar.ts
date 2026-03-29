@@ -157,14 +157,18 @@ export async function startCameraKitSession(
   let stream: MediaStream | null = null;
 
   try {
+    console.log("[CameraKit] bootstrapping with token:", SNAP_API_TOKEN.slice(0, 20) + "...");
     const cameraKit = await bootstrapCameraKit({ apiToken: SNAP_API_TOKEN });
+    console.log("[CameraKit] bootstrap OK");
 
     const session = await cameraKit.createSession({ liveRenderTarget: canvas });
+    console.log("[CameraKit] session created");
 
     stream = await navigator.mediaDevices.getUserMedia({
       video: { facingMode: "user", width: { ideal: 1280 }, height: { ideal: 720 } },
       audio: false,
     });
+    console.log("[CameraKit] camera stream OK");
 
     const source = createMediaStreamSource(stream, {
       transform: Transform2D.MirrorX,
@@ -172,22 +176,32 @@ export async function startCameraKitSession(
     });
 
     await session.setSource(source);
+    console.log("[CameraKit] source set");
 
-    // Load the first lens from the group (or by ID if specified)
+    // Load lens with timeout — loadLens hangs if lens isn't approved for Camera Kit
     let lens;
-    if (SNAP_LENS_ID) {
-      lens = await cameraKit.lensRepository.loadLens(SNAP_LENS_ID, SNAP_LENS_GROUP_ID);
-    } else {
-      const [group] = await cameraKit.lensRepository.loadLensGroups([SNAP_LENS_GROUP_ID]);
-      lens = group.lenses[0];
+    try {
+      const lensPromise = SNAP_LENS_ID
+        ? cameraKit.lensRepository.loadLens(SNAP_LENS_ID, SNAP_LENS_GROUP_ID)
+        : cameraKit.lensRepository.loadLensGroups([SNAP_LENS_GROUP_ID]).then(({ lenses }) => lenses?.[0]);
+
+      console.log("[CameraKit] loading lens...");
+      lens = await Promise.race([
+        lensPromise,
+        new Promise((_, reject) => setTimeout(() => reject(new Error("Lens load timed out after 10s")), 10000)),
+      ]);
+      console.log("[CameraKit] lens loaded:", (lens as any)?.id, (lens as any)?.name);
+
+      await session.applyLens(lens as any, {
+        launchParams: buildSnapLaunchData(config),
+      });
+      console.log("[CameraKit] lens applied");
+    } catch (lensErr) {
+      console.warn("[CameraKit] lens failed, running camera-only:", lensErr);
     }
 
-    // LensLaunchData.launchParams is the correct field for arbitrary key-value data
-    await session.applyLens(lens, {
-      launchParams: buildSnapLaunchData(config),
-    });
-
     await session.play();
+    console.log("[CameraKit] playing");
 
     return () => {
       session.pause();

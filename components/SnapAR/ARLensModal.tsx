@@ -21,6 +21,7 @@ type ARLensModalProps = {
 export default function ARLensModal({ config, onClose }: ARLensModalProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const cleanupRef = useRef<(() => void) | null>(null);
+  const [canvasKey, setCanvasKey] = useState(0);
   const [mode, setMode] = useState<ARMode>("loading");
   const [errorMsg, setErrorMsg] = useState("");
   const [lensLoaded, setLensLoaded] = useState(false);
@@ -66,7 +67,7 @@ export default function ARLensModal({ config, onClose }: ARLensModalProps) {
     return () => {
       cleanupRef.current?.();
     };
-  }, [startSession]);
+  }, [canvasKey]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Escape key
   useEffect(() => {
@@ -118,6 +119,7 @@ export default function ARLensModal({ config, onClose }: ARLensModalProps) {
 
       {/* Camera Kit canvas — always mounted so the session can attach */}
       <canvas
+        key={canvasKey}
         ref={canvasRef}
         className="w-full h-full object-cover"
         style={{ display: mode === "running" ? "block" : "none" }}
@@ -154,7 +156,7 @@ export default function ARLensModal({ config, onClose }: ARLensModalProps) {
           <p className="text-white text-base font-semibold">AR couldn't start</p>
           <p className="text-white/60 text-sm leading-relaxed">{errorMsg}</p>
           <button
-            onClick={startSession}
+            onClick={() => setCanvasKey(k => k + 1)}
             className="mt-2 px-6 py-2.5 rounded-full bg-white text-black text-sm font-semibold hover:bg-white/90 transition-colors"
           >
             Try Again

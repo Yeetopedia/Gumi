@@ -15,6 +15,7 @@
  */
 
 import { useState, useEffect, useCallback } from "react";
+import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { GummiBearConfig } from "@/types/gummi-bear";
 import {
@@ -23,7 +24,6 @@ import {
   buildLensDeepLink,
   SNAP_LENS_ID,
 } from "@/lib/snap-ar";
-import ARLensModal from "./ARLensModal";
 
 type SnapARButtonProps = {
   config: GummiBearConfig;
@@ -45,7 +45,7 @@ function loadCreativeKit() {
 }
 
 export default function SnapARButton({ config, mode = "inline" }: SnapARButtonProps) {
-  const [arOpen, setArOpen] = useState(false);
+  const router = useRouter();
   const [status, setStatus] = useState<"idle" | "loading" | "error">("idle");
   const [tooltipMsg, setTooltipMsg] = useState("");
   const configured = isSnapConfigured();
@@ -62,9 +62,13 @@ export default function SnapARButton({ config, mode = "inline" }: SnapARButtonPr
   const handleClick = useCallback(async () => {
     if (status === "loading") return;
 
-    // Strategy 1: Camera Kit embedded (best — requires credentials)
+    // Strategy 1: Navigate to /ar page (requires credentials)
     if (configured) {
-      setArOpen(true);
+      const p = new URLSearchParams({ hue: String(config.hue) });
+      if (config.clothing) p.set("clothing", config.clothing);
+      if (config.accessory) p.set("accessory", config.accessory);
+      if (config.headwear) p.set("headwear", config.headwear);
+      router.push(`/ar?${p.toString()}`);
       return;
     }
 
@@ -95,33 +99,19 @@ export default function SnapARButton({ config, mode = "inline" }: SnapARButtonPr
 
   if (mode === "compact") {
     return (
-      <>
-        <AnimatePresence>
-          {arOpen && (
-            <ARLensModal config={config} onClose={() => setArOpen(false)} />
-          )}
-        </AnimatePresence>
-
-        <button
-          onClick={handleClick}
-          className="flex items-center gap-2 px-4 py-2 rounded-full bg-yellow-400 text-black text-sm font-semibold hover:bg-yellow-300 active:scale-95 transition-all"
-        >
-          <SnapGhost size={16} />
-          <span>Try in AR</span>
-        </button>
-      </>
+      <button
+        onClick={handleClick}
+        className="flex items-center gap-2 px-4 py-2 rounded-full bg-yellow-400 text-black text-sm font-semibold hover:bg-yellow-300 active:scale-95 transition-all"
+      >
+        <SnapGhost size={16} />
+        <span>Try in AR</span>
+      </button>
     );
   }
 
   // Inline (full) mode
   return (
     <>
-      <AnimatePresence>
-        {arOpen && (
-          <ARLensModal config={config} onClose={() => setArOpen(false)} />
-        )}
-      </AnimatePresence>
-
       <div className="relative flex flex-col items-center">
         <motion.button
           onClick={handleClick}
