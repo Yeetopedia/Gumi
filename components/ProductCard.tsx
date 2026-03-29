@@ -155,7 +155,7 @@ export default function ProductCard({
             {/* Gummi count badge — bottom-left */}
             <div className="absolute bottom-3 left-3 z-10">
               <div className="flex items-center gap-1 bg-black/40 backdrop-blur-sm rounded-full pl-1.5 pr-2.5 py-1">
-                <Image src="/gummi-icon.png" alt="Gummi" width={18} height={31} />
+                <Image src="/gummi-icon.png" alt="Gummi" width={15} height={26} />
                 <span className="text-white text-xs font-medium">{formatCount(product.gummis)}</span>
                 <span className="text-white/60 text-[10px]">bought</span>
               </div>
