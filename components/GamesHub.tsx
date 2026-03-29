@@ -46,40 +46,38 @@ export default function GamesHub() {
   return (
     <div className="w-full min-h-screen px-4 md:px-8 py-8 flex flex-col justify-center">
       {/* Header with tabs */}
-      <div className="max-w-4xl mx-auto mb-10">
-        <div className="flex items-center justify-between mb-2">
-          <div className="flex items-center gap-3">
-            {/* GUMI_ICON_PLACEHOLDER */}
-            <Image src="/gummi-icon.png" alt="Gummi" width={40} height={40} className="drop-shadow-md" />
-            <h1 className="text-4xl font-bold text-(--text-primary)" style={{ fontFamily: "var(--font-cormorant), serif" }}>
-              Gummi Games
-            </h1>
-          </div>
-          {/* View toggle tabs */}
-          <div className="flex items-center gap-2 bg-(--bg-secondary) rounded-full p-1">
-            <button
-              onClick={() => setView("games")}
-              className={`px-4 py-2 rounded-full font-semibold transition-all text-sm ${
-                view === "games"
-                  ? "bg-(--accent) text-white"
-                  : "text-(--text-secondary) hover:text-(--text-primary)"
-              }`}
-            >
-              Games
-            </button>
-            <button
-              onClick={() => setView("leaderboard")}
-              className={`px-4 py-2 rounded-full font-semibold transition-all text-sm ${
-                view === "leaderboard"
-                  ? "bg-(--accent) text-white"
-                  : "text-(--text-secondary) hover:text-(--text-primary)"
-              }`}
-            >
-              Leaderboard
-            </button>
-          </div>
+      <div className="max-w-4xl mx-auto mb-10 flex flex-col items-center">
+        <div className="flex items-center gap-3 mb-6">
+          {/* GUMI_ICON_PLACEHOLDER */}
+          <Image src="/gummi-icon.png" alt="Gummi" width={40} height={40} className="drop-shadow-md" />
+          <h1 className="text-4xl font-bold text-(--text-primary)" style={{ fontFamily: "var(--font-cormorant), serif" }}>
+            Gummi Games
+          </h1>
         </div>
-        <p className="text-(--text-secondary) text-sm ml-[52px]">
+        {/* View toggle tabs */}
+        <div className="flex items-center gap-2 bg-(--bg-secondary) rounded-full p-1 mb-4">
+          <button
+            onClick={() => setView("games")}
+            className={`px-4 py-2 rounded-full font-semibold transition-all text-sm ${
+              view === "games"
+                ? "bg-(--accent) text-white"
+                : "text-(--text-secondary) hover:text-(--text-primary)"
+            }`}
+          >
+            Games
+          </button>
+          <button
+            onClick={() => setView("leaderboard")}
+            className={`px-4 py-2 rounded-full font-semibold transition-all text-sm ${
+              view === "leaderboard"
+                ? "bg-(--accent) text-white"
+                : "text-(--text-secondary) hover:text-(--text-primary)"
+            }`}
+          >
+            Leaderboard
+          </button>
+        </div>
+        <p className="text-(--text-secondary) text-sm text-center">
           {view === "games" ? "Play, compete, and have fun with gummy-powered games" : "See how you rank against your friends"}
         </p>
       </div>
@@ -91,10 +89,10 @@ export default function GamesHub() {
           <button
             key={game.id}
             onClick={() => setActiveGame(game.id)}
-            className="group text-left rounded-2xl overflow-hidden bg-(--card-bg) border border-(--border) shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+            className="group text-left rounded-2xl overflow-hidden bg-(--card-bg) border border-(--border) shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col"
           >
             {/* Card hero */}
-            <div className={`relative h-40 bg-linear-to-br ${game.gradient} flex items-center justify-center overflow-hidden`}>
+            <div className={`relative h-40 bg-linear-to-br ${game.gradient} flex items-center justify-center overflow-hidden flex-shrink-0`}>
               {/* GUMI_ICON_PLACEHOLDER - decorative background icons */}
               <div className="absolute inset-0 opacity-10">
                 {Array.from({ length: 6 }).map((_, i) => (
@@ -116,7 +114,7 @@ export default function GamesHub() {
               <span className="text-6xl group-hover:scale-110 transition-transform duration-300 drop-shadow-lg">{game.icon}</span>
             </div>
             {/* Card body */}
-            <div className="p-5">
+            <div className="p-5 flex-1">
               <h3 className="text-lg font-bold text-(--text-primary) mb-1" style={{ fontFamily: "var(--font-cormorant), serif" }}>
                 {game.title}
               </h3>

@@ -15,7 +15,6 @@ import StoryViewer from "@/components/StoryViewer";
 import MasonryGrid from "@/components/MasonryGrid";
 import UserProfile from "@/components/UserProfile";
 import GummiToast from "@/components/GummiToast";
-import AlgorithmModal from "@/components/AlgorithmModal";
 import MyProfile from "@/components/MyProfile/MyProfile";
 import ChatBot from "@/components/ChatBot";
 import ProductModal from "@/components/ProductModal";
@@ -35,9 +34,6 @@ export default function Home() {
   const [storyViewerOpen, setStoryViewerOpen] = useState(false);
   const [storyInitialIndex, setStoryInitialIndex] = useState(0);
   const [viewedStoryUsers, setViewedStoryUsers] = useState<Set<string>>(new Set());
-
-  // Algorithm modal
-  const [algorithmOpen, setAlgorithmOpen] = useState(false);
 
   // My Profile
   const [myProfileOpen, setMyProfileOpen] = useState(false);
@@ -132,7 +128,6 @@ export default function Home() {
         categories={CATEGORIES}
         activeCategory={activeCategory}
         onCategorySelect={handleCategorySelect}
-        onAlgorithmClick={() => setAlgorithmOpen(true)}
         onProfileClick={() => setMyProfileOpen(true)}
         activeSection="feed"
         onHomeClick={() => {
@@ -270,12 +265,6 @@ export default function Home() {
           setTimeout(() => setSelectedUser(user), 300);
         }}
         onGummi={handleGummi}
-      />
-
-      {/* Algorithm Modal */}
-      <AlgorithmModal
-        isOpen={algorithmOpen}
-        onClose={() => setAlgorithmOpen(false)}
       />
 
       {/* Purchase confirmation toast */}

@@ -19,7 +19,6 @@ type SidebarProps = {
   categories: Category[];
   activeCategory: string;
   onCategorySelect: (categoryId: string) => void;
-  onAlgorithmClick?: () => void;
   onProfileClick?: () => void;
   activeSection?: "feed" | "games" | "messages";
   onHomeClick?: () => void;
@@ -38,7 +37,6 @@ export default function Sidebar({
   categories,
   activeCategory,
   onCategorySelect,
-  onAlgorithmClick,
   onProfileClick,
   activeSection = "feed",
   onHomeClick,
@@ -201,19 +199,6 @@ export default function Sidebar({
               </button>
             </div>
           </nav>
-
-{/* Algorithm button */}
-          {onAlgorithmClick && (
-            <button
-              onClick={onAlgorithmClick}
-              className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-(--bg-secondary) transition-colors text-left mb-6"
-            >
-              <span className="text-lg" style={{ fontFamily: "var(--font-cormorant), serif", fontStyle: "italic", fontWeight: 600 }}>
-                Σ
-              </span>
-              <span className="text-sm font-medium text-(--text-primary)">The Algorithm</span>
-            </button>
-          )}
 
           {/* User profile button */}
           <button onClick={() => router.push("/user")} className="w-full flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-(--bg-secondary) transition-colors text-left">
