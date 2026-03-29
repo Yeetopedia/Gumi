@@ -2,6 +2,10 @@
 
 import { useState, useEffect, useRef, useCallback } from "react";
 import Image from "next/image";
+import { AnimatePresence } from "framer-motion";
+import { updatePacmanScore } from "@/lib/game-scores";
+import { CURRENT_USER, MOCK_USERS } from "@/lib/mock-users";
+import PostGameLeaderboard from "@/components/PostGameLeaderboard";
 
 // 0=pellet, 1=wall, 2=empty, 3=power pellet
 const MAZE_TEMPLATE = [
@@ -60,6 +64,8 @@ export default function GummiPacmanGame({ onBack }: { onBack: () => void }) {
   const [score, setScore] = useState(0);
   const [lives, setLives] = useState(3);
   const [level, setLevel] = useState(1);
+  const [showLeaderboard, setShowLeaderboard] = useState(false);
+  const [finalScore, setFinalScore] = useState(0);
 
   const gRef = useRef({
     maze: MAZE_TEMPLATE.map(row => [...row]),
@@ -187,7 +193,11 @@ export default function GummiPacmanGame({ onBack }: { onBack: () => void }) {
           }
           // Win check
           if (r.pelletsEaten >= r.totalPellets) {
-            r.state = "won"; setGameState("won");
+            r.state = "won"; 
+            setGameState("won");
+            setFinalScore(r.score);
+            updatePacmanScore(CURRENT_USER.id, r.score);
+            setShowLeaderboard(true);
           }
         }
 
@@ -259,7 +269,13 @@ export default function GummiPacmanGame({ onBack }: { onBack: () => void }) {
               ghost.eaten = true; r.score += 200; setScore(r.score);
             } else if (!ghost.eaten) {
               r.lives--; setLives(r.lives);
-              if (r.lives <= 0) { r.state = "lost"; setGameState("lost"); }
+              if (r.lives <= 0) { 
+                r.state = "lost"; 
+                setGameState("lost");
+                setFinalScore(r.score);
+                updatePacmanScore(CURRENT_USER.id, r.score);
+                setShowLeaderboard(true);
+              }
               else { resetPositions(); r.deathPause = 1.0; }
               break;
             }
@@ -367,7 +383,15 @@ export default function GummiPacmanGame({ onBack }: { onBack: () => void }) {
     <div className="flex flex-col items-center w-full h-full">
       {/* Header */}
       <div className="flex items-center justify-between w-full px-4 py-3 z-10">
-        <button onClick={onBack} className="p-2 rounded-lg hover:bg-(--bg-secondary) transition-colors">
+        <button 
+          onClick={() => {
+            // Save the final score before going back
+            if (score > 0) {
+              updatePacmanScore(CURRENT_USER.id, score);
+            }
+            onBack();
+          }} 
+          className="p-2 rounded-lg hover:bg-(--bg-secondary) transition-colors">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--text-primary)" strokeWidth="2"><polyline points="15 18 9 12 15 6"/></svg>
         </button>
         <div className="flex items-center gap-2">
@@ -405,7 +429,7 @@ export default function GummiPacmanGame({ onBack }: { onBack: () => void }) {
         )}
 
         {/* Won */}
-        {gameState === "won" && (
+        {gameState === "won" && !showLeaderboard && (
           <div className="absolute inset-0 flex items-center justify-center bg-black/60 backdrop-blur-sm">
             <div className="text-center">
               <Image src="/gummi-icon.png" alt="Gummi" width={72} height={72} className="mx-auto mb-4" />
@@ -419,7 +443,7 @@ export default function GummiPacmanGame({ onBack }: { onBack: () => void }) {
         )}
 
         {/* Lost */}
-        {gameState === "lost" && (
+        {gameState === "lost" && !showLeaderboard && (
           <div className="absolute inset-0 flex items-center justify-center bg-black/60 backdrop-blur-sm">
             <div className="text-center">
               <Image src="/gummi-icon.png" alt="Gummi" width={64} height={64} className="mx-auto mb-4 grayscale" />
@@ -431,6 +455,21 @@ export default function GummiPacmanGame({ onBack }: { onBack: () => void }) {
             </div>
           </div>
         )}
+
+        {/* Post-game leaderboard */}
+        <AnimatePresence>
+          {showLeaderboard && (
+            <PostGameLeaderboard
+              game="pacman"
+              finalScore={finalScore}
+              users={MOCK_USERS.filter((u) => u.id !== CURRENT_USER.id)}
+              onClose={() => {
+                setShowLeaderboard(false);
+                setGameState("menu");
+              }}
+            />
+          )}
+        </AnimatePresence>
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect, useCallback } from "react";
+import { useState, useRef, useEffect, useCallback, useMemo } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Product } from "@/types";
@@ -20,6 +20,8 @@ export default function ReelsView({ products, onLoadMore, hasMore, onProductClic
   const [gummied, setGummied] = useState<Set<string>>(new Set());
   const [bookmarked, setBookmarked] = useState<Set<string>>(new Set());
   const [direction, setDirection] = useState(0);
+  const [showKeyHint, setShowKeyHint] = useState(true);
+  const [commentsOpen, setCommentsOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const touchStartY = useRef(0);
   const isTransitioning = useRef(false);
@@ -100,6 +102,24 @@ export default function ReelsView({ products, onLoadMore, hasMore, onProductClic
   };
 
   // No double-tap to Gummi — Gummi is a purchase action, not a casual gesture
+
+  // Deterministic mock comments per product
+  const mockComments = useMemo(() => {
+    const pool = [
+      { user: "sophiac", text: "Obsessed with this, just ordered!" },
+      { user: "emmaliu", text: "The quality is incredible for the price 🤩" },
+      { user: "oliviarose", text: "Been using this for 3 months, love it" },
+      { user: "liampark", text: "Perfect gift idea — saving this!" },
+      { user: "noahkim", text: "Does anyone know if they ship internationally?" },
+      { user: "mayaw", text: "This is so my aesthetic 😍" },
+      { user: "jasmine_buys", text: "5 stars, highly recommend" },
+      { user: "theo_style", text: "The colors are even better in person" },
+    ];
+    const hash = product.id.split("").reduce((a, c) => a + c.charCodeAt(0), 0);
+    const count = 3 + (hash % 4); // 3-6 comments
+    const start = hash % pool.length;
+    return Array.from({ length: count }, (_, i) => pool[(start + i) % pool.length]);
+  }, [product.id]);
 
   if (!product) return null;
 
@@ -196,7 +216,7 @@ export default function ReelsView({ products, onLoadMore, hasMore, onProductClic
               </button>
 
               {/* Comment */}
-              <button className="flex flex-col items-center gap-1">
+              <button onClick={() => setCommentsOpen(true)} className="flex flex-col items-center gap-1">
                 <div className="w-12 h-12 rounded-full bg-white/15 backdrop-blur-sm flex items-center justify-center">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
                     <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
@@ -298,6 +318,108 @@ export default function ReelsView({ products, onLoadMore, hasMore, onProductClic
         </motion.div>
       </AnimatePresence>
       </div>
+
+      {/* Scroll hint */}
+      {currentIndex === 0 && (
+        <motion.div
+          initial={{ opacity: 1 }}
+          animate={{ opacity: 0 }}
+          transition={{ delay: 2, duration: 1 }}
+          className="absolute bottom-32 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center gap-1"
+        >
+          <motion.svg
+            animate={{ y: [0, 8, 0] }}
+            transition={{ repeat: Infinity, duration: 1.5 }}
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="white"
+            strokeWidth="2"
+          >
+            <polyline points="6 9 12 15 18 9" />
+          </motion.svg>
+          <span className="text-white/60 text-xs">Scroll for more</span>
+        </motion.div>
+      )}
+
+      {/* Keyboard shortcut hint */}
+      <AnimatePresence>
+        {showKeyHint && (
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.4, delay: 0.5 }}
+            onAnimationComplete={() => {
+              setTimeout(() => setShowKeyHint(false), 3000);
+            }}
+            className="absolute bottom-24 left-1/2 -translate-x-1/2 bg-white/15 backdrop-blur-md px-4 py-2 rounded-full flex items-center gap-2 pointer-events-none"
+          >
+            <span className="text-white/80 text-xs font-medium">↑↓ or j/k to navigate</span>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Comment sheet */}
+      <AnimatePresence>
+        {commentsOpen && (
+          <>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="absolute inset-0 z-40"
+              onClick={() => setCommentsOpen(false)}
+            />
+            <motion.div
+              initial={{ y: "100%" }}
+              animate={{ y: 0 }}
+              exit={{ y: "100%" }}
+              transition={{ duration: 0.3, ease: [0.32, 0.72, 0, 1] }}
+              className="absolute bottom-0 left-0 right-0 z-50 bg-(--card-bg) rounded-t-2xl max-h-[60vh] flex flex-col"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Handle */}
+              <div className="flex justify-center pt-3 pb-2 shrink-0">
+                <div className="w-10 h-1 rounded-full bg-(--border)" />
+              </div>
+              <div className="flex items-center justify-between px-4 pb-3 shrink-0 border-b border-(--border)">
+                <h3 className="text-sm font-semibold text-(--text-primary)">
+                  Comments · {formatCount(Math.floor(product.gummis * 0.12))}
+                </h3>
+                <button onClick={() => setCommentsOpen(false)} className="text-(--text-tertiary) hover:text-(--text-primary) transition-colors">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+                    <line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" />
+                  </svg>
+                </button>
+              </div>
+              <div className="overflow-y-auto flex-1 px-4 py-3 space-y-4">
+                {mockComments.map((c, i) => (
+                  <div key={i} className="flex gap-3">
+                    <div className="w-8 h-8 rounded-full bg-(--bg-secondary) shrink-0 flex items-center justify-center text-xs font-bold text-(--text-tertiary)">
+                      {c.user[0].toUpperCase()}
+                    </div>
+                    <div>
+                      <span className="text-xs font-semibold text-(--text-primary) mr-2">@{c.user}</span>
+                      <span className="text-sm text-(--text-secondary)">{c.text}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              {/* Comment input */}
+              <div className="px-4 py-3 border-t border-(--border) shrink-0 flex items-center gap-3">
+                <div className="w-8 h-8 rounded-full bg-(--accent)/20 shrink-0 flex items-center justify-center text-xs font-bold text-(--accent)">
+                  Y
+                </div>
+                <div className="flex-1 bg-(--bg-secondary) rounded-full px-4 py-2 text-sm text-(--text-tertiary)">
+                  Add a comment…
+                </div>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
