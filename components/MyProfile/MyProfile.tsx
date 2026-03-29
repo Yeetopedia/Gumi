@@ -167,6 +167,7 @@ export default function MyProfile({ isOpen, onClose, onProductClick, onUserClick
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -8 }}
                 transition={{ duration: 0.2 }}
+                className="pb-12"
               >
                 {activeTab === "gummis" && (
                   <ProfileGummisGrid

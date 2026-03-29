@@ -18,7 +18,7 @@ const TABS: { id: ProfileTab; label: string; hasIcon?: boolean }[] = [
 
 export default function ProfileTabs({ activeTab, onTabChange }: ProfileTabsProps) {
   return (
-    <div className="sticky top-0 z-10 bg-(--bg-primary)/95 backdrop-blur-md border-b border-(--border)/50">
+    <div className="sticky top-8 z-10 bg-(--bg-primary)/95 backdrop-blur-md border-b border-(--border)/50">
       <div className="flex">
         {TABS.map((tab) => (
           <button

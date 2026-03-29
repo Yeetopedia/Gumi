@@ -36,7 +36,7 @@ export default function SuggestedFollowers({ onUserClick }: SuggestedFollowersPr
   };
 
   return (
-    <section className="px-6 py-4 border-b border-(--border)">
+    <section className="py-8">
       {/* Header */}
       <div className="flex items-center justify-between mb-3">
         <span className="text-[10px] uppercase tracking-[0.15em] text-(--text-tertiary) font-medium">
