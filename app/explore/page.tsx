@@ -169,7 +169,6 @@ export default function ExplorePage() {
               isLoading={isLoading}
               onProductClick={handleProductClick}
               onFriendClick={handleFriendClick}
-              onGummi={handleGummi}
               prefetchSentinelIndex={prefetchSentinelIndex}
               prefetchSentinelRef={prefetchSentinelRef}
             />

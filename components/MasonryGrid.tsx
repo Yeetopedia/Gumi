@@ -10,7 +10,6 @@ type MasonryGridProps = {
   isLoading: boolean;
   onProductClick: (product: Product) => void;
   onFriendClick?: (user: MockUser) => void;
-  onGummi?: (product: Product) => void;
   prefetchSentinelIndex?: number;
   prefetchSentinelRef?: (node: HTMLDivElement | null) => void;
   recommendationScores?: Map<string, number>;
@@ -21,7 +20,6 @@ export default function MasonryGrid({
   isLoading,
   onProductClick,
   onFriendClick,
-  onGummi,
   prefetchSentinelIndex,
   prefetchSentinelRef,
   recommendationScores,
@@ -35,7 +33,6 @@ export default function MasonryGrid({
             index={index}
             onClick={onProductClick}
             onFriendClick={onFriendClick}
-            onGummi={onGummi}
             matchScore={recommendationScores?.get(product.id)}
           />
           {index === prefetchSentinelIndex && prefetchSentinelRef && (

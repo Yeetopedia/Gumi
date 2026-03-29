@@ -201,7 +201,6 @@ export default function Home() {
                 isLoading={isLoading}
                 onProductClick={handleProductClick}
                 onFriendClick={handleFriendClick}
-                onGummi={handleGummi}
                 prefetchSentinelIndex={prefetchSentinelIndex}
                 prefetchSentinelRef={prefetchSentinelRef}
               />
