@@ -14,20 +14,20 @@ export default function ImageGallery({ images }: ImageGalleryProps) {
   const [direction, setDirection] = useState(0);
 
   const goTo = useCallback(
-    (index: number) => {
-      setDirection(index > currentIndex ? 1 : -1);
+    (index: number, dir?: number) => {
+      setDirection(dir ?? (index > currentIndex ? 1 : -1));
       setCurrentIndex(index);
     },
     [currentIndex]
   );
 
   const prev = useCallback(
-    () => goTo(currentIndex === 0 ? images.length - 1 : currentIndex - 1),
+    () => goTo(currentIndex === 0 ? images.length - 1 : currentIndex - 1, -1),
     [currentIndex, images.length, goTo]
   );
 
   const next = useCallback(
-    () => goTo(currentIndex === images.length - 1 ? 0 : currentIndex + 1),
+    () => goTo(currentIndex === images.length - 1 ? 0 : currentIndex + 1, 1),
     [currentIndex, images.length, goTo]
   );
 
@@ -105,25 +105,25 @@ export default function ImageGallery({ images }: ImageGalleryProps) {
             {currentIndex + 1} / {images.length}
           </div>
         )}
-      </div>
 
-      {/* Dots */}
-      {images.length > 1 && (
-        <div className="flex justify-center gap-1.5 py-3">
-          {images.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => goTo(i)}
-              className={`w-1.5 h-1.5 rounded-full transition-all ${
-                i === currentIndex
-                  ? "bg-(--text-primary) w-4"
-                  : "bg-(--text-tertiary)/40 hover:bg-(--text-tertiary)"
-              }`}
-              aria-label={`Go to image ${i + 1}`}
-            />
-          ))}
-        </div>
-      )}
+        {/* Dots - positioned at bottom of image */}
+        {images.length > 1 && (
+          <div className="absolute bottom-3 left-1/2 -translate-x-1/2 z-10 flex justify-center gap-1.5">
+            {images.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => goTo(i)}
+                className={`w-1.5 h-1.5 rounded-full transition-all ${
+                  i === currentIndex
+                    ? "bg-white w-4"
+                    : "bg-white/40 hover:bg-white/60"
+                }`}
+                aria-label={`Go to image ${i + 1}`}
+              />
+            ))}
+          </div>
+        )}
+      </div>
     </div>
   );
 }
