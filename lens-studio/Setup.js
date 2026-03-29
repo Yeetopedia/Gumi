@@ -62,7 +62,8 @@ startEvent.bind(function () {
 
   // ─── Step 2: Create SparkleEmitter child ────────────────────────────────────
 
-  var sparkleEmitter = bearRoot.createSceneObject("SparkleEmitter");
+  var sparkleEmitter = global.scene.createSceneObject("SparkleEmitter");
+  sparkleEmitter.setParent(bearRoot);
   // Position it at the center of the bear
   var sparkleTransform = sparkleEmitter.getTransform();
   sparkleTransform.setLocalPosition(new vec3(0, 0, 0));

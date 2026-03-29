@@ -22,7 +22,7 @@
 // @input float squishAmount {"default": 0.07, "hint": "Max scale squish factor (0 = none)"}
 // @input bool  enableSway {"default": true, "hint": "Enable side-to-side rotation sway"}
 
-var ColorUtils = require("./ColorUtils");
+// ColorUtils functions are global (defined in ColorUtils.js which runs first)
 
 // Runtime state
 var time = 0;

@@ -24,7 +24,7 @@
 // @input float springStiffness {"default": 220.0, "hint": "Spring stiffness (higher = snappier)"}
 // @input float springDamping   {"default": 14.0,  "hint": "Spring damping (higher = less bounce)"}
 
-var ColorUtils = require("./ColorUtils");
+// ColorUtils functions are global (defined in ColorUtils.js which runs first)
 
 // Spring state for Y scale
 var springValue    = 1.0;   // current Y scale multiplier
@@ -67,7 +67,7 @@ updateEvent.bind(function(eventData) {
   var dt = Math.min(eventData.getDeltaTime(), 0.05); // cap dt to prevent explosion
 
   // Spring step for Y scale
-  var yResult = ColorUtils.springStep(
+  var yResult = springStep(
     springValue,
     springTarget,
     springVelocity,
@@ -81,7 +81,7 @@ updateEvent.bind(function(eventData) {
   // XZ scale inversely tracks Y (volume conservation)
   // When Y squishes to 0.75, XZ expands to ~1.15
   var xzTarget = 1.0 + (1.0 - springValue) * 0.6;
-  var xzResult = ColorUtils.springStep(
+  var xzResult = springStep(
     xzSpringValue,
     xzTarget,
     xzSpringVelocity,

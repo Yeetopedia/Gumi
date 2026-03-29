@@ -121,10 +121,6 @@ function springStep(current, target, velocity, stiffness, damping, dt) {
   return { value: newValue, velocity: newVelocity };
 }
 
-// Export for other scripts via require()
-module.exports.rgbToHsv = rgbToHsv;
-module.exports.hsvToRgb = hsvToRgb;
-module.exports.shiftHue = shiftHue;
-module.exports.applyHueToMaterial = applyHueToMaterial;
-module.exports.lerp = lerp;
-module.exports.springStep = springStep;
+// Lens Studio 5.x uses plain global functions — no module.exports needed.
+// Other scripts access these functions directly since they share the same global scope.
+// (require() in LS5 does not use CommonJS module.exports)

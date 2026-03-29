@@ -8,9 +8,23 @@
  *   - headwear   (string item ID)    → shows/hides headwear mesh children
  *   - color_name (string)            → used by UI label if present
  *
+ * ─── GummyBear_V2.fbx notes ──────────────────────────────────────────────────
+ * The FBX contains:
+ *   - Single mesh object named "Mesh" (one-piece body, rigged with "Armature")
+ *   - Two materials: "Material" (body) and "Material.001" (eyes/details)
+ *   - Base diffuse color: #F90000 (R=0.978, G=0.0, B=0.0) — pure red
+ *   - Skeleton: Armature + Bone hierarchy for posing/animation
+ *
+ * In Lens Studio after import:
+ *   - Rename the root SceneObject to "BearRoot"
+ *   - The mesh child will be named "Mesh" — set that as the @input bearBody
+ *   - "Material" is the one to hue-shift (body color)
+ *   - "Material.001" controls eye color — leave it alone or tint separately
+ * ─────────────────────────────────────────────────────────────────────────────
+ *
  * Scene hierarchy expected:
  *   BearRoot
- *   ├── BearBody          ← RenderMeshVisual with GummiBear_Mat
+ *   ├── Mesh              ← the imported FBX mesh (RenderMeshVisual, material = "Material")
  *   ├── Clothing
  *   │   ├── Clothing_TShirt
  *   │   ├── Clothing_Hoodie
@@ -40,12 +54,12 @@
  * In the Inspector, bind each @input to the matching SceneObject.
  */
 
-// @input SceneObject bearBody {"hint":"The main bear body mesh"}
+// @input SceneObject bearBody {"hint":"The 'Mesh' SceneObject from GummyBear_V2.fbx import"}
 // @input SceneObject clothingRoot {"hint":"Parent of all clothing meshes"}
 // @input SceneObject accessoryRoot {"hint":"Parent of all accessory meshes"}
 // @input SceneObject headwearRoot {"hint":"Parent of all headwear meshes"}
 
-var ColorUtils = require("./ColorUtils");
+// ColorUtils functions are global (defined in ColorUtils.js which runs first)
 
 // ─── Item ID → scene child name mapping ──────────────────────────────────────
 
@@ -97,11 +111,11 @@ function setActiveChild(root, activeChildName) {
 }
 
 /**
- * Get the cherry-red base color from the bear body material.
- * This is the canonical "0 hue" state — we shift FROM this.
- * Cherry red RGB: approximately (0.77, 0.18, 0.18) from the Gummi app palette.
+ * Base color extracted from GummyBear_V2.fbx DiffuseColor property.
+ * R=0.978, G=0.000, B=0.000 (#F90000) — nearly pure red.
+ * All hue shifts are relative to this color.
  */
-var BASE_BEAR_COLOR = new vec4(0.77, 0.18, 0.18, 1.0);
+var BASE_BEAR_COLOR = new vec4(0.978, 0.0, 0.0, 1.0);
 
 // ─── Main configuration function ─────────────────────────────────────────────
 
@@ -120,7 +134,7 @@ function applyBearConfig() {
     if (meshVisual) {
       var mat = meshVisual.getMaterial(0);
       if (mat) {
-        ColorUtils.applyHueToMaterial(mat.mainPass, BASE_BEAR_COLOR, hueDegrees);
+        applyHueToMaterial(mat.mainPass, BASE_BEAR_COLOR, hueDegrees);
       }
     }
   }
