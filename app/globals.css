@@ -65,15 +65,15 @@ body {
   }
 }
 
-/* Related products section - 3 cols on desktop, 2 cols on tablet/mobile */
+/* Related products section - 4 cols on desktop, 2 cols on tablet/mobile */
 .masonry-related {
-  columns: 3;
+  columns: 4;
   column-gap: 16px;
 }
 
 @media (max-width: 1439px) {
   .masonry-related {
-    columns: 3;
+    columns: 4;
     column-gap: 14px;
   }
 }

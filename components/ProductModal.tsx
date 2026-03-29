@@ -103,7 +103,7 @@ export default function ProductModal({ product, onClose, onGummi, onFriendClick 
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: 400 }}
             transition={{ duration: 0.3, ease: [0.32, 0.72, 0, 1] }}
-            className="fixed top-0 right-0 bottom-0 w-full max-w-sm md:max-w-md lg:max-w-2xl bg-(--card-bg) z-50 overflow-hidden flex flex-col shadow-2xl lg:rounded-l-2xl"
+            className="fixed top-0 right-0 bottom-0 w-full max-w-sm md:max-w-md lg:max-w-xl bg-(--card-bg) z-50 overflow-hidden flex flex-col shadow-2xl lg:rounded-l-2xl"
           >
             <button
               onClick={onClose}
@@ -117,12 +117,12 @@ export default function ProductModal({ product, onClose, onGummi, onFriendClick 
             </button>
 
             {/* Image gallery */}
-            <div className="h-56 md:h-64 shrink-0 p-4 md:p-6 flex items-center bg-(--bg-secondary)">
+            <div className="h-56 md:h-64 shrink-0 p-6 md:p-8 flex items-center bg-(--bg-secondary)">
               <ImageGallery images={allImages} />
             </div>
 
             {/* Product details */}
-            <div className="flex-1 overflow-y-auto p-6 md:p-8 flex flex-col">
+            <div className="flex-1 overflow-y-auto p-8 md:p-10 flex flex-col">
               <p className="text-[11px] uppercase tracking-[0.15em] text-(--text-tertiary) font-medium mb-2">
                 {product.brand}
               </p>

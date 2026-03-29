@@ -10,6 +10,7 @@ import { MOCK_PRODUCTS } from "@/lib/mock-data";
 import { getUserById } from "@/lib/mock-users";
 import { formatPriceRange, formatCount, formatRating } from "@/lib/utils";
 import { useInfiniteQueue } from "@/hooks/useInfiniteQueue";
+import Sidebar from "@/components/Sidebar";
 import ImageGallery from "@/components/ImageGallery";
 import ProductCard from "@/components/ProductCard";
 import SkeletonCard from "@/components/SkeletonCard";
@@ -26,6 +27,8 @@ export default function ProductPage() {
   const [toastVisible, setToastVisible] = useState(false);
   const [selectedUser, setSelectedUser] = useState<MockUser | null>(null);
   const [followedUsers, setFollowedUsers] = useState<Set<string>>(new Set());
+  const [searchValue, setSearchValue] = useState("");
+  const [activeCategory, setActiveCategory] = useState("for-you");
 
   // Strip cycle suffix for product lookup
   const cleanId = decodeURIComponent(productId).replace(/__c\d+_\d+$/, "");
@@ -90,7 +93,27 @@ export default function ProductPage() {
   }
 
   return (
-    <div className="min-h-screen bg-(--bg-primary)">
+    <div className="flex min-h-screen bg-(--bg-primary)">
+      {/* Sidebar */}
+      <Sidebar
+        searchValue={searchValue}
+        onSearchChange={setSearchValue}
+        onSearchSubmit={() => {}}
+        categories={[]}
+        activeCategory={activeCategory}
+        onCategorySelect={setActiveCategory}
+        activeSection="feed"
+        onHomeClick={() => router.push("/")}
+        onExploreClick={() => router.push("/")}
+        onGamesClick={() => router.push("/games")}
+        onMessagesClick={() => router.push("/messages")}
+        onLikesClick={() => router.push("/")}
+        onFollowUser={(userId) => setFollowedUsers((prev) => new Set([...prev, userId]))}
+        isFollowing={(userId) => followedUsers.has(userId)}
+      />
+
+      {/* Main content */}
+      <div className="flex-1 min-w-0">
       {/* Top bar */}
       <div className="sticky top-0 z-40 bg-(--bg-primary)/80 backdrop-blur-lg border-b border-(--border)/50">
         <div className="flex items-center gap-4 px-4 md:px-6 lg:px-8 py-3">
@@ -118,16 +141,20 @@ export default function ProductPage() {
         </div>
       </div>
 
-      {/* Main content: two-column layout */}
+      {/* Main content: single column layout */}
       <div className="max-w-[1600px] mx-auto px-4 md:px-6 lg:px-8 py-6">
-        <div className="flex flex-col lg:flex-row gap-8">
-          {/* Left column: Product detail (sticky on desktop) */}
+        {/* Product details - two column on desktop */}
+        <div className="flex flex-col lg:flex-row gap-8 mb-12">
+          {/* Left column: Carousel */}
           <div className="lg:w-[420px] xl:w-[480px] shrink-0">
-            <div className="lg:sticky lg:top-24">
-              {/* Image gallery */}
-              <div className="mb-5">
-                <ImageGallery images={allImages} />
-              </div>
+            <div className="mb-5">
+              <ImageGallery images={allImages} />
+            </div>
+          </div>
+
+          {/* Right column: Product info - centered vertically */}
+          <div className="flex-1 flex items-center">
+            <div className="w-full">
 
               {/* Brand */}
               <p className="text-[11px] uppercase tracking-[0.15em] text-(--text-tertiary) font-medium mb-1">
@@ -309,32 +336,32 @@ export default function ProductPage() {
               </div>
             </div>
           </div>
+        </div>
 
-          {/* Right column: Similar products masonry grid with infinite queue */}
-          <div className="flex-1 min-w-0">
-            <p className="text-[10px] uppercase tracking-[0.15em] text-(--text-tertiary) font-medium mb-4">
-              More like this
-            </p>
-            <div className="masonry masonry-related">
-              {relatedProducts.map((relProduct, index) => (
-                <React.Fragment key={relProduct.id}>
-                  <ProductCard
-                    product={relProduct}
-                    index={index}
-                    onClick={handleRelatedProductClick}
-                  />
-                  {index === prefetchSentinelIndex && (
-                    <div ref={prefetchSentinelRef} className="h-0 w-0" aria-hidden="true" />
-                  )}
-                </React.Fragment>
+        {/* More like this section - full width below */}
+        <div className="w-full">
+          <p className="text-[10px] uppercase tracking-[0.15em] text-(--text-tertiary) font-medium mb-4">
+            More like this
+          </p>
+          <div className="masonry masonry-related">
+            {relatedProducts.map((relProduct, index) => (
+              <React.Fragment key={relProduct.id}>
+                <ProductCard
+                  product={relProduct}
+                  index={index}
+                  onClick={handleRelatedProductClick}
+                />
+                {index === prefetchSentinelIndex && (
+                  <div ref={prefetchSentinelRef} className="h-0 w-0" aria-hidden="true" />
+                )}
+              </React.Fragment>
+            ))}
+            {isLoadingRelated &&
+              Array.from({ length: 6 }).map((_, i) => (
+                <SkeletonCard key={`skeleton-${i}`} index={i} />
               ))}
-              {isLoadingRelated &&
-                Array.from({ length: 6 }).map((_, i) => (
-                  <SkeletonCard key={`skeleton-${i}`} index={i} />
-                ))}
-            </div>
-            <div ref={loadSentinelRef} className="h-4" />
           </div>
+          <div ref={loadSentinelRef} className="h-4" />
         </div>
       </div>
 
@@ -352,6 +379,7 @@ export default function ProductPage() {
 
       {/* Gummi toast */}
       <GummiToast visible={toastVisible} productTitle={product.title} />
+      </div>
     </div>
   );
 }

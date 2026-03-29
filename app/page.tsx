@@ -153,11 +153,7 @@ export default function Home() {
       />
 
       {/* Main content area */}
-      <div
-        className={`flex-1 min-w-0 transition-padding duration-300 ${
-          selectedProduct ? "lg:pr-[42rem] md:pr-[28rem]" : ""
-        }`}
-      >
+      <div className="flex-1 min-w-0">
         <div className="w-full">
           {/* Stories row — recent friend purchases */}
           {!activeSearch && (
