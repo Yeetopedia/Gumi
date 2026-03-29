@@ -87,6 +87,7 @@ export default function FeedPage() {
         onExploreClick={() => router.push("/explore")}
         onGamesClick={() => router.push("/games")}
         onMessagesClick={() => router.push("/messages")}
+        onLikesClick={() => router.push("/likes")}
         onFollowUser={(userId) => {
           setFollowedUsers((prev) => new Set([...prev, userId]));
         }}

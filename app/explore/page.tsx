@@ -102,7 +102,7 @@ export default function ExplorePage() {
         onExploreClick={() => {}}
         onGamesClick={() => router.push("/games")}
         onMessagesClick={() => router.push("/messages")}
-        onLikesClick={() => router.push("/")}
+        onLikesClick={() => router.push("/likes")}
         onFollowUser={(userId) => {
           setFollowedUsers((prev) => new Set([...prev, userId]));
         }}
@@ -114,7 +114,7 @@ export default function ExplorePage() {
         <div className="w-full">
           {/* Category pills */}
           {!activeSearch && (
-            <div className="px-4 md:px-6 lg:px-8">
+            <div className="px-4 md:px-6 lg:px-8 pt-6 md:pt-8 lg:pt-10">
               <CategoryPills
                 categories={CATEGORIES}
                 activeCategory={activeCategory}

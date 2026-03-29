@@ -148,10 +148,10 @@ export default function Sidebar({
                 <span className="text-sm font-medium text-(--text-primary)">Explore</span>
               </button>
               <button
-                disabled
-                className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-(--bg-secondary) transition-colors text-left opacity-50 cursor-not-allowed"
+                onClick={() => { onLikesClick?.(); setIsOpen(false); }}
+                className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-(--bg-secondary) transition-colors text-left ${pathname === "/likes" ? "bg-(--bg-secondary)" : ""}`}
               >
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--text-primary)" strokeWidth="2">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill={pathname === "/likes" ? "currentColor" : "none"} stroke="var(--text-primary)" strokeWidth={pathname === "/likes" ? "1.5" : "2"}>
                   <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
                 </svg>
                 <span className="text-sm font-medium text-(--text-primary)">Likes</span>

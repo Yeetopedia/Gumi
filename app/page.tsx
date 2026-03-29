@@ -141,9 +141,7 @@ export default function Home() {
           window.scrollTo({ top: 0, behavior: "smooth" });
         }}
         onExploreClick={() => router.push("/explore")}
-        onLikesClick={() => {
-          setMyProfileOpen(true);
-        }}
+        onLikesClick={() => router.push("/likes")}
         onGamesClick={() => router.push("/games")}
         onMessagesClick={() => router.push("/messages")}
         onFollowUser={(userId) => {
@@ -159,17 +157,6 @@ export default function Home() {
           {!activeSearch && (
             <div className="px-4 md:px-6 lg:px-8">
               <StoriesRow users={storyUsers} onStoryClick={handleStoryClick} viewedUserIds={viewedStoryUsers} />
-            </div>
-          )}
-
-          {/* Category pills */}
-          {!activeSearch && (
-            <div className="px-4 md:px-6 lg:px-8">
-              <CategoryPills
-                categories={CATEGORIES}
-                activeCategory={activeCategory}
-                onSelect={handleCategorySelect}
-              />
             </div>
           )}
 

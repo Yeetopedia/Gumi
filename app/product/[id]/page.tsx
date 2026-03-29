@@ -107,7 +107,7 @@ export default function ProductPage() {
         onExploreClick={() => router.push("/")}
         onGamesClick={() => router.push("/games")}
         onMessagesClick={() => router.push("/messages")}
-        onLikesClick={() => router.push("/")}
+        onLikesClick={() => router.push("/likes")}
         onFollowUser={(userId) => setFollowedUsers((prev) => new Set([...prev, userId]))}
         isFollowing={(userId) => followedUsers.has(userId)}
       />

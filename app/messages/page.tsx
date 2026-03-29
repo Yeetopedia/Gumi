@@ -26,7 +26,7 @@ export default function MessagesPage() {
         onExploreClick={() => router.push("/explore")}
         onGamesClick={() => router.push("/games")}
         onMessagesClick={() => {}}
-        onLikesClick={() => router.push("/")}
+        onLikesClick={() => router.push("/likes")}
       />
 
       {/* Main content area */}

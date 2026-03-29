@@ -257,7 +257,7 @@ export default function ProductModal({ product, onClose, onGummi, onFriendClick 
                             backgroundColor: colors[i % colors.length],
                             top: "50%", left: "50%",
                           }}
-                          initial={{ x: 0, y: 0, opacity: 1, scale: 1 }}
+                          initial={{ x: 0, y: 0, opacity: 0, scale: 1 }}
                           animate={{ x: Math.cos(rad) * dist, y: Math.sin(rad) * dist, opacity: 0, scale: 0.2 }}
                           transition={{ duration: 0.7, ease: "easeOut" }}
                         />
@@ -268,7 +268,7 @@ export default function ProductModal({ product, onClose, onGummi, onFriendClick 
                   onClick={handleGummi}
                   className={`flex items-center gap-2 px-4 py-3 rounded-full border text-sm font-medium transition-all ${
                     isGummied
-                      ? "bg-(--accent)/10 border-(--accent) text-(--accent)"
+                      ? "border-(--accent) text-(--accent)"
                       : "border-(--border) text-(--text-secondary) hover:border-(--accent) hover:text-(--accent)"
                   }`}
                 >
