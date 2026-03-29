@@ -35,12 +35,12 @@ const GAMES: { id: GameId; title: string; description: string; gradient: string;
 export default function GamesHub() {
   const [activeGame, setActiveGame] = useState<GameId | null>(null);
 
-  if (activeGame === "wordle") return <WordleGame onBack={() => setActiveGame(null)} />;
-  if (activeGame === "shooter") return <div className="w-full h-[calc(100vh-0px) flex flex-col"><GummyShooterGame onBack={() => setActiveGame(null)} /></div>;
-  if (activeGame === "pacman") return <div className="w-full h-[calc(100vh-0px) flex flex-col"><GummiPacmanGame onBack={() => setActiveGame(null)} /></div>;
+  if (activeGame === "wordle") return <div className="w-full h-screen flex flex-col items-center justify-center"><WordleGame onBack={() => setActiveGame(null)} /></div>;
+  if (activeGame === "shooter") return <div className="w-full h-screen flex flex-col items-center justify-center"><GummyShooterGame onBack={() => setActiveGame(null)} /></div>;
+  if (activeGame === "pacman") return <div className="w-full h-screen flex flex-col items-center justify-center"><GummiPacmanGame onBack={() => setActiveGame(null)} /></div>;
 
   return (
-    <div className="w-full min-h-screen px-4 md:px-8 py-8">
+    <div className="w-full min-h-screen px-4 md:px-8 py-8 flex flex-col justify-center">
       {/* Header */}
       <div className="max-w-4xl mx-auto mb-10">
         <div className="flex items-center gap-3 mb-2">

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { GummiBearItemCategory, GummiBearItem, GummiBearConfig } from "@/types/gummi-bear";
 import { useGummiBear } from "@/lib/gummi-bear-context";
@@ -44,6 +44,7 @@ export default function GummiBearCustomizer({ onClose }: GummiBearCustomizerProp
   const [pendingItem, setPendingItem] = useState<GummiBearItem | null>(null);
   const [animateKey, setAnimateKey] = useState("init");
   const [toast, setToast] = useState<string | null>(null);
+  const [confetti, setConfetti] = useState(false);
 
   const displayConfig = previewConfig || state.config;
   const items = getItemsByCategory(activeCategory);
@@ -88,9 +89,11 @@ export default function GummiBearCustomizer({ onClose }: GummiBearCustomizerProp
     if (success) {
       setToast(`Unlocked ${pendingItem.name}!`);
       setAnimateKey(`buy-${pendingItem.id}`);
+      setConfetti(true);
       setPreviewConfig(null);
       setPendingItem(null);
       setTimeout(() => setToast(null), 2500);
+      setTimeout(() => setConfetti(false), 1200);
     }
   }, [pendingItem, purchaseItem]);
 
@@ -131,7 +134,7 @@ export default function GummiBearCustomizer({ onClose }: GummiBearCustomizerProp
       </div>
 
       {/* Preview */}
-      <div className="shrink-0 flex items-center justify-center py-4">
+      <div className="shrink-0 flex items-center justify-center py-4 relative">
         <motion.div
           key={animateKey}
           initial={{ scale: 0.95 }}
@@ -143,6 +146,38 @@ export default function GummiBearCustomizer({ onClose }: GummiBearCustomizerProp
         >
           <GummiBear config={displayConfig} size={180} />
         </motion.div>
+
+        {/* Purchase confetti burst */}
+        <AnimatePresence>
+          {confetti && Array.from({ length: 14 }).map((_, i) => {
+            const angle = (i / 14) * 360;
+            const rad = (angle * Math.PI) / 180;
+            const dist = 80 + Math.random() * 40;
+            const colors = ["#E84393", "#F9CA24", "#6C5CE7", "#00B894", "#FD79A8", "#0984E3", "#E17055", "#55EFC4"];
+            return (
+              <motion.div
+                key={`confetti-${i}`}
+                className="absolute rounded-full pointer-events-none"
+                style={{
+                  width: 6 + Math.random() * 6,
+                  height: 6 + Math.random() * 6,
+                  backgroundColor: colors[i % colors.length],
+                  top: "50%",
+                  left: "50%",
+                }}
+                initial={{ x: 0, y: 0, opacity: 1, scale: 1 }}
+                animate={{
+                  x: Math.cos(rad) * dist,
+                  y: Math.sin(rad) * dist,
+                  opacity: 0,
+                  scale: 0.3,
+                }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+              />
+            );
+          })}
+        </AnimatePresence>
       </div>
 
       {/* Purchase bar */}

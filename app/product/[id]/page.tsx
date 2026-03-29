@@ -25,6 +25,7 @@ export default function ProductPage() {
   const [isSaved, setIsSaved] = useState(false);
   const [toastVisible, setToastVisible] = useState(false);
   const [selectedUser, setSelectedUser] = useState<MockUser | null>(null);
+  const [followedUsers, setFollowedUsers] = useState<Set<string>>(new Set());
 
   // Strip cycle suffix for product lookup
   const cleanId = decodeURIComponent(productId).replace(/__c\d+_\d+$/, "");
@@ -338,7 +339,16 @@ export default function ProductPage() {
       </div>
 
       {/* User Profile Panel */}
-      <UserProfile user={selectedUser} onClose={() => setSelectedUser(null)} />
+      <UserProfile
+        user={selectedUser}
+        onClose={() => setSelectedUser(null)}
+        onFollow={(userId) => setFollowedUsers((prev) => new Set([...prev, userId]))}
+        onMessage={() => {
+          setSelectedUser(null);
+          router.push("/");
+        }}
+        isFollowing={(userId) => followedUsers.has(userId)}
+      />
 
       {/* Gummi toast */}
       <GummiToast visible={toastVisible} productTitle={product.title} />

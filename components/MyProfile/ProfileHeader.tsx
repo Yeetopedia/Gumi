@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { motion } from "framer-motion";
 import { CurrentUserProfile } from "@/types";
 import { formatCount } from "@/lib/utils";
 import GummiBear from "../GummiBear/GummiBear";
@@ -27,22 +28,27 @@ export default function ProfileHeader({
 
   return (
     <div className="flex flex-col items-center pt-14 pb-6 px-6">
-      {/* Gummi Bear avatar */}
-      <div className="relative w-24 h-24 mb-4">
+      {/* Gummi Bear avatar with bounce entrance */}
+      <motion.div
+        className="relative w-24 h-24 mb-4"
+        initial={{ scale: 0.8, rotate: -5 }}
+        animate={{ scale: 1, rotate: 0 }}
+        transition={{ type: "spring", stiffness: 260, damping: 15, delay: 0.1 }}
+      >
         <div className="w-full h-full rounded-full overflow-hidden bg-(--bg-secondary) flex items-center justify-center">
           <GummiBear config={state.config} size={80} />
         </div>
-        {/* Customize button */}
+        {/* Customize button with pulse */}
         <button
           onClick={onCustomizeClick}
-          className="absolute bottom-0 right-0 w-7 h-7 rounded-full bg-(--accent) flex items-center justify-center shadow-md border-2 border-(--card-bg)"
+          className="absolute bottom-0 right-0 w-7 h-7 rounded-full bg-(--accent) flex items-center justify-center shadow-md border-2 border-(--card-bg) animate-[pulse-glow_2s_ease-in-out_infinite]"
           aria-label="Customize bear"
         >
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
             <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
           </svg>
         </button>
-      </div>
+      </motion.div>
 
       {/* Name */}
       <h2

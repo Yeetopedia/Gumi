@@ -24,6 +24,8 @@ type SidebarProps = {
   onHomeClick?: () => void;
   onGamesClick?: () => void;
   onMessagesClick?: () => void;
+  onExploreClick?: () => void;
+  onLikesClick?: () => void;
   onFollowUser?: (userId: string) => void;
   isFollowing?: (userId: string) => boolean;
 };
@@ -43,6 +45,8 @@ export default function Sidebar({
   onHomeClick,
   onGamesClick,
   onMessagesClick,
+  onExploreClick,
+  onLikesClick,
   onFollowUser,
   isFollowing,
 }: SidebarProps) {
@@ -67,7 +71,7 @@ export default function Sidebar({
       {/* Mobile backdrop */}
       {isOpen && (
         <div
-          className="fixed inset-0 bg-black/50 z-30 lg:hidden"
+          className="fixed inset-0 bg-black/50 z-30 lg:hidden animate-[fadeIn_0.2s_ease-out]"
           onClick={() => setIsOpen(false)}
         />
       )}
@@ -127,14 +131,20 @@ export default function Sidebar({
                 </svg>
                 <span className="text-sm font-medium text-(--text-primary)">Home</span>
               </button>
-              <button className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-(--bg-secondary) transition-colors text-left">
+              <button
+                onClick={() => { onExploreClick?.(); setIsOpen(false); }}
+                className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-(--bg-secondary) transition-colors text-left"
+              >
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--text-primary)" strokeWidth="2">
                   <circle cx="11" cy="11" r="8" />
                   <path d="m21 21-4.35-4.35" />
                 </svg>
                 <span className="text-sm font-medium text-(--text-primary)">Explore</span>
               </button>
-              <button className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-(--bg-secondary) transition-colors text-left">
+              <button
+                onClick={() => { onLikesClick?.(); setIsOpen(false); }}
+                className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-(--bg-secondary) transition-colors text-left"
+              >
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--text-primary)" strokeWidth="2">
                   <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
                 </svg>

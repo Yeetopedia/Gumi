@@ -2,7 +2,7 @@
 
 import { useState, useCallback, useEffect, useMemo } from "react";
 import { useRouter } from "next/navigation";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { Product, FeedMode, MockUser } from "@/types";
 import { CATEGORIES, getProductPool, getSearchPool } from "@/lib/mock-data";
 import { getStoryUsers } from "@/lib/mock-users";
@@ -149,6 +149,16 @@ export default function Home() {
         onProfileClick={() => setMyProfileOpen(true)}
         activeSection={appSection}
         onHomeClick={() => setAppSection("feed")}
+        onExploreClick={() => {
+          setAppSection("feed");
+          setFeedMode("gallery");
+          setActiveCategory("for-you");
+          setSearchValue("");
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }}
+        onLikesClick={() => {
+          setMyProfileOpen(true);
+        }}
         onGamesClick={() => setAppSection("games")}
         onMessagesClick={() => setAppSection("messages")}
         onFollowUser={(userId) => {
@@ -159,11 +169,17 @@ export default function Home() {
 
       {/* Main content area */}
       <div className="flex-1 min-w-0">
+        <AnimatePresence mode="wait">
         {appSection === "games" ? (
+          <motion.div key="games" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }} transition={{ duration: 0.2 }}>
           <GamesHub />
+          </motion.div>
         ) : appSection === "messages" ? (
+          <motion.div key="messages" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }} transition={{ duration: 0.2 }}>
           <MessagesHub />
+          </motion.div>
         ) : (
+        <motion.div key="feed" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }} transition={{ duration: 0.2 }}>
         <>
         {feedMode === "gallery" && (
           <div className="w-full">
@@ -252,7 +268,9 @@ export default function Home() {
           </div>
         )}
         </>
+        </motion.div>
         )}
+        </AnimatePresence>
       </div>
 
       {/* Overlay modal only in reels mode */}

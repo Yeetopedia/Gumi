@@ -5,7 +5,7 @@ import { shiftHue } from "@/lib/hue-shift";
 
 type TintedImageProps = {
   src: string;
-  hue: number; // 0-360 hue shift (0 = original)
+  hue: number;
   width?: number;
   height?: number;
   fill?: boolean;
@@ -24,7 +24,9 @@ export default function TintedImage({
   style,
   alt = "",
 }: TintedImageProps) {
-  const [tintedSrc, setTintedSrc] = useState<string | null>(null);
+  const normalizedHue = ((hue % 360) + 360) % 360;
+  const needsShift = normalizedHue !== 0;
+  const [tintedSrc, setTintedSrc] = useState<string | null>(needsShift ? null : src);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -34,8 +36,7 @@ export default function TintedImage({
   useEffect(() => {
     if (!mounted) return;
 
-    const normalizedHue = ((hue % 360) + 360) % 360;
-    if (normalizedHue === 0) {
+    if (!needsShift) {
       setTintedSrc(src);
       return;
     }
@@ -48,9 +49,17 @@ export default function TintedImage({
     return () => {
       cancelled = true;
     };
-  }, [src, hue, mounted]);
+  }, [src, normalizedHue, needsShift, mounted]);
 
+  // For non-shifted images, show immediately. For shifted, fade in when ready.
+  const isReady = !!tintedSrc;
   const displaySrc = tintedSrc || src;
+
+  const fadeStyle: React.CSSProperties = {
+    ...style,
+    opacity: isReady ? 1 : 0,
+    transition: "opacity 0.3s ease-in",
+  };
 
   if (fill) {
     return (
@@ -59,7 +68,7 @@ export default function TintedImage({
         src={displaySrc}
         alt={alt}
         className={`absolute inset-0 w-full h-full object-contain ${className}`}
-        style={style}
+        style={fadeStyle}
         draggable={false}
       />
     );
@@ -73,7 +82,7 @@ export default function TintedImage({
       width={width}
       height={height}
       className={className}
-      style={style}
+      style={fadeStyle}
       draggable={false}
     />
   );

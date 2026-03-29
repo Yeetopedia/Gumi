@@ -60,12 +60,15 @@ function getKeyboardStates(guesses: string[], solution: string): Map<string, Til
   return states;
 }
 
-const TILE_COLORS: Record<TileState, string> = {
-  correct: "bg-emerald-500 border-emerald-500 text-white",
-  present: "bg-amber-400 border-amber-400 text-white",
-  absent: "bg-zinc-600 border-zinc-600 text-white",
-  empty: "bg-transparent border-(--border)",
-  active: "bg-transparent border-(--text-secondary)",
+const TILE_IMAGES: Record<string, string> = {
+  correct: "/wordle-tile-green.png",
+  present: "/wordle-tile-yellow.png",
+  absent: "/wordle-tile-gray.png",
+};
+
+const TILE_EMPTY_CLASSES: Record<string, string> = {
+  empty: "border-2 border-(--border)",
+  active: "border-2 border-(--text-secondary)",
 };
 
 const KEY_COLORS: Record<string, string> = {
@@ -153,16 +156,34 @@ export default function WordleGame({ onBack }: { onBack: () => void }) {
 
   const renderTile = (letter: string, state: TileState, rowIdx: number, colIdx: number, revealed: boolean) => {
     const delay = revealed ? colIdx * 0.3 : 0;
+    const tileImage = TILE_IMAGES[state];
+    const isImageTile = !!tileImage;
+
     return (
       <div
         key={`${rowIdx}-${colIdx}`}
-        className={`w-[52px] h-[52px] sm:w-[58px] sm:h-[58px] flex items-center justify-center text-2xl font-bold rounded-lg border-2 transition-all duration-500 ${TILE_COLORS[state]}`}
+        className={`relative w-[52px] h-[52px] sm:w-[58px] sm:h-[58px] flex items-center justify-center transition-all duration-500 ${
+          isImageTile ? "rounded-lg" : `rounded-lg ${TILE_EMPTY_CLASSES[state] || ""}`
+        }`}
         style={{
           transitionDelay: revealed ? `${delay}s` : "0s",
           transform: revealed ? "rotateX(360deg)" : state === "active" ? "scale(1.05)" : "scale(1)",
         }}
       >
-        {letter}
+        {isImageTile && (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={tileImage}
+            alt=""
+            className="absolute inset-0 w-full h-full rounded-[10px] object-cover"
+            draggable={false}
+          />
+        )}
+        <span className={`relative z-10 text-2xl font-bold select-none ${
+          isImageTile ? "text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)]" : letter ? "text-(--text-primary)" : ""
+        }`}>
+          {letter}
+        </span>
       </div>
     );
   };

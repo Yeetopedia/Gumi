@@ -19,6 +19,7 @@ export default function ReelsView({ products, onLoadMore, hasMore, onProductClic
   const [gummied, setGummied] = useState<Set<string>>(new Set());
   const [bookmarked, setBookmarked] = useState<Set<string>>(new Set());
   const [direction, setDirection] = useState(0);
+  const [showKeyHint, setShowKeyHint] = useState(true);
   const containerRef = useRef<HTMLDivElement>(null);
   const touchStartY = useRef(0);
   const isTransitioning = useRef(false);
@@ -318,6 +319,24 @@ export default function ReelsView({ products, onLoadMore, hasMore, onProductClic
           <span className="text-white/60 text-xs">Scroll for more</span>
         </motion.div>
       )}
+
+      {/* Keyboard shortcut hint */}
+      <AnimatePresence>
+        {showKeyHint && (
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.4, delay: 0.5 }}
+            onAnimationComplete={() => {
+              setTimeout(() => setShowKeyHint(false), 3000);
+            }}
+            className="absolute bottom-24 left-1/2 -translate-x-1/2 bg-white/15 backdrop-blur-md px-4 py-2 rounded-full flex items-center gap-2 pointer-events-none"
+          >
+            <span className="text-white/80 text-xs font-medium">↑↓ or j/k to navigate</span>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

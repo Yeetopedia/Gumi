@@ -128,3 +128,14 @@ body {
   font-weight: 600;
 }
 
+/* Customize button pulse glow */
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(196, 93, 62, 0.4); }
+  50% { box-shadow: 0 0 0 6px rgba(196, 93, 62, 0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
