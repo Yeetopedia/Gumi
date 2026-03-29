@@ -315,7 +315,7 @@ export default function ProductPage() {
             <p className="text-[10px] uppercase tracking-[0.15em] text-(--text-tertiary) font-medium mb-4">
               More like this
             </p>
-            <div className="masonry" style={{ columns: 3 }}>
+            <div className="masonry masonry-related">
               {relatedProducts.map((relProduct, index) => (
                 <React.Fragment key={relProduct.id}>
                   <ProductCard
