@@ -22,6 +22,7 @@ import MyProfile from "@/components/MyProfile/MyProfile";
 import ChatBot from "@/components/ChatBot";
 import GamesHub from "@/components/GamesHub";
 import MessagesHub from "@/components/MessagesHub";
+import { useRecommendations } from "@/hooks/useRecommendations";
 
 export default function Home() {
   const router = useRouter();
@@ -86,12 +87,16 @@ export default function Home() {
     resetKey: `${activeCategory}|${activeSearch}`,
   });
 
+  // Recommendation engine
+  const { scores: recommendationScores, recordInteraction } = useRecommendations(displayedProducts);
+
   // Handle Gummi action — show confirmation toast
   const handleGummi = useCallback((product: Product) => {
+    recordInteraction(product.id, "purchase");
     setToastProductTitle(product.title);
     setToastVisible(true);
     setTimeout(() => setToastVisible(false), 2500);
-  }, []);
+  }, [recordInteraction]);
 
   // Handle friend avatar click — open profile
   const handleFriendClick = useCallback((user: MockUser) => {
@@ -117,14 +122,13 @@ export default function Home() {
   };
 
   const handleProductClick = useCallback((product: Product) => {
+    recordInteraction(product.id, "click");
     if (feedMode === "gallery") {
-      // Navigate to product detail page
       router.push(`/product/${encodeURIComponent(product.id)}`);
     } else {
-      // Reels mode — use overlay modal
       setSelectedProduct(product);
     }
-  }, [feedMode, router]);
+  }, [feedMode, router, recordInteraction]);
 
   const handleFeedModeChange = (mode: FeedMode) => {
     setFeedMode(mode);
@@ -250,6 +254,7 @@ export default function Home() {
                 onGummi={handleGummi}
                 prefetchSentinelIndex={prefetchSentinelIndex}
                 prefetchSentinelRef={prefetchSentinelRef}
+                recommendationScores={recommendationScores}
               />
 
               <div ref={loadSentinelRef} className="h-4" />

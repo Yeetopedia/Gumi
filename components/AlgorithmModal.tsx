@@ -22,52 +22,63 @@ const fadeUp = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
 };
 
+// Interaction signal weights (normalised to max 100 for bar display)
 const SIGNALS = [
-  { label: "Friend purchased this product", weight: 100, color: "var(--accent)" },
-  { label: "Friend wishlisted this product", weight: 65, color: "var(--accent)" },
-  { label: "Category matches user taste profile", weight: 45, color: "var(--text-tertiary)" },
-  { label: "Product is trending (time-decayed Gummis)", weight: 35, color: "var(--text-tertiary)" },
-  { label: "Price range matches user history", weight: 25, color: "var(--border)" },
+  { label: "Purchase (Gummi)", raw: "6.0", weight: 100, color: "var(--accent)" },
+  { label: "Wishlist add", raw: "4.5", weight: 75, color: "var(--accent)" },
+  { label: "Share", raw: "4.0", weight: 67, color: "var(--accent)" },
+  { label: "Save / bookmark", raw: "3.0", weight: 50, color: "var(--text-tertiary)" },
+  { label: "Extended dwell time", raw: "2.0", weight: 33, color: "var(--text-tertiary)" },
+  { label: "Click / tap", raw: "1.5", weight: 25, color: "var(--border)" },
+  { label: "View impression", raw: "1.0", weight: 17, color: "var(--border)" },
+];
+
+const RANK_WEIGHTS = [
+  { symbol: "w\u2081", value: "0.35", label: "Content", desc: "Cosine similarity of user & item embeddings" },
+  { symbol: "w\u2082", value: "0.25", label: "Collaborative", desc: "Latent-factor taste alignment (CF)" },
+  { symbol: "w\u2083", value: "0.15", label: "Social", desc: "Friend purchase & wishlist signal" },
+  { symbol: "w\u2084", value: "0.10", label: "Freshness", desc: "Trending velocity and recency" },
+  { symbol: "w\u2085", value: "0.15", label: "Diversity", desc: "MMR penalty for redundant results" },
 ];
 
 const PARAMS = [
-  { symbol: "α", value: "0.45", label: "Social Signal", desc: "Weight of friend purchase activity" },
-  { symbol: "β", value: "0.35", label: "Personal Affinity", desc: "Cosine similarity of taste embeddings" },
-  { symbol: "γ", value: "0.20", label: "Trending Score", desc: "Time-decayed purchase velocity" },
+  { symbol: "\u03B2", value: "0.60", label: "Long-term Blend", desc: "Weight of historical vs. session preference" },
+  { symbol: "\u03C4", value: "7d", label: "Time Decay", desc: "Half-life for behavior signal decay" },
+  { symbol: "d", value: "32+16", label: "Latent Dims", desc: "Content embedding + CF factor dimensions" },
 ];
 
-// Mock neighbor data for the interactive k-NN visualization
-const NEIGHBOR_DATA = [
+// Embedding-space product clusters for the interactive visualization
+const CLUSTER_DATA = [
   {
-    label: "N₁", name: "Sophia C.", similarity: "94%",
-    rec: "Linen Throw Blanket", recPrice: "$48",
+    label: "P\u2081", name: "Fashion cluster", similarity: "96%",
+    rec: "Cashmere Crew Neck Sweater", recBrand: "Naadam",
+    img: "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=120&q=60",
+  },
+  {
+    label: "P\u2082", name: "Home cluster", similarity: "91%",
+    rec: "Hand-Thrown Ceramic Vase", recBrand: "East Fork",
     img: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=120&q=60",
   },
   {
-    label: "N₂", name: "Emma L.", similarity: "89%",
-    rec: "Ceramic Pour-Over Set", recPrice: "$62",
-    img: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=120&q=60",
-  },
-  {
-    label: "N₃", name: "Olivia R.", similarity: "82%",
-    rec: "Minimalist Wall Clock", recPrice: "$79",
-    img: "https://images.unsplash.com/photo-1507646227500-4d389b0012be?w=120&q=60",
+    label: "P\u2083", name: "Beauty cluster", similarity: "87%",
+    rec: "Botanical Face Oil", recBrand: "Herbivore",
+    img: "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=120&q=60",
   },
 ];
 
 export default function AlgorithmModal({ isOpen, onClose }: AlgorithmModalProps) {
-  const [selectedNeighbor, setSelectedNeighbor] = useState<number | null>(null);
+  const [selectedCluster, setSelectedCluster] = useState<number | null>(null);
 
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
-        if (selectedNeighbor !== null) { setSelectedNeighbor(null); return; }
+        if (selectedCluster !== null) { setSelectedCluster(null); return; }
         onClose();
       }
     };
     window.addEventListener("keydown", handleKey);
     return () => window.removeEventListener("keydown", handleKey);
-  }, [onClose, selectedNeighbor]);
+  }, [onClose, selectedCluster]);
 
   useEffect(() => {
     if (isOpen) {
@@ -127,53 +138,111 @@ export default function AlgorithmModal({ isOpen, onClose }: AlgorithmModalProps)
                   className="text-3xl md:text-4xl text-(--text-primary) mb-3"
                   style={{ fontFamily: "var(--font-cormorant), serif", fontWeight: 600 }}
                 >
-                  Social Graph Recommendation Engine
+                  Vector Embedding Recommendation Engine
                 </h2>
                 <p className="text-sm text-(--text-secondary) max-w-md mx-auto">
-                  How Gummi surfaces products your friends actually bought — turning purchase behavior into personalized discovery.
+                  A two-stage retrieval + reranking pipeline that encodes every product and user into dense vector embeddings, then finds your strongest matches in latent space.
                 </p>
               </motion.div>
 
-              {/* Core Formula */}
+              {/* ── Pipeline overview ── */}
+              <motion.div variants={fadeUp} className="mb-10">
+                <p className="text-[10px] uppercase tracking-[0.15em] text-(--text-tertiary) font-medium mb-4">
+                  Pipeline
+                </p>
+                <div className="flex items-center gap-2 overflow-x-auto pb-2">
+                  {[
+                    { step: "1", label: "Embed", desc: "Products \u2192 \u211D\u00B3\u00B2" },
+                    { step: "2", label: "Profile", desc: "User \u2192 \u211D\u00B3\u00B2" },
+                    { step: "3", label: "Retrieve", desc: "cos(\u00FB, \u00EA)" },
+                    { step: "4", label: "Rerank", desc: "5-signal score" },
+                    { step: "5", label: "Display", desc: "65\u201398% match" },
+                  ].map((s, i) => (
+                    <div key={i} className="flex items-center gap-2 shrink-0">
+                      <div className="bg-(--bg-secondary) rounded-xl px-4 py-3 text-center min-w-[90px]">
+                        <span className="text-[9px] uppercase tracking-widest text-(--text-tertiary) block mb-1">Stage {s.step}</span>
+                        <span className="text-sm font-semibold text-(--text-primary) block">{s.label}</span>
+                        <span className="text-[10px] text-(--text-tertiary)">{s.desc}</span>
+                      </div>
+                      {i < 4 && (
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--border)" strokeWidth="2" className="shrink-0">
+                          <polyline points="9 18 15 12 9 6" />
+                        </svg>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+
+              {/* ── Core Scoring Formula ── */}
               <motion.div variants={fadeUp} className="bg-(--bg-secondary) rounded-2xl p-6 md:p-8 mb-10">
                 <p className="text-[10px] uppercase tracking-[0.15em] text-(--text-tertiary) font-medium mb-4">
-                  Scoring Function
+                  Reranking Score
                 </p>
-                <div className="formula text-center py-4 text-lg md:text-xl">
-                  <span className="fn">score</span>(<var>u</var>, <var>p</var>) = <var>α</var> · <span className="fn">social</span>(<var>u</var>, <var>p</var>) + <var>β</var> · <span className="fn">affinity</span>(<var>u</var>, <var>p</var>) + <var>γ</var> · <span className="fn">trend</span>(<var>p</var>)
+                <div className="formula text-center py-4 text-base md:text-lg leading-relaxed">
+                  <var>s</var><sub>final</sub>(<var>u</var>, <var>p</var>) =
+                  <var> w</var><sub>1</sub>&middot;<span className="fn">content</span> +
+                  <var> w</var><sub>2</sub>&middot;<span className="fn">cf</span> +
+                  <var> w</var><sub>3</sub>&middot;<span className="fn">social</span> +
+                  <var> w</var><sub>4</sub>&middot;<span className="fn">fresh</span> &minus;
+                  <var> w</var><sub>5</sub>&middot;<span className="fn">diversity</span>
                 </div>
+
                 <div className="border-t border-(--border) pt-4 mt-4 space-y-3">
                   <div className="formula text-sm text-(--text-secondary)">
-                    <span className="fn">social</span>(<var>u</var>, <var>p</var>) = Σ <var>w</var>(<var>u</var>, <var>f</var><sub>i</sub>) · <span className="fn">gummi</span>(<var>f</var><sub>i</sub>, <var>p</var>)&nbsp;&nbsp; for <var>f</var><sub>i</sub> ∈ <span className="fn">friends</span>(<var>u</var>)
+                    <span className="fn">content</span>(<var>u</var>, <var>p</var>) = cos(<var>&ucirc;</var>, <var>&ecirc;</var><sub>p</sub>)
+                    &nbsp;&nbsp; where <var>&ucirc;</var> = &beta;&middot;<var>&ucirc;</var><sub>long</sub> + (1&minus;&beta;)&middot;<var>&ucirc;</var><sub>short</sub>
                   </div>
                   <div className="formula text-sm text-(--text-secondary)">
-                    <span className="fn">affinity</span>(<var>u</var>, <var>p</var>) = <span className="fn">cos</span>(<span className="fn">embed</span>(<var>u</var>), <span className="fn">embed</span>(<var>p</var>))
+                    <span className="fn">cf</span>(<var>u</var>, <var>p</var>) = cos(<var>&ucirc;</var><sub>cf</sub>, <var>v&#x0302;</var><sub>p</sub>)
+                    &nbsp;&nbsp; implicit ALS latent factors in &real;<sup>16</sup>
                   </div>
                   <div className="formula text-sm text-(--text-secondary)">
-                    <span className="fn">trend</span>(<var>p</var>) = <span className="fn">gummis</span>(<var>p</var>, <var>t</var>) / <span className="fn">decay</span>(<var>t</var>)
+                    <span className="fn">diversity</span>(<var>p</var>, <var>S</var>) = max<sub>q&isin;S</sub> cos(<var>&ecirc;</var><sub>p</sub>, <var>&ecirc;</var><sub>q</sub>)
+                    &nbsp;&nbsp; MMR penalty
                   </div>
                 </div>
               </motion.div>
 
-              {/* k-Nearest Neighbors Section */}
+              {/* ── User embedding formula ── */}
+              <motion.div variants={fadeUp} className="bg-(--bg-secondary) rounded-2xl p-6 md:p-8 mb-10">
+                <p className="text-[10px] uppercase tracking-[0.15em] text-(--text-tertiary) font-medium mb-4">
+                  User Embedding &mdash; Long-term + Short-term
+                </p>
+                <div className="space-y-3">
+                  <div className="formula text-sm text-(--text-secondary)">
+                    <var>&ucirc;</var><sub>long</sub> = &Sigma;<sub>i</sub> <var>w</var><sub>i</sub>&middot;&lambda;(<var>t</var><sub>i</sub>)&middot;<var>&ecirc;</var><sub>p<sub>i</sub></sub> &frasl; &Sigma;<sub>i</sub> |<var>w</var><sub>i</sub>|&middot;&lambda;(<var>t</var><sub>i</sub>)
+                  </div>
+                  <div className="formula text-sm text-(--text-secondary)">
+                    <var>&ucirc;</var><sub>short</sub> = &Sigma;<sub>i&isin;session</sub> <var>w</var><sub>i</sub>&middot;<var>&ecirc;</var><sub>p<sub>i</sub></sub> &frasl; &Sigma; |<var>w</var><sub>i</sub>|
+                    &nbsp;&nbsp; (last 20 interactions)
+                  </div>
+                  <div className="formula text-sm text-(--text-secondary)">
+                    &lambda;(<var>t</var>) = exp(&minus;ln2 &frasl; &tau; &middot; &Delta;<var>t</var><sub>days</sub>)
+                    &nbsp;&nbsp; exponential decay, &tau; = 7 days
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* ── Latent Space Visualization ── */}
               <motion.div variants={fadeUp} className="mb-10">
                 <p className="text-[10px] uppercase tracking-[0.15em] text-(--text-tertiary) font-medium mb-2">
-                  Stage 2
+                  Embedding Space
                 </p>
                 <h3
                   className="text-xl text-(--text-primary) mb-3"
                   style={{ fontFamily: "var(--font-cormorant), serif", fontWeight: 600 }}
                 >
-                  Finding Your Taste Neighbors
+                  Nearest Neighbors in Latent Space
                 </h3>
                 <p className="text-sm text-(--text-secondary) mb-4 leading-relaxed">
-                  We transform each user&apos;s Gummi history into a high-dimensional behavior vector. Using k-nearest neighbors (k-NN), we identify users with the most similar purchase patterns — your &quot;taste neighbors.&quot; Products purchased by your neighbors but not yet seen by you become high-confidence recommendations.
+                  Every product and user maps to a point in a 32-dimensional embedding space. At retrieval time, the engine finds products closest to your combined preference vector using cosine similarity &mdash; surfacing items that match both your long-term taste and current session.
                 </p>
                 <p className="text-xs text-(--text-tertiary) mb-6 italic">
-                  ↑ Click N₁, N₂, or N₃ to see what they recommend for you
+                  Click P&#x2081;, P&#x2082;, or P&#x2083; to see how each cluster connects to you
                 </p>
 
-                {/* Visual: user cluster diagram */}
+                {/* Visual: embedding space diagram */}
                 <div className="bg-(--bg-secondary) rounded-2xl p-6 flex items-center justify-center">
                   <div className="relative w-full max-w-xs aspect-square">
                     {/* Central user node */}
@@ -181,31 +250,31 @@ export default function AlgorithmModal({ isOpen, onClose }: AlgorithmModalProps)
                       initial={{ scale: 0 }}
                       animate={{ scale: 1 }}
                       transition={{ delay: 0.3, type: "spring" }}
-                      className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-(--accent) flex items-center justify-center text-white text-xs font-bold z-10 shadow-lg"
+                      className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-(--accent) flex items-center justify-center text-white text-[9px] font-bold z-10 shadow-lg"
                     >
-                      You
+                      <span>&ucirc;</span>
                     </motion.div>
 
-                    {/* Neighbor nodes — clickable (N1-N3) */}
+                    {/* Product cluster nodes */}
                     {[
-                      { x: "20%", y: "25%", label: "N₁", delay: 0.4, neighborIdx: 0 },
-                      { x: "75%", y: "20%", label: "N₂", delay: 0.5, neighborIdx: 1 },
-                      { x: "80%", y: "65%", label: "N₃", delay: 0.6, neighborIdx: 2 },
-                      { x: "15%", y: "70%", label: "N₄", delay: 0.7, neighborIdx: -1 },
-                      { x: "60%", y: "80%", label: "N₅", delay: 0.8, neighborIdx: -1 },
-                      { x: "35%", y: "15%", label: "·", delay: 0.9, neighborIdx: -1 },
-                      { x: "90%", y: "40%", label: "·", delay: 1.0, neighborIdx: -1 },
-                      { x: "8%", y: "45%", label: "·", delay: 1.1, neighborIdx: -1 },
+                      { x: "22%", y: "22%", label: "P\u2081", delay: 0.4, idx: 0 },
+                      { x: "78%", y: "18%", label: "P\u2082", delay: 0.5, idx: 1 },
+                      { x: "76%", y: "68%", label: "P\u2083", delay: 0.6, idx: 2 },
+                      { x: "18%", y: "72%", label: "\u00B7", delay: 0.7, idx: -1 },
+                      { x: "58%", y: "82%", label: "\u00B7", delay: 0.8, idx: -1 },
+                      { x: "38%", y: "12%", label: "\u00B7", delay: 0.9, idx: -1 },
+                      { x: "88%", y: "42%", label: "\u00B7", delay: 1.0, idx: -1 },
+                      { x: "10%", y: "48%", label: "\u00B7", delay: 1.1, idx: -1 },
                     ].map((node, i) => {
-                      const isClickable = node.neighborIdx >= 0;
-                      const isSelected = selectedNeighbor === node.neighborIdx;
+                      const isClickable = node.idx >= 0;
+                      const isSelected = selectedCluster === node.idx;
                       return (
                         <motion.button
                           key={i}
                           initial={{ scale: 0, opacity: 0 }}
                           animate={{ scale: isSelected ? 1.2 : 1, opacity: 1 }}
                           transition={{ delay: node.delay, type: "spring", stiffness: 200 }}
-                          onClick={() => isClickable ? setSelectedNeighbor(isSelected ? null : node.neighborIdx) : undefined}
+                          onClick={() => isClickable ? setSelectedCluster(isSelected ? null : node.idx) : undefined}
                           className={`absolute w-8 h-8 rounded-full flex items-center justify-center text-[10px] font-medium transition-all ${
                             isClickable
                               ? isSelected
@@ -220,12 +289,12 @@ export default function AlgorithmModal({ isOpen, onClose }: AlgorithmModalProps)
                       );
                     })}
 
-                    {/* Connecting lines (SVG) */}
+                    {/* Connecting lines (SVG) — cosine similarity links */}
                     <svg className="absolute inset-0 w-full h-full" style={{ zIndex: 0 }}>
                       {[
-                        { x1: "50%", y1: "50%", x2: "20%", y2: "25%" },
-                        { x1: "50%", y1: "50%", x2: "75%", y2: "20%" },
-                        { x1: "50%", y1: "50%", x2: "80%", y2: "65%" },
+                        { x1: "50%", y1: "50%", x2: "22%", y2: "22%" },
+                        { x1: "50%", y1: "50%", x2: "78%", y2: "18%" },
+                        { x1: "50%", y1: "50%", x2: "76%", y2: "68%" },
                       ].map((line, i) => (
                         <motion.line
                           key={i}
@@ -245,11 +314,11 @@ export default function AlgorithmModal({ isOpen, onClose }: AlgorithmModalProps)
                 </div>
               </motion.div>
 
-              {/* Neighbor recommendation popup */}
+              {/* Cluster recommendation popup */}
               <AnimatePresence mode="wait">
-                {selectedNeighbor !== null && NEIGHBOR_DATA[selectedNeighbor] && (
+                {selectedCluster !== null && CLUSTER_DATA[selectedCluster] && (
                   <motion.div
-                    key={selectedNeighbor}
+                    key={selectedCluster}
                     initial={{ opacity: 0, y: 10, scale: 0.97 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: -6, scale: 0.97 }}
@@ -260,26 +329,28 @@ export default function AlgorithmModal({ isOpen, onClose }: AlgorithmModalProps)
                       <div className="relative w-24 shrink-0">
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
-                          src={NEIGHBOR_DATA[selectedNeighbor].img}
-                          alt={NEIGHBOR_DATA[selectedNeighbor].rec}
+                          src={CLUSTER_DATA[selectedCluster].img}
+                          alt={CLUSTER_DATA[selectedCluster].rec}
                           className="w-full h-full object-cover"
                         />
                       </div>
                       <div className="flex-1 p-4">
                         <div className="flex items-center gap-1.5 mb-2">
                           <span className="w-5 h-5 rounded-full bg-(--accent)/20 text-(--accent) text-[9px] font-bold flex items-center justify-center">
-                            {NEIGHBOR_DATA[selectedNeighbor].label}
+                            {CLUSTER_DATA[selectedCluster].label}
                           </span>
-                          <span className="text-xs font-medium text-(--text-primary)">{NEIGHBOR_DATA[selectedNeighbor].name}</span>
-                          <span className="text-[10px] text-(--text-tertiary) ml-auto">{NEIGHBOR_DATA[selectedNeighbor].similarity} match</span>
+                          <span className="text-xs font-medium text-(--text-primary)">{CLUSTER_DATA[selectedCluster].name}</span>
+                          <span className="text-[10px] text-(--text-tertiary) ml-auto">{CLUSTER_DATA[selectedCluster].similarity} cosine</span>
                         </div>
-                        <p className="text-[10px] uppercase tracking-[0.1em] text-(--text-tertiary) mb-1">Recommended for you</p>
-                        <p className="text-sm font-semibold text-(--text-primary) leading-snug mb-1" style={{ fontFamily: "var(--font-cormorant), serif" }}>
-                          {NEIGHBOR_DATA[selectedNeighbor].rec}
+                        <p className="text-[10px] uppercase tracking-[0.1em] text-(--text-tertiary) mb-1">Nearest match in cluster</p>
+                        <p className="text-sm font-semibold text-(--text-primary) leading-snug mb-0.5" style={{ fontFamily: "var(--font-cormorant), serif" }}>
+                          {CLUSTER_DATA[selectedCluster].rec}
                         </p>
-                        <p className="text-sm font-medium text-(--accent)">{NEIGHBOR_DATA[selectedNeighbor].recPrice}</p>
-                        <p className="text-[10px] text-(--text-tertiary) mt-1">
-                          Because {NEIGHBOR_DATA[selectedNeighbor].name.split(" ")[0]} bought this and your tastes align
+                        <p className="text-xs text-(--text-tertiary)">
+                          {CLUSTER_DATA[selectedCluster].recBrand}
+                        </p>
+                        <p className="text-[10px] text-(--text-tertiary) mt-1.5">
+                          High content similarity + CF alignment with your taste vector
                         </p>
                       </div>
                     </div>
@@ -287,10 +358,41 @@ export default function AlgorithmModal({ isOpen, onClose }: AlgorithmModalProps)
                 )}
               </AnimatePresence>
 
-              {/* Parameter Cards */}
+              {/* ── Reranking Weight Cards ── */}
               <motion.div variants={fadeUp} className="mb-10">
                 <p className="text-[10px] uppercase tracking-[0.15em] text-(--text-tertiary) font-medium mb-4">
-                  Weight Parameters
+                  Reranking Weights
+                </p>
+                <div className="grid grid-cols-5 gap-2">
+                  {RANK_WEIGHTS.map((rw, i) => (
+                    <motion.div
+                      key={rw.symbol}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.6 + i * 0.08 }}
+                      className="bg-(--bg-secondary) rounded-xl p-3 text-center"
+                    >
+                      <span
+                        className="text-lg text-(--accent) block mb-0.5"
+                        style={{ fontFamily: "var(--font-cormorant), serif", fontStyle: "italic" }}
+                      >
+                        {rw.value}
+                      </span>
+                      <p className="text-[10px] font-semibold text-(--text-primary) mb-0.5">
+                        {rw.label}
+                      </p>
+                      <p className="text-[9px] text-(--text-tertiary) leading-tight">
+                        {rw.desc}
+                      </p>
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+
+              {/* ── System Parameter Cards ── */}
+              <motion.div variants={fadeUp} className="mb-10">
+                <p className="text-[10px] uppercase tracking-[0.15em] text-(--text-tertiary) font-medium mb-4">
+                  System Parameters
                 </p>
                 <div className="grid grid-cols-3 gap-3">
                   {PARAMS.map((param, i) => (
@@ -318,17 +420,17 @@ export default function AlgorithmModal({ isOpen, onClose }: AlgorithmModalProps)
                 </div>
               </motion.div>
 
-              {/* Signal Strength Bars */}
-              <motion.div variants={fadeUp} className="mb-8">
+              {/* ── Interaction Signal Bars ── */}
+              <motion.div variants={fadeUp} className="mb-10">
                 <p className="text-[10px] uppercase tracking-[0.15em] text-(--text-tertiary) font-medium mb-4">
-                  Signal Strength
+                  Behavior Signal Weights
                 </p>
                 <div className="space-y-3">
                   {SIGNALS.map((signal, i) => (
                     <div key={i}>
                       <div className="flex items-center justify-between mb-1">
                         <span className="text-xs text-(--text-secondary)">{signal.label}</span>
-                        <span className="text-xs text-(--text-tertiary)">{signal.weight}%</span>
+                        <span className="text-xs text-(--text-tertiary) tabular-nums">{signal.raw}</span>
                       </div>
                       <div className="h-2 bg-(--bg-secondary) rounded-full overflow-hidden">
                         <motion.div
@@ -336,7 +438,7 @@ export default function AlgorithmModal({ isOpen, onClose }: AlgorithmModalProps)
                           style={{ backgroundColor: signal.color }}
                           initial={{ width: 0 }}
                           animate={{ width: `${signal.weight}%` }}
-                          transition={{ delay: 0.8 + i * 0.1, duration: 0.6, ease: "easeOut" }}
+                          transition={{ delay: 0.8 + i * 0.08, duration: 0.6, ease: "easeOut" }}
                         />
                       </div>
                     </div>
@@ -344,10 +446,23 @@ export default function AlgorithmModal({ isOpen, onClose }: AlgorithmModalProps)
                 </div>
               </motion.div>
 
+              {/* ── Score Normalization ── */}
+              <motion.div variants={fadeUp} className="bg-(--bg-secondary) rounded-2xl p-6 md:p-8 mb-10">
+                <p className="text-[10px] uppercase tracking-[0.15em] text-(--text-tertiary) font-medium mb-4">
+                  Score Normalization
+                </p>
+                <div className="formula text-center py-3 text-base md:text-lg">
+                  match% = 65 + 30 &middot; &sigma;( 4 &middot; (<var>s</var> &minus; &mu;) / &sigma;<sub>s</sub> )
+                </div>
+                <p className="text-xs text-(--text-secondary) text-center mt-3 max-w-sm mx-auto leading-relaxed">
+                  Raw scores are z-score normalized then sigmoid-mapped into the display range [65%, 98%], ensuring strong matches visually separate from weaker ones while every visible product feels like a positive recommendation.
+                </p>
+              </motion.div>
+
               {/* Footer */}
               <motion.div variants={fadeUp} className="text-center pt-4 border-t border-(--border)">
                 <p className="text-xs text-(--text-tertiary)">
-                  The social graph turns every purchase into a signal that helps friends discover products they&apos;ll love.
+                  Every interaction shifts your preference vector in real time &mdash; click, save, or purchase to see your recommendations adapt.
                 </p>
               </motion.div>
             </motion.div>

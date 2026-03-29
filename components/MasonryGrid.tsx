@@ -13,6 +13,7 @@ type MasonryGridProps = {
   onGummi?: (product: Product) => void;
   prefetchSentinelIndex?: number;
   prefetchSentinelRef?: (node: HTMLDivElement | null) => void;
+  recommendationScores?: Map<string, number>;
 };
 
 export default function MasonryGrid({
@@ -23,6 +24,7 @@ export default function MasonryGrid({
   onGummi,
   prefetchSentinelIndex,
   prefetchSentinelRef,
+  recommendationScores,
 }: MasonryGridProps) {
   return (
     <div className="masonry">
@@ -34,6 +36,7 @@ export default function MasonryGrid({
             onClick={onProductClick}
             onFriendClick={onFriendClick}
             onGummi={onGummi}
+            matchScore={recommendationScores?.get(product.id)}
           />
           {index === prefetchSentinelIndex && prefetchSentinelRef && (
             <div ref={prefetchSentinelRef} className="h-0 w-0" aria-hidden="true" />
