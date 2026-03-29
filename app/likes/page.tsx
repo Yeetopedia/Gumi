@@ -117,7 +117,7 @@ export default function LikesPage() {
       </div>
 
       {/* Toast notification */}
-      <GummiToast title={toastProductTitle} visible={toastVisible} />
+      <GummiToast visible={toastVisible} productTitle={toastProductTitle} />
     </main>
   );
 }
