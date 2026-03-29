@@ -2,43 +2,26 @@
 
 import { useState, useCallback, useEffect, useMemo } from "react";
 import { useRouter } from "next/navigation";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { Product, MockUser } from "@/types";
 import { CATEGORIES, getProductPool, getSearchPool } from "@/lib/mock-data";
-import { getStoryUsers } from "@/lib/mock-users";
 import { useDebounce } from "@/hooks/useDebounce";
 import { useInfiniteQueue } from "@/hooks/useInfiniteQueue";
 import Sidebar from "@/components/Sidebar";
-import StoriesRow from "@/components/StoriesRow";
 import CategoryPills from "@/components/CategoryPills";
-import StoryViewer from "@/components/StoryViewer";
 import MasonryGrid from "@/components/MasonryGrid";
 import UserProfile from "@/components/UserProfile";
 import GummiToast from "@/components/GummiToast";
-import AlgorithmModal from "@/components/AlgorithmModal";
-import MyProfile from "@/components/MyProfile/MyProfile";
 import ChatBot from "@/components/ChatBot";
 
-export default function Home() {
+export default function ExplorePage() {
   const router = useRouter();
 
   // UI state
   const [activeCategory, setActiveCategory] = useState("for-you");
   const [searchValue, setSearchValue] = useState("");
   const [activeSearch, setActiveSearch] = useState("");
-  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [selectedUser, setSelectedUser] = useState<MockUser | null>(null);
-
-  // Story viewer state
-  const [storyViewerOpen, setStoryViewerOpen] = useState(false);
-  const [storyInitialIndex, setStoryInitialIndex] = useState(0);
-  const [viewedStoryUsers, setViewedStoryUsers] = useState<Set<string>>(new Set());
-
-  // Algorithm modal
-  const [algorithmOpen, setAlgorithmOpen] = useState(false);
-
-  // My Profile
-  const [myProfileOpen, setMyProfileOpen] = useState(false);
 
   // Follow state
   const [followedUsers, setFollowedUsers] = useState<Set<string>>(new Set());
@@ -48,7 +31,6 @@ export default function Home() {
   const [toastProductTitle, setToastProductTitle] = useState("");
 
   const debouncedSearch = useDebounce(searchValue, 300);
-  const storyUsers = getStoryUsers();
 
   // Debounced search → activeSearch
   useEffect(() => {
@@ -90,13 +72,6 @@ export default function Home() {
     setSelectedUser(user);
   }, []);
 
-  // Handle story click — open story viewer and mark as viewed
-  const handleStoryClick = useCallback((user: MockUser, index: number) => {
-    setStoryInitialIndex(index);
-    setStoryViewerOpen(true);
-    setViewedStoryUsers((prev) => new Set(prev).add(user.id));
-  }, []);
-
   const handleCategorySelect = (categoryId: string) => {
     setActiveCategory(categoryId);
     setSearchValue("");
@@ -109,7 +84,6 @@ export default function Home() {
   };
 
   const handleProductClick = useCallback((product: Product) => {
-    // Navigate to product detail page
     router.push(`/product/${encodeURIComponent(product.id)}`);
   }, [router]);
 
@@ -118,24 +92,17 @@ export default function Home() {
       {/* Sidebar */}
       <Sidebar
         searchValue={searchValue}
+        onSearchChange={setSearchValue}
         onSearchSubmit={handleSearchSubmit}
         categories={CATEGORIES}
         activeCategory={activeCategory}
         onCategorySelect={handleCategorySelect}
-        onAlgorithmClick={() => setAlgorithmOpen(true)}
-        onProfileClick={() => setMyProfileOpen(true)}
         activeSection="feed"
-        onHomeClick={() => {
-          setActiveCategory("for-you");
-          setSearchValue("");
-          window.scrollTo({ top: 0, behavior: "smooth" });
-        }}
-        onExploreClick={() => router.push("/explore")}
-        onLikesClick={() => {
-          setMyProfileOpen(true);
-        }}
+        onHomeClick={() => router.push("/")}
+        onExploreClick={() => {}}
         onGamesClick={() => router.push("/games")}
         onMessagesClick={() => router.push("/messages")}
+        onLikesClick={() => router.push("/")}
         onFollowUser={(userId) => {
           setFollowedUsers((prev) => new Set([...prev, userId]));
         }}
@@ -143,19 +110,8 @@ export default function Home() {
       />
 
       {/* Main content area */}
-      <div
-        className={`flex-1 min-w-0 transition-padding duration-300 ${
-          selectedProduct ? "lg:pr-[42rem] md:pr-[28rem]" : ""
-        }`}
-      >
+      <div className="flex-1 min-w-0">
         <div className="w-full">
-          {/* Stories row — recent friend purchases */}
-          {!activeSearch && (
-            <div className="px-4 md:px-6 lg:px-8">
-              <StoriesRow users={storyUsers} onStoryClick={handleStoryClick} viewedUserIds={viewedStoryUsers} />
-            </div>
-          )}
-
           {/* Category pills */}
           {!activeSearch && (
             <div className="px-4 md:px-6 lg:px-8">
@@ -230,54 +186,10 @@ export default function Home() {
           setFollowedUsers((prev) => new Set([...prev, userId]));
         }}
         onMessage={() => {
-          setAppSection("messages");
+          router.push("/messages");
           setSelectedUser(null);
         }}
         isFollowing={(userId) => followedUsers.has(userId)}
-      />
-
-      {/* Story Viewer */}
-      <AnimatePresence>
-        {storyViewerOpen && (
-          <StoryViewer
-            users={storyUsers}
-            initialUserIndex={storyInitialIndex}
-            onClose={(viewedUserIndex?: number) => {
-              setStoryViewerOpen(false);
-              if (viewedUserIndex !== undefined) {
-                setViewedStoryUsers((prev) => {
-                  const next = new Set(prev);
-                  for (let i = storyInitialIndex; i <= viewedUserIndex; i++) {
-                    if (storyUsers[i]) next.add(storyUsers[i].id);
-                  }
-                  return next;
-                });
-              }
-            }}
-            onProductClick={handleProductClick}
-          />
-        )}
-      </AnimatePresence>
-
-      {/* My Profile */}
-      <MyProfile
-        isOpen={myProfileOpen}
-        onClose={() => setMyProfileOpen(false)}
-        onProductClick={(product) => {
-          setMyProfileOpen(false);
-          setTimeout(() => handleProductClick(product), 300);
-        }}
-        onUserClick={(user) => {
-          setMyProfileOpen(false);
-          setTimeout(() => setSelectedUser(user), 300);
-        }}
-        onGummi={handleGummi}
-      />
-
-      {/* Algorithm Modal */}
-      <AlgorithmModal
-        isOpen={algorithmOpen}
-        onClose={() => setAlgorithmOpen(false)}
       />
 
       {/* Purchase confirmation toast */}

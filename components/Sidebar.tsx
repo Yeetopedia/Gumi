@@ -1,8 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter, usePathname } from "next/navigation";
 import Image from "next/image";
-import { Category, FeedMode } from "@/types";
+import { Category } from "@/types";
 import { CURRENT_USER } from "@/lib/mock-users";
 import { getUnreadCount } from "@/lib/mock-conversations";
 import SearchBar from "./SearchBar";
@@ -10,8 +11,8 @@ import GummiBear from "./GummiBear/GummiBear";
 import { useGummiBear } from "@/lib/gummi-bear-context";
 
 type SidebarProps = {
-  feedMode: FeedMode;
-  onFeedModeChange: (mode: FeedMode) => void;
+  feedMode?: never; // Removed: feed mode is now URL-based
+  onFeedModeChange?: never; // Removed: feed mode is now URL-based
   searchValue: string;
   onSearchChange: (value: string) => void;
   onSearchSubmit: (value: string) => void;
@@ -31,8 +32,6 @@ type SidebarProps = {
 };
 
 export default function Sidebar({
-  feedMode,
-  onFeedModeChange,
   searchValue,
   onSearchChange,
   onSearchSubmit,
@@ -50,6 +49,8 @@ export default function Sidebar({
   onFollowUser,
   isFollowing,
 }: SidebarProps) {
+  const router = useRouter();
+  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const unreadCount = getUnreadCount();
   const { state: bearState } = useGummiBear();
@@ -125,31 +126,30 @@ export default function Sidebar({
               <button
                 onClick={() => {
                   onHomeClick?.();
-                  onFeedModeChange("gallery");
                   onCategorySelect("for-you");
                   onSearchChange("");
                   setIsOpen(false);
                 }}
-                className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-(--bg-secondary) transition-colors text-left ${activeSection === "feed" ? "bg-(--bg-secondary)" : ""}`}
+                className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-(--bg-secondary) transition-colors text-left ${pathname === "/" ? "bg-(--bg-secondary)" : ""}`}
               >
-                <svg width="20" height="20" viewBox="0 0 24 24" fill={activeSection === "feed" ? "currentColor" : "none"} stroke="var(--text-primary)" strokeWidth={activeSection === "feed" ? "1.5" : "2"}>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill={pathname === "/" ? "currentColor" : "none"} stroke="var(--text-primary)" strokeWidth={pathname === "/" ? "1.5" : "2"}>
                   <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
                 </svg>
                 <span className="text-sm font-medium text-(--text-primary)">Home</span>
               </button>
               <button
                 onClick={() => { onExploreClick?.(); setIsOpen(false); }}
-                className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-(--bg-secondary) transition-colors text-left"
+                className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-(--bg-secondary) transition-colors text-left ${pathname === "/explore" ? "bg-(--bg-secondary)" : ""}`}
               >
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--text-primary)" strokeWidth="2">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill={pathname === "/explore" ? "currentColor" : "none"} stroke="var(--text-primary)" strokeWidth={pathname === "/explore" ? "1.5" : "2"}>
                   <circle cx="11" cy="11" r="8" />
                   <path d="m21 21-4.35-4.35" />
                 </svg>
                 <span className="text-sm font-medium text-(--text-primary)">Explore</span>
               </button>
               <button
-                onClick={() => { onLikesClick?.(); setIsOpen(false); }}
-                className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-(--bg-secondary) transition-colors text-left"
+                disabled
+                className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-(--bg-secondary) transition-colors text-left opacity-50 cursor-not-allowed"
               >
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--text-primary)" strokeWidth="2">
                   <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
@@ -158,9 +158,9 @@ export default function Sidebar({
               </button>
               <button
                 onClick={() => { onMessagesClick?.(); setIsOpen(false); }}
-                className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-(--bg-secondary) transition-colors text-left relative ${activeSection === "messages" ? "bg-(--bg-secondary)" : ""}`}
+                className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-(--bg-secondary) transition-colors text-left relative ${pathname === "/messages" ? "bg-(--bg-secondary)" : ""}`}
               >
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--text-primary)" strokeWidth="2">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill={pathname === "/messages" ? "currentColor" : "none"} stroke="var(--text-primary)" strokeWidth={pathname === "/messages" ? "1.5" : "2"}>
                   <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
                 </svg>
                 <span className="text-sm font-medium text-(--text-primary)">Messages</span>
@@ -172,13 +172,12 @@ export default function Sidebar({
               </button>
               <button
                 onClick={() => {
-                  onHomeClick?.();
-                  onFeedModeChange(feedMode === "reels" ? "gallery" : "reels");
+                  router.push("/feed");
                   setIsOpen(false);
                 }}
-                className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-(--bg-secondary) transition-colors text-left"
+                className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-(--bg-secondary) transition-colors text-left ${pathname === "/feed" ? "bg-(--bg-secondary)" : ""}`}
               >
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--text-primary)" strokeWidth="2">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill={pathname === "/feed" ? "currentColor" : "none"} stroke="var(--text-primary)" strokeWidth={pathname === "/feed" ? "1.5" : "2"}>
                   <rect x="6" y="3" width="12" height="18" rx="2" />
                   <line x1="12" y1="18" x2="12" y2="18" strokeLinecap="round" strokeWidth="3" />
                 </svg>
@@ -186,17 +185,17 @@ export default function Sidebar({
               </button>
               <button
                 onClick={() => { onGamesClick?.(); setIsOpen(false); }}
-                className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-(--bg-secondary) transition-colors text-left ${activeSection === "games" ? "bg-(--bg-secondary)" : ""}`}
+                className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-(--bg-secondary) transition-colors text-left ${pathname === "/games" ? "bg-(--bg-secondary)" : ""}`}
               >
-                <svg width="20" height="20" viewBox="0 0 24 24" fill={activeSection === "games" ? "currentColor" : "none"} stroke="var(--text-primary)" strokeWidth="2">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill={pathname === "/games" ? "currentColor" : "none"} stroke="var(--text-primary)" strokeWidth="2">
                   <rect x="2" y="6" width="20" height="12" rx="3" />
-                  <circle cx="9" cy="12" r="1.5" fill={activeSection === "games" ? "var(--card-bg)" : "var(--text-primary)"} stroke="none" />
-                  <circle cx="15" cy="10" r="1" fill={activeSection === "games" ? "var(--card-bg)" : "var(--text-primary)"} stroke="none" />
-                  <circle cx="17" cy="12" r="1" fill={activeSection === "games" ? "var(--card-bg)" : "var(--text-primary)"} stroke="none" />
-                  <circle cx="15" cy="14" r="1" fill={activeSection === "games" ? "var(--card-bg)" : "var(--text-primary)"} stroke="none" />
-                  <circle cx="13" cy="12" r="1" fill={activeSection === "games" ? "var(--card-bg)" : "var(--text-primary)"} stroke="none" />
-                  <line x1="7" y1="12" x2="11" y2="12" stroke={activeSection === "games" ? "var(--card-bg)" : "var(--text-primary)"} strokeWidth="1.5" />
-                  <line x1="9" y1="10" x2="9" y2="14" stroke={activeSection === "games" ? "var(--card-bg)" : "var(--text-primary)"} strokeWidth="1.5" />
+                  <circle cx="9" cy="12" r="1.5" fill={pathname === "/games" ? "var(--card-bg)" : "var(--text-primary)"} stroke="none" />
+                  <circle cx="15" cy="10" r="1" fill={pathname === "/games" ? "var(--card-bg)" : "var(--text-primary)"} stroke="none" />
+                  <circle cx="17" cy="12" r="1" fill={pathname === "/games" ? "var(--card-bg)" : "var(--text-primary)"} stroke="none" />
+                  <circle cx="15" cy="14" r="1" fill={pathname === "/games" ? "var(--card-bg)" : "var(--text-primary)"} stroke="none" />
+                  <circle cx="13" cy="12" r="1" fill={pathname === "/games" ? "var(--card-bg)" : "var(--text-primary)"} stroke="none" />
+                  <line x1="7" y1="12" x2="11" y2="12" stroke={pathname === "/games" ? "var(--card-bg)" : "var(--text-primary)"} strokeWidth="1.5" />
+                  <line x1="9" y1="10" x2="9" y2="14" stroke={pathname === "/games" ? "var(--card-bg)" : "var(--text-primary)"} strokeWidth="1.5" />
                 </svg>
                 <span className="text-sm font-medium text-(--text-primary)">Games</span>
               </button>

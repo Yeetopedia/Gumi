@@ -121,7 +121,7 @@ export default function ReelsView({ products, onLoadMore, hasMore, onProductClic
   return (
     <div
       ref={containerRef}
-      className="fixed inset-0 bg-black z-10 overflow-hidden flex items-center justify-center"
+      className="fixed inset-0 bg-black z-10 overflow-hidden flex items-center justify-center lg:left-64"
       style={{ top: 0 }}
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
@@ -163,7 +163,7 @@ export default function ReelsView({ products, onLoadMore, hasMore, onProductClic
             <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/10 to-black/30" />
 
             {/* Top bar */}
-            <div className="absolute top-0 left-0 right-0 p-4 pt-14 flex items-center justify-between z-20">
+            <div className="absolute top-0 left-0 right-0 p-4 flex items-center justify-between z-20">
               <div className="flex items-center gap-2">
                 <div className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white text-xs font-bold">
                   {product.brand.charAt(0)}
@@ -171,16 +171,6 @@ export default function ReelsView({ products, onLoadMore, hasMore, onProductClic
                 <span className="text-white text-sm font-medium drop-shadow-lg">
                   {product.brand}
                 </span>
-              </div>
-              <div className="flex gap-1">
-                {products.slice(Math.max(0, currentIndex - 2), currentIndex + 3).map((p) => (
-                  <div
-                    key={p.id}
-                    className={`w-1.5 h-1.5 rounded-full transition-all ${
-                      p.id === product.id ? "bg-white w-4" : "bg-white/40"
-                    }`}
-                  />
-                ))}
               </div>
             </div>
 

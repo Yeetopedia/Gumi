@@ -91,20 +91,20 @@ export default function ProductModal({ product, onClose, onGummi, onFriendClick 
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50"
+            className="fixed inset-0 bg-black/30 lg:bg-transparent backdrop-blur-sm lg:backdrop-blur-none z-40 lg:hidden"
             onClick={onClose}
           />
 
           <motion.div
-            initial={{ opacity: 0, y: 40, scale: 0.97 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 40, scale: 0.97 }}
+            initial={{ opacity: 0, x: 400 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 400 }}
             transition={{ duration: 0.3, ease: [0.32, 0.72, 0, 1] }}
-            className="fixed inset-4 md:inset-8 lg:inset-16 xl:inset-24 bg-(--card-bg) rounded-2xl z-50 overflow-hidden flex flex-col md:flex-row shadow-2xl"
+            className="fixed top-0 right-0 bottom-0 w-full max-w-sm md:max-w-md lg:max-w-2xl bg-(--card-bg) z-50 overflow-hidden flex flex-col shadow-2xl lg:rounded-l-2xl"
           >
             <button
               onClick={onClose}
-              className="absolute top-4 right-4 w-10 h-10 rounded-full bg-(--bg-secondary) flex items-center justify-center hover:bg-(--border) transition-colors z-20"
+              className="absolute top-4 right-4 w-10 h-10 rounded-full bg-(--bg-secondary) flex items-center justify-center hover:bg-(--border) transition-colors z-20 lg:top-6 lg:right-6"
               aria-label="Close"
             >
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--text-primary)" strokeWidth="2" strokeLinecap="round">
@@ -114,12 +114,12 @@ export default function ProductModal({ product, onClose, onGummi, onFriendClick 
             </button>
 
             {/* Image gallery */}
-            <div className="md:w-1/2 lg:w-[55%] shrink-0 p-4 md:p-6 flex items-center">
+            <div className="h-56 md:h-64 shrink-0 p-4 md:p-6 flex items-center bg-(--bg-secondary)">
               <ImageGallery images={allImages} />
             </div>
 
             {/* Product details */}
-            <div className="md:w-1/2 lg:w-[45%] overflow-y-auto p-6 md:p-8 lg:p-10 flex flex-col">
+            <div className="flex-1 overflow-y-auto p-6 md:p-8 flex flex-col">
               <p className="text-[11px] uppercase tracking-[0.15em] text-(--text-tertiary) font-medium mb-2">
                 {product.brand}
               </p>
@@ -235,7 +235,7 @@ export default function ProductModal({ product, onClose, onGummi, onFriendClick 
               <div className="flex-1" />
 
               {/* Action buttons */}
-              <div className="flex items-center gap-2 sticky bottom-0 pt-4 bg-(--card-bg)">
+              <div className="flex items-center gap-2 sticky bottom-0 pt-4 mt-6 bg-(--card-bg) border-t border-(--border)">
                 {/* Gummi = "I Bought This" */}
                 <button
                   onClick={handleGummi}
