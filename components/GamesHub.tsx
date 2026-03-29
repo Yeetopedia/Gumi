@@ -5,8 +5,11 @@ import Image from "next/image";
 import WordleGame from "./games/WordleGame";
 import GummyShooterGame from "./games/GummyShooterGame";
 import GummiPacmanGame from "./games/GummiPacmanGame";
+import GameLeaderboard from "./GameLeaderboard";
+import { MOCK_USERS } from "@/lib/mock-users";
 
 type GameId = "wordle" | "shooter" | "pacman";
+type View = "games" | "leaderboard";
 
 const GAMES: { id: GameId; title: string; description: string; gradient: string; icon: string }[] = [
   {
@@ -34,6 +37,7 @@ const GAMES: { id: GameId; title: string; description: string; gradient: string;
 
 export default function GamesHub() {
   const [activeGame, setActiveGame] = useState<GameId | null>(null);
+  const [view, setView] = useState<View>("games");
 
   if (activeGame === "wordle") return <div className="w-full h-screen flex flex-col items-center justify-center"><WordleGame onBack={() => setActiveGame(null)} /></div>;
   if (activeGame === "shooter") return <div className="w-full h-screen flex flex-col items-center justify-center"><GummyShooterGame onBack={() => setActiveGame(null)} /></div>;
@@ -41,21 +45,49 @@ export default function GamesHub() {
 
   return (
     <div className="w-full min-h-screen px-4 md:px-8 py-8 flex flex-col justify-center">
-      {/* Header */}
+      {/* Header with tabs */}
       <div className="max-w-4xl mx-auto mb-10">
-        <div className="flex items-center gap-3 mb-2">
-          {/* GUMI_ICON_PLACEHOLDER */}
-          <Image src="/gummi-icon.png" alt="Gummi" width={40} height={40} className="drop-shadow-md" />
-          <h1 className="text-4xl font-bold text-(--text-primary)" style={{ fontFamily: "var(--font-cormorant), serif" }}>
-            Gummi Games
-          </h1>
+        <div className="flex items-center justify-between mb-2">
+          <div className="flex items-center gap-3">
+            {/* GUMI_ICON_PLACEHOLDER */}
+            <Image src="/gummi-icon.png" alt="Gummi" width={40} height={40} className="drop-shadow-md" />
+            <h1 className="text-4xl font-bold text-(--text-primary)" style={{ fontFamily: "var(--font-cormorant), serif" }}>
+              Gummi Games
+            </h1>
+          </div>
+          {/* View toggle tabs */}
+          <div className="flex items-center gap-2 bg-(--bg-secondary) rounded-full p-1">
+            <button
+              onClick={() => setView("games")}
+              className={`px-4 py-2 rounded-full font-semibold transition-all text-sm ${
+                view === "games"
+                  ? "bg-(--accent) text-white"
+                  : "text-(--text-secondary) hover:text-(--text-primary)"
+              }`}
+            >
+              Games
+            </button>
+            <button
+              onClick={() => setView("leaderboard")}
+              className={`px-4 py-2 rounded-full font-semibold transition-all text-sm ${
+                view === "leaderboard"
+                  ? "bg-(--accent) text-white"
+                  : "text-(--text-secondary) hover:text-(--text-primary)"
+              }`}
+            >
+              Leaderboard
+            </button>
+          </div>
         </div>
-        <p className="text-(--text-secondary) text-sm ml-[52px]">Play, compete, and have fun with gummy-powered games</p>
+        <p className="text-(--text-secondary) text-sm ml-[52px]">
+          {view === "games" ? "Play, compete, and have fun with gummy-powered games" : "See how you rank against your friends"}
+        </p>
       </div>
 
-      {/* Game cards */}
-      <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {GAMES.map((game) => (
+      {/* Content */}
+      {view === "games" ? (
+        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {GAMES.map((game) => (
           <button
             key={game.id}
             onClick={() => setActiveGame(game.id)}
@@ -95,8 +127,13 @@ export default function GamesHub() {
               </div>
             </div>
           </button>
-        ))}
-      </div>
+          ))}
+        </div>
+      ) : (
+        <div className="max-w-4xl mx-auto">
+          <GameLeaderboard users={MOCK_USERS} />
+        </div>
+      )}
 
       {/* Footer badge */}
       <div className="max-w-4xl mx-auto mt-12 flex items-center justify-center gap-2 text-(--text-tertiary) text-xs">

@@ -2,6 +2,11 @@
 
 import { useState, useEffect, useRef, useCallback } from "react";
 import Image from "next/image";
+import { AnimatePresence } from "framer-motion";
+import { updateBlasterScore } from "@/lib/game-scores";
+import { CURRENT_USER } from "@/lib/mock-users";
+import PostGameLeaderboard from "@/components/PostGameLeaderboard";
+import { MOCK_USERS } from "@/lib/mock-users";
 
 type Enemy = {
   id: number;
@@ -29,6 +34,8 @@ export default function GummyShooterGame({ onBack }: { onBack: () => void }) {
   const [health, setHealth] = useState(3);
   const [wave, setWave] = useState(1);
   const [highScore, setHighScore] = useState(0);
+  const [showLeaderboard, setShowLeaderboard] = useState(false);
+  const [finalScore, setFinalScore] = useState(0);
 
   const g = useRef({
     enemies: [] as Enemy[],
@@ -71,10 +78,13 @@ export default function GummyShooterGame({ onBack }: { onBack: () => void }) {
     const r = g.current;
     r.state = "gameover";
     setGameState("gameover");
+    setFinalScore(r.score);
     if (r.score > highScore) {
       setHighScore(r.score);
       localStorage.setItem("gummi-shooter-high", String(r.score));
     }
+    updateBlasterScore(CURRENT_USER.id, r.score);
+    setShowLeaderboard(true);
   }, [highScore]);
 
   const spawnEnemy = useCallback(() => {
@@ -291,7 +301,15 @@ export default function GummyShooterGame({ onBack }: { onBack: () => void }) {
     <div className="flex flex-col items-center w-full h-full">
       {/* Header */}
       <div className="flex items-center justify-between w-full px-4 py-3 z-10">
-        <button onClick={onBack} className="p-2 rounded-lg hover:bg-white/10 transition-colors">
+        <button 
+          onClick={() => {
+            // Save the final wave score before going back
+            if (wave > 0) {
+              updateBlasterScore(CURRENT_USER.id, wave);
+            }
+            onBack();
+          }} 
+          className="p-2 rounded-lg hover:bg-white/10 transition-colors">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--text-primary)" strokeWidth="2"><polyline points="15 18 9 12 15 6"/></svg>
         </button>
         <div className="flex items-center gap-2">
@@ -354,7 +372,7 @@ export default function GummyShooterGame({ onBack }: { onBack: () => void }) {
         )}
 
         {/* Game over overlay */}
-        {gameState === "gameover" && (
+        {gameState === "gameover" && !showLeaderboard && (
           <div className="absolute inset-0 flex items-center justify-center bg-black/60 backdrop-blur-sm rounded-xl">
             <div className="text-center">
               {/* GUMI_ICON_PLACEHOLDER */}
@@ -369,6 +387,21 @@ export default function GummyShooterGame({ onBack }: { onBack: () => void }) {
             </div>
           </div>
         )}
+
+        {/* Post-game leaderboard */}
+        <AnimatePresence>
+          {showLeaderboard && (
+            <PostGameLeaderboard
+              game="blaster"
+              finalScore={finalScore}
+              users={MOCK_USERS.filter((u) => u.id !== CURRENT_USER.id)}
+              onClose={() => {
+                setShowLeaderboard(false);
+                setGameState("menu");
+              }}
+            />
+          )}
+        </AnimatePresence>
       </div>
     </div>
   );
