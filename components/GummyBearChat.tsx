@@ -3,7 +3,6 @@
 import { Message, MockUser } from "@/types";
 import { motion } from "framer-motion";
 import { CURRENT_USER } from "@/lib/mock-users";
-import GummiBear from "./GummiBear/GummiBear";
 import EmojiGummiBear from "./EmojiGummiBear";
 import type { Emotion } from "@/lib/emoji-emotions";
 
@@ -101,59 +100,6 @@ export default function GummyBearChat({
         )}
       </div>
 
-      {/* Gummy bears at bottom */}
-      <div className="relative z-20 px-6 py-8 flex justify-between items-end gap-8">
-        {/* Participant bear */}
-        <div className="flex flex-col items-center gap-3">
-          <motion.div
-            animate={{ y: [0, -12, 0] }}
-            transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
-            className="flex flex-col items-center"
-          >
-            <GummiBear
-              config={{
-                hue: participantUser.gummiHue,
-                clothing: participantUser.gummiOutfit?.clothing || null,
-                accessory: participantUser.gummiOutfit?.accessory || null,
-                headwear: participantUser.gummiOutfit?.headwear || null,
-              }}
-              size={80}
-              className="drop-shadow-lg"
-            />
-          </motion.div>
-          <span className="text-xs font-semibold text-(--text-secondary)">
-            {participantUser.name}
-          </span>
-        </div>
-
-        {/* Your bear (right) */}
-        <div className="flex flex-col items-center gap-3">
-          <motion.div
-            animate={{ y: [0, -12, 0] }}
-            transition={{
-              duration: 2.5,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: 0.3,
-            }}
-            className="flex flex-col items-center"
-          >
-            <GummiBear
-              config={{
-                hue: CURRENT_USER.gummiHue,
-                clothing: CURRENT_USER.gummiOutfit?.clothing || null,
-                accessory: CURRENT_USER.gummiOutfit?.accessory || null,
-                headwear: CURRENT_USER.gummiOutfit?.headwear || null,
-              }}
-              size={80}
-              className="drop-shadow-lg"
-            />
-          </motion.div>
-          <span className="text-xs font-semibold text-(--text-secondary)">
-            {CURRENT_USER.name}
-          </span>
-        </div>
-      </div>
     </div>
   );
 }

@@ -42,34 +42,57 @@ export default function MessagesConversation({
       messageInput
     );
 
+    const messageToSend = messageInput;
     setMessageInput("");
     setConversationState({ ...conversation });
 
-    // Simulate typing indicator
+    // Get AI response via Lava
     if (userMsg) {
       setIsTyping(true);
-      setTimeout(() => {
-        // Add response message
-        const responses = [
-          "That's awesome! 😄",
-          "I totally agree! 💯",
-          "Love that energy ✨",
-          "Right? 🙌",
-          "For sure! 👀",
-          "Haha yes! 😂",
-          "Perfect! 🎯",
-          "Absolutely! 💕",
-        ];
-        const randomResponse =
-          responses[Math.floor(Math.random() * responses.length)];
-        addMessageToConversation(
-          conversation.id,
-          conversation.participantId,
-          randomResponse
-        );
-        setConversationState({ ...conversation });
-        setIsTyping(false);
-      }, 1200 + Math.random() * 800);
+
+      const generateResponse = async () => {
+        try {
+          console.log("🔵 API CALL: Fetching response from /api/messages/response");
+          console.log("Message:", messageToSend);
+          console.log("Participant:", participantUser.name);
+
+          const res = await fetch("/api/messages/response", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              userMessage: messageToSend,
+              participant: participantUser,
+            }),
+          });
+
+          console.log("🔵 API Response Status:", res.status);
+          const data = await res.json();
+          console.log("🔵 API Response Data:", data);
+
+          if (!res.ok) {
+            console.error("🔴 API ERROR:", data);
+            setIsTyping(false);
+            return;
+          }
+
+          // Simulate natural typing delay
+          setTimeout(() => {
+            console.log("🟢 Adding AI message:", data.message);
+            addMessageToConversation(
+              conversation.id,
+              conversation.participantId,
+              data.message
+            );
+            setConversationState({ ...conversation });
+            setIsTyping(false);
+          }, 1200 + Math.random() * 800);
+        } catch (error) {
+          console.error("🔴 Failed to get response:", error);
+          setIsTyping(false);
+        }
+      };
+
+      generateResponse();
     }
   };
 
@@ -198,28 +221,36 @@ export default function MessagesConversation({
           );
           setConversationState({ ...conversation });
           setEmojiPickerOpen(false);
-          
-          // Simulate response
-          setTimeout(() => {
-            const responses = [
-              "That's awesome! 😄",
-              "I totally agree! 💯",
-              "Love that energy ✨",
-              "Right? 🙌",
-              "For sure! 👀",
-              "Haha yes! 😂",
-              "Perfect! 🎯",
-              "Absolutely! 💕",
-            ];
-            const randomResponse =
-              responses[Math.floor(Math.random() * responses.length)];
-            addMessageToConversation(
-              conversation.id,
-              conversation.participantId,
-              randomResponse
-            );
-            setConversationState({ ...conversation });
-          }, 1200 + Math.random() * 800);
+
+          // Get AI response for emoji reaction
+          setIsTyping(true);
+          const generateResponse = async () => {
+            try {
+              const res = await fetch("/api/messages/response", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                  userMessage: `[emoji:${emotion}]`,
+                  participant: participantUser,
+                }),
+              });
+
+              const data = await res.json();
+              setTimeout(() => {
+                addMessageToConversation(
+                  conversation.id,
+                  conversation.participantId,
+                  data.message
+                );
+                setConversationState({ ...conversation });
+                setIsTyping(false);
+              }, 1200 + Math.random() * 800);
+            } catch (error) {
+              console.error("Failed to get emoji response:", error);
+              setIsTyping(false);
+            }
+          };
+          generateResponse();
         }}
         userConfig={{
           hue: CURRENT_USER.gummiHue,
