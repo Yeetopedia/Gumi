@@ -9,6 +9,7 @@ import { getItemsByCategory, GUMI_BEAR_ITEMS } from "@/lib/gummi-bear-items";
 import { formatCount } from "@/lib/utils";
 import GummiBear from "./GummiBear";
 import TintedImage from "./TintedImage";
+import SnapARButton from "../SnapAR/SnapARButton";
 
 type GummiBearCustomizerProps = {
   onClose: () => void;
@@ -125,11 +126,14 @@ export default function GummiBearCustomizer({ onClose }: GummiBearCustomizerProp
           Customize Your Gummi
         </h2>
 
-        <div className="flex items-center gap-1.5 bg-(--bg-secondary) px-3 py-1.5 rounded-full">
-          <Image src="/gummi-icon.png" alt="" width={14} height={24} />
-          <span className="text-sm font-semibold text-(--accent)">
-            {formatCount(state.gummiBalance)}
-          </span>
+        <div className="flex items-center gap-2">
+          <SnapARButton config={displayConfig} mode="compact" />
+          <div className="flex items-center gap-1.5 bg-(--bg-secondary) px-3 py-1.5 rounded-full">
+            <Image src="/gummi-icon.png" alt="" width={14} height={24} />
+            <span className="text-sm font-semibold text-(--accent)">
+              {formatCount(state.gummiBalance)}
+            </span>
+          </div>
         </div>
       </div>
 
