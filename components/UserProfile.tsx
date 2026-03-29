@@ -1,11 +1,30 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { MockUser } from "@/types";
 import { getUserGummis, getUserHighlights } from "@/lib/user-products";
 import { formatCount } from "@/lib/utils";
+import GummiBear from "./GummiBear/GummiBear";
+
+// Seeded deterministic overlap score from user IDs
+function getTasteOverlap(userId: string): number {
+  const hash = userId.split("").reduce((acc, c) => acc + c.charCodeAt(0), 0);
+  return 55 + (hash % 40); // 55-94%
+}
+
+const SHARED_INTERESTS = [
+  ["Minimalist Home", "Skincare", "Ceramics"],
+  ["Fashion", "Art Prints", "Coffee Gear"],
+  ["Streetwear", "Tech Gadgets", "Books"],
+  ["Jewelry", "Candles", "Plants"],
+  ["Vintage Fashion", "Kitchenware", "Stationery"],
+];
+function getSharedInterests(userId: string): string[] {
+  const hash = userId.split("").reduce((acc, c) => acc + c.charCodeAt(0), 0);
+  return SHARED_INTERESTS[hash % SHARED_INTERESTS.length];
+}
 
 type UserProfileProps = {
   user: MockUser | null;
@@ -61,6 +80,9 @@ export default function UserProfile({
   const userGummis = user ? getUserGummis(user.id) : [];
   const highlights = user ? getUserHighlights(user.id) : [];
   const [activeHighlight, setActiveHighlight] = useState<string | null>(null);
+
+  const tasteOverlap = useMemo(() => user ? getTasteOverlap(user.id) : 0, [user]);
+  const sharedInterests = useMemo(() => user ? getSharedInterests(user.id) : [], [user]);
 
   // Reset highlight when user changes
   useEffect(() => {
@@ -174,6 +196,47 @@ export default function UserProfile({
                   Message
                 </button>
               </div>
+            </div>
+
+            {/* Taste Overlap panel */}
+            <div className="mx-6 mb-4 rounded-2xl bg-(--bg-secondary) p-4">
+              <div className="flex items-center justify-between mb-3">
+                <p className="text-[10px] uppercase tracking-[0.12em] text-(--text-tertiary) font-medium">
+                  Taste Overlap
+                </p>
+                <div className="flex items-center gap-1">
+                  <GummiBear
+                    config={{ hue: user.gummiHue ?? 0, clothing: user.gummiOutfit?.clothing ?? null, accessory: user.gummiOutfit?.accessory ?? null, headwear: user.gummiOutfit?.headwear ?? null }}
+                    size={22}
+                  />
+                </div>
+              </div>
+              {/* Progress bar */}
+              <div className="flex items-center gap-3 mb-3">
+                <div className="flex-1 h-2.5 bg-(--border) rounded-full overflow-hidden">
+                  <motion.div
+                    className="h-full rounded-full bg-gradient-to-r from-(--accent) to-rose-400"
+                    initial={{ width: 0 }}
+                    animate={{ width: `${tasteOverlap}%` }}
+                    transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
+                  />
+                </div>
+                <span className="text-sm font-bold text-(--accent) shrink-0">{tasteOverlap}%</span>
+              </div>
+              {/* Shared categories */}
+              <div className="flex flex-wrap gap-1.5">
+                {sharedInterests.map((interest) => (
+                  <span
+                    key={interest}
+                    className="text-[10px] font-medium px-2 py-0.5 bg-(--card-bg) rounded-full text-(--text-secondary) border border-(--border)"
+                  >
+                    {interest}
+                  </span>
+                ))}
+              </div>
+              <p className="text-[10px] text-(--text-tertiary) mt-2">
+                You and {user.name.split(" ")[0]} both love these categories
+              </p>
             </div>
 
             {/* Highlights row */}

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -36,14 +36,38 @@ const PARAMS = [
   { symbol: "γ", value: "0.20", label: "Trending Score", desc: "Time-decayed purchase velocity" },
 ];
 
+// Mock neighbor data for the interactive k-NN visualization
+const NEIGHBOR_DATA = [
+  {
+    label: "N₁", name: "Sophia C.", similarity: "94%",
+    rec: "Linen Throw Blanket", recPrice: "$48",
+    img: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=120&q=60",
+  },
+  {
+    label: "N₂", name: "Emma L.", similarity: "89%",
+    rec: "Ceramic Pour-Over Set", recPrice: "$62",
+    img: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=120&q=60",
+  },
+  {
+    label: "N₃", name: "Olivia R.", similarity: "82%",
+    rec: "Minimalist Wall Clock", recPrice: "$79",
+    img: "https://images.unsplash.com/photo-1507646227500-4d389b0012be?w=120&q=60",
+  },
+];
+
 export default function AlgorithmModal({ isOpen, onClose }: AlgorithmModalProps) {
+  const [selectedNeighbor, setSelectedNeighbor] = useState<number | null>(null);
+
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") onClose();
+      if (e.key === "Escape") {
+        if (selectedNeighbor !== null) { setSelectedNeighbor(null); return; }
+        onClose();
+      }
     };
     window.addEventListener("keydown", handleKey);
     return () => window.removeEventListener("keydown", handleKey);
-  }, [onClose]);
+  }, [onClose, selectedNeighbor]);
 
   useEffect(() => {
     if (isOpen) {
@@ -142,8 +166,11 @@ export default function AlgorithmModal({ isOpen, onClose }: AlgorithmModalProps)
                 >
                   Finding Your Taste Neighbors
                 </h3>
-                <p className="text-sm text-(--text-secondary) mb-6 leading-relaxed">
+                <p className="text-sm text-(--text-secondary) mb-4 leading-relaxed">
                   We transform each user&apos;s Gummi history into a high-dimensional behavior vector. Using k-nearest neighbors (k-NN), we identify users with the most similar purchase patterns — your &quot;taste neighbors.&quot; Products purchased by your neighbors but not yet seen by you become high-confidence recommendations.
+                </p>
+                <p className="text-xs text-(--text-tertiary) mb-6 italic">
+                  ↑ Click N₁, N₂, or N₃ to see what they recommend for you
                 </p>
 
                 {/* Visual: user cluster diagram */}
@@ -159,32 +186,39 @@ export default function AlgorithmModal({ isOpen, onClose }: AlgorithmModalProps)
                       You
                     </motion.div>
 
-                    {/* Neighbor nodes */}
+                    {/* Neighbor nodes — clickable (N1-N3) */}
                     {[
-                      { x: "20%", y: "25%", label: "N₁", delay: 0.4, accent: true },
-                      { x: "75%", y: "20%", label: "N₂", delay: 0.5, accent: true },
-                      { x: "80%", y: "65%", label: "N₃", delay: 0.6, accent: true },
-                      { x: "15%", y: "70%", label: "N₄", delay: 0.7, accent: false },
-                      { x: "60%", y: "80%", label: "N₅", delay: 0.8, accent: false },
-                      { x: "35%", y: "15%", label: "·", delay: 0.9, accent: false },
-                      { x: "90%", y: "40%", label: "·", delay: 1.0, accent: false },
-                      { x: "8%", y: "45%", label: "·", delay: 1.1, accent: false },
-                    ].map((node, i) => (
-                      <motion.div
-                        key={i}
-                        initial={{ scale: 0, opacity: 0 }}
-                        animate={{ scale: 1, opacity: 1 }}
-                        transition={{ delay: node.delay, type: "spring", stiffness: 200 }}
-                        className={`absolute w-8 h-8 rounded-full flex items-center justify-center text-[10px] font-medium ${
-                          node.accent
-                            ? "bg-(--accent)/20 text-(--accent) border border-(--accent)/30"
-                            : "bg-(--border) text-(--text-tertiary)"
-                        }`}
-                        style={{ left: node.x, top: node.y, transform: "translate(-50%, -50%)" }}
-                      >
-                        {node.label}
-                      </motion.div>
-                    ))}
+                      { x: "20%", y: "25%", label: "N₁", delay: 0.4, neighborIdx: 0 },
+                      { x: "75%", y: "20%", label: "N₂", delay: 0.5, neighborIdx: 1 },
+                      { x: "80%", y: "65%", label: "N₃", delay: 0.6, neighborIdx: 2 },
+                      { x: "15%", y: "70%", label: "N₄", delay: 0.7, neighborIdx: -1 },
+                      { x: "60%", y: "80%", label: "N₅", delay: 0.8, neighborIdx: -1 },
+                      { x: "35%", y: "15%", label: "·", delay: 0.9, neighborIdx: -1 },
+                      { x: "90%", y: "40%", label: "·", delay: 1.0, neighborIdx: -1 },
+                      { x: "8%", y: "45%", label: "·", delay: 1.1, neighborIdx: -1 },
+                    ].map((node, i) => {
+                      const isClickable = node.neighborIdx >= 0;
+                      const isSelected = selectedNeighbor === node.neighborIdx;
+                      return (
+                        <motion.button
+                          key={i}
+                          initial={{ scale: 0, opacity: 0 }}
+                          animate={{ scale: isSelected ? 1.2 : 1, opacity: 1 }}
+                          transition={{ delay: node.delay, type: "spring", stiffness: 200 }}
+                          onClick={() => isClickable ? setSelectedNeighbor(isSelected ? null : node.neighborIdx) : undefined}
+                          className={`absolute w-8 h-8 rounded-full flex items-center justify-center text-[10px] font-medium transition-all ${
+                            isClickable
+                              ? isSelected
+                                ? "bg-(--accent) text-white shadow-lg ring-2 ring-(--accent)/40 cursor-pointer"
+                                : "bg-(--accent)/20 text-(--accent) border border-(--accent)/30 cursor-pointer hover:bg-(--accent)/30"
+                              : "bg-(--border) text-(--text-tertiary) cursor-default"
+                          }`}
+                          style={{ left: node.x, top: node.y, transform: "translate(-50%, -50%)", zIndex: isClickable ? 2 : 0 }}
+                        >
+                          {node.label}
+                        </motion.button>
+                      );
+                    })}
 
                     {/* Connecting lines (SVG) */}
                     <svg className="absolute inset-0 w-full h-full" style={{ zIndex: 0 }}>
@@ -210,6 +244,48 @@ export default function AlgorithmModal({ isOpen, onClose }: AlgorithmModalProps)
                   </div>
                 </div>
               </motion.div>
+
+              {/* Neighbor recommendation popup */}
+              <AnimatePresence mode="wait">
+                {selectedNeighbor !== null && NEIGHBOR_DATA[selectedNeighbor] && (
+                  <motion.div
+                    key={selectedNeighbor}
+                    initial={{ opacity: 0, y: 10, scale: 0.97 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: -6, scale: 0.97 }}
+                    transition={{ duration: 0.25 }}
+                    className="mb-8 rounded-2xl bg-(--bg-secondary) border border-(--accent)/20 overflow-hidden"
+                  >
+                    <div className="flex items-stretch">
+                      <div className="relative w-24 shrink-0">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={NEIGHBOR_DATA[selectedNeighbor].img}
+                          alt={NEIGHBOR_DATA[selectedNeighbor].rec}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div className="flex-1 p-4">
+                        <div className="flex items-center gap-1.5 mb-2">
+                          <span className="w-5 h-5 rounded-full bg-(--accent)/20 text-(--accent) text-[9px] font-bold flex items-center justify-center">
+                            {NEIGHBOR_DATA[selectedNeighbor].label}
+                          </span>
+                          <span className="text-xs font-medium text-(--text-primary)">{NEIGHBOR_DATA[selectedNeighbor].name}</span>
+                          <span className="text-[10px] text-(--text-tertiary) ml-auto">{NEIGHBOR_DATA[selectedNeighbor].similarity} match</span>
+                        </div>
+                        <p className="text-[10px] uppercase tracking-[0.1em] text-(--text-tertiary) mb-1">Recommended for you</p>
+                        <p className="text-sm font-semibold text-(--text-primary) leading-snug mb-1" style={{ fontFamily: "var(--font-cormorant), serif" }}>
+                          {NEIGHBOR_DATA[selectedNeighbor].rec}
+                        </p>
+                        <p className="text-sm font-medium text-(--accent)">{NEIGHBOR_DATA[selectedNeighbor].recPrice}</p>
+                        <p className="text-[10px] text-(--text-tertiary) mt-1">
+                          Because {NEIGHBOR_DATA[selectedNeighbor].name.split(" ")[0]} bought this and your tastes align
+                        </p>
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
 
               {/* Parameter Cards */}
               <motion.div variants={fadeUp} className="mb-10">

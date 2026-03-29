@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Product, MockUser } from "@/types";
@@ -18,6 +18,7 @@ type ProductModalProps = {
 export default function ProductModal({ product, onClose, onGummi, onFriendClick }: ProductModalProps) {
   const [isGummied, setIsGummied] = useState(false);
   const [isSaved, setIsSaved] = useState(false);
+  const [confetti, setConfetti] = useState(false);
 
   useEffect(() => {
     if (product) {
@@ -62,14 +63,16 @@ export default function ProductModal({ product, onClose, onGummi, onFriendClick 
     };
   }, [product]);
 
-  const handleGummi = () => {
+  const handleGummi = useCallback(() => {
     if (!isGummied && product) {
       setIsGummied(true);
+      setConfetti(true);
+      setTimeout(() => setConfetti(false), 1200);
       onGummi?.(product);
     } else {
       setIsGummied(false);
     }
-  };
+  }, [isGummied, product, onGummi]);
 
   const allImages =
     product && product.images.length > 0
@@ -236,7 +239,31 @@ export default function ProductModal({ product, onClose, onGummi, onFriendClick 
 
               {/* Action buttons */}
               <div className="flex items-center gap-2 sticky bottom-0 pt-4 bg-(--card-bg)">
-                {/* Gummi = "I Bought This" */}
+                {/* Gummi = "I Bought This" — with confetti burst */}
+                <div className="relative">
+                  <AnimatePresence>
+                    {confetti && Array.from({ length: 12 }).map((_, i) => {
+                      const angle = (i / 12) * 360;
+                      const rad = (angle * Math.PI) / 180;
+                      const dist = 50 + Math.random() * 30;
+                      const colors = ["#C45D3E", "#F9CA24", "#6C5CE7", "#00B894", "#FD79A8", "#0984E3"];
+                      return (
+                        <motion.div
+                          key={i}
+                          className="absolute rounded-full pointer-events-none z-20"
+                          style={{
+                            width: 5 + Math.random() * 5,
+                            height: 5 + Math.random() * 5,
+                            backgroundColor: colors[i % colors.length],
+                            top: "50%", left: "50%",
+                          }}
+                          initial={{ x: 0, y: 0, opacity: 1, scale: 1 }}
+                          animate={{ x: Math.cos(rad) * dist, y: Math.sin(rad) * dist, opacity: 0, scale: 0.2 }}
+                          transition={{ duration: 0.7, ease: "easeOut" }}
+                        />
+                      );
+                    })}
+                  </AnimatePresence>
                 <button
                   onClick={handleGummi}
                   className={`flex items-center gap-2 px-4 py-3 rounded-full border text-sm font-medium transition-all ${
@@ -259,6 +286,7 @@ export default function ProductModal({ product, onClose, onGummi, onFriendClick 
                   </motion.div>
                   {isGummied ? "Purchased!" : "I Bought This"}
                 </button>
+                </div>
 
                 {/* Share */}
                 <button
