@@ -24,40 +24,36 @@ export default function TintedImage({
   style,
   alt = "",
 }: TintedImageProps) {
-  const normalizedHue = ((hue % 360) + 360) % 360;
-  const needsShift = normalizedHue !== 0;
-  const [tintedSrc, setTintedSrc] = useState<string | null>(needsShift ? null : src);
-  const [mounted, setMounted] = useState(false);
+  const [tintedSrc, setTintedSrc] = useState<string>(src);
+  const [ready, setReady] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  useEffect(() => {
-    if (!mounted) return;
-
-    if (!needsShift) {
+    const normalizedHue = ((hue % 360) + 360) % 360;
+    if (normalizedHue === 0) {
       setTintedSrc(src);
+      setReady(true);
       return;
     }
 
     let cancelled = false;
     shiftHue(src, normalizedHue).then((dataUrl) => {
-      if (!cancelled) setTintedSrc(dataUrl);
+      if (!cancelled) {
+        setTintedSrc(dataUrl);
+        setReady(true);
+      }
     });
 
-    return () => {
-      cancelled = true;
-    };
-  }, [src, normalizedHue, needsShift, mounted]);
+    return () => { cancelled = true; };
+  }, [src, hue]);
 
-  // For non-shifted images, show immediately. For shifted, fade in when ready.
-  const isReady = !!tintedSrc;
-  const displaySrc = tintedSrc || src;
+  // On server and initial client render, always show the original src.
+  // Once the hue-shifted version is ready, swap it in with a fade.
+  const needsShift = ((hue % 360) + 360) % 360 !== 0;
+  const opacity = needsShift && !ready ? 0 : 1;
 
-  const fadeStyle: React.CSSProperties = {
+  const mergedStyle: React.CSSProperties = {
     ...style,
-    opacity: isReady ? 1 : 0,
+    opacity,
     transition: "opacity 0.3s ease-in",
   };
 
@@ -65,10 +61,10 @@ export default function TintedImage({
     return (
       // eslint-disable-next-line @next/next/no-img-element
       <img
-        src={displaySrc}
+        src={tintedSrc}
         alt={alt}
         className={`absolute inset-0 w-full h-full object-contain ${className}`}
-        style={fadeStyle}
+        style={mergedStyle}
         draggable={false}
       />
     );
@@ -77,12 +73,12 @@ export default function TintedImage({
   return (
     // eslint-disable-next-line @next/next/no-img-element
     <img
-      src={displaySrc}
+      src={tintedSrc}
       alt={alt}
       width={width}
       height={height}
       className={className}
-      style={fadeStyle}
+      style={mergedStyle}
       draggable={false}
     />
   );

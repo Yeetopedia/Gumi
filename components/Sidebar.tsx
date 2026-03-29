@@ -123,7 +123,13 @@ export default function Sidebar({
           <nav className="flex-1 mb-6">
             <div className="space-y-2">
               <button
-                onClick={() => { onHomeClick?.(); setIsOpen(false); }}
+                onClick={() => {
+                  onHomeClick?.();
+                  onFeedModeChange("gallery");
+                  onCategorySelect("for-you");
+                  onSearchChange("");
+                  setIsOpen(false);
+                }}
                 className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-(--bg-secondary) transition-colors text-left ${activeSection === "feed" ? "bg-(--bg-secondary)" : ""}`}
               >
                 <svg width="20" height="20" viewBox="0 0 24 24" fill={activeSection === "feed" ? "currentColor" : "none"} stroke="var(--text-primary)" strokeWidth={activeSection === "feed" ? "1.5" : "2"}>
@@ -166,7 +172,8 @@ export default function Sidebar({
               </button>
               <button
                 onClick={() => {
-                  onFeedModeChange("reels");
+                  onHomeClick?.();
+                  onFeedModeChange(feedMode === "reels" ? "gallery" : "reels");
                   setIsOpen(false);
                 }}
                 className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-(--bg-secondary) transition-colors text-left"

@@ -264,6 +264,7 @@ export default function Home() {
               onLoadMore={manualAppend}
               hasMore={true}
               onProductClick={handleProductClick}
+              onClose={() => setFeedMode("gallery")}
             />
           </div>
         )}

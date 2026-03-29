@@ -12,9 +12,10 @@ type ReelsViewProps = {
   onLoadMore: () => void;
   hasMore: boolean;
   onProductClick: (product: Product) => void;
+  onClose?: () => void;
 };
 
-export default function ReelsView({ products, onLoadMore, hasMore, onProductClick }: ReelsViewProps) {
+export default function ReelsView({ products, onLoadMore, hasMore, onProductClick, onClose }: ReelsViewProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [gummied, setGummied] = useState<Set<string>>(new Set());
   const [bookmarked, setBookmarked] = useState<Set<string>>(new Set());
@@ -45,12 +46,13 @@ export default function ReelsView({ products, onLoadMore, hasMore, onProductClic
 
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") { onClose?.(); return; }
       if (e.key === "ArrowDown" || e.key === "j") goTo(currentIndex + 1);
       if (e.key === "ArrowUp" || e.key === "k") goTo(currentIndex - 1);
     };
     window.addEventListener("keydown", handleKey);
     return () => window.removeEventListener("keydown", handleKey);
-  }, [currentIndex, goTo]);
+  }, [currentIndex, goTo, onClose]);
 
   useEffect(() => {
     const el = containerRef.current;
@@ -124,6 +126,18 @@ export default function ReelsView({ products, onLoadMore, hasMore, onProductClic
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
     >
+      {/* Close / back to gallery button */}
+      {onClose && (
+        <button
+          onClick={onClose}
+          className="fixed top-4 left-4 lg:left-[272px] z-30 w-10 h-10 rounded-full bg-white/15 backdrop-blur-sm flex items-center justify-center hover:bg-white/25 transition-colors"
+          aria-label="Back to gallery"
+        >
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round">
+            <polyline points="15 18 9 12 15 6" />
+          </svg>
+        </button>
+      )}
       <div className="relative w-full h-full max-w-md">
         <AnimatePresence initial={false} custom={direction} mode="popLayout">
           <motion.div
