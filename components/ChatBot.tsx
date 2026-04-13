@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Product } from "@/types";
 import { formatPriceRange } from "@/lib/utils";
 
+
 type SearchChatMessage = {
   id: string;
   role: "user" | "assistant";
